@@ -22,6 +22,7 @@
     .map-placeholder iframe { width:100%;height:100%;filter:grayscale(40%) invert(15%) hue-rotate(180deg) }
     @media (max-width:1024px) { .contact-layout{grid-template-columns:1fr} }
   </style>
+<link rel="stylesheet" href="css/responsive.css">
 </head>
 <body class="page-transition">
   <div id="preloader"><div class="preloader-logo">Sportify<span>Turf</span></div><div class="preloader-bar"><div class="preloader-bar__fill"></div></div></div>
@@ -166,7 +167,7 @@
           <h2 style="font-size:var(--text-2xl);font-weight:900;margin-block:var(--space-3) var(--space-6)">We'd Love to <span class="accent">Hear From You</span></h2>
           <form id="contact-form" novalidate>
             <div style="display:flex;flex-direction:column;gap:var(--space-4)">
-              <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)">
+              <div class="form-grid-2" style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)">
                 <div class="form-group">
                   <label class="form-label" for="contact-name">Full Name *</label>
                   <input type="text" id="contact-name" class="form-input" placeholder="Your name" required>

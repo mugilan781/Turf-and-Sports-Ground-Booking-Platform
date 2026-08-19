@@ -30,6 +30,7 @@
     .comment-item { display:flex;gap:var(--space-4);padding:var(--space-5);background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-xl);margin-bottom:var(--space-4) }
     @media (max-width:1024px) { .article-layout{grid-template-columns:1fr} .article-sidebar{position:static} }
   </style>
+<link rel="stylesheet" href="css/responsive.css">
 </head>
 <body class="page-transition">
   <div id="preloader"><div class="preloader-logo">Sportify<span>Turf</span></div><div class="preloader-bar"><div class="preloader-bar__fill"></div></div></div>
@@ -208,7 +209,7 @@
         </div>
 
         <!-- Author Card (SECTION 3) -->
-        <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-2xl);padding:var(--space-8);margin-block:var(--space-10);display:flex;gap:var(--space-6);align-items:flex-start" aria-label="Author information">
+        <div class="author-card" style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-2xl);padding:var(--space-8);margin-block:var(--space-10);display:flex;gap:var(--space-6);align-items:flex-start" aria-label="Author information">
           <div class="avatar avatar-xl" id="author-card-avatar" style="background:linear-gradient(135deg,var(--electric-lime),var(--stadium-green));color:var(--midnight-navy);font-weight:900;flex-shrink:0;font-size:var(--text-2xl)">RK</div>
           <div>
             <div style="font-size:var(--text-xs);color:var(--electric-lime);font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:var(--space-1)">Written by</div>
@@ -232,7 +233,7 @@
             <a href="blog.html" class="chip" style="text-decoration:none">Strategy</a>
             <a href="blog.html" class="chip" style="text-decoration:none">5-a-side</a>
           </div>
-          <div style="display:flex;gap:var(--space-2)">
+          <div class="comment-share-row" style="display:flex;gap:var(--space-2)">
             <button class="btn btn-secondary btn-sm" onclick="window.SportifyApp.showToast('Sharing on WhatsApp...','info')">WhatsApp</button>
             <button class="btn btn-secondary btn-sm" onclick="window.SportifyApp.showToast('Sharing on Twitter...','info')">Twitter</button>
             <button class="btn btn-secondary btn-sm" onclick="window.SportifyApp.showToast('Link copied!','success')">Copy Link</button>
@@ -310,7 +311,7 @@
           <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-2xl);padding:var(--space-6)">
             <h3 style="margin-bottom:var(--space-5)">Leave a Comment</h3>
             <div class="auth-form" style="display:flex;flex-direction:column;gap:var(--space-4)">
-              <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)">
+              <div class="form-grid-2" style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)">
                 <div class="form-group"><label class="form-label">Name</label><input type="text" class="form-input" placeholder="Your name"></div>
                 <div class="form-group"><label class="form-label">Email</label><input type="email" class="form-input" placeholder="your@email.com"></div>
               </div>

@@ -1,0 +1,231 @@
+/* ============================================================
+   RESPONSIVE.CSS — Cross-page responsive fixes
+   Every rule below lives inside a max-width media query so the
+   desktop layout (>= 1025px) is never touched.
+   Breakpoint family: 1024 / 768 / 640 / 480 / 360
+   ============================================================ */
+
+/* ═══════════════ TABLET-LAPTOP (≤1024px) ═══════════════ */
+@media (max-width: 1024px) {
+  /* Hero slider (index) */
+  .hero-slider { min-height: 640px; }
+
+  /* Page hero (all inner pages) — tighten oversized padding */
+  .page-hero {
+    padding-block: var(--space-24);
+    padding-top: calc(var(--nav-height) + var(--space-24));
+  }
+
+  /* Home 2 hero — 100vh grid collapses to one column; give it natural height */
+  .h2-hero {
+    min-height: auto;
+    padding-block: calc(var(--nav-height) + var(--space-12)) var(--space-12);
+  }
+
+  /* Compact xs buttons (Home 2 HUD join buttons) */
+  .btn-xs {
+    padding: 0.5rem 1rem;
+    font-size: var(--text-xs);
+    line-height: 1.2;
+  }
+
+  /* Blog comments — avatar + content side by side */
+  .comment-item {
+    display: flex;
+    gap: var(--space-4);
+    align-items: flex-start;
+  }
+
+  /* Modal & toast breathing room */
+  .modal { padding: var(--space-6); }
+
+  /* Leaderboard table — tighter cells */
+  .h2-lb-table th,
+  .h2-lb-table td { padding: var(--space-3) var(--space-4); }
+}
+
+/* ═══════════════ TABLET (≤768px) ═══════════════ */
+@media (max-width: 768px) {
+  /* Hero slider (index) */
+  .hero-slider { min-height: 580px; }
+  .hero-slide__content { padding-bottom: var(--space-20); }
+  .hero-controls { bottom: var(--space-5); gap: var(--space-3); }
+  .hero-arrows { padding-inline: var(--space-3); }
+  .hero-arrow { width: 44px; height: 44px; font-size: 15px; }
+
+  /* Modal fills the screen nicely on tablets */
+  .modal-overlay { padding: var(--space-4); }
+  .modal { max-width: 100%; padding: var(--space-6); }
+  .modal-close { top: var(--space-3); right: var(--space-3); }
+
+  /* Toast stays inside the viewport */
+  .toast {
+    right: var(--space-4);
+    bottom: var(--space-4);
+    max-width: calc(100vw - var(--space-8));
+  }
+
+  /* Sport / About showcases — tighter column gap */
+  .sport-showcase,
+  .about-intro { gap: var(--space-8); }
+
+  /* Featured post body padding */
+  .featured-post__body { padding: var(--space-6); }
+
+  /* Blog / article sidebars full width once stacked */
+  .blog-sidebar,
+  .article-sidebar { max-width: 100%; }
+
+  /* Leaderboard — drop "Home Ground" column and scroll if needed */
+  .h2-lb-table th:nth-child(6),
+  .h2-lb-table td:nth-child(6) { display: none; }
+  .h2-leaderboard-card { overflow-x: auto; }
+  .h2-leaderboard-card .h2-lb-table { min-width: 500px; }
+
+  /* VIP cards tighter on tablets */
+  .h2-vip-card { padding: var(--space-6); }
+}
+
+/* ═══════════════ MOBILE (≤640px) ═══════════════ */
+@media (max-width: 640px) {
+  /* Hero slider (index) */
+  .hero-slider { min-height: 540px; }
+  .hero-slide__eyebrow {
+    font-size: 11px;
+    padding: var(--space-1) var(--space-3);
+  }
+  .hero-slide__desc { margin-bottom: var(--space-6); }
+
+  /* Mobile nav menu — snugger padding */
+  .navbar__mobile { padding: var(--space-5); }
+  .navbar__mobile-link { padding: var(--space-3); }
+
+  /* Home 2 hero — let the HUD breathe */
+  .h2-hero__hud { width: 100%; }
+  .h2-match-top { flex-wrap: wrap; gap: var(--space-1); }
+  .h2-match-roster { flex-wrap: wrap; gap: var(--space-3); }
+  .h2-zone-tab { padding: var(--space-2) var(--space-4); }
+
+  /* Calculator — tighter padding */
+  .h2-calc-wrapper { padding: var(--space-5); }
+
+  /* Leaderboard — hide "Win Rate", shrink type */
+  .h2-lb-table th:nth-child(5),
+  .h2-lb-table td:nth-child(5) { display: none; }
+  .h2-lb-table th,
+  .h2-lb-table td { font-size: var(--text-xs); }
+
+  /* Billing switcher — compact pills */
+  .h2-billing-switcher { max-width: 100%; }
+  .h2-billing-btn { padding: 8px 16px; font-size: var(--text-xs); }
+
+  /* Showcase images shorter on phones */
+  .sport-img,
+  .about-intro__image { height: 220px; }
+  .article-hero-img { height: 220px; }
+
+  /* Services CTA banner — stack text + buttons (overrides inline grid) */
+  .cta-banner {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+    gap: var(--space-6) !important;
+    padding: var(--space-8) !important;
+  }
+
+  /* Sport showcase price/button row — allow wrap */
+  .sport-showcase__cta { flex-wrap: wrap; }
+
+  /* Blog author row — wrap */
+  .featured-post__footer { flex-wrap: wrap; gap: var(--space-4); }
+
+  /* Author card — stack avatar over text */
+  .author-card { flex-direction: column !important; }
+
+  /* Share buttons — wrap */
+  .comment-share-row { flex-wrap: wrap; }
+
+  /* 2-col form grids → 1 col (contact / comments / dashboard) */
+  .form-grid-2 { grid-template-columns: 1fr !important; }
+
+  /* Dashboard header — stack title + controls */
+  .dashboard-header { flex-direction: column; align-items: flex-start; }
+  .dashboard-main { padding: var(--space-4); }
+  .db-stat-card { padding: var(--space-4); }
+  .booking-table th,
+  .booking-table td { padding: var(--space-3); }
+
+  /* Page hero — tighter top padding on phones */
+  .page-hero {
+    padding-block: var(--space-16);
+    padding-top: calc(var(--nav-height) + var(--space-16));
+  }
+
+  /* Section header — tighter bottom margin */
+  .section-header { margin-bottom: var(--space-10); }
+
+  /* Map placeholder — shorter on phones */
+  .map-placeholder { min-height: 300px; }
+}
+
+/* ═══════════════ SMALL MOBILE (≤480px) ═══════════════ */
+@media (max-width: 480px) {
+  /* Hero actions — full-width stacked buttons */
+  .hero-slide__actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .hero-slider { min-height: 520px; }
+
+  /* Newsletters (blog CTA + sitemap search) — stack input + button */
+  .newsletter-form {
+    flex-direction: column !important;
+    width: 100%;
+  }
+  .newsletter-form .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .sitemap-search { flex-direction: column !important; }
+  .sitemap-search input,
+  .sitemap-search .btn { width: 100%; justify-content: center; }
+
+  /* 404 actions — stacked full width */
+  .error-actions { flex-direction: column !important; }
+  .error-actions .btn { width: 100%; justify-content: center; }
+  .error-search { flex-direction: column !important; }
+  .error-search input,
+  .error-search .btn { width: 100%; justify-content: center; }
+
+  /* Home 2 — leaderboard drops "Sport", VIP/tourney cards tighter */
+  .h2-lb-table th:nth-child(3),
+  .h2-lb-table td:nth-child(3) { display: none; }
+  .h2-lb-table th,
+  .h2-lb-table td { padding: var(--space-2) var(--space-3); }
+  .h2-vip-card { padding: var(--space-5); }
+  .h2-tourney-body { padding: var(--space-5); }
+
+  /* Calculator add-ons — single column */
+  .h2-calc-addons { grid-template-columns: 1fr !important; }
+
+  /* Facilities grid — single column for roomy touch targets */
+  .facilities-grid { grid-template-columns: 1fr; }
+
+  /* Dashboard profile summary — stack avatar + info */
+  .profile-summary {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  /* Modal — tighter on phones */
+  .modal { padding: var(--space-5); }
+
+  /* Stats — give stat items more breathing room */
+  .stat-item { padding: var(--space-5); }
+}
+
+/* ═══════════════ TINY MOBILE (≤360px) ═══════════════ */
+@media (max-width: 360px) {
+  .hero-slider { min-height: 500px; }
+  .hero-arrow { width: 38px; height: 38px; font-size: 13px; }
+  .h2-billing-btn { padding: 8px 12px; }
+}
