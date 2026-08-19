@@ -931,6 +931,16 @@ svg.v-icon[fill="currentColor"] {
 }
 .page-header .badge-navy { border-color: rgba(184, 230, 46, 0.2); }
 
+[data-theme="light"] .contact-cta .btn-ghost {
+  background: rgba(255,255,255,0.12);
+  color: var(--ice-white);
+  border-color: rgba(255,255,255,0.32);
+}
+[data-theme="light"] .contact-cta .btn-ghost:hover {
+  color: var(--electric-lime);
+  border-color: var(--electric-lime);
+}
+
 [data-theme="light"] .page-header .btn-secondary {
   background: rgba(255,255,255,0.12);
   color: var(--ice-white);
