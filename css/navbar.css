@@ -443,3 +443,53 @@
 @media (max-width: 640px) {
   .navbar__logo-tagline { display: none; }
 }
+
+/* ── Light Theme: Transparent Navbar Over Dark Heroes ──
+   Hero sections stay dark in light mode, so the transparent
+   navbar must keep the dark-theme light palette for contrast. */
+[data-theme="light"] .navbar--transparent.navbar--over-dark .navbar__logo-name {
+  color: var(--ice-white);
+}
+
+[data-theme="light"] .navbar--transparent.navbar--over-dark .navbar__logo-name span,
+[data-theme="light"] .navbar--transparent.navbar--over-dark .navbar__link.active {
+  color: var(--electric-lime);
+}
+
+[data-theme="light"] .navbar--transparent.navbar--over-dark .navbar__logo-tagline {
+  color: var(--silver-dark);
+}
+
+[data-theme="light"] .navbar--transparent.navbar--over-dark .navbar__link {
+  color: var(--silver);
+}
+
+[data-theme="light"] .navbar--transparent.navbar--over-dark .navbar__link:hover {
+  color: var(--ice-white);
+  background: rgba(255,255,255,0.08);
+}
+
+[data-theme="light"] .navbar--transparent.navbar--over-dark .navbar__link::after {
+  background: var(--electric-lime);
+}
+
+[data-theme="light"] .navbar--transparent.navbar--over-dark .navbar__toggle-btn {
+  color: var(--silver);
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.15);
+}
+
+[data-theme="light"] .navbar--transparent.navbar--over-dark .navbar__toggle-btn:hover {
+  color: var(--electric-lime);
+  background: rgba(184,230,46,0.12);
+  border-color: var(--border-accent);
+}
+
+[data-theme="light"] .navbar--transparent.navbar--over-dark .navbar__hamburger {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.15);
+}
+
+[data-theme="light"] .navbar--transparent.navbar--over-dark .navbar__hamburger span {
+  background: var(--ice-white);
+}
