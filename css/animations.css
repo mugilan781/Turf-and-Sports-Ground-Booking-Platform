@@ -481,7 +481,7 @@
   justify-content: center;
   flex-direction: column;
   gap: var(--space-6);
-  transition: opacity 0.5s ease, visibility 0.5s ease;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 #preloader.hidden {
@@ -511,7 +511,7 @@
   height: 100%;
   background: linear-gradient(90deg, var(--electric-lime), var(--stadium-green));
   border-radius: var(--radius-full);
-  animation: preloader-fill 1.8s ease-out forwards;
+  animation: preloader-fill 0.7s ease-out forwards;
 }
 
 @keyframes preloader-fill {

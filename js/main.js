@@ -13,7 +13,7 @@ const initPreloader = () => {
   window.addEventListener('load', () => {
     setTimeout(() => {
       preloader.classList.add('hidden');
-    }, 1800);
+    }, 700);
   });
 };
 
