@@ -820,7 +820,8 @@ svg.v-icon[fill="currentColor"] {
 [data-theme="light"] .hero-slide__eyebrow .v-icon-lime,
 [data-theme="light"] .page-hero__eyebrow .v-icon-lime,
 [data-theme="light"] .cta-section .v-icon-lime,
-[data-theme="light"] .sport-img__badge .v-icon-lime {
+[data-theme="light"] .sport-img__badge .v-icon-lime,
+[data-theme="light"] .page-header .v-icon-lime {
   color: var(--electric-lime);
   stroke: var(--electric-lime);
 }
@@ -899,5 +900,44 @@ svg.v-icon[fill="currentColor"] {
   color: var(--electric-lime);
   background: rgba(184, 230, 46, 0.12);
   border-color: rgba(184, 230, 46, 0.3);
+}
+
+/* ── Always-dark page headers (blog details, legal, sitemap) ── */
+.page-header {
+  background: linear-gradient(135deg, var(--midnight-navy), var(--graphite-dark));
+  border-bottom: 1px solid rgba(184, 230, 46, 0.15);
+}
+.page-header h1 { color: var(--ice-white); }
+.page-header nav,
+.page-header nav a { color: rgba(255,255,255,0.7); }
+.page-header nav a:hover { color: var(--electric-lime); }
+.page-header p { color: rgba(255,255,255,0.75); }
+.page-header strong { color: rgba(255,255,255,0.95); }
+.page-header .legal-highlight {
+  background: rgba(184, 230, 46, 0.08);
+  border-color: rgba(184, 230, 46, 0.2);
+  border-left-color: var(--electric-lime);
+  color: rgba(255,255,255,0.85);
+}
+.page-header [id="author-name"] { color: var(--ice-white); }
+.page-header [id="author-role"],
+.page-header [id="article-date"],
+.page-header [id="article-read-time"],
+.page-header [id="article-views"] { color: rgba(255,255,255,0.7); }
+.page-header .badge-lime {
+  background: rgba(184, 230, 46, 0.15);
+  color: var(--electric-lime);
+  border-color: rgba(184, 230, 46, 0.3);
+}
+.page-header .badge-navy { border-color: rgba(184, 230, 46, 0.2); }
+
+[data-theme="light"] .page-header .btn-secondary {
+  background: rgba(255,255,255,0.12);
+  color: var(--ice-white);
+  border-color: rgba(255,255,255,0.32);
+}
+[data-theme="light"] .page-header .btn-secondary:hover {
+  color: var(--electric-lime);
+  border-color: var(--electric-lime);
 }
 
