@@ -493,3 +493,9 @@
 [data-theme="light"] .navbar--transparent.navbar--over-dark .navbar__hamburger span {
   background: var(--ice-white);
 }
+
+/* ── Dashboard header: logo flush left, actions flush right ── */
+.navbar--dashboard > .container {
+  max-width: 100%;
+  padding-inline: var(--space-4);
+}
