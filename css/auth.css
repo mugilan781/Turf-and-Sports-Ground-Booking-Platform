@@ -349,7 +349,10 @@
   justify-content: center;
   gap: var(--space-3);
   margin-bottom: var(--space-8);
+  text-decoration: none;
 }
+
+.login-brand:hover { opacity: 0.85; }
 
 .login-brand__img {
   width: 44px;
