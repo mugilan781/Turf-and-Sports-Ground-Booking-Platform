@@ -819,7 +819,8 @@ svg.v-icon[fill="currentColor"] {
 /* Icons on always-dark surfaces keep the bright lime in light mode */
 [data-theme="light"] .hero-slide__eyebrow .v-icon-lime,
 [data-theme="light"] .page-hero__eyebrow .v-icon-lime,
-[data-theme="light"] .cta-section .v-icon-lime {
+[data-theme="light"] .cta-section .v-icon-lime,
+[data-theme="light"] .sport-img__badge .v-icon-lime {
   color: var(--electric-lime);
   stroke: var(--electric-lime);
 }

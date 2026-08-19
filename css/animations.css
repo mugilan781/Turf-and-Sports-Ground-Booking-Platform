@@ -246,6 +246,25 @@
   border-color: rgba(255,255,255,0.45);
 }
 
+.page-hero__actions .btn-ghost {
+  background: rgba(255,255,255,0.12);
+  color: var(--ice-white);
+  border-color: rgba(255,255,255,0.32);
+  backdrop-filter: blur(10px);
+}
+
+.page-hero__actions .btn-ghost:hover {
+  background: rgba(255,255,255,0.2);
+  color: var(--electric-lime);
+  border-color: var(--electric-lime);
+}
+
+[data-theme="light"] .page-hero__actions .btn-ghost {
+  background: rgba(255,255,255,0.16);
+  color: var(--white);
+  border-color: rgba(255,255,255,0.45);
+}
+
 /* ── Slider Controls ── */
 .hero-controls {
   position: absolute;
