@@ -245,6 +245,7 @@ const initQuickBookSearch = () => {
   if (!btn || !turfGrid) return;
 
   dateInput.min = new Date().toISOString().split('T')[0];
+  if (!dateInput.value) dateInput.value = dateInput.min;
 
   btn.addEventListener('click', () => {
     const sport = sportSel.value;
@@ -253,10 +254,6 @@ const initQuickBookSearch = () => {
 
     if (!sport && !loc && !date) {
       window.SportifyApp?.showToast('Select a sport, area or date to search.', 'error');
-      return;
-    }
-    if (!date) {
-      window.SportifyApp?.showToast('Please choose a date.', 'error');
       return;
     }
 
@@ -274,9 +271,9 @@ const initQuickBookSearch = () => {
 
     if (results.length === 0) {
       turfGrid.innerHTML = `
-        <div class="text-center" style="padding:var(--space-12) 0">
+        <div class="turf-empty">
           <p style="color:var(--text-muted);font-size:var(--text-lg)">
-            No turfs match your search. Try a different sport, area or date.
+            No turfs available for your expected slot. Try a different sport, area or date.
           </p>
         </div>`;
     } else {

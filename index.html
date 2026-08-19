@@ -700,34 +700,9 @@
   <script src="js/main.js"></script>
   <script src="js/hero-slider.js"></script>
   <script src="js/booking.js"></script>
-  <script>
-    // ── Quick Search ──
-    document.addEventListener('DOMContentLoaded', () => {
-      // Set today's date on quick book
-      const dateInput = document.getElementById('qb-date');
-      if (dateInput) {
-        dateInput.value = new Date().toISOString().split('T')[0];
-        dateInput.min = new Date().toISOString().split('T')[0];
-      }
-
-      const searchBtn = document.getElementById('quick-search-btn');
-      if (searchBtn) {
-        searchBtn.addEventListener('click', () => {
-          const sport = document.getElementById('qb-sport')?.value;
-          const filterBtns = document.querySelectorAll('[data-sport-filter]');
-          if (sport) {
-            filterBtns.forEach(btn => {
-              btn.classList.toggle('active', btn.getAttribute('data-sport-filter') === sport);
-              btn.click();
-            });
-          }
-          // Scroll to turf grid
-          document.getElementById('turf-grid')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        });
-      }
-
-      // ── Testimonial Carousel ──
-      const track = document.getElementById('testimonialTrack');
+<script>
+    // ── Testimonial Carousel ──
+    const track = document.getElementById('testimonialTrack');
       const prevBtn = document.getElementById('testimonialPrev');
       const nextBtn = document.getElementById('testimonialNext');
       if (!track) return;
@@ -754,13 +729,12 @@
       });
 
       // Sport filter ARIA update
-      document.querySelectorAll('[data-sport-filter]').forEach(btn => {
+document.querySelectorAll('[data-sport-filter]').forEach(btn => {
         btn.addEventListener('click', () => {
           document.querySelectorAll('[data-sport-filter]').forEach(b => b.setAttribute('aria-pressed', 'false'));
           btn.setAttribute('aria-pressed', 'true');
         });
       });
-    });
   </script>
 
 </body>
