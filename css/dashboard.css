@@ -110,9 +110,15 @@
 }
 
 .dashboard-nav-item__icon {
-  font-size: var(--text-lg);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 24px;
-  text-align: center;
+  flex-shrink: 0;
+}
+
+.dashboard-nav-item__icon svg {
+  stroke: currentColor;
 }
 
 .dashboard-nav-item__badge {

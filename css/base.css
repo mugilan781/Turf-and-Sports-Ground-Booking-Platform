@@ -319,6 +319,12 @@ p {
   border: 1px solid rgba(184, 230, 46, 0.3);
 }
 
+[data-theme="light"] .badge-lime {
+  background: rgba(18, 107, 79, 0.08);
+  color: var(--stadium-green);
+  border-color: rgba(18, 107, 79, 0.25);
+}
+
 .badge-green {
   background: rgba(18, 107, 79, 0.15);
   color: var(--green-light);
@@ -798,6 +804,21 @@ svg.v-icon,
 .v-icon-navy { color: var(--midnight-navy); stroke: var(--midnight-navy); }
 .v-icon-muted { color: var(--text-muted); stroke: var(--text-muted); }
 
+/* ── Light Mode Icon Contrast Overrides ── */
+[data-theme="light"] .v-icon-lime {
+  color: var(--stadium-green);
+  stroke: var(--stadium-green);
+}
+
+.section-label .v-icon,
+.badge .v-icon,
+.pill-badge .v-icon,
+.sport-filter-btn .v-icon,
+.btn .v-icon {
+  stroke: currentColor;
+  color: inherit;
+}
+
 .icon-circle {
   display: inline-flex;
   align-items: center;
@@ -810,6 +831,12 @@ svg.v-icon,
   border: 1px solid rgba(184, 230, 46, 0.2);
   flex-shrink: 0;
   transition: all var(--transition-base);
+}
+
+[data-theme="light"] .icon-circle {
+  background: rgba(18, 107, 79, 0.08);
+  color: var(--stadium-green);
+  border-color: rgba(18, 107, 79, 0.25);
 }
 
 .icon-circle--green {
