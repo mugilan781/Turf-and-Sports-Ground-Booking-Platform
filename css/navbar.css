@@ -284,8 +284,17 @@
   z-index: var(--z-dropdown);
 }
 
-.navbar__profile:hover .navbar__profile-menu,
-.navbar__profile:focus-within .navbar__profile-menu {
+@media (hover: hover) and (pointer: fine) {
+  .navbar__profile:hover .navbar__profile-menu,
+  .navbar__profile:focus-within .navbar__profile-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    transform: translateY(0);
+  }
+}
+
+.navbar__profile.open .navbar__profile-menu {
   opacity: 1;
   visibility: visible;
   pointer-events: all;
@@ -398,6 +407,8 @@
   gap: var(--space-2);
   transform: translateY(-100%);
   opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
   transition: all var(--transition-slow);
   z-index: calc(var(--z-sticky) - 1);
   max-height: calc(100vh - var(--nav-height));
@@ -407,6 +418,8 @@
 .navbar__mobile.open {
   transform: translateY(0);
   opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .navbar__mobile-link {

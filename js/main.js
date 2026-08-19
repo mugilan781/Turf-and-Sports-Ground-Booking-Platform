@@ -118,22 +118,59 @@ const initNavbar = () => {
   const hamburger = document.querySelector('.navbar__hamburger');
   const mobileMenu = document.querySelector('.navbar__mobile');
 
+  const closeMobileMenu = () => {
+    if (!hamburger || !mobileMenu) return;
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  };
+
   if (hamburger && mobileMenu) {
     hamburger.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.contains('open');
       hamburger.classList.toggle('open');
       mobileMenu.classList.toggle('open');
-      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+      hamburger.setAttribute('aria-expanded', String(!isOpen));
+      document.body.style.overflow = isOpen ? '' : 'hidden';
+    });
+
+    // Close the menu when tapping any link/button inside it
+    mobileMenu.querySelectorAll('a, button').forEach(el => {
+      el.addEventListener('click', closeMobileMenu);
     });
 
     // Close on outside click
     document.addEventListener('click', (e) => {
       if (!navbar.contains(e.target)) {
-        hamburger.classList.remove('open');
-        mobileMenu.classList.remove('open');
-        document.body.style.overflow = '';
+        closeMobileMenu();
       }
     });
   }
+};
+
+// ── Profile Dropdown (works on touch AND mouse) ──────────
+const initProfileMenu = () => {
+  const closeAll = () => {
+    document.querySelectorAll('.navbar__profile.open').forEach(p => p.classList.remove('open'));
+  };
+
+  document.querySelectorAll('.navbar__profile').forEach(profile => {
+    const trigger = profile.querySelector('.navbar__toggle-btn');
+    if (!trigger) return;
+
+    trigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const wasOpen = profile.classList.contains('open');
+      closeAll();
+      if (!wasOpen) profile.classList.add('open');
+      trigger.blur();
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (e.target instanceof Element && !e.target.closest('.navbar__profile')) closeAll();
+  });
 };
 
 // ── Scroll Progress Bar ────────────────────────────────────
@@ -316,6 +353,9 @@ const initAccessibility = () => {
       const mobileMenu = document.querySelector('.navbar__mobile.open');
       if (hamburger) hamburger.classList.remove('open');
       if (mobileMenu) mobileMenu.classList.remove('open');
+      if (hamburger) hamburger.setAttribute('aria-expanded', 'false');
+      // Close profile dropdowns
+      document.querySelectorAll('.navbar__profile.open').forEach(p => p.classList.remove('open'));
       document.body.style.overflow = '';
     }
   });
@@ -353,6 +393,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   initRTL();
   initNavbar();
+  initProfileMenu();
   initScrollProgress();
   initScrollReveal();
   initCounters();
