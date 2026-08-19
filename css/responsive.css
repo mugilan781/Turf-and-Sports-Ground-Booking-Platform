@@ -39,6 +39,14 @@
   /* Modal & toast breathing room */
   .modal { padding: var(--space-6); }
 
+  /* Stop the layout viewport from expanding to page min-content —
+     that expansion renders the page zoomed out with an empty right gap */
+  html { overflow-x: hidden; }
+
+  /* Blog featured image — inline aspect-ratio (4/3) × min-height
+     inflated the image width to 373px and overflowed the card */
+  .featured-post__image { aspect-ratio: auto; }
+
   /* Leaderboard table — tighter cells */
   .h2-lb-table th,
   .h2-lb-table td { padding: var(--space-3) var(--space-4); }
@@ -81,6 +89,14 @@
   .h2-lb-table td:nth-child(6) { display: none; }
   .h2-leaderboard-card { overflow-x: auto; }
   .h2-leaderboard-card .h2-lb-table { min-width: 500px; }
+
+  /* Calculator — clamp grid tracks so the controls/output min-content
+     (394px) can no longer leak into the layout viewport */
+  .h2-calc-wrapper { grid-template-columns: minmax(0, 1fr); }
+
+  /* Contact info cards — the inline repeat(3, 1fr) grid is too tight
+     below 768px and leaks ~467px of min-content */
+  .info-cards-grid { grid-template-columns: 1fr !important; max-width: 400px; margin-inline: auto; }
 
   /* VIP cards tighter on tablets */
   .h2-vip-card { padding: var(--space-6); }
@@ -163,8 +179,9 @@
   /* Section header — tighter bottom margin */
   .section-header { margin-bottom: var(--space-10); }
 
-  /* Map placeholder — shorter on phones */
-  .map-placeholder { min-height: 300px; }
+  /* Map placeholder — shorter on phones; drop the inline aspect-ratio
+     (16/9 × min-height inflated the width to 533px) */
+  .map-placeholder { min-height: 300px; aspect-ratio: auto; }
 }
 
 /* ═══════════════ SMALL MOBILE (≤480px) ═══════════════ */
