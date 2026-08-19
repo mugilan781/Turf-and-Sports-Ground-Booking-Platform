@@ -244,6 +244,59 @@
   font-size: 16px;
 }
 
+/* ── Profile Dropdown ── */
+.navbar__profile {
+  position: relative;
+}
+
+.navbar__profile-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 200px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2);
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-8px);
+  transition: all var(--transition-base);
+  z-index: var(--z-dropdown);
+}
+
+.navbar__profile:hover .navbar__profile-menu,
+.navbar__profile:focus-within .navbar__profile-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+  transform: translateY(0);
+}
+
+.navbar__profile-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--text-secondary);
+  transition: all var(--transition-base);
+}
+
+.navbar__profile-item:hover {
+  background: rgba(184,230,46,0.08);
+  color: var(--electric-lime);
+}
+
+[data-theme="light"] .navbar__profile-item:hover {
+  background: rgba(18,107,79,0.08);
+  color: var(--stadium-green);
+}
+
 /* ── Actions ── */
 .navbar__actions {
   display: flex;
