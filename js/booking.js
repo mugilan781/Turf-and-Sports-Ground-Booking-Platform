@@ -40,7 +40,7 @@ const TURFS = [
     rating: 4.8,
     reviews: 312,
     price: 1500,
-    image: 'https://images.unsplash.com/photo-1540747913346-19212a4b573d?w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1714425340532-bf62553cb288?w=600&q=80',
     facilities: ['Practice Nets', 'Scoreboard', 'Pavilion', 'Parking'],
     badge: 'Premium',
     available: true
