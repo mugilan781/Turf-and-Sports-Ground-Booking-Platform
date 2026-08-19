@@ -891,3 +891,13 @@ svg.v-icon[fill="currentColor"] {
   fill: currentColor;
 }
 
+/* ── Blog "Stay Updated" CTA (always-dark surface) ── */
+.blog-cta .section-title { color: var(--ice-white); }
+.blog-cta .section-title .accent { color: var(--electric-lime); }
+.blog-cta p { color: rgba(255,255,255,0.75); }
+.blog-cta .section-label {
+  color: var(--electric-lime);
+  background: rgba(184, 230, 46, 0.12);
+  border-color: rgba(184, 230, 46, 0.3);
+}
+
