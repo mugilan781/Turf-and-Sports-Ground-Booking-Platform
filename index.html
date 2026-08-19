@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SportifyTurf — India's premier turf & sports ground booking platform. Book football, cricket, and badminton courts instantly. Real-time availability, premium facilities.">
+  <meta name="keywords" content="turf booking, sports ground booking, football turf, cricket ground, badminton court, Chennai sports">
+  <meta name="author" content="SportifyTurf">
+  <meta property="og:title" content="SportifyTurf — Book Your Game, Own The Field">
+  <meta property="og:description" content="Premium sports ground booking platform for football, cricket, and badminton.">
+  <meta property="og:type" content="website">
+  <title>SportifyTurf — Book Your Game, Own The Field</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚽</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800;900&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body class="page-transition">
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="preloader-logo">Sportify<span>Turf</span></div>
+    <div class="preloader-bar"><div class="preloader-bar__fill"></div></div>
+  </div>
+
+  <!-- Scroll Progress -->
+  <div id="scroll-progress"></div>
+
+  <!-- ═══════════════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════════════ -->
+  <nav class="navbar navbar--transparent" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="navbar__inner">
+        <!-- Logo -->
+        <a href="index.html" class="navbar__logo" aria-label="SportifyTurf Home">
+          <div class="navbar__logo-mark">⚽</div>
+          <div class="navbar__logo-text">
+            <span class="navbar__logo-name">Sportify<span>Turf</span></span>
+            <span class="navbar__logo-tagline">Book. Play. Win.</span>
+          </div>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="navbar__nav" aria-label="Site navigation">
+          <a href="index.html" class="navbar__link active">Home</a>
+          <a href="about.html" class="navbar__link">About</a>
+          <div class="navbar__dropdown">
+            <button class="navbar__link navbar__dropdown-trigger" aria-haspopup="true">
+              Sports
+              <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M6 9l6 6 6-6"/>
+              </svg>
+            </button>
+            <div class="navbar__dropdown-menu" role="menu">
+              <a href="services.html#football" class="navbar__dropdown-item" role="menuitem">
+                <div class="navbar__dropdown-item-icon">⚽</div>
+                <div>
+                  <div style="font-weight:700;color:var(--text-primary)">Football</div>
+                  <div style="font-size:var(--text-xs);color:var(--text-muted)">5-a-side & 7-a-side</div>
+                </div>
+              </a>
+              <a href="services.html#cricket" class="navbar__dropdown-item" role="menuitem">
+                <div class="navbar__dropdown-item-icon">🏏</div>
+                <div>
+                  <div style="font-weight:700;color:var(--text-primary)">Cricket</div>
+                  <div style="font-size:var(--text-xs);color:var(--text-muted)">Full grounds & nets</div>
+                </div>
+              </a>
+              <a href="services.html#badminton" class="navbar__dropdown-item" role="menuitem">
+                <div class="navbar__dropdown-item-icon">🏸</div>
+                <div>
+                  <div style="font-weight:700;color:var(--text-primary)">Badminton</div>
+                  <div style="font-size:var(--text-xs);color:var(--text-muted)">Professional courts</div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <a href="services.html" class="navbar__link">Services</a>
+          <a href="blog.html" class="navbar__link">Blog</a>
+          <a href="contact.html" class="navbar__link">Contact</a>
+        </nav>
+
+        <!-- Actions -->
+        <div class="navbar__actions">
+          <button id="theme-toggle" class="navbar__toggle-btn" aria-label="Toggle dark/light mode" title="Toggle theme">
+            <span class="theme-icon">☀️</span>
+          </button>
+          <button id="rtl-toggle" class="navbar__toggle-btn" aria-label="Toggle RTL/LTR direction" title="Toggle direction">
+            <span class="rtl-icon" style="font-size:var(--text-xs);font-weight:700">RTL</span>
+          </button>
+          <a href="login.html" class="btn btn-secondary btn-sm">Sign In</a>
+          <a href="dashboard.html" class="btn btn-primary btn-sm">Book Now →</a>
+        </div>
+
+        <!-- Hamburger -->
+        <button class="navbar__hamburger" id="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="navbar__mobile" id="mobile-menu" role="dialog" aria-label="Mobile navigation">
+      <a href="index.html" class="navbar__mobile-link active">🏠 Home</a>
+      <a href="about.html" class="navbar__mobile-link">👥 About</a>
+      <a href="services.html" class="navbar__mobile-link">🏟️ Services</a>
+      <a href="blog.html" class="navbar__mobile-link">📰 Blog</a>
+      <a href="contact.html" class="navbar__mobile-link">📞 Contact</a>
+      <div class="navbar__mobile-actions">
+        <div style="display:flex;gap:var(--space-3)">
+          <button id="theme-toggle-mobile" class="navbar__toggle-btn" style="flex:1;width:auto">
+            <span class="theme-icon">☀️</span>&nbsp; Toggle Theme
+          </button>
+          <button class="navbar__toggle-btn" style="flex:1;width:auto" onclick="document.getElementById('rtl-toggle').click()">
+            <span class="rtl-icon">RTL</span>&nbsp; Toggle Dir
+          </button>
+        </div>
+        <a href="login.html" class="btn btn-secondary" style="width:100%;justify-content:center">Sign In</a>
+        <a href="dashboard.html" class="btn btn-primary" style="width:100%;justify-content:center">Book Now →</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION 1: HERO SLIDER
+  ═══════════════════════════════════════════════ -->
+  <section class="home-hero" aria-label="Hero section">
+    <div class="hero-slider" id="heroSlider">
+
+      <!-- Slide 1: Football -->
+      <div class="hero-slide active">
+        <div class="hero-slide__bg">
+          <img src="https://images.unsplash.com/photo-1575361204480-aadea25e6e68?w=1920&q=80" alt="Premium football turf at night with floodlights" fetchpriority="high">
+        </div>
+        <div class="hero-slide__overlay"></div>
+        <div class="hero-slide__content">
+          <div class="container">
+            <div class="hero-slide__inner">
+              <span class="hero-slide__eyebrow">⚡ Live Slots Available Now</span>
+              <h1 class="hero-slide__title">
+                Book Your <span class="accent">Dream</span><br>Football Turf
+              </h1>
+              <p class="hero-slide__desc">
+                Premium floodlit football arenas across Chennai. Instant booking, real-time availability, no waiting.
+              </p>
+              <div class="hero-slide__actions">
+                <a href="dashboard.html" class="btn btn-primary btn-xl">⚽ Book Football Turf</a>
+                <a href="services.html#football" class="btn btn-ghost btn-xl">Explore Venues</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Floating Stats -->
+        <div class="hero-slide__stats">
+          <div class="hero-stat-card">
+            <div class="hero-stat-value">50+</div>
+            <div class="hero-stat-label">Football Turfs</div>
+          </div>
+          <div class="hero-stat-card">
+            <div class="hero-stat-value">₹900</div>
+            <div class="hero-stat-label">Starting/hr</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2: Cricket -->
+      <div class="hero-slide">
+        <div class="hero-slide__bg">
+          <img src="https://images.unsplash.com/photo-1540747913346-19212a4b573d?w=1920&q=80" alt="Professional cricket ground with lush outfield">
+        </div>
+        <div class="hero-slide__overlay" style="background:linear-gradient(135deg, rgba(7,26,43,0.88) 0%, rgba(18,107,79,0.5) 100%)"></div>
+        <div class="hero-slide__content">
+          <div class="container">
+            <div class="hero-slide__inner">
+              <span class="hero-slide__eyebrow">🏏 Cricket Season Is On</span>
+              <h1 class="hero-slide__title">
+                Professional <span class="accent">Cricket</span><br>Grounds Await
+              </h1>
+              <p class="hero-slide__desc">
+                Full-size cricket grounds, practice nets, pavilions — all bookable online in under 60 seconds.
+              </p>
+              <div class="hero-slide__actions">
+                <a href="dashboard.html" class="btn btn-primary btn-xl">🏏 Book Cricket Ground</a>
+                <a href="services.html#cricket" class="btn btn-ghost btn-xl">View Grounds</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-slide__stats">
+          <div class="hero-stat-card">
+            <div class="hero-stat-value">30+</div>
+            <div class="hero-stat-label">Cricket Grounds</div>
+          </div>
+          <div class="hero-stat-card">
+            <div class="hero-stat-value">₹1200</div>
+            <div class="hero-stat-label">Starting/hr</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3: Badminton -->
+      <div class="hero-slide">
+        <div class="hero-slide__bg">
+          <img src="https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?w=1920&q=80" alt="Indoor badminton court with professional lighting">
+        </div>
+        <div class="hero-slide__overlay" style="background:linear-gradient(135deg, rgba(7,26,43,0.88) 0%, rgba(37,42,48,0.6) 100%)"></div>
+        <div class="hero-slide__content">
+          <div class="container">
+            <div class="hero-slide__inner">
+              <span class="hero-slide__eyebrow">🏸 AC Courts Available</span>
+              <h1 class="hero-slide__title">
+                Elite <span class="accent">Badminton</span><br>Courts Near You
+              </h1>
+              <p class="hero-slide__desc">
+                Air-conditioned professional badminton courts with premium flooring. Book by the hour, any time of day.
+              </p>
+              <div class="hero-slide__actions">
+                <a href="dashboard.html" class="btn btn-primary btn-xl">🏸 Book Badminton Court</a>
+                <a href="services.html#badminton" class="btn btn-ghost btn-xl">See Courts</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-slide__stats">
+          <div class="hero-stat-card">
+            <div class="hero-stat-value">40+</div>
+            <div class="hero-stat-label">Badminton Courts</div>
+          </div>
+          <div class="hero-stat-card">
+            <div class="hero-stat-value">₹500</div>
+            <div class="hero-stat-label">Starting/hr</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slider Controls -->
+      <div class="hero-arrows">
+        <button class="hero-arrow hero-arrow--prev" aria-label="Previous slide">‹</button>
+        <button class="hero-arrow hero-arrow--next" aria-label="Next slide">›</button>
+      </div>
+      <div class="hero-controls">
+        <div class="hero-dots">
+          <button class="hero-dot active" aria-label="Slide 1"></button>
+          <button class="hero-dot" aria-label="Slide 2"></button>
+          <button class="hero-dot" aria-label="Slide 3"></button>
+        </div>
+      </div>
+      <div class="hero-progress"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       OFFERS TICKER
+  ═══════════════════════════════════════════════ -->
+  <div class="offers-ticker" aria-label="Current offers">
+    <div class="ticker-content" aria-live="polite">
+      <span class="ticker-item">🎉 Get 20% OFF your first booking with code SPORT20</span>
+      <span class="ticker-sep">⚡</span>
+      <span class="ticker-item">🏆 Weekend Special — Book 2 hours, get 30 mins FREE</span>
+      <span class="ticker-sep">⚡</span>
+      <span class="ticker-item">⚽ New Football Arena opened in Velachery — Book Now!</span>
+      <span class="ticker-sep">⚡</span>
+      <span class="ticker-item">🏏 Cricket Season Package: 10 sessions at 25% discount</span>
+      <span class="ticker-sep">⚡</span>
+      <span class="ticker-item">🏸 Badminton Early Bird: 5 AM–7 AM slots at ₹399/hr</span>
+      <span class="ticker-sep">⚡</span>
+      <span class="ticker-item">🎉 Get 20% OFF your first booking with code SPORT20</span>
+      <span class="ticker-sep">⚡</span>
+      <span class="ticker-item">🏆 Weekend Special — Book 2 hours, get 30 mins FREE</span>
+      <span class="ticker-sep">⚡</span>
+      <span class="ticker-item">⚽ New Football Arena opened in Velachery — Book Now!</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION 2: QUICK BOOK + SPORT FILTERS
+  ═══════════════════════════════════════════════ -->
+  <section class="section sport-categories" aria-labelledby="sport-heading">
+    <div class="container">
+
+      <!-- Quick Book Bar -->
+      <div class="quick-book-bar reveal">
+        <div class="quick-book-card">
+          <div class="quick-book-field">
+            <label for="qb-sport">Sport</label>
+            <select id="qb-sport" class="quick-book-select" aria-label="Select sport">
+              <option value="">Select Sport</option>
+              <option value="football">⚽ Football</option>
+              <option value="cricket">🏏 Cricket</option>
+              <option value="badminton">🏸 Badminton</option>
+            </select>
+          </div>
+          <div class="quick-book-field">
+            <label for="qb-location">Location</label>
+            <select id="qb-location" class="quick-book-select" aria-label="Select location">
+              <option value="">Select Area</option>
+              <option value="anna-nagar">Anna Nagar</option>
+              <option value="t-nagar">T. Nagar</option>
+              <option value="adyar">Adyar</option>
+              <option value="omr">OMR</option>
+              <option value="velachery">Velachery</option>
+              <option value="porur">Porur</option>
+            </select>
+          </div>
+          <div class="quick-book-field">
+            <label for="qb-date">Date</label>
+            <input type="date" id="qb-date" class="quick-book-select" style="cursor:pointer" aria-label="Select date">
+          </div>
+          <button class="btn btn-primary btn-lg" id="quick-search-btn" aria-label="Search available turfs">
+            🔍 Find Turfs
+          </button>
+        </div>
+      </div>
+
+      <div style="margin-top:var(--space-20)">
+        <div class="section-header">
+          <span class="section-label" id="sport-heading">⚡ Browse By Sport</span>
+          <h2 class="section-title">Find Your <span class="accent">Perfect</span> Sport</h2>
+          <p class="section-desc">From high-energy football to precision cricket and lightning-fast badminton — we've got it all.</p>
+        </div>
+
+        <!-- Sport Filters -->
+        <div class="sport-filters" role="group" aria-label="Filter by sport">
+          <button class="sport-filter-btn active" data-sport-filter="all" aria-pressed="true">
+            <span class="sport-filter-icon">🏟️</span> All Sports
+          </button>
+          <button class="sport-filter-btn" data-sport-filter="football" aria-pressed="false">
+            <span class="sport-filter-icon">⚽</span> Football
+          </button>
+          <button class="sport-filter-btn" data-sport-filter="cricket" aria-pressed="false">
+            <span class="sport-filter-icon">🏏</span> Cricket
+          </button>
+          <button class="sport-filter-btn" data-sport-filter="badminton" aria-pressed="false">
+            <span class="sport-filter-icon">🏸</span> Badminton
+          </button>
+        </div>
+
+        <!-- Turf Grid -->
+        <div id="turf-grid" aria-label="Available turfs" aria-live="polite">
+          <!-- Populated by booking.js -->
+        </div>
+
+        <div class="text-center" style="margin-top:var(--space-10)">
+          <a href="dashboard.html" class="btn btn-outline btn-lg">View All Venues →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION 3: ANIMATED STATS
+  ═══════════════════════════════════════════════ -->
+  <section class="stats-section section" aria-labelledby="stats-heading">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label" id="stats-heading" style="color:var(--electric-lime);background:rgba(184,230,46,0.1);border-color:rgba(184,230,46,0.2)">
+          📊 Platform Stats
+        </span>
+        <h2 class="section-title" style="color:var(--white)">Trusted By <span style="color:var(--electric-lime)">Champions</span></h2>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-item reveal delay-100">
+          <span class="stat-icon">🏟️</span>
+          <div class="stat-value">
+            <span data-count="120" data-suffix="+">0+</span>
+          </div>
+          <div class="stat-label">Premium Venues</div>
+        </div>
+        <div class="stat-item reveal delay-200">
+          <span class="stat-icon">👥</span>
+          <div class="stat-value">
+            <span data-count="15000" data-suffix="+">0+</span>
+          </div>
+          <div class="stat-label">Active Players</div>
+        </div>
+        <div class="stat-item reveal delay-300">
+          <span class="stat-icon">📅</span>
+          <div class="stat-value">
+            <span data-count="50000" data-suffix="+">0+</span>
+          </div>
+          <div class="stat-label">Bookings Completed</div>
+        </div>
+        <div class="stat-item reveal delay-400">
+          <span class="stat-icon">⭐</span>
+          <div class="stat-value">
+            <span data-count="4" data-suffix=".9★">0</span>
+          </div>
+          <div class="stat-label">Average Rating</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION 4: HOW IT WORKS
+  ═══════════════════════════════════════════════ -->
+  <section class="section how-it-works" aria-labelledby="hiw-heading">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label" id="hiw-heading">🚀 Quick & Easy</span>
+        <h2 class="section-title reveal">Book a Turf in <span class="accent">3 Steps</span></h2>
+        <p class="section-desc reveal delay-100">No phone calls. No waiting. Just pick your sport, slot, and play.</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card reveal delay-100">
+          <div class="step-number">01</div>
+          <div class="step-icon">🔍</div>
+          <h3 class="step-title">Search & Discover</h3>
+          <p class="step-desc">Browse through 120+ premium venues near you. Filter by sport, location, date, and time. See real-time availability instantly.</p>
+        </div>
+        <div class="step-card reveal delay-300">
+          <div class="step-number">02</div>
+          <div class="step-icon">📅</div>
+          <h3 class="step-title">Pick Your Slot</h3>
+          <p class="step-desc">Select your preferred date and time slot from our interactive booking calendar. Green = available, red = taken. Simple as that.</p>
+        </div>
+        <div class="step-card reveal delay-500">
+          <div class="step-number">03</div>
+          <div class="step-icon">⚡</div>
+          <h3 class="step-title">Pay & Play</h3>
+          <p class="step-desc">Confirm your booking with instant payment. Receive a digital confirmation and QR code. Show up and play — it's that simple.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION 5: TESTIMONIALS
+  ═══════════════════════════════════════════════ -->
+  <section class="section testimonials" aria-labelledby="testimonials-heading">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label" id="testimonials-heading">💬 Player Reviews</span>
+        <h2 class="section-title reveal">What Players <span class="accent">Say</span></h2>
+        <p class="section-desc reveal delay-100">Join thousands of satisfied players who book with SportifyTurf every week.</p>
+      </div>
+
+      <div class="testimonial-carousel" id="testimonialCarousel">
+        <div class="testimonial-track" id="testimonialTrack">
+
+          <div class="testimonial-card reveal">
+            <div class="testimonial-quote">"</div>
+            <p class="testimonial-text">Absolutely incredible experience! Booked a football turf in under 2 minutes. The floodlights were perfect for our evening match. Will never use another platform.</p>
+            <div class="testimonial-author">
+              <div class="avatar avatar-lg" style="background:linear-gradient(135deg,var(--electric-lime),var(--stadium-green));color:var(--midnight-navy);font-weight:900">AR</div>
+              <div class="testimonial-author-info">
+                <h4>Arjun Ramesh</h4>
+                <p>⚽ Football Player • Anna Nagar</p>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card reveal delay-200">
+            <div class="testimonial-quote">"</div>
+            <p class="testimonial-text">The cricket ground was in phenomenal condition. Well-maintained pitch, excellent facilities. The booking process is the most seamless I've ever used for any sport.</p>
+            <div class="testimonial-author">
+              <div class="avatar avatar-lg" style="background:linear-gradient(135deg,var(--stadium-green),#0D4F3A);color:var(--white);font-weight:900">KS</div>
+              <div class="testimonial-author-info">
+                <h4>Kavitha Sundar</h4>
+                <p>🏏 Cricket Captain • Adyar</p>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card reveal delay-400">
+            <div class="testimonial-quote">"</div>
+            <p class="testimonial-text">The AC badminton courts are world-class. Perfect lighting, professional-grade flooring, and the shuttle service is a cherry on top. My team books here every week!</p>
+            <div class="testimonial-author">
+              <div class="avatar avatar-lg" style="background:linear-gradient(135deg,#3B82F6,#1D4ED8);color:var(--white);font-weight:900">MP</div>
+              <div class="testimonial-author-info">
+                <h4>Mithun Prakash</h4>
+                <p>🏸 Badminton Enthusiast • OMR</p>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card reveal delay-200">
+            <div class="testimonial-quote">"</div>
+            <p class="testimonial-text">As a team organizer, recurring bookings feature is a lifesaver. I set it once and my team has guaranteed slots every Saturday morning. Absolutely love SportifyTurf!</p>
+            <div class="testimonial-author">
+              <div class="avatar avatar-lg" style="background:linear-gradient(135deg,#F59E0B,#D97706);color:var(--white);font-weight:900">DP</div>
+              <div class="testimonial-author-info">
+                <h4>Divya Priya</h4>
+                <p>🏟️ Team Manager • T. Nagar</p>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="testimonial-nav">
+        <button class="btn btn-secondary btn-icon" id="testimonialPrev" aria-label="Previous testimonial">‹</button>
+        <button class="btn btn-primary btn-icon" id="testimonialNext" aria-label="Next testimonial">›</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       SECTION 6: CTA + NEWSLETTER
+  ═══════════════════════════════════════════════ -->
+  <section class="section-lg cta-section" aria-labelledby="cta-heading">
+    <div class="container">
+      <div class="cta-content">
+        <span class="section-label" style="margin-bottom:var(--space-6)">🎯 Ready to Play?</span>
+        <h2 class="cta-title" id="cta-heading">Your Next <span class="accent">Epic Game</span><br>Starts Here</h2>
+        <p class="cta-desc">Join 15,000+ players who trust SportifyTurf for their weekend plans. First booking? Get 20% off with code <strong style="color:var(--electric-lime)">SPORT20</strong>.</p>
+        <div class="cta-actions reveal">
+          <a href="dashboard.html" class="btn btn-primary btn-xl">⚡ Book Your Slot Now</a>
+          <a href="signup.html" class="btn btn-ghost btn-xl">Create Free Account</a>
+        </div>
+
+        <!-- Newsletter -->
+        <div style="margin-top:var(--space-12);max-width:480px;margin-inline:auto" class="reveal delay-200">
+          <p style="color:rgba(255,255,255,0.6);margin-bottom:var(--space-4);font-size:var(--text-sm)">
+            Subscribe for exclusive deals, new venue alerts & sports tips:
+          </p>
+          <div class="newsletter-form" style="display:flex;gap:var(--space-3)">
+            <input type="email" placeholder="Enter your email address" class="form-input" id="newsletter-email" aria-label="Email address for newsletter">
+            <button class="btn btn-primary" style="white-space:nowrap" id="newsletter-submit">Subscribe →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Decorative elements -->
+    <div style="position:absolute;bottom:var(--space-10);left:var(--space-10);opacity:0.07;font-size:15rem;pointer-events:none;user-select:none;line-height:1">⚽</div>
+    <div style="position:absolute;top:var(--space-10);right:var(--space-10);opacity:0.05;font-size:12rem;pointer-events:none;user-select:none;line-height:1;transform:rotate(15deg)">🏆</div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <!-- Decorative Glows -->
+    <div class="footer__glow footer__glow--lime"></div>
+    <div class="footer__glow footer__glow--green"></div>
+
+    <div class="footer__top">
+      <div class="container">
+        <div class="footer__grid">
+          <!-- Brand -->
+          <div class="footer__brand">
+            <a href="index.html" class="footer__logo">
+              <div class="footer__logo-mark">⚽</div>
+              <div>
+                <div class="footer__logo-name">Sportify<span>Turf</span></div>
+                <div class="footer__logo-tagline">Book. Play. Win.</div>
+              </div>
+            </a>
+            <p class="footer__desc">India's most trusted sports ground booking platform. Premium venues, instant confirmations, unforgettable games.</p>
+            <div class="footer__social">
+              <a href="#" class="footer__social-link" aria-label="Facebook">f</a>
+              <a href="#" class="footer__social-link" aria-label="Instagram">📸</a>
+              <a href="#" class="footer__social-link" aria-label="Twitter">𝕏</a>
+              <a href="#" class="footer__social-link" aria-label="YouTube">▶</a>
+              <a href="#" class="footer__social-link" aria-label="LinkedIn">in</a>
+            </div>
+            <div>
+              <p style="font-size:var(--text-xs);color:var(--silver-dark);margin-bottom:var(--space-2)">Get weekly sport tips & deals:</p>
+              <div class="footer__newsletter" style="display:flex;gap:var(--space-2)">
+                <input type="email" class="footer__newsletter-input" placeholder="Your email address" aria-label="Newsletter email">
+                <button class="footer__newsletter-btn">→</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer__nav-group">
+            <h3 class="footer__nav-title">Platform</h3>
+            <ul class="footer__nav-list">
+              <li><a href="index.html" class="footer__nav-link">Home</a></li>
+              <li><a href="home2.html" class="footer__nav-link">Discover Venues</a></li>
+              <li><a href="about.html" class="footer__nav-link">About Us</a></li>
+              <li><a href="services.html" class="footer__nav-link">Services</a></li>
+              <li><a href="blog.html" class="footer__nav-link">Sports Blog</a></li>
+              <li><a href="contact.html" class="footer__nav-link">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Sports -->
+          <div class="footer__nav-group">
+            <h3 class="footer__nav-title">Sports</h3>
+            <ul class="footer__nav-list">
+              <li><a href="services.html#football" class="footer__nav-link">⚽ Football Turf</a></li>
+              <li><a href="services.html#cricket" class="footer__nav-link">🏏 Cricket Ground</a></li>
+              <li><a href="services.html#badminton" class="footer__nav-link">🏸 Badminton Courts</a></li>
+              <li><a href="dashboard.html" class="footer__nav-link">📅 Book Now</a></li>
+              <li><a href="dashboard.html#team" class="footer__nav-link">👥 Team Booking</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div class="footer__nav-group">
+            <h3 class="footer__nav-title">Get In Touch</h3>
+            <div class="footer__nav-list">
+              <div class="footer__contact-item">
+                <div class="footer__contact-icon">📍</div>
+                <div class="footer__contact-text">No. 42, Sports Complex Road, Anna Nagar, Chennai — 600040</div>
+              </div>
+              <div class="footer__contact-item">
+                <div class="footer__contact-icon">📞</div>
+                <div class="footer__contact-text">
+                  <a href="tel:+919876543210">+91 98765 43210</a>
+                </div>
+              </div>
+              <div class="footer__contact-item">
+                <div class="footer__contact-icon">✉️</div>
+                <div class="footer__contact-text">
+                  <a href="mailto:hello@sportifyturf.in">hello@sportifyturf.in</a>
+                </div>
+              </div>
+              <div class="footer__contact-item">
+                <div class="footer__contact-icon">🕐</div>
+                <div class="footer__contact-text">Daily 5:00 AM — 11:00 PM</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer__bottom">
+      <div class="container">
+        <div class="footer__bottom-inner">
+          <p class="footer__copyright">
+            © 2026 <span>SportifyTurf</span>. All rights reserved. Built with ❤️ for sports lovers.
+          </p>
+          <div class="footer__legal">
+            <a href="privacy-policy.html" class="footer__legal-link">Privacy Policy</a>
+            <a href="terms.html" class="footer__legal-link">Terms & Conditions</a>
+            <a href="sitemap.html" class="footer__legal-link">Sitemap</a>
+          </div>
+          <div class="footer__payment-badges">
+            <span class="footer__payment-badge">UPI</span>
+            <span class="footer__payment-badge">VISA</span>
+            <span class="footer__payment-badge">MASTERCARD</span>
+            <span class="footer__payment-badge">NET BANKING</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/hero-slider.js"></script>
+  <script src="js/booking.js"></script>
+  <script>
+    // ── Quick Search ──
+    document.addEventListener('DOMContentLoaded', () => {
+      // Set today's date on quick book
+      const dateInput = document.getElementById('qb-date');
+      if (dateInput) {
+        dateInput.value = new Date().toISOString().split('T')[0];
+        dateInput.min = new Date().toISOString().split('T')[0];
+      }
+
+      const searchBtn = document.getElementById('quick-search-btn');
+      if (searchBtn) {
+        searchBtn.addEventListener('click', () => {
+          const sport = document.getElementById('qb-sport')?.value;
+          const filterBtns = document.querySelectorAll('[data-sport-filter]');
+          if (sport) {
+            filterBtns.forEach(btn => {
+              btn.classList.toggle('active', btn.getAttribute('data-sport-filter') === sport);
+              btn.click();
+            });
+          }
+          // Scroll to turf grid
+          document.getElementById('turf-grid')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      }
+
+      // ── Testimonial Carousel ──
+      const track = document.getElementById('testimonialTrack');
+      const prevBtn = document.getElementById('testimonialPrev');
+      const nextBtn = document.getElementById('testimonialNext');
+      if (!track) return;
+
+      let tIndex = 0;
+      const cards = track.querySelectorAll('.testimonial-card');
+      const visible = window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
+      const maxIndex = Math.max(0, cards.length - visible);
+
+      const moveCarousel = () => {
+        const cardWidth = cards[0]?.offsetWidth || 0;
+        const gap = 24;
+        track.style.transform = `translateX(-${tIndex * (cardWidth + gap)}px)`;
+      };
+
+      prevBtn?.addEventListener('click', () => {
+        tIndex = Math.max(0, tIndex - 1);
+        moveCarousel();
+      });
+
+      nextBtn?.addEventListener('click', () => {
+        tIndex = Math.min(maxIndex, tIndex + 1);
+        moveCarousel();
+      });
+
+      // Sport filter ARIA update
+      document.querySelectorAll('[data-sport-filter]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('[data-sport-filter]').forEach(b => b.setAttribute('aria-pressed', 'false'));
+          btn.setAttribute('aria-pressed', 'true');
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

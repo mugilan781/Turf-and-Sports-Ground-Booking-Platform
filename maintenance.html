@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SportifyTurf is currently undergoing scheduled maintenance. We'll be back soon with exciting new features!">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Maintenance — SportifyTurf · Back Soon</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚽</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800;900&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/error.css">
+</head>
+<body>
+
+  <main class="maintenance-page" role="main">
+    <!-- Logo -->
+    <div class="maintenance-content">
+      <a href="index.html" class="maintenance-logo" aria-label="SportifyTurf Home">
+        <div class="maintenance-logo-mark">⚽</div>
+        <div class="maintenance-logo-name">Sportify<span>Turf</span></div>
+      </a>
+
+      <!-- Spinning Icon -->
+      <div class="maintenance-icon" aria-hidden="true">⚙️</div>
+
+      <h1 class="maintenance-title">
+        We're <span class="accent">Upgrading</span><br>the Pitch!
+      </h1>
+
+      <p class="maintenance-desc">
+        SportifyTurf is undergoing scheduled maintenance to bring you an even better sports booking experience. We'll be back online shortly with exciting new features and improvements.
+      </p>
+
+      <!-- Countdown Timer -->
+      <div class="countdown" role="timer" aria-label="Time until we're back online">
+        <div class="countdown-item">
+          <div class="countdown-value" id="count-hours">08</div>
+          <div class="countdown-label">Hours</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-value" id="count-minutes">45</div>
+          <div class="countdown-label">Minutes</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-value" id="count-seconds">30</div>
+          <div class="countdown-label">Seconds</div>
+        </div>
+      </div>
+
+      <!-- Progress -->
+      <div style="margin-bottom:var(--space-8);text-align:left;max-width:480px;margin-inline:auto">
+        <div style="display:flex;justify-content:space-between;margin-bottom:var(--space-2)">
+          <span style="font-size:var(--text-sm);color:rgba(255,255,255,0.6)">Maintenance progress</span>
+          <span style="font-size:var(--text-sm);font-weight:700;color:var(--electric-lime)" id="progress-pct">72%</span>
+        </div>
+        <div class="progress-bar" style="height:8px;background:rgba(255,255,255,0.1)">
+          <div class="progress-bar__fill" id="progress-bar" style="width:72%;animation:none;background:linear-gradient(90deg,var(--electric-lime),var(--stadium-green))"></div>
+        </div>
+      </div>
+
+      <!-- What We're Working On -->
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-2xl);padding:var(--space-6);margin-bottom:var(--space-8);text-align:left;max-width:480px;margin-inline:auto">
+        <h3 style="color:white;margin-bottom:var(--space-4);font-size:var(--text-base)">🔧 What We're Working On:</h3>
+        <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+          <!-- Task: Complete -->
+          <div style="display:flex;align-items:center;gap:var(--space-3)">
+            <span style="font-size:var(--text-lg)">✅</span>
+            <span style="font-size:var(--text-sm);color:rgba(255,255,255,0.8);flex:1">Improved booking speed</span>
+            <span style="font-size:10px;font-weight:700;padding:2px 8px;border-radius:var(--radius-full);background:rgba(34,197,94,0.15);color:var(--success)">Complete</span>
+          </div>
+          <!-- Task: Complete -->
+          <div style="display:flex;align-items:center;gap:var(--space-3)">
+            <span style="font-size:var(--text-lg)">✅</span>
+            <span style="font-size:var(--text-sm);color:rgba(255,255,255,0.8);flex:1">Enhanced venue search filters</span>
+            <span style="font-size:10px;font-weight:700;padding:2px 8px;border-radius:var(--radius-full);background:rgba(34,197,94,0.15);color:var(--success)">Complete</span>
+          </div>
+          <!-- Task: In Progress -->
+          <div style="display:flex;align-items:center;gap:var(--space-3)">
+            <span style="font-size:var(--text-lg)">🔄</span>
+            <span style="font-size:var(--text-sm);color:rgba(255,255,255,0.8);flex:1">New loyalty rewards system</span>
+            <span style="font-size:10px;font-weight:700;padding:2px 8px;border-radius:var(--radius-full);background:rgba(245,158,11,0.15);color:var(--warning)">In Progress</span>
+          </div>
+          <!-- Task: Coming Soon -->
+          <div style="display:flex;align-items:center;gap:var(--space-3)">
+            <span style="font-size:var(--text-lg)">⏳</span>
+            <span style="font-size:var(--text-sm);color:rgba(255,255,255,0.8);flex:1">Mobile app improvements</span>
+            <span style="font-size:10px;font-weight:700;padding:2px 8px;border-radius:var(--radius-full);background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.5)">Coming Soon</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Newsletter -->
+      <div class="maintenance-newsletter">
+        <h3>Get Notified When We're Back 🔔</h3>
+        <p>Enter your email and we'll notify you the moment SportifyTurf is back online.</p>
+        <form class="maintenance-newsletter-form" onsubmit="handleMaintenanceNotify(event)">
+          <input type="email" class="maintenance-newsletter-input" placeholder="your@email.com" required id="maintenance-email" aria-label="Email for notification">
+          <button type="submit" class="btn btn-primary" style="white-space:nowrap">Notify Me →</button>
+        </form>
+        <div id="notify-success" style="display:none;margin-top:var(--space-3);color:var(--electric-lime);font-size:var(--text-sm);font-weight:600">
+          ✅ You're on the list! We'll email you when we're back.
+        </div>
+      </div>
+
+      <!-- Social Links -->
+      <p style="color:rgba(255,255,255,0.5);font-size:var(--text-sm);margin-bottom:var(--space-4)">Stay connected for live updates:</p>
+      <div class="maintenance-social">
+        <a href="#" class="maintenance-social-link" aria-label="Follow us on Twitter">𝕏</a>
+        <a href="#" class="maintenance-social-link" aria-label="Follow us on Instagram">📸</a>
+        <a href="#" class="maintenance-social-link" aria-label="Follow us on Facebook">f</a>
+        <a href="#" class="maintenance-social-link" aria-label="Subscribe on YouTube">▶</a>
+      </div>
+
+      <!-- Contact in Emergency -->
+      <div style="margin-top:var(--space-8);padding-top:var(--space-6);border-top:1px solid rgba(255,255,255,0.1)">
+        <p style="color:rgba(255,255,255,0.4);font-size:var(--text-sm)">
+          Emergency support: <a href="mailto:support@sportifyturf.in" style="color:var(--electric-lime)">support@sportifyturf.in</a>
+          · <a href="tel:+919876543210" style="color:var(--electric-lime)">+91 98765 43210</a>
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Countdown Timer
+    const target = new Date();
+    target.setHours(target.getHours() + 8);
+    target.setMinutes(target.getMinutes() + 45);
+
+    const countdown = () => {
+      const now = new Date();
+      const diff = target - now;
+      if (diff <= 0) {
+        document.getElementById('count-hours').textContent = '00';
+        document.getElementById('count-minutes').textContent = '00';
+        document.getElementById('count-seconds').textContent = '00';
+        return;
+      }
+      const h = Math.floor(diff / 3600000);
+      const m = Math.floor((diff % 3600000) / 60000);
+      const s = Math.floor((diff % 60000) / 1000);
+      document.getElementById('count-hours').textContent = String(h).padStart(2, '0');
+      document.getElementById('count-minutes').textContent = String(m).padStart(2, '0');
+      document.getElementById('count-seconds').textContent = String(s).padStart(2, '0');
+    };
+
+    countdown();
+    setInterval(countdown, 1000);
+
+    // Progress animation
+    let progress = 72;
+    const progressInterval = setInterval(() => {
+      if (progress < 95) {
+        progress += 0.01;
+        const pct = Math.min(Math.round(progress), 95);
+        document.getElementById('progress-bar').style.width = pct + '%';
+        document.getElementById('progress-pct').textContent = pct + '%';
+      } else {
+        clearInterval(progressInterval);
+      }
+    }, 200);
+
+    // Notify form
+    function handleMaintenanceNotify(e) {
+      e.preventDefault();
+      document.getElementById('notify-success').style.display = 'block';
+      document.querySelector('.maintenance-newsletter-form').style.display = 'none';
+    }
+  </script>
+</body>
+</html>

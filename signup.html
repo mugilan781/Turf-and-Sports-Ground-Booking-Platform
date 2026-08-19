@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Create your free SportifyTurf account — Book sports grounds instantly, join teams, and track your game history.">
+  <title>Create Account — SportifyTurf</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚽</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800;900&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+<body class="page-transition">
+
+  <div class="auth-page">
+    <!-- Left Panel -->
+    <div class="auth-left">
+      <div class="auth-left__bg">
+        <img src="https://images.unsplash.com/photo-1529900748604-07564a03e7a6?w=900&q=80" alt="Football team celebrating on the pitch">
+      </div>
+      <div class="auth-left__overlay"></div>
+
+      <a href="index.html" class="auth-left__logo">
+        <div class="auth-left__logo-mark">⚽</div>
+        <div class="auth-left__logo-name">Sportify<span>Turf</span></div>
+      </a>
+
+      <div class="auth-left__content">
+        <h2 class="auth-left__quote">
+          The game is not just about strength. It's about <span class="accent">strategy</span>.
+        </h2>
+        <p class="auth-left__desc">
+          Create your free account and get instant access to 120+ premium sports venues across Chennai. Start playing today.
+        </p>
+        <div class="auth-trust">
+          <div class="auth-trust-item"><span>🎁</span> First booking 20% OFF</div>
+          <div class="auth-trust-item"><span>🏆</span> Earn reward points</div>
+          <div class="auth-trust-item"><span>👥</span> Free team features</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Panel -->
+    <div class="auth-right">
+      <div class="auth-form-container" style="animation:fadeInUp 0.6s ease both">
+        <div style="margin-bottom:var(--space-6)">
+          <h1 class="auth-title">Create account 🎯</h1>
+          <p class="auth-subtitle">
+            Already have an account? <a href="login.html">Sign in →</a>
+          </p>
+        </div>
+
+        <!-- Step Progress -->
+        <div class="signup-steps" aria-label="Registration steps">
+          <div class="signup-step active">
+            <div class="signup-step-num">1</div>
+            <div class="signup-step-label">Personal</div>
+          </div>
+          <div class="signup-step-divider"></div>
+          <div class="signup-step">
+            <div class="signup-step-num">2</div>
+            <div class="signup-step-label">Security</div>
+          </div>
+          <div class="signup-step-divider"></div>
+          <div class="signup-step">
+            <div class="signup-step-num">3</div>
+            <div class="signup-step-label">Preferences</div>
+          </div>
+        </div>
+
+        <form id="signup-form" novalidate>
+
+          <!-- Step 1: Personal Info -->
+          <div class="signup-step-panel active" id="signup-panel-1">
+            <div class="auth-form" style="display:flex;flex-direction:column;gap:var(--space-4)">
+              <div class="auth-form__row">
+                <div class="form-group">
+                  <label class="form-label" for="signup-firstname">First Name</label>
+                  <input type="text" id="signup-firstname" class="form-input" placeholder="Arjun" autocomplete="given-name" aria-required="true">
+                  <span class="form-error" id="signup-firstname-error" role="alert"></span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="signup-lastname">Last Name</label>
+                  <input type="text" id="signup-lastname" class="form-input" placeholder="Ramesh" autocomplete="family-name" aria-required="true">
+                  <span class="form-error" id="signup-lastname-error" role="alert"></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="signup-email">Email Address</label>
+                <input type="email" id="signup-email" class="form-input" placeholder="you@example.com" autocomplete="email" aria-required="true">
+                <span class="form-error" id="signup-email-error" role="alert"></span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="signup-phone">Mobile Number</label>
+                <input type="tel" id="signup-phone" class="form-input" placeholder="98765 43210" autocomplete="tel" aria-required="true">
+                <span class="form-error" id="signup-phone-error" role="alert"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2: Security -->
+          <div class="signup-step-panel" id="signup-panel-2">
+            <div class="auth-form" style="display:flex;flex-direction:column;gap:var(--space-4)">
+              <div class="form-group">
+                <label class="form-label" for="signup-password">Create Password</label>
+                <div class="password-input-wrap">
+                  <input type="password" id="signup-password" class="form-input" placeholder="Minimum 8 characters" autocomplete="new-password" aria-required="true">
+                  <button type="button" class="password-toggle" id="toggle-signup-password" aria-label="Toggle password visibility">👁️</button>
+                </div>
+                <span class="form-error" id="signup-password-error" role="alert"></span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="signup-confirm-password">Confirm Password</label>
+                <div class="password-input-wrap">
+                  <input type="password" id="signup-confirm-password" class="form-input" placeholder="Re-enter your password" autocomplete="new-password" aria-required="true">
+                  <button type="button" class="password-toggle" id="toggle-confirm-password" aria-label="Toggle confirm password visibility">👁️</button>
+                </div>
+                <span class="form-error" id="signup-confirm-password-error" role="alert"></span>
+              </div>
+              <!-- Password strength -->
+              <div id="password-strength" style="display:none">
+                <div class="progress-bar" style="margin-bottom:var(--space-2)">
+                  <div class="progress-bar__fill" id="strength-bar" style="width:0%"></div>
+                </div>
+                <p id="strength-text" style="font-size:var(--text-xs);color:var(--text-muted)"></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3: Sport Preferences -->
+          <div class="signup-step-panel" id="signup-panel-3">
+            <div style="margin-bottom:var(--space-5)">
+              <h3 style="font-size:var(--text-lg);margin-bottom:var(--space-2)">What sports do you play? 🏆</h3>
+              <p style="font-size:var(--text-sm);color:var(--text-muted)">Select all that apply (optional — you can change this later)</p>
+            </div>
+            <div class="sport-prefs" style="margin-bottom:var(--space-6)">
+              <button type="button" class="sport-pref-btn selected" data-sport="football">
+                <span class="sport-pref-icon">⚽</span>
+                <span class="sport-pref-name">Football</span>
+              </button>
+              <button type="button" class="sport-pref-btn" data-sport="cricket">
+                <span class="sport-pref-icon">🏏</span>
+                <span class="sport-pref-name">Cricket</span>
+              </button>
+              <button type="button" class="sport-pref-btn" data-sport="badminton">
+                <span class="sport-pref-icon">🏸</span>
+                <span class="sport-pref-name">Badminton</span>
+              </button>
+            </div>
+            <label class="auth-form__checkbox" style="margin-bottom:var(--space-4)">
+              <input type="checkbox" id="signup-terms" required aria-required="true">
+              I agree to the <a href="terms.html" style="color:var(--electric-lime)">Terms & Conditions</a> and <a href="privacy-policy.html" style="color:var(--electric-lime)">Privacy Policy</a>
+            </label>
+            <label class="auth-form__checkbox">
+              <input type="checkbox" id="signup-newsletter">
+              Subscribe to sports tips & exclusive offers
+            </label>
+          </div>
+
+          <!-- Navigation Buttons -->
+          <div style="display:flex;gap:var(--space-3);margin-top:var(--space-6)">
+            <button type="button" id="signup-prev" class="btn btn-secondary" style="display:none">← Back</button>
+            <button type="button" id="signup-next" class="btn btn-primary" style="flex:1;justify-content:center">Continue →</button>
+            <button type="submit" id="signup-submit" class="btn btn-primary" style="flex:1;justify-content:center;display:none">🎯 Create Account</button>
+          </div>
+        </form>
+
+        <div style="text-align:center;margin-top:var(--space-6)">
+          <button id="theme-toggle" class="btn btn-secondary btn-sm">
+            <span class="theme-icon">☀️</span> Toggle Theme
+          </button>
+          <button id="rtl-toggle" class="btn btn-secondary btn-sm" style="margin-left:var(--space-2)">
+            <span class="rtl-icon" style="font-size:10px;font-weight:700">RTL</span> Direction
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/auth.js"></script>
+  <script>
+    // Password strength indicator
+    document.getElementById('signup-password')?.addEventListener('input', (e) => {
+      const val = e.target.value;
+      const strength = document.getElementById('password-strength');
+      const bar = document.getElementById('strength-bar');
+      const text = document.getElementById('strength-text');
+      if (!strength || !bar || !text) return;
+      
+      strength.style.display = val ? 'block' : 'none';
+      let score = 0;
+      if (val.length >= 8) score++;
+      if (/[A-Z]/.test(val)) score++;
+      if (/[0-9]/.test(val)) score++;
+      if (/[^A-Za-z0-9]/.test(val)) score++;
+
+      const levels = ['', 'Weak', 'Fair', 'Good', 'Strong'];
+      const colors = ['', 'var(--error)', 'var(--warning)', 'var(--info)', 'var(--success)'];
+      const widths = ['0%', '25%', '50%', '75%', '100%'];
+
+      bar.style.width = widths[score];
+      bar.style.background = colors[score];
+      text.textContent = score > 0 ? `Password strength: ${levels[score]}` : '';
+      text.style.color = colors[score];
+    });
+  </script>
+</body>
+</html>

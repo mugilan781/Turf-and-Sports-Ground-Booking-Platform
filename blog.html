@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SportifyTurf Blog — Sports tips, training guides, turf maintenance, football tactics, cricket coaching, and badminton techniques.">
+  <title>Sports Blog — SportifyTurf</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚽</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800;900&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/components.css">
+  <style>
+    .blog-layout { display:grid;grid-template-columns:1fr 340px;gap:var(--space-10);align-items:start }
+    .blog-sidebar { position:sticky;top:calc(var(--nav-height)+var(--space-6)) }
+    .sidebar-widget { background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-2xl);padding:var(--space-6);margin-bottom:var(--space-5) }
+    .sidebar-widget-title { font-size:var(--text-sm);font-weight:900;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:var(--space-4);padding-bottom:var(--space-3);border-bottom:1px solid var(--border-color) }
+    .featured-post { background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-2xl);overflow:hidden;display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:var(--space-8) }
+    .featured-post__image { aspect-ratio:4/3;overflow:hidden }
+    .featured-post__image img { width:100%;height:100%;object-fit:cover;transition:transform var(--transition-slow) }
+    .featured-post:hover .featured-post__image img { transform:scale(1.05) }
+    .featured-post__body { padding:var(--space-8) }
+    .tag-cloud { display:flex;flex-wrap:wrap;gap:var(--space-2) }
+    @media (max-width:1024px) { .blog-layout{grid-template-columns:1fr} .blog-sidebar{position:static} .featured-post{grid-template-columns:1fr} }
+  </style>
+</head>
+<body class="page-transition">
+  <div id="preloader"><div class="preloader-logo">Sportify<span>Turf</span></div><div class="preloader-bar"><div class="preloader-bar__fill"></div></div></div>
+  <div id="scroll-progress"></div>
+
+  <nav class="navbar navbar--transparent" role="navigation" aria-label="Main navigation">
+    <div class="container"><div class="navbar__inner">
+      <a href="index.html" class="navbar__logo"><div class="navbar__logo-mark">⚽</div><div class="navbar__logo-text"><span class="navbar__logo-name">Sportify<span>Turf</span></span><span class="navbar__logo-tagline">Book. Play. Win.</span></div></a>
+      <nav class="navbar__nav">
+        <a href="index.html" class="navbar__link">Home</a><a href="about.html" class="navbar__link">About</a><a href="services.html" class="navbar__link">Services</a><a href="blog.html" class="navbar__link active">Blog</a><a href="contact.html" class="navbar__link">Contact</a>
+      </nav>
+      <div class="navbar__actions">
+        <button id="theme-toggle" class="navbar__toggle-btn"><span class="theme-icon">☀️</span></button>
+        <button id="rtl-toggle" class="navbar__toggle-btn"><span class="rtl-icon" style="font-size:10px;font-weight:700">RTL</span></button>
+        <a href="login.html" class="btn btn-secondary btn-sm">Sign In</a>
+        <a href="dashboard.html" class="btn btn-primary btn-sm">Book Now →</a>
+      </div>
+      <button class="navbar__hamburger" id="mobile-menu-toggle"><span></span><span></span><span></span></button>
+    </div></div>
+    <div class="navbar__mobile" id="mobile-menu">
+      <a href="index.html" class="navbar__mobile-link">🏠 Home</a><a href="blog.html" class="navbar__mobile-link active">📰 Blog</a><a href="contact.html" class="navbar__mobile-link">📞 Contact</a>
+      <div class="navbar__mobile-actions"><button id="theme-toggle-mobile" class="navbar__toggle-btn" style="width:100%"><span class="theme-icon">☀️</span> Theme</button><a href="dashboard.html" class="btn btn-primary" style="width:100%;justify-content:center">Book Now →</a></div>
+    </div>
+  </nav>
+
+  <!-- SECTION 1: Hero -->
+  <section class="page-hero" aria-labelledby="blog-heading">
+    <div class="page-hero__bg"><img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=1920&q=80" alt="Athletes training — sports blog" fetchpriority="high"></div>
+    <div class="page-hero__overlay"></div>
+    <div class="container"><div class="page-hero__content reveal">
+      <span class="page-hero__eyebrow">📰 Sports Knowledge</span>
+      <h1 class="page-hero__title" id="blog-heading">The <span style="color:var(--electric-lime)">Sports Blog</span></h1>
+      <p style="color:rgba(255,255,255,0.75);font-size:var(--text-lg);max-width:560px;margin-inline:auto">Tips, tactics, training guides, and stories from the world of sports.</p>
+      <nav class="page-hero__breadcrumb" aria-label="Breadcrumb" style="margin-top:var(--space-6)"><a href="index.html">Home</a><span class="sep">›</span><span>Blog</span></nav>
+    </div></div>
+  </section>
+
+  <!-- SECTION 2: Featured Post -->
+  <section class="section" style="background:var(--bg-secondary)" aria-labelledby="featured-heading">
+    <div class="container">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--space-8)">
+        <div><span class="section-label" id="featured-heading">⭐ Editor's Pick</span><h2 class="section-title" style="text-align:left;margin-top:var(--space-2)">Featured <span class="accent">Article</span></h2></div>
+      </div>
+      <div class="featured-post reveal">
+        <div class="featured-post__image"><img src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?w=800&q=80" alt="Football tactics training session" loading="lazy"></div>
+        <div class="featured-post__body">
+          <div style="display:flex;gap:var(--space-3);margin-bottom:var(--space-4)">
+            <span style="background:var(--electric-lime);color:var(--midnight-navy);padding:4px 12px;border-radius:var(--radius-full);font-size:var(--text-xs);font-weight:900">⚽ Football</span>
+            <span style="font-size:var(--text-xs);color:var(--text-muted)">12 min read</span>
+          </div>
+          <h2 style="font-size:clamp(var(--text-xl),3vw,var(--text-3xl));font-weight:900;margin-bottom:var(--space-4);line-height:var(--lh-snug)">
+            <a href="blog-details.html" style="color:var(--text-primary);transition:color var(--transition-base)">10 Football Tactics Every Amateur Team Must Know in 2026</a>
+          </h2>
+          <p style="color:var(--text-muted);line-height:var(--lh-relaxed);margin-bottom:var(--space-6)">From high-press formations to counter-attack strategies — these tactical frameworks have transformed amateur football teams from regional underdogs to local champions. Learn how to implement them on your next session.</p>
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <div style="display:flex;align-items:center;gap:var(--space-3)">
+              <div class="avatar avatar-md" style="background:linear-gradient(135deg,var(--electric-lime),var(--stadium-green));color:var(--midnight-navy);font-weight:900;font-size:12px">RK</div>
+              <div>
+                <div style="font-size:var(--text-sm);font-weight:700">Raj Kumar</div>
+                <div style="font-size:var(--text-xs);color:var(--text-muted)">Aug 15, 2026</div>
+              </div>
+            </div>
+            <a href="blog-details.html" class="btn btn-primary btn-sm">Read Article →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: Blog Grid + Sidebar -->
+  <section class="section" aria-labelledby="articles-heading">
+    <div class="container">
+      <div class="blog-layout">
+        <!-- Blog Grid -->
+        <div>
+          <h2 class="section-title" style="text-align:left;margin-bottom:var(--space-8)" id="articles-heading">Latest <span class="accent">Articles</span></h2>
+          <div class="blog-grid">
+            <div class="blog-card reveal delay-100">
+              <div class="blog-card__image"><img src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=600&q=80" alt="Cricket training drills" loading="lazy"><span class="blog-card__category">🏏 Cricket</span></div>
+              <div class="blog-card__body">
+                <div class="blog-card__meta"><span class="blog-card__date">Aug 12, 2026</span><span class="blog-card__read-time">8 min read</span></div>
+                <h3 class="blog-card__title"><a href="blog-details.html">5 Batting Drills to Improve Your Strike Rate Before Your Next Match</a></h3>
+                <p class="blog-card__excerpt">Focused training sessions that build muscle memory and reaction time for batsmen at every level.</p>
+                <div class="blog-card__footer"><div class="blog-card__author"><div class="avatar avatar-sm" style="background:linear-gradient(135deg,var(--stadium-green),#0D4F3A);color:white;font-weight:700;font-size:10px">VK</div>Vikram K.</div><a href="blog-details.html" class="blog-card__read-more">Read more →</a></div>
+              </div>
+            </div>
+            <div class="blog-card reveal delay-200">
+              <div class="blog-card__image"><img src="https://images.unsplash.com/photo-1593341646782-e0b495cff86d?w=600&q=80" alt="Badminton footwork training" loading="lazy"><span class="blog-card__category">🏸 Badminton</span></div>
+              <div class="blog-card__body">
+                <div class="blog-card__meta"><span class="blog-card__date">Aug 10, 2026</span><span class="blog-card__read-time">6 min read</span></div>
+                <h3 class="blog-card__title"><a href="blog-details.html">Mastering Footwork: The Secret to Winning Badminton Rallies</a></h3>
+                <p class="blog-card__excerpt">Footwork is 70% of badminton. Here's a complete guide with drills to transform your court coverage.</p>
+                <div class="blog-card__footer"><div class="blog-card__author"><div class="avatar avatar-sm" style="background:linear-gradient(135deg,#3B82F6,#1D4ED8);color:white;font-weight:700;font-size:10px">AP</div>Ananya P.</div><a href="blog-details.html" class="blog-card__read-more">Read more →</a></div>
+              </div>
+            </div>
+            <div class="blog-card reveal delay-300">
+              <div class="blog-card__image"><img src="https://images.unsplash.com/photo-1556056504-5c7696c4c28d?w=600&q=80" alt="Sports nutrition for athletes" loading="lazy"><span class="blog-card__category">💪 Fitness</span></div>
+              <div class="blog-card__body">
+                <div class="blog-card__meta"><span class="blog-card__date">Aug 8, 2026</span><span class="blog-card__read-time">10 min read</span></div>
+                <h3 class="blog-card__title"><a href="blog-details.html">The Ultimate Pre-Match Nutrition Guide for Team Sports Athletes</a></h3>
+                <p class="blog-card__excerpt">What you eat 2 hours before your game can make or break your performance. Science-backed nutrition plan.</p>
+                <div class="blog-card__footer"><div class="blog-card__author"><div class="avatar avatar-sm" style="background:linear-gradient(135deg,#F59E0B,#D97706);color:white;font-weight:700;font-size:10px">DR</div>Dr. Ravi</div><a href="blog-details.html" class="blog-card__read-more">Read more →</a></div>
+              </div>
+            </div>
+            <div class="blog-card reveal delay-100">
+              <div class="blog-card__image"><img src="https://images.unsplash.com/photo-1575361204480-aadea25e6e68?w=600&q=80" alt="Night football turf booking" loading="lazy"><span class="blog-card__category">🏟️ Venues</span></div>
+              <div class="blog-card__body">
+                <div class="blog-card__meta"><span class="blog-card__date">Aug 5, 2026</span><span class="blog-card__read-time">5 min read</span></div>
+                <h3 class="blog-card__title"><a href="blog-details.html">Top 10 Football Turfs in Chennai You Need to Book This Weekend</a></h3>
+                <p class="blog-card__excerpt">Our curated list of the best-rated football turfs across Chennai — reviewed by 1,000+ players.</p>
+                <div class="blog-card__footer"><div class="blog-card__author"><div class="avatar avatar-sm" style="background:linear-gradient(135deg,var(--electric-lime),var(--stadium-green));color:var(--midnight-navy);font-weight:700;font-size:10px">RK</div>Raj Kumar</div><a href="blog-details.html" class="blog-card__read-more">Read more →</a></div>
+              </div>
+            </div>
+            <div class="blog-card reveal delay-200">
+              <div class="blog-card__image"><img src="https://images.unsplash.com/photo-1540747913346-19212a4b573d?w=600&q=80" alt="Cricket pitch maintenance" loading="lazy"><span class="blog-card__category">🏏 Cricket</span></div>
+              <div class="blog-card__body">
+                <div class="blog-card__meta"><span class="blog-card__date">Aug 2, 2026</span><span class="blog-card__read-time">7 min read</span></div>
+                <h3 class="blog-card__title"><a href="blog-details.html">How to Read a Cricket Pitch: A Guide for Amateur Captains</a></h3>
+                <p class="blog-card__excerpt">Pitch reading is an art. Learn to identify pitch conditions and adjust your team selection accordingly.</p>
+                <div class="blog-card__footer"><div class="blog-card__author"><div class="avatar avatar-sm" style="background:linear-gradient(135deg,#8B5CF6,#6D28D9);color:white;font-weight:700;font-size:10px">MS</div>Murali S.</div><a href="blog-details.html" class="blog-card__read-more">Read more →</a></div>
+              </div>
+            </div>
+            <div class="blog-card reveal delay-300">
+              <div class="blog-card__image"><img src="https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?w=600&q=80" alt="Team building through sport" loading="lazy"><span class="blog-card__category">👥 Team Sports</span></div>
+              <div class="blog-card__body">
+                <div class="blog-card__meta"><span class="blog-card__date">Jul 28, 2026</span><span class="blog-card__read-time">9 min read</span></div>
+                <h3 class="blog-card__title"><a href="blog-details.html">Building Team Cohesion: Why Sports Outings Transform Workplace Teams</a></h3>
+                <p class="blog-card__excerpt">Corporate sports bookings are rising 40% year-on-year. Here's the science behind sports and team building.</p>
+                <div class="blog-card__footer"><div class="blog-card__author"><div class="avatar avatar-sm" style="background:linear-gradient(135deg,#EC4899,#BE185D);color:white;font-weight:700;font-size:10px">PN</div>Priya N.</div><a href="blog-details.html" class="blog-card__read-more">Read more →</a></div>
+              </div>
+            </div>
+          </div>
+          <div style="text-align:center;margin-top:var(--space-10)">
+            <button class="btn btn-outline btn-lg" onclick="window.SportifyApp.showToast('Loading more articles...','info')">Load More Articles</button>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="blog-sidebar reveal-right" aria-label="Blog sidebar">
+          <!-- Search -->
+          <div class="sidebar-widget">
+            <div class="sidebar-widget-title">🔍 Search</div>
+            <div style="display:flex;gap:var(--space-2)">
+              <input type="search" class="form-input" placeholder="Search articles..." aria-label="Search articles" style="padding:0.75rem 1rem">
+              <button class="btn btn-primary btn-sm" style="flex-shrink:0">Go</button>
+            </div>
+          </div>
+
+          <!-- Categories -->
+          <div class="sidebar-widget">
+            <div class="sidebar-widget-title">📂 Categories</div>
+            <div style="display:flex;flex-direction:column;gap:var(--space-2)">
+              ${[['⚽ Football','12'],['🏏 Cricket','8'],['🏸 Badminton','6'],['💪 Fitness','9'],['🏟️ Venues','5'],['👥 Team Sports','4']].map(([cat,count]) => `
+                <a href="#" style="display:flex;justify-content:space-between;align-items:center;padding:var(--space-2) var(--space-3);border-radius:var(--radius-md);color:var(--text-secondary);font-size:var(--text-sm);transition:all var(--transition-base);text-decoration:none" onmouseover="this.style.background='rgba(184,230,46,0.06)';this.style.color='var(--electric-lime)'" onmouseout="this.style.background='';this.style.color=''">
+                  <span>${cat}</span>
+                  <span style="background:var(--bg-card-hover);padding:2px 8px;border-radius:var(--radius-full);font-size:10px;font-weight:700">${count}</span>
+                </a>
+              `).join('')}
+            </div>
+          </div>
+
+          <!-- Popular Posts -->
+          <div class="sidebar-widget">
+            <div class="sidebar-widget-title">🔥 Trending</div>
+            <div style="display:flex;flex-direction:column;gap:var(--space-4)">
+              ${[['Top 10 Football Turfs in Chennai','⚽ Venues','2.4K views'],['Pre-Match Nutrition Guide','💪 Fitness','1.8K views'],['Mastering Badminton Footwork','🏸 Badminton','1.2K views']].map(([title,cat,views],i) => `
+                <a href="blog-details.html" style="display:flex;gap:var(--space-3);align-items:flex-start;text-decoration:none">
+                  <div style="width:32px;height:32px;background:rgba(184,230,46,0.1);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--electric-lime);font-size:var(--text-sm);flex-shrink:0">${i+1}</div>
+                  <div>
+                    <div style="font-size:var(--text-sm);font-weight:600;color:var(--text-primary);margin-bottom:2px;transition:color var(--transition-base)">${title}</div>
+                    <div style="font-size:10px;color:var(--text-muted)">${cat} · ${views}</div>
+                  </div>
+                </a>
+              `).join('')}
+            </div>
+          </div>
+
+          <!-- Tags -->
+          <div class="sidebar-widget">
+            <div class="sidebar-widget-title">🏷️ Popular Tags</div>
+            <div class="tag-cloud">
+              ${['Football','Cricket','Badminton','Fitness','Nutrition','Tactics','Coaching','Team Building','Venues','Chennai','Sports','Training'].map(tag => `<a href="#" class="chip" style="text-decoration:none">${tag}</a>`).join('')}
+            </div>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="sidebar-widget" style="background:linear-gradient(135deg,var(--stadium-green),var(--green-dark));border-color:var(--stadium-green)">
+            <div style="font-size:2rem;margin-bottom:var(--space-3)">📧</div>
+            <h3 style="font-size:var(--text-lg);font-weight:700;color:var(--white);margin-bottom:var(--space-2)">Get Weekly Tips</h3>
+            <p style="font-size:var(--text-sm);color:rgba(255,255,255,0.75);margin-bottom:var(--space-4)">Join 5,000+ athletes getting weekly sports tips in their inbox.</p>
+            <input type="email" class="form-input" placeholder="Your email" style="margin-bottom:var(--space-3);background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.2);color:white" aria-label="Newsletter email">
+            <button class="btn btn-primary" style="width:100%;justify-content:center">Subscribe →</button>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: Trending Topics -->
+  <section class="section" style="background:var(--bg-secondary)" aria-labelledby="topics-heading">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label" id="topics-heading">🔥 Hot Right Now</span>
+        <h2 class="section-title reveal">Trending <span class="accent">Topics</span></h2>
+      </div>
+      <div class="grid-4">
+        <div class="card reveal delay-100" style="padding:var(--space-6);text-align:center;cursor:pointer" onclick="window.SportifyApp.showToast('Browsing Football Tactics...','info')">
+          <div style="font-size:2.5rem;margin-bottom:var(--space-3)">⚽</div>
+          <div style="font-family:var(--font-display);font-weight:700;margin-bottom:var(--space-1);font-size:var(--text-base)">Football Tactics</div>
+          <div style="font-size:var(--text-xs);color:#B8E62E;font-weight:700">23 articles</div>
+        </div>
+        <div class="card reveal delay-200" style="padding:var(--space-6);text-align:center;cursor:pointer" onclick="window.SportifyApp.showToast('Browsing Cricket Coaching...','info')">
+          <div style="font-size:2.5rem;margin-bottom:var(--space-3)">🏏</div>
+          <div style="font-family:var(--font-display);font-weight:700;margin-bottom:var(--space-1);font-size:var(--text-base)">Cricket Coaching</div>
+          <div style="font-size:var(--text-xs);color:#126B4F;font-weight:700">14 articles</div>
+        </div>
+        <div class="card reveal delay-300" style="padding:var(--space-6);text-align:center;cursor:pointer" onclick="window.SportifyApp.showToast('Browsing Badminton Skills...','info')">
+          <div style="font-size:2.5rem;margin-bottom:var(--space-3)">🏸</div>
+          <div style="font-family:var(--font-display);font-weight:700;margin-bottom:var(--space-1);font-size:var(--text-base)">Badminton Skills</div>
+          <div style="font-size:var(--text-xs);color:#3B82F6;font-weight:700">11 articles</div>
+        </div>
+        <div class="card reveal delay-400" style="padding:var(--space-6);text-align:center;cursor:pointer" onclick="window.SportifyApp.showToast('Browsing Sports Fitness...','info')">
+          <div style="font-size:2.5rem;margin-bottom:var(--space-3)">💪</div>
+          <div style="font-family:var(--font-display);font-weight:700;margin-bottom:var(--space-1);font-size:var(--text-base)">Sports Fitness</div>
+          <div style="font-size:var(--text-xs);color:#F59E0B;font-weight:700">18 articles</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: FAQ -->
+  <section class="section" aria-labelledby="blog-faq-heading">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label" id="blog-faq-heading">❓ Common Questions</span>
+        <h2 class="section-title reveal">Sports <span class="accent">FAQs</span></h2>
+      </div>
+      <div class="faq-list">
+        ${[
+          ['How do I book a turf on SportifyTurf?', 'Simply browse available venues by sport and location, select your preferred date and time slot, and complete payment. You\'ll receive an instant confirmation with a QR code.'],
+          ['Can I cancel my booking after payment?', 'Yes. Bookings can be cancelled free of charge up to 12 hours before the scheduled time. Late cancellations may incur a 25% fee.'],
+          ['Do you offer group or team packages?', 'Absolutely! Our Team Package offers 20 sessions per month at a discounted rate with guaranteed recurring slots. Contact our sales team for custom pricing.'],
+          ['What is the minimum booking duration?', 'Our minimum booking duration is 1 hour. You can book in 30-minute increments for sessions longer than 1 hour.'],
+          ['Are the venues available 24/7?', 'Most venues operate from 5:00 AM to 11:00 PM. Some premium venues offer extended hours on weekends. Check individual venue listings for exact timings.'],
+        ].map(([q,a]) => `
+          <div class="faq-item reveal">
+            <button class="faq-trigger" aria-expanded="false">
+              <span class="faq-question">${q}</span>
+              <div class="faq-icon">+</div>
+            </button>
+            <div class="faq-body"><div class="faq-answer">${a}</div></div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: Newsletter CTA -->
+  <section class="section" style="background:linear-gradient(135deg,var(--graphite-dark),var(--midnight-navy))" aria-labelledby="blog-cta-heading">
+    <div class="container" style="text-align:center">
+      <span class="section-label" style="color:var(--electric-lime)">📧 Stay Updated</span>
+      <h2 class="section-title reveal" id="blog-cta-heading" style="margin-top:var(--space-4)">Never Miss a <span class="accent">Sports Tip</span></h2>
+      <p style="color:var(--text-muted);margin-bottom:var(--space-8);font-size:var(--text-lg)">Join 5,000+ athletes getting weekly content. No spam, ever.</p>
+      <div class="newsletter-form reveal" style="display:flex;gap:var(--space-3);max-width:480px;margin-inline:auto">
+        <input type="email" class="form-input" placeholder="Enter your email" id="blog-newsletter-email" aria-label="Newsletter email">
+        <button class="btn btn-primary" style="white-space:nowrap" id="newsletter-submit">Subscribe →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__glow footer__glow--lime"></div><div class="footer__glow footer__glow--green"></div>
+    <div class="footer__top"><div class="container"><div class="footer__grid">
+      <div class="footer__brand"><a href="index.html" class="footer__logo"><div class="footer__logo-mark">⚽</div><div><div class="footer__logo-name">Sportify<span>Turf</span></div></div></a><p class="footer__desc">India's most trusted sports ground booking platform.</p><div class="footer__social"><a href="#" class="footer__social-link">f</a><a href="#" class="footer__social-link">📸</a><a href="#" class="footer__social-link">𝕏</a></div></div>
+      <div class="footer__nav-group"><h3 class="footer__nav-title">Platform</h3><ul class="footer__nav-list"><li><a href="index.html" class="footer__nav-link">Home</a></li><li><a href="about.html" class="footer__nav-link">About</a></li><li><a href="services.html" class="footer__nav-link">Services</a></li><li><a href="blog.html" class="footer__nav-link">Blog</a></li></ul></div>
+      <div class="footer__nav-group"><h3 class="footer__nav-title">Sports</h3><ul class="footer__nav-list"><li><a href="services.html#football" class="footer__nav-link">⚽ Football</a></li><li><a href="services.html#cricket" class="footer__nav-link">🏏 Cricket</a></li><li><a href="services.html#badminton" class="footer__nav-link">🏸 Badminton</a></li></ul></div>
+      <div class="footer__nav-group"><h3 class="footer__nav-title">Legal</h3><ul class="footer__nav-list"><li><a href="privacy-policy.html" class="footer__nav-link">Privacy Policy</a></li><li><a href="terms.html" class="footer__nav-link">Terms</a></li><li><a href="sitemap.html" class="footer__nav-link">Sitemap</a></li></ul></div>
+    </div></div></div>
+    <div class="footer__bottom"><div class="container"><div class="footer__bottom-inner"><p class="footer__copyright">© 2026 <span>SportifyTurf</span>. All rights reserved.</p></div></div></div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

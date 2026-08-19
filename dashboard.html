@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Customer Dashboard — Manage your SportifyTurf bookings, view slot availability, track history, register your team, and handle payments all in one place.">
+  <title>Dashboard — SportifyTurf</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚽</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800;900&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+  <!-- Scroll Progress -->
+  <div id="scroll-progress"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar--solid" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="navbar__inner">
+        <a href="index.html" class="navbar__logo">
+          <div class="navbar__logo-mark">⚽</div>
+          <div class="navbar__logo-text">
+            <span class="navbar__logo-name">Sportify<span>Turf</span></span>
+            <span class="navbar__logo-tagline">Book. Play. Win.</span>
+          </div>
+        </a>
+        <div class="navbar__actions">
+          <button id="theme-toggle" class="navbar__toggle-btn" aria-label="Toggle theme"><span class="theme-icon">☀️</span></button>
+          <button id="rtl-toggle" class="navbar__toggle-btn" aria-label="Toggle direction"><span class="rtl-icon" style="font-size:10px;font-weight:700">RTL</span></button>
+          <div style="display:flex;align-items:center;gap:var(--space-3)">
+            <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--electric-lime),var(--stadium-green));display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--midnight-navy);font-size:14px">AR</div>
+            <div style="display:flex;flex-direction:column">
+              <span style="font-size:var(--text-sm);font-weight:700;color:var(--text-primary)">Arjun Ramesh</span>
+              <span style="font-size:10px;color:var(--electric-lime);font-weight:600">🏆 Gold Member</span>
+            </div>
+          </div>
+          <a href="index.html" class="btn btn-secondary btn-sm">← Back to Site</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Dashboard Layout -->
+  <div class="dashboard-wrapper">
+
+    <!-- ── Sidebar ── -->
+    <aside class="dashboard-sidebar" role="navigation" aria-label="Dashboard navigation">
+      <!-- User Info -->
+      <div class="dashboard-sidebar__user">
+        <div class="dashboard-sidebar__avatar">AR</div>
+        <div>
+          <div class="dashboard-sidebar__name" id="db-user-name">Arjun Ramesh</div>
+          <div class="dashboard-sidebar__email">🏆 Gold Member</div>
+        </div>
+      </div>
+
+      <div class="dashboard-nav-label">Main</div>
+      <button class="dashboard-nav-item active" data-panel="overview">
+        <span class="dashboard-nav-item__icon">🏠</span> Overview
+      </button>
+      <button class="dashboard-nav-item" data-panel="book">
+        <span class="dashboard-nav-item__icon">📅</span> Book a Turf
+        <span class="dashboard-nav-item__badge">Live</span>
+      </button>
+      <button class="dashboard-nav-item" data-panel="history">
+        <span class="dashboard-nav-item__icon">📋</span> Booking History
+      </button>
+
+      <div class="dashboard-nav-label">Team</div>
+      <button class="dashboard-nav-item" data-panel="team">
+        <span class="dashboard-nav-item__icon">👥</span> Team Bookings
+      </button>
+
+      <div class="dashboard-nav-label">Account</div>
+      <button class="dashboard-nav-item" data-panel="payments">
+        <span class="dashboard-nav-item__icon">💳</span> Payments
+      </button>
+      <button class="dashboard-nav-item" data-panel="notifications">
+        <span class="dashboard-nav-item__icon">🔔</span> Notifications
+        <span class="dashboard-nav-item__badge">2</span>
+      </button>
+      <button class="dashboard-nav-item" data-panel="profile">
+        <span class="dashboard-nav-item__icon">👤</span> Profile
+      </button>
+      <button class="dashboard-nav-item" data-panel="settings">
+        <span class="dashboard-nav-item__icon">⚙️</span> Settings
+      </button>
+
+      <div style="margin-top:auto;padding-top:var(--space-6)">
+        <a href="index.html" class="dashboard-nav-item" style="color:var(--error);text-decoration:none">
+          <span class="dashboard-nav-item__icon">🚪</span> Sign Out
+        </a>
+      </div>
+    </aside>
+
+    <!-- ── Main Content ── -->
+    <main class="dashboard-main">
+
+      <!-- ═══════ PANEL: OVERVIEW ═══════ -->
+      <div class="dashboard-panel active" id="panel-overview">
+        <div class="dashboard-header">
+          <div>
+            <h1 class="dashboard-header__title">Good morning, Arjun! 👋</h1>
+            <p class="dashboard-header__subtitle">Here's your sports activity overview.</p>
+          </div>
+          <button class="btn btn-primary" onclick="document.querySelector('[data-panel=\'book\']').click()">
+            📅 Book a Turf
+          </button>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="db-stats-grid">
+          <div class="db-stat-card">
+            <div class="db-stat-icon db-stat-icon--lime">📅</div>
+            <div>
+              <div class="db-stat-value" id="db-total-bookings">24</div>
+              <div class="db-stat-label">Total Bookings</div>
+            </div>
+          </div>
+          <div class="db-stat-card">
+            <div class="db-stat-icon db-stat-icon--green">⏱️</div>
+            <div>
+              <div class="db-stat-value" id="db-hours-played">48</div>
+              <div class="db-stat-label">Hours Played</div>
+            </div>
+          </div>
+          <div class="db-stat-card">
+            <div class="db-stat-icon db-stat-icon--blue">🏆</div>
+            <div>
+              <div class="db-stat-value" id="db-points">2,400</div>
+              <div class="db-stat-label">Reward Points</div>
+            </div>
+          </div>
+          <div class="db-stat-card">
+            <div class="db-stat-icon db-stat-icon--orange">💰</div>
+            <div>
+              <div class="db-stat-value">₹28.4K</div>
+              <div class="db-stat-label">Total Spent</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Bookings -->
+        <div class="booking-table-wrap" style="margin-bottom:var(--space-6)">
+          <div class="booking-table-header">
+            <h3 class="booking-table-title">Recent Bookings</h3>
+            <button class="btn btn-secondary btn-sm" onclick="document.querySelector('[data-panel=\'history\']').click()">View All</button>
+          </div>
+          <div style="overflow-x:auto">
+            <table class="booking-table" aria-label="Recent bookings">
+              <thead>
+                <tr>
+                  <th>Booking ID</th>
+                  <th>Turf</th>
+                  <th>Date & Time</th>
+                  <th>Amount</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="db-recent-bookings">
+                <!-- Populated by dashboard.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="grid-2" style="gap:var(--space-4)">
+          <div class="card" style="padding:var(--space-6)">
+            <h4 style="margin-bottom:var(--space-3)">🎯 Your Favorite Sport</h4>
+            <p style="font-size:var(--text-3xl);margin-bottom:var(--space-3)">⚽ Football</p>
+            <p style="font-size:var(--text-sm);color:var(--text-muted)">16 sessions this year</p>
+          </div>
+          <div class="card" style="padding:var(--space-6)">
+            <h4 style="margin-bottom:var(--space-3)">📍 Nearest Venue</h4>
+            <p style="font-size:var(--text-base);font-weight:700;margin-bottom:var(--space-2)">Premier Football Arena</p>
+            <p style="font-size:var(--text-sm);color:var(--text-muted)">Anna Nagar · 0.8 km away</p>
+            <button class="btn btn-primary btn-sm" style="margin-top:var(--space-3)" onclick="document.querySelector('[data-panel=\'book\']').click()">Book Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══════ PANEL: BOOK A TURF ═══════ -->
+      <div class="dashboard-panel" id="panel-book">
+        <div class="dashboard-header">
+          <div>
+            <h1 class="dashboard-header__title">Book a Turf 📅</h1>
+            <p class="dashboard-header__subtitle">Select your sport and find available slots in real time.</p>
+          </div>
+        </div>
+
+        <!-- Sport Filters -->
+        <div class="sport-filters" role="group" aria-label="Filter by sport" style="justify-content:flex-start;margin-bottom:var(--space-6)">
+          <button class="sport-filter-btn active" data-sport-filter="all">🏟️ All</button>
+          <button class="sport-filter-btn" data-sport-filter="football">⚽ Football</button>
+          <button class="sport-filter-btn" data-sport-filter="cricket">🏏 Cricket</button>
+          <button class="sport-filter-btn" data-sport-filter="badminton">🏸 Badminton</button>
+        </div>
+
+        <!-- Turf Grid -->
+        <div id="turf-grid" aria-live="polite" aria-label="Available turfs">
+          <!-- Populated by booking.js -->
+        </div>
+      </div>
+
+      <!-- ═══════ PANEL: BOOKING HISTORY ═══════ -->
+      <div class="dashboard-panel" id="panel-history">
+        <div class="dashboard-header">
+          <div>
+            <h1 class="dashboard-header__title">Booking History 📋</h1>
+            <p class="dashboard-header__subtitle">All your past and upcoming bookings.</p>
+          </div>
+          <div style="display:flex;gap:var(--space-3)">
+            <select class="quick-book-select" style="width:auto" aria-label="Filter by status">
+              <option>All Bookings</option>
+              <option>Confirmed</option>
+              <option>Pending</option>
+              <option>Cancelled</option>
+            </select>
+          </div>
+        </div>
+        <div class="booking-table-wrap">
+          <div style="overflow-x:auto">
+            <table class="booking-table" aria-label="Full booking history">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Turf</th>
+                  <th>Date</th>
+                  <th>Time</th>
+                  <th>Duration</th>
+                  <th>Amount</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="db-full-history">
+                <!-- Populated by dashboard.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══════ PANEL: TEAM BOOKINGS ═══════ -->
+      <div class="dashboard-panel" id="panel-team">
+        <div class="dashboard-header">
+          <div>
+            <h1 class="dashboard-header__title">Team Bookings 👥</h1>
+            <p class="dashboard-header__subtitle">Set up recurring team sessions and manage members.</p>
+          </div>
+          <button class="btn btn-primary" id="create-team-btn">+ Create New Team</button>
+        </div>
+
+        <!-- Current Teams -->
+        <div class="grid-2" style="margin-bottom:var(--space-8)">
+          <div class="card" style="padding:var(--space-6)">
+            <div style="display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-4)">
+              <div style="width:52px;height:52px;background:linear-gradient(135deg,var(--electric-lime),var(--stadium-green));border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;font-size:24px">⚽</div>
+              <div>
+                <h3 style="font-size:var(--text-lg)">Warriors FC</h3>
+                <p style="font-size:var(--text-xs);color:var(--text-muted)">8 members · Captain: Arjun</p>
+              </div>
+              <span class="badge badge-lime" style="margin-left:auto">Active</span>
+            </div>
+            <div style="display:flex;gap:var(--space-2);flex-wrap:wrap;margin-bottom:var(--space-4)">
+              ${['AR','KS','MP','DP','RK','VK','AK','JS'].map(m => `<div style="width:32px;height:32px;border-radius:50%;background:var(--bg-card-hover);border:1px solid var(--border-color);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:var(--text-muted)">${m}</div>`).join('')}
+            </div>
+            <div style="font-size:var(--text-sm);color:var(--text-muted);margin-bottom:var(--space-4)">
+              🔄 Recurring: Every Saturday, 6:00 PM<br>
+              📍 Premier Football Arena, Anna Nagar
+            </div>
+            <div style="display:flex;gap:var(--space-3)">
+              <button class="btn btn-primary btn-sm">Book Next Session</button>
+              <button class="btn btn-secondary btn-sm">Manage Team</button>
+            </div>
+          </div>
+
+          <div class="card" style="padding:var(--space-6);border-style:dashed;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:var(--space-4);cursor:pointer" id="create-team-card">
+            <div style="width:64px;height:64px;border-radius:50%;background:rgba(184,230,46,0.08);border:2px dashed rgba(184,230,46,0.3);display:flex;align-items:center;justify-content:center;font-size:24px">+</div>
+            <h3>Create New Team</h3>
+            <p style="font-size:var(--text-sm);color:var(--text-muted)">Register your team for recurring sessions and exclusive team packages.</p>
+            <button class="btn btn-outline btn-sm">Get Started →</button>
+          </div>
+        </div>
+
+        <!-- Team Registration Form -->
+        <div class="booking-table-wrap" style="padding:var(--space-6)" id="team-form-section" style="display:none">
+          <h3 style="margin-bottom:var(--space-6)">Register New Team</h3>
+          <div class="grid-2" style="gap:var(--space-5)">
+            <div class="form-group">
+              <label class="form-label" for="team-name">Team Name</label>
+              <input type="text" id="team-name" class="form-input" placeholder="Enter team name">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="team-sport">Sport</label>
+              <select id="team-sport" class="form-input">
+                <option>Select Sport</option>
+                <option>⚽ Football</option>
+                <option>🏏 Cricket</option>
+                <option>🏸 Badminton</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="team-size">Team Size</label>
+              <input type="number" id="team-size" class="form-input" min="2" max="22" placeholder="Number of players">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="team-recurring">Recurring Schedule</label>
+              <select id="team-recurring" class="form-input">
+                <option>Select Frequency</option>
+                <option>Weekly</option>
+                <option>Bi-Weekly</option>
+                <option>Monthly</option>
+              </select>
+            </div>
+          </div>
+          <div style="margin-top:var(--space-5)">
+            <button class="btn btn-primary" onclick="window.SportifyApp.showToast('Team registered successfully! 🎉', 'success')">Register Team →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══════ PANEL: PAYMENTS ═══════ -->
+      <div class="dashboard-panel" id="panel-payments">
+        <div class="dashboard-header">
+          <div>
+            <h1 class="dashboard-header__title">Payments 💳</h1>
+            <p class="dashboard-header__subtitle">Your payment history and saved methods.</p>
+          </div>
+        </div>
+
+        <div class="grid-2" style="margin-bottom:var(--space-8)">
+          <div class="payment-card">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:var(--space-6)">
+              <div>
+                <p style="font-size:var(--text-xs);color:var(--text-muted);margin-bottom:var(--space-1)">TOTAL SPENT</p>
+                <p style="font-family:var(--font-display);font-size:var(--text-4xl);font-weight:900;color:var(--electric-lime)">₹28,400</p>
+              </div>
+              <div style="padding:var(--space-2) var(--space-3);background:rgba(34,197,94,0.1);border-radius:var(--radius-full);font-size:var(--text-xs);color:var(--success);font-weight:700">All Time</div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)">
+              <div>
+                <p style="font-size:var(--text-xs);color:var(--text-muted)">This Month</p>
+                <p style="font-weight:700;color:var(--text-primary)">₹3,600</p>
+              </div>
+              <div>
+                <p style="font-size:var(--text-xs);color:var(--text-muted)">Savings</p>
+                <p style="font-weight:700;color:var(--success)">₹1,200</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="payment-card">
+            <h3 style="margin-bottom:var(--space-4)">Saved Payment Methods</h3>
+            <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+              <div style="display:flex;align-items:center;gap:var(--space-3);padding:var(--space-3);background:var(--bg-card-hover);border-radius:var(--radius-lg)">
+                <div style="width:48px;height:32px;background:linear-gradient(135deg,#1A1FE5,#0052CC);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:white">VISA</div>
+                <div style="flex:1">
+                  <p style="font-size:var(--text-sm);font-weight:600">•••• •••• •••• 4242</p>
+                  <p style="font-size:var(--text-xs);color:var(--text-muted)">Expires 12/27</p>
+                </div>
+                <span class="badge badge-lime">Default</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:var(--space-3);padding:var(--space-3);background:var(--bg-card-hover);border-radius:var(--radius-lg)">
+                <div style="width:48px;height:32px;background:linear-gradient(135deg,#FF6B35,#FF3C00);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:white">UPI</div>
+                <div style="flex:1">
+                  <p style="font-size:var(--text-sm);font-weight:600">arjun@okaxis</p>
+                  <p style="font-size:var(--text-xs);color:var(--text-muted)">UPI ID</p>
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-outline btn-sm" style="margin-top:var(--space-4)">+ Add Payment Method</button>
+          </div>
+        </div>
+
+        <!-- Transaction History -->
+        <div class="booking-table-wrap">
+          <div class="booking-table-header">
+            <h3 class="booking-table-title">Transaction History</h3>
+          </div>
+          <div style="overflow-x:auto">
+            <table class="booking-table" aria-label="Payment transactions">
+              <thead>
+                <tr><th>Date</th><th>Description</th><th>Method</th><th>Amount</th><th>Status</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Aug 18, 2026</td>
+                  <td>⚽ Premier Football Arena — 7 PM slot</td>
+                  <td>UPI</td>
+                  <td><strong>₹1,200</strong></td>
+                  <td><span class="booking-status booking-status--confirmed">Success</span></td>
+                </tr>
+                <tr>
+                  <td>Aug 15, 2026</td>
+                  <td>⚽ Green Pitch Stadium — 6 AM slot</td>
+                  <td>VISA</td>
+                  <td><strong>₹900</strong></td>
+                  <td><span class="booking-status booking-status--confirmed">Success</span></td>
+                </tr>
+                <tr>
+                  <td>Aug 12, 2026</td>
+                  <td>🏏 Cricket Ground Pro — 9 AM (2hr)</td>
+                  <td>UPI</td>
+                  <td><strong>₹3,000</strong></td>
+                  <td><span class="booking-status booking-status--confirmed">Success</span></td>
+                </tr>
+                <tr>
+                  <td>Aug 10, 2026</td>
+                  <td>🏸 Elite Badminton Courts — 6 PM slot</td>
+                  <td>VISA</td>
+                  <td><strong>₹600</strong></td>
+                  <td><span class="booking-status booking-status--cancelled">Refunded</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══════ PANEL: NOTIFICATIONS ═══════ -->
+      <div class="dashboard-panel" id="panel-notifications">
+        <div class="dashboard-header">
+          <div>
+            <h1 class="dashboard-header__title">Notifications 🔔</h1>
+            <p class="dashboard-header__subtitle">Stay updated with your bookings and offers.</p>
+          </div>
+          <button class="btn btn-secondary btn-sm" onclick="window.SportifyApp.showToast('All notifications marked as read.', 'success')">Mark All Read</button>
+        </div>
+        <div class="notification-list" id="db-notifications">
+          <!-- Populated by dashboard.js -->
+        </div>
+      </div>
+
+      <!-- ═══════ PANEL: PROFILE ═══════ -->
+      <div class="dashboard-panel" id="panel-profile">
+        <div class="dashboard-header">
+          <div>
+            <h1 class="dashboard-header__title">My Profile 👤</h1>
+            <p class="dashboard-header__subtitle">Manage your personal information.</p>
+          </div>
+        </div>
+
+        <div class="booking-table-wrap" style="padding:var(--space-8)">
+          <div style="display:flex;align-items:center;gap:var(--space-6);margin-bottom:var(--space-8);padding-bottom:var(--space-8);border-bottom:1px solid var(--border-color)">
+            <div style="width:100px;height:100px;border-radius:50%;background:linear-gradient(135deg,var(--electric-lime),var(--stadium-green));display:flex;align-items:center;justify-content:center;font-size:2.5rem;font-weight:900;color:var(--midnight-navy);flex-shrink:0">AR</div>
+            <div>
+              <h2 style="font-size:var(--text-2xl);margin-bottom:var(--space-1)">Arjun Ramesh</h2>
+              <p style="color:var(--electric-lime);font-weight:600;margin-bottom:var(--space-3)">🏆 Gold Member · Since Jan 2025</p>
+              <button class="btn btn-secondary btn-sm">Change Photo</button>
+            </div>
+          </div>
+
+          <form id="profile-form" novalidate>
+            <div class="profile-grid">
+              <div class="form-group">
+                <label class="form-label" for="profile-name">Full Name</label>
+                <input type="text" id="profile-name" class="form-input">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="profile-email">Email Address</label>
+                <input type="email" id="profile-email" class="form-input">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="profile-phone">Phone Number</label>
+                <input type="tel" id="profile-phone" class="form-input">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="profile-location">Location</label>
+                <input type="text" id="profile-location" class="form-input">
+              </div>
+              <div class="form-group full-width">
+                <label class="form-label">Preferred Sports</label>
+                <div style="display:flex;gap:var(--space-3)">
+                  <span class="chip active">⚽ Football</span>
+                  <span class="chip">🏏 Cricket</span>
+                  <span class="chip">🏸 Badminton</span>
+                </div>
+              </div>
+            </div>
+            <div style="margin-top:var(--space-6);display:flex;gap:var(--space-3)">
+              <button type="submit" id="save-profile-btn" class="btn btn-primary">Save Changes</button>
+              <button type="button" class="btn btn-secondary">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- ═══════ PANEL: SETTINGS ═══════ -->
+      <div class="dashboard-panel" id="panel-settings">
+        <div class="dashboard-header">
+          <div>
+            <h1 class="dashboard-header__title">Settings ⚙️</h1>
+            <p class="dashboard-header__subtitle">Customize your SportifyTurf experience.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:var(--space-4)">
+          <!-- Theme -->
+          <div class="booking-table-wrap" style="padding:var(--space-6)">
+            <h3 style="margin-bottom:var(--space-5)">Appearance</h3>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:var(--space-4);background:var(--bg-card-hover);border-radius:var(--radius-lg)">
+              <div>
+                <p style="font-weight:600">Dark Mode</p>
+                <p style="font-size:var(--text-sm);color:var(--text-muted)">Toggle between dark and light theme</p>
+              </div>
+              <button id="theme-toggle-settings" class="btn btn-secondary btn-sm" onclick="document.getElementById('theme-toggle').click();this.textContent=document.documentElement.getAttribute('data-theme')==='dark'?'Dark Mode':'Light Mode'">Toggle Theme</button>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:var(--space-4);background:var(--bg-card-hover);border-radius:var(--radius-lg);margin-top:var(--space-3)">
+              <div>
+                <p style="font-weight:600">Reading Direction</p>
+                <p style="font-size:var(--text-sm);color:var(--text-muted)">Toggle between LTR and RTL layout</p>
+              </div>
+              <button class="btn btn-secondary btn-sm" onclick="document.getElementById('rtl-toggle').click()">Toggle RTL/LTR</button>
+            </div>
+          </div>
+
+          <!-- Notifications -->
+          <div class="booking-table-wrap" style="padding:var(--space-6)">
+            <h3 style="margin-bottom:var(--space-5)">Notification Preferences</h3>
+            ${[
+              ['Booking Confirmations', 'Receive instant confirmation when a slot is booked'],
+              ['Reminders', 'Get reminded 1 hour before your booking'],
+              ['Promotional Offers', 'Receive exclusive deals and offers'],
+              ['Team Updates', 'Notifications about your team bookings'],
+            ].map(([title, desc]) => `
+              <div style="display:flex;align-items:center;justify-content:space-between;padding:var(--space-4);background:var(--bg-card-hover);border-radius:var(--radius-lg);margin-bottom:var(--space-3)">
+                <div>
+                  <p style="font-weight:600">${title}</p>
+                  <p style="font-size:var(--text-sm);color:var(--text-muted)">${desc}</p>
+                </div>
+                <label style="position:relative;display:inline-block;width:44px;height:24px;cursor:pointer">
+                  <input type="checkbox" checked style="opacity:0;width:0;height:0;position:absolute">
+                  <span style="position:absolute;inset:0;background:var(--electric-lime);border-radius:12px;transition:0.3s"></span>
+                </label>
+              </div>
+            `).join('')}
+          </div>
+
+          <!-- Danger Zone -->
+          <div class="booking-table-wrap" style="padding:var(--space-6);border-color:rgba(239,68,68,0.3)">
+            <h3 style="margin-bottom:var(--space-5);color:var(--error)">⚠️ Danger Zone</h3>
+            <div style="display:flex;align-items:center;justify-content:space-between">
+              <div>
+                <p style="font-weight:600">Delete Account</p>
+                <p style="font-size:var(--text-sm);color:var(--text-muted)">Permanently delete your account and all data</p>
+              </div>
+              <button class="btn btn-sm" style="background:transparent;border:1.5px solid var(--error);color:var(--error)" onclick="window.SportifyApp.showToast('This action is irreversible. Contact support to proceed.', 'error')">Delete Account</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Mobile Sidebar Toggle -->
+  <button class="dashboard-sidebar-toggle" aria-label="Toggle sidebar">☰</button>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/booking.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Team form toggle
+      const createTeamBtn = document.getElementById('create-team-btn');
+      const createTeamCard = document.getElementById('create-team-card');
+      const teamFormSection = document.getElementById('team-form-section');
+      [createTeamBtn, createTeamCard].forEach(el => {
+        el?.addEventListener('click', () => {
+          if (teamFormSection) {
+            teamFormSection.style.display = teamFormSection.style.display === 'none' ? 'block' : 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

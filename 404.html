@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Page not found — The page you're looking for doesn't exist on SportifyTurf.">
+  <title>404 — Page Not Found · SportifyTurf</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚽</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800;900&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/error.css">
+</head>
+<body class="page-transition">
+  <!-- Minimal Navbar -->
+  <div style="position:fixed;top:0;left:0;right:0;z-index:100;padding:var(--space-4) var(--space-6);display:flex;align-items:center;justify-content:space-between;background:rgba(7,26,43,0.8);backdrop-filter:blur(20px);border-bottom:1px solid var(--border-color)">
+    <a href="index.html" style="display:flex;align-items:center;gap:var(--space-3);text-decoration:none">
+      <div style="width:36px;height:36px;background:linear-gradient(135deg,var(--electric-lime),var(--stadium-green));border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px">⚽</div>
+      <span style="font-family:var(--font-display);font-weight:900;color:var(--white)">Sportify<span style="color:var(--electric-lime)">Turf</span></span>
+    </a>
+    <div style="display:flex;gap:var(--space-3)">
+      <button id="theme-toggle" style="background:none;border:1px solid var(--border-color);border-radius:var(--radius-md);padding:var(--space-2) var(--space-3);cursor:pointer;color:var(--text-muted)"><span class="theme-icon">☀️</span></button>
+      <a href="index.html" class="btn btn-primary btn-sm">← Go Home</a>
+    </div>
+  </div>
+
+  <main class="error-page">
+    <div class="error-bg-glow error-bg-glow--lime"></div>
+    <div class="error-bg-glow error-bg-glow--green"></div>
+
+    <div class="error-content">
+      <div class="error-number">404</div>
+      <div class="error-icon">🏟️</div>
+      <h1 class="error-title">The Field is Empty</h1>
+      <p class="error-desc">
+        Looks like this page took a wrong turn at midfield. The turf you're looking for doesn't exist, was moved, or is currently under renovation.
+      </p>
+
+      <div class="error-actions">
+        <a href="index.html" class="btn btn-primary btn-lg">🏠 Back to Home</a>
+        <a href="dashboard.html" class="btn btn-ghost btn-lg">📅 Book a Turf</a>
+        <button class="btn btn-secondary btn-lg" onclick="window.history.back()">← Go Back</button>
+      </div>
+
+      <div class="error-suggestions">
+        <h3>🔍 Looking for something?</h3>
+        <div class="error-links">
+          <a href="index.html" class="error-link">🏠 Home</a>
+          <a href="dashboard.html" class="error-link">📅 Book Now</a>
+          <a href="services.html" class="error-link">🏟️ Services</a>
+          <a href="about.html" class="error-link">👥 About Us</a>
+          <a href="blog.html" class="error-link">📰 Blog</a>
+          <a href="contact.html" class="error-link">📞 Contact</a>
+          <a href="login.html" class="error-link">🔑 Sign In</a>
+          <a href="sitemap.html" class="error-link">🗺️ Sitemap</a>
+        </div>
+        <div style="margin-top:var(--space-6)">
+          <p style="font-size:var(--text-sm);color:var(--text-muted);margin-bottom:var(--space-3)">Or search for what you need:</p>
+          <div style="display:flex;gap:var(--space-3);max-width:400px;margin-inline:auto">
+            <input type="search" class="form-input" placeholder="Search SportifyTurf..." aria-label="Search" id="error-search">
+            <button class="btn btn-primary" onclick="window.SportifyApp.showToast('Search coming soon!','info')">Go</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fun Football Fact -->
+      <div style="margin-top:var(--space-8);padding:var(--space-5);background:rgba(184,230,46,0.05);border:1px solid rgba(184,230,46,0.1);border-radius:var(--radius-xl)">
+        <p style="font-size:var(--text-sm);color:var(--text-muted)">⚽ <strong style="color:var(--electric-lime)">Did you know?</strong> <span id="fun-fact">The fastest goal ever scored in professional football was just 2 seconds after kick-off!</span></p>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/main.js"></script>
+  <script>
+    const facts = [
+      'The fastest goal in professional football was scored in 2.8 seconds by Ricardo Oliveira in 1998.',
+      'Sachin Tendulkar holds the record for most runs in international cricket with 34,357 runs.',
+      'Badminton shuttlecocks can reach speeds of up to 493 km/h in competitive play.',
+      'A standard football pitch is between 100-130 yards long and 50-100 yards wide.',
+      'The first cricket World Cup was held in 1975 in England, won by West Indies.',
+      'Lin Dan of China is considered the greatest badminton player of all time with 5 World Championship titles.',
+    ];
+    document.getElementById('fun-fact').textContent = facts[Math.floor(Math.random() * facts.length)];
+  </script>
+</body>
+</html>
