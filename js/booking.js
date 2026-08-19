@@ -226,6 +226,67 @@ const initSportFilter = () => {
   if (turfGrid) renderTurfCards(turfGrid, TURFS);
 };
 
+// ── Quick Book Search ──────────────────────────────────────
+const LOCATION_MAP = {
+  'anna-nagar': 'anna nagar',
+  't-nagar': 't. nagar',
+  'adyar': 'adyar',
+  'omr': 'omr',
+  'velachery': 'velachery',
+  'porur': 'porur'
+};
+
+const initQuickBookSearch = () => {
+  const btn = document.getElementById('quick-search-btn');
+  const sportSel = document.getElementById('qb-sport');
+  const locSel = document.getElementById('qb-location');
+  const dateInput = document.getElementById('qb-date');
+  const turfGrid = document.getElementById('turf-grid');
+  if (!btn || !turfGrid) return;
+
+  dateInput.min = new Date().toISOString().split('T')[0];
+
+  btn.addEventListener('click', () => {
+    const sport = sportSel.value;
+    const loc = locSel.value;
+    const date = dateInput.value;
+
+    if (!sport && !loc && !date) {
+      window.SportifyApp?.showToast('Select a sport, area or date to search.', 'error');
+      return;
+    }
+    if (!date) {
+      window.SportifyApp?.showToast('Please choose a date.', 'error');
+      return;
+    }
+
+    let results = TURFS.filter(t => t.available);
+    if (sport) results = results.filter(t => t.sport === sport);
+    if (loc) {
+      const needle = LOCATION_MAP[loc] || loc;
+      results = results.filter(t => t.location.toLowerCase().includes(needle));
+    }
+
+    bookingState.activeSport = sport || 'all';
+    document.querySelectorAll('[data-sport-filter]').forEach(b => {
+      b.classList.toggle('active', b.getAttribute('data-sport-filter') === bookingState.activeSport);
+    });
+
+    if (results.length === 0) {
+      turfGrid.innerHTML = `
+        <div class="text-center" style="padding:var(--space-12) 0">
+          <p style="color:var(--text-muted);font-size:var(--text-lg)">
+            No turfs match your search. Try a different sport, area or date.
+          </p>
+        </div>`;
+    } else {
+      renderTurfCards(turfGrid, results);
+    }
+
+    document.getElementById('sport-heading')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+};
+
 // ── Slot Grid ──────────────────────────────────────────────
 const renderSlotGrid = (container) => {
   if (!container) return;
@@ -387,6 +448,7 @@ const confirmBooking = () => {
 // ── Init ───────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   initSportFilter();
+  initQuickBookSearch();
 });
 
 // Export

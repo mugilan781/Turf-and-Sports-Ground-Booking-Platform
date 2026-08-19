@@ -89,9 +89,31 @@
   transition: border-color var(--transition-base);
   appearance: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23B8C0C8' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
+background-repeat: no-repeat;
   background-position: right 1rem center;
   padding-right: 2.5rem;
+}
+
+/* Date picker: remove the unwanted chevron + native calendar icon theme */
+.quick-book-select[type="date"] {
+  background-image: none;
+  padding-right: 1.25rem;
+  color-scheme: dark;
+}
+
+[data-theme="light"] .quick-book-select[type="date"] {
+  color-scheme: light;
+}
+
+/* Native dropdown list contrast in dark mode */
+.quick-book-select option {
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+}
+
+[data-theme="light"] .quick-book-select option {
+  background-color: var(--white);
+  color: var(--text-primary);
 }
 
 [data-theme="light"] .quick-book-select {
