@@ -271,7 +271,14 @@
               <span class="badge badge-lime" style="margin-left:auto">Active</span>
             </div>
             <div style="display:flex;gap:var(--space-2);flex-wrap:wrap;margin-bottom:var(--space-4)">
-              ${['AR','KS','MP','DP','RK','VK','AK','JS'].map(m => `<div style="width:32px;height:32px;border-radius:50%;background:var(--bg-card-hover);border:1px solid var(--border-color);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:var(--text-muted)">${m}</div>`).join('')}
+              <div style="width:32px;height:32px;border-radius:50%;background:var(--bg-card-hover);border:1px solid var(--border-color);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:var(--text-muted)">AR</div>
+              <div style="width:32px;height:32px;border-radius:50%;background:var(--bg-card-hover);border:1px solid var(--border-color);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:var(--text-muted)">KS</div>
+              <div style="width:32px;height:32px;border-radius:50%;background:var(--bg-card-hover);border:1px solid var(--border-color);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:var(--text-muted)">MP</div>
+              <div style="width:32px;height:32px;border-radius:50%;background:var(--bg-card-hover);border:1px solid var(--border-color);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:var(--text-muted)">DP</div>
+              <div style="width:32px;height:32px;border-radius:50%;background:var(--bg-card-hover);border:1px solid var(--border-color);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:var(--text-muted)">RK</div>
+              <div style="width:32px;height:32px;border-radius:50%;background:var(--bg-card-hover);border:1px solid var(--border-color);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:var(--text-muted)">VK</div>
+              <div style="width:32px;height:32px;border-radius:50%;background:var(--bg-card-hover);border:1px solid var(--border-color);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:var(--text-muted)">AK</div>
+              <div style="width:32px;height:32px;border-radius:50%;background:var(--bg-card-hover);border:1px solid var(--border-color);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:var(--text-muted)">JS</div>
             </div>
             <div style="font-size:var(--text-sm);color:var(--text-muted);margin-bottom:var(--space-4)">
               🔄 Recurring: Every Saturday, 6:00 PM<br>
@@ -526,23 +533,38 @@
           <!-- Notifications -->
           <div class="booking-table-wrap" style="padding:var(--space-6)">
             <h3 style="margin-bottom:var(--space-5)">Notification Preferences</h3>
-            ${[
-              ['Booking Confirmations', 'Receive instant confirmation when a slot is booked'],
-              ['Reminders', 'Get reminded 1 hour before your booking'],
-              ['Promotional Offers', 'Receive exclusive deals and offers'],
-              ['Team Updates', 'Notifications about your team bookings'],
-            ].map(([title, desc]) => `
-              <div style="display:flex;align-items:center;justify-content:space-between;padding:var(--space-4);background:var(--bg-card-hover);border-radius:var(--radius-lg);margin-bottom:var(--space-3)">
-                <div>
-                  <p style="font-weight:600">${title}</p>
-                  <p style="font-size:var(--text-sm);color:var(--text-muted)">${desc}</p>
-                </div>
-                <label style="position:relative;display:inline-block;width:44px;height:24px;cursor:pointer">
-                  <input type="checkbox" checked style="opacity:0;width:0;height:0;position:absolute">
-                  <span style="position:absolute;inset:0;background:var(--electric-lime);border-radius:12px;transition:0.3s"></span>
-                </label>
-              </div>
-            `).join('')}
+            <!-- Booking Confirmations -->
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:var(--space-4);background:var(--bg-card-hover);border-radius:var(--radius-lg);margin-bottom:var(--space-3)">
+              <div><p style="font-weight:600">Booking Confirmations</p><p style="font-size:var(--text-sm);color:var(--text-muted)">Receive instant confirmation when a slot is booked</p></div>
+              <label style="position:relative;display:inline-block;width:44px;height:24px;cursor:pointer">
+                <input type="checkbox" checked style="opacity:0;width:0;height:0;position:absolute">
+                <span style="position:absolute;inset:0;background:var(--electric-lime);border-radius:12px;transition:0.3s"></span>
+              </label>
+            </div>
+            <!-- Reminders -->
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:var(--space-4);background:var(--bg-card-hover);border-radius:var(--radius-lg);margin-bottom:var(--space-3)">
+              <div><p style="font-weight:600">Reminders</p><p style="font-size:var(--text-sm);color:var(--text-muted)">Get reminded 1 hour before your booking</p></div>
+              <label style="position:relative;display:inline-block;width:44px;height:24px;cursor:pointer">
+                <input type="checkbox" checked style="opacity:0;width:0;height:0;position:absolute">
+                <span style="position:absolute;inset:0;background:var(--electric-lime);border-radius:12px;transition:0.3s"></span>
+              </label>
+            </div>
+            <!-- Promotional Offers -->
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:var(--space-4);background:var(--bg-card-hover);border-radius:var(--radius-lg);margin-bottom:var(--space-3)">
+              <div><p style="font-weight:600">Promotional Offers</p><p style="font-size:var(--text-sm);color:var(--text-muted)">Receive exclusive deals and offers</p></div>
+              <label style="position:relative;display:inline-block;width:44px;height:24px;cursor:pointer">
+                <input type="checkbox" checked style="opacity:0;width:0;height:0;position:absolute">
+                <span style="position:absolute;inset:0;background:var(--electric-lime);border-radius:12px;transition:0.3s"></span>
+              </label>
+            </div>
+            <!-- Team Updates -->
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:var(--space-4);background:var(--bg-card-hover);border-radius:var(--radius-lg);margin-bottom:var(--space-3)">
+              <div><p style="font-weight:600">Team Updates</p><p style="font-size:var(--text-sm);color:var(--text-muted)">Notifications about your team bookings</p></div>
+              <label style="position:relative;display:inline-block;width:44px;height:24px;cursor:pointer">
+                <input type="checkbox" checked style="opacity:0;width:0;height:0;position:absolute">
+                <span style="position:absolute;inset:0;background:var(--electric-lime);border-radius:12px;transition:0.3s"></span>
+              </label>
+            </div>
           </div>
 
           <!-- Danger Zone -->

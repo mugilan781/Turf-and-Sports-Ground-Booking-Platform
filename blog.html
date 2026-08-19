@@ -179,12 +179,12 @@
           <div class="sidebar-widget">
             <div class="sidebar-widget-title">📂 Categories</div>
             <div style="display:flex;flex-direction:column;gap:var(--space-2)">
-              ${[['⚽ Football','12'],['🏏 Cricket','8'],['🏸 Badminton','6'],['💪 Fitness','9'],['🏟️ Venues','5'],['👥 Team Sports','4']].map(([cat,count]) => `
-                <a href="#" style="display:flex;justify-content:space-between;align-items:center;padding:var(--space-2) var(--space-3);border-radius:var(--radius-md);color:var(--text-secondary);font-size:var(--text-sm);transition:all var(--transition-base);text-decoration:none" onmouseover="this.style.background='rgba(184,230,46,0.06)';this.style.color='var(--electric-lime)'" onmouseout="this.style.background='';this.style.color=''">
-                  <span>${cat}</span>
-                  <span style="background:var(--bg-card-hover);padding:2px 8px;border-radius:var(--radius-full);font-size:10px;font-weight:700">${count}</span>
-                </a>
-              `).join('')}
+              <a href="#" style="display:flex;justify-content:space-between;align-items:center;padding:var(--space-2) var(--space-3);border-radius:var(--radius-md);color:var(--text-secondary);font-size:var(--text-sm);transition:all var(--transition-base);text-decoration:none" onmouseover="this.style.background='rgba(184,230,46,0.06)';this.style.color='var(--electric-lime)'" onmouseout="this.style.background='';this.style.color=''"><span>⚽ Football</span><span style="background:var(--bg-card-hover);padding:2px 8px;border-radius:var(--radius-full);font-size:10px;font-weight:700">12</span></a>
+              <a href="#" style="display:flex;justify-content:space-between;align-items:center;padding:var(--space-2) var(--space-3);border-radius:var(--radius-md);color:var(--text-secondary);font-size:var(--text-sm);transition:all var(--transition-base);text-decoration:none" onmouseover="this.style.background='rgba(184,230,46,0.06)';this.style.color='var(--electric-lime)'" onmouseout="this.style.background='';this.style.color=''"><span>🏏 Cricket</span><span style="background:var(--bg-card-hover);padding:2px 8px;border-radius:var(--radius-full);font-size:10px;font-weight:700">8</span></a>
+              <a href="#" style="display:flex;justify-content:space-between;align-items:center;padding:var(--space-2) var(--space-3);border-radius:var(--radius-md);color:var(--text-secondary);font-size:var(--text-sm);transition:all var(--transition-base);text-decoration:none" onmouseover="this.style.background='rgba(184,230,46,0.06)';this.style.color='var(--electric-lime)'" onmouseout="this.style.background='';this.style.color=''"><span>🏸 Badminton</span><span style="background:var(--bg-card-hover);padding:2px 8px;border-radius:var(--radius-full);font-size:10px;font-weight:700">6</span></a>
+              <a href="#" style="display:flex;justify-content:space-between;align-items:center;padding:var(--space-2) var(--space-3);border-radius:var(--radius-md);color:var(--text-secondary);font-size:var(--text-sm);transition:all var(--transition-base);text-decoration:none" onmouseover="this.style.background='rgba(184,230,46,0.06)';this.style.color='var(--electric-lime)'" onmouseout="this.style.background='';this.style.color=''"><span>💪 Fitness</span><span style="background:var(--bg-card-hover);padding:2px 8px;border-radius:var(--radius-full);font-size:10px;font-weight:700">9</span></a>
+              <a href="#" style="display:flex;justify-content:space-between;align-items:center;padding:var(--space-2) var(--space-3);border-radius:var(--radius-md);color:var(--text-secondary);font-size:var(--text-sm);transition:all var(--transition-base);text-decoration:none" onmouseover="this.style.background='rgba(184,230,46,0.06)';this.style.color='var(--electric-lime)'" onmouseout="this.style.background='';this.style.color=''"><span>🏟️ Venues</span><span style="background:var(--bg-card-hover);padding:2px 8px;border-radius:var(--radius-full);font-size:10px;font-weight:700">5</span></a>
+              <a href="#" style="display:flex;justify-content:space-between;align-items:center;padding:var(--space-2) var(--space-3);border-radius:var(--radius-md);color:var(--text-secondary);font-size:var(--text-sm);transition:all var(--transition-base);text-decoration:none" onmouseover="this.style.background='rgba(184,230,46,0.06)';this.style.color='var(--electric-lime)'" onmouseout="this.style.background='';this.style.color=''"><span>👥 Team Sports</span><span style="background:var(--bg-card-hover);padding:2px 8px;border-radius:var(--radius-full);font-size:10px;font-weight:700">4</span></a>
             </div>
           </div>
 
@@ -192,15 +192,18 @@
           <div class="sidebar-widget">
             <div class="sidebar-widget-title">🔥 Trending</div>
             <div style="display:flex;flex-direction:column;gap:var(--space-4)">
-              ${[['Top 10 Football Turfs in Chennai','⚽ Venues','2.4K views'],['Pre-Match Nutrition Guide','💪 Fitness','1.8K views'],['Mastering Badminton Footwork','🏸 Badminton','1.2K views']].map(([title,cat,views],i) => `
-                <a href="blog-details.html" style="display:flex;gap:var(--space-3);align-items:flex-start;text-decoration:none">
-                  <div style="width:32px;height:32px;background:rgba(184,230,46,0.1);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--electric-lime);font-size:var(--text-sm);flex-shrink:0">${i+1}</div>
-                  <div>
-                    <div style="font-size:var(--text-sm);font-weight:600;color:var(--text-primary);margin-bottom:2px;transition:color var(--transition-base)">${title}</div>
-                    <div style="font-size:10px;color:var(--text-muted)">${cat} · ${views}</div>
-                  </div>
-                </a>
-              `).join('')}
+              <a href="blog-details.html" style="display:flex;gap:var(--space-3);align-items:flex-start;text-decoration:none">
+                <div style="width:32px;height:32px;background:rgba(184,230,46,0.1);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--electric-lime);font-size:var(--text-sm);flex-shrink:0">1</div>
+                <div><div style="font-size:var(--text-sm);font-weight:600;color:var(--text-primary);margin-bottom:2px">Top 10 Football Turfs in Chennai</div><div style="font-size:10px;color:var(--text-muted)">⚽ Venues · 2.4K views</div></div>
+              </a>
+              <a href="blog-details.html" style="display:flex;gap:var(--space-3);align-items:flex-start;text-decoration:none">
+                <div style="width:32px;height:32px;background:rgba(184,230,46,0.1);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--electric-lime);font-size:var(--text-sm);flex-shrink:0">2</div>
+                <div><div style="font-size:var(--text-sm);font-weight:600;color:var(--text-primary);margin-bottom:2px">Pre-Match Nutrition Guide</div><div style="font-size:10px;color:var(--text-muted)">💪 Fitness · 1.8K views</div></div>
+              </a>
+              <a href="blog-details.html" style="display:flex;gap:var(--space-3);align-items:flex-start;text-decoration:none">
+                <div style="width:32px;height:32px;background:rgba(184,230,46,0.1);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--electric-lime);font-size:var(--text-sm);flex-shrink:0">3</div>
+                <div><div style="font-size:var(--text-sm);font-weight:600;color:var(--text-primary);margin-bottom:2px">Mastering Badminton Footwork</div><div style="font-size:10px;color:var(--text-muted)">🏸 Badminton · 1.2K views</div></div>
+              </a>
             </div>
           </div>
 
@@ -208,7 +211,18 @@
           <div class="sidebar-widget">
             <div class="sidebar-widget-title">🏷️ Popular Tags</div>
             <div class="tag-cloud">
-              ${['Football','Cricket','Badminton','Fitness','Nutrition','Tactics','Coaching','Team Building','Venues','Chennai','Sports','Training'].map(tag => `<a href="#" class="chip" style="text-decoration:none">${tag}</a>`).join('')}
+              <a href="#" class="chip" style="text-decoration:none">Football</a>
+              <a href="#" class="chip" style="text-decoration:none">Cricket</a>
+              <a href="#" class="chip" style="text-decoration:none">Badminton</a>
+              <a href="#" class="chip" style="text-decoration:none">Fitness</a>
+              <a href="#" class="chip" style="text-decoration:none">Nutrition</a>
+              <a href="#" class="chip" style="text-decoration:none">Tactics</a>
+              <a href="#" class="chip" style="text-decoration:none">Coaching</a>
+              <a href="#" class="chip" style="text-decoration:none">Team Building</a>
+              <a href="#" class="chip" style="text-decoration:none">Venues</a>
+              <a href="#" class="chip" style="text-decoration:none">Chennai</a>
+              <a href="#" class="chip" style="text-decoration:none">Sports</a>
+              <a href="#" class="chip" style="text-decoration:none">Training</a>
             </div>
           </div>
 
@@ -265,21 +279,26 @@
         <h2 class="section-title reveal">Sports <span class="accent">FAQs</span></h2>
       </div>
       <div class="faq-list">
-        ${[
-          ['How do I book a turf on SportifyTurf?', 'Simply browse available venues by sport and location, select your preferred date and time slot, and complete payment. You\'ll receive an instant confirmation with a QR code.'],
-          ['Can I cancel my booking after payment?', 'Yes. Bookings can be cancelled free of charge up to 12 hours before the scheduled time. Late cancellations may incur a 25% fee.'],
-          ['Do you offer group or team packages?', 'Absolutely! Our Team Package offers 20 sessions per month at a discounted rate with guaranteed recurring slots. Contact our sales team for custom pricing.'],
-          ['What is the minimum booking duration?', 'Our minimum booking duration is 1 hour. You can book in 30-minute increments for sessions longer than 1 hour.'],
-          ['Are the venues available 24/7?', 'Most venues operate from 5:00 AM to 11:00 PM. Some premium venues offer extended hours on weekends. Check individual venue listings for exact timings.'],
-        ].map(([q,a]) => `
-          <div class="faq-item reveal">
-            <button class="faq-trigger" aria-expanded="false">
-              <span class="faq-question">${q}</span>
-              <div class="faq-icon">+</div>
-            </button>
-            <div class="faq-body"><div class="faq-answer">${a}</div></div>
-          </div>
-        `).join('')}
+        <div class="faq-item reveal">
+          <button class="faq-trigger" aria-expanded="false"><span class="faq-question">How do I book a turf on SportifyTurf?</span><div class="faq-icon">+</div></button>
+          <div class="faq-body"><div class="faq-answer">Simply browse available venues by sport and location, select your preferred date and time slot, and complete payment. You'll receive an instant confirmation with a QR code.</div></div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-trigger" aria-expanded="false"><span class="faq-question">Can I cancel my booking after payment?</span><div class="faq-icon">+</div></button>
+          <div class="faq-body"><div class="faq-answer">Yes. Bookings can be cancelled free of charge up to 12 hours before the scheduled time. Late cancellations may incur a 25% fee.</div></div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-trigger" aria-expanded="false"><span class="faq-question">Do you offer group or team packages?</span><div class="faq-icon">+</div></button>
+          <div class="faq-body"><div class="faq-answer">Absolutely! Our Team Package offers 20 sessions per month at a discounted rate with guaranteed recurring slots. Contact our sales team for custom pricing.</div></div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-trigger" aria-expanded="false"><span class="faq-question">What is the minimum booking duration?</span><div class="faq-icon">+</div></button>
+          <div class="faq-body"><div class="faq-answer">Our minimum booking duration is 1 hour. You can book in 30-minute increments for sessions longer than 1 hour.</div></div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-trigger" aria-expanded="false"><span class="faq-question">Are the venues available 24/7?</span><div class="faq-icon">+</div></button>
+          <div class="faq-body"><div class="faq-answer">Most venues operate from 5:00 AM to 11:00 PM. Some premium venues offer extended hours on weekends. Check individual venue listings for exact timings.</div></div>
+        </div>
       </div>
     </div>
   </section>

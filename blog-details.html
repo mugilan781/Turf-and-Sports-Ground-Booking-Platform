@@ -159,7 +159,12 @@
         <!-- Tags + Share -->
         <div style="display:flex;justify-content:space-between;align-items:center;padding:var(--space-5) 0;border-top:1px solid var(--border-color);border-bottom:1px solid var(--border-color);margin-bottom:var(--space-10);flex-wrap:wrap;gap:var(--space-4)">
           <div style="display:flex;gap:var(--space-2);flex-wrap:wrap">
-            ${['Football','Tactics','Amateur Football','Coaching','Strategy','5-a-side'].map(tag => `<a href="blog.html" class="chip" style="text-decoration:none">${tag}</a>`).join('')}
+            <a href="blog.html" class="chip" style="text-decoration:none">Football</a>
+            <a href="blog.html" class="chip" style="text-decoration:none">Tactics</a>
+            <a href="blog.html" class="chip" style="text-decoration:none">Amateur Football</a>
+            <a href="blog.html" class="chip" style="text-decoration:none">Coaching</a>
+            <a href="blog.html" class="chip" style="text-decoration:none">Strategy</a>
+            <a href="blog.html" class="chip" style="text-decoration:none">5-a-side</a>
           </div>
           <div style="display:flex;gap:var(--space-2)">
             <button class="btn btn-secondary btn-sm" onclick="window.SportifyApp.showToast('Sharing on WhatsApp...','info')">📱 WhatsApp</button>
@@ -246,16 +251,18 @@
         <div class="sidebar-widget">
           <div class="sidebar-widget-title">📖 Related Articles</div>
           <div style="display:flex;flex-direction:column;gap:var(--space-4)">
-            ${[
-              ['Top 10 Football Turfs in Chennai','https://images.unsplash.com/photo-1575361204480-aadea25e6e68?w=200&q=80'],
-              ['Pre-Match Nutrition Guide for Footballers','https://images.unsplash.com/photo-1556056504-5c7696c4c28d?w=200&q=80'],
-              ['How to Organize a 5-a-side Tournament','https://images.unsplash.com/photo-1529900748604-07564a03e7a6?w=200&q=80'],
-            ].map(([title,img]) => `
-              <a href="blog-details.html" style="display:flex;gap:var(--space-3);align-items:flex-start;text-decoration:none">
-                <img src="${img}" alt="${title}" style="width:60px;height:50px;object-fit:cover;border-radius:var(--radius-md);flex-shrink:0" loading="lazy">
-                <div style="font-size:var(--text-sm);font-weight:600;color:var(--text-primary);line-height:var(--lh-snug)">${title}</div>
-              </a>
-            `).join('')}
+            <a href="blog-details.html" style="display:flex;gap:var(--space-3);align-items:flex-start;text-decoration:none">
+              <img src="https://images.unsplash.com/photo-1575361204480-aadea25e6e68?w=200&q=80" alt="Top 10 Football Turfs in Chennai" style="width:60px;height:50px;object-fit:cover;border-radius:var(--radius-md);flex-shrink:0" loading="lazy">
+              <div style="font-size:var(--text-sm);font-weight:600;color:var(--text-primary);line-height:var(--lh-snug)">Top 10 Football Turfs in Chennai</div>
+            </a>
+            <a href="blog-details.html" style="display:flex;gap:var(--space-3);align-items:flex-start;text-decoration:none">
+              <img src="https://images.unsplash.com/photo-1556056504-5c7696c4c28d?w=200&q=80" alt="Pre-Match Nutrition Guide for Footballers" style="width:60px;height:50px;object-fit:cover;border-radius:var(--radius-md);flex-shrink:0" loading="lazy">
+              <div style="font-size:var(--text-sm);font-weight:600;color:var(--text-primary);line-height:var(--lh-snug)">Pre-Match Nutrition Guide for Footballers</div>
+            </a>
+            <a href="blog-details.html" style="display:flex;gap:var(--space-3);align-items:flex-start;text-decoration:none">
+              <img src="https://images.unsplash.com/photo-1529900748604-07564a03e7a6?w=200&q=80" alt="How to Organize a 5-a-side Tournament" style="width:60px;height:50px;object-fit:cover;border-radius:var(--radius-md);flex-shrink:0" loading="lazy">
+              <div style="font-size:var(--text-sm);font-weight:600;color:var(--text-primary);line-height:var(--lh-snug)">How to Organize a 5-a-side Tournament</div>
+            </a>
           </div>
         </div>
 

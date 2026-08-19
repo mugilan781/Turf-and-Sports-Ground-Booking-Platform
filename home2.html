@@ -214,13 +214,26 @@
         <div class="partner-logo">📱 Google Partner</div>
       </div>
       <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-6);margin-top:var(--space-12)">
-        ${[['🔒','Secure Payments','256-bit SSL encryption on all transactions'],['⭐','4.9★ Rating','Average rating from 12,000+ reviews'],['⚡','Instant Booking','Confirmation in under 30 seconds'],['🛡️','Money-Back','100% refund if venue fails to deliver']].map(([icon,title,desc]) => `
-          <div class="card reveal" style="padding:var(--space-6);text-align:center">
-            <div style="font-size:2.5rem;margin-bottom:var(--space-3)">${icon}</div>
-            <div style="font-weight:700;margin-bottom:var(--space-2)">${title}</div>
-            <div style="font-size:var(--text-sm);color:var(--text-muted)">${desc}</div>
-          </div>
-        `).join('')}
+        <div class="card reveal" style="padding:var(--space-6);text-align:center">
+          <div style="font-size:2.5rem;margin-bottom:var(--space-3)">🔒</div>
+          <div style="font-weight:700;margin-bottom:var(--space-2)">Secure Payments</div>
+          <div style="font-size:var(--text-sm);color:var(--text-muted)">256-bit SSL encryption on all transactions</div>
+        </div>
+        <div class="card reveal" style="padding:var(--space-6);text-align:center">
+          <div style="font-size:2.5rem;margin-bottom:var(--space-3)">⭐</div>
+          <div style="font-weight:700;margin-bottom:var(--space-2)">4.9★ Rating</div>
+          <div style="font-size:var(--text-sm);color:var(--text-muted)">Average rating from 12,000+ reviews</div>
+        </div>
+        <div class="card reveal" style="padding:var(--space-6);text-align:center">
+          <div style="font-size:2.5rem;margin-bottom:var(--space-3)">⚡</div>
+          <div style="font-weight:700;margin-bottom:var(--space-2)">Instant Booking</div>
+          <div style="font-size:var(--text-sm);color:var(--text-muted)">Confirmation in under 30 seconds</div>
+        </div>
+        <div class="card reveal" style="padding:var(--space-6);text-align:center">
+          <div style="font-size:2.5rem;margin-bottom:var(--space-3)">🛡️</div>
+          <div style="font-weight:700;margin-bottom:var(--space-2)">Money-Back</div>
+          <div style="font-size:var(--text-sm);color:var(--text-muted)">100% refund if venue fails to deliver</div>
+        </div>
       </div>
     </div>
   </section>
@@ -233,18 +246,26 @@
         <h2 class="section-title reveal">Frequently Asked <span class="accent">Questions</span></h2>
       </div>
       <div class="faq-list">
-        ${[
-          ['What sports can I book on SportifyTurf?','Football (5-a-side & 7-a-side turfs), Cricket (full grounds & practice nets), and Badminton (indoor professional courts). More sports coming soon!'],
-          ['How far in advance can I book a slot?','You can book up to 30 days in advance. Popular venues fill up quickly on weekends, so we recommend booking at least 3-4 days ahead.'],
-          ['What payment methods do you accept?','We accept all major UPI apps (PhonePe, Google Pay, Paytm), debit/credit cards (Visa, Mastercard, RuPay), and net banking.'],
-          ['Is there a loyalty program?','Yes! Every booking earns you SportifyPoints. Collect 1000 points to get ₹100 off your next booking. Gold members get 2x points on every session.'],
-          ['Can I modify my booking after confirmation?','Bookings can be modified up to 6 hours before the session start time (subject to availability). Open your booking in the dashboard and click "Modify".'],
-        ].map(([q,a]) => `
-          <div class="faq-item reveal">
-            <button class="faq-trigger" aria-expanded="false"><span class="faq-question">${q}</span><div class="faq-icon">+</div></button>
-            <div class="faq-body"><div class="faq-answer">${a}</div></div>
-          </div>
-        `).join('')}
+        <div class="faq-item reveal">
+          <button class="faq-trigger" aria-expanded="false"><span class="faq-question">What sports can I book on SportifyTurf?</span><div class="faq-icon">+</div></button>
+          <div class="faq-body"><div class="faq-answer">Football (5-a-side &amp; 7-a-side turfs), Cricket (full grounds &amp; practice nets), and Badminton (indoor professional courts). More sports coming soon!</div></div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-trigger" aria-expanded="false"><span class="faq-question">How far in advance can I book a slot?</span><div class="faq-icon">+</div></button>
+          <div class="faq-body"><div class="faq-answer">You can book up to 30 days in advance. Popular venues fill up quickly on weekends, so we recommend booking at least 3-4 days ahead.</div></div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-trigger" aria-expanded="false"><span class="faq-question">What payment methods do you accept?</span><div class="faq-icon">+</div></button>
+          <div class="faq-body"><div class="faq-answer">We accept all major UPI apps (PhonePe, Google Pay, Paytm), debit/credit cards (Visa, Mastercard, RuPay), and net banking.</div></div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-trigger" aria-expanded="false"><span class="faq-question">Is there a loyalty program?</span><div class="faq-icon">+</div></button>
+          <div class="faq-body"><div class="faq-answer">Yes! Every booking earns you SportifyPoints. Collect 1000 points to get ₹100 off your next booking. Gold members get 2x points on every session.</div></div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-trigger" aria-expanded="false"><span class="faq-question">Can I modify my booking after confirmation?</span><div class="faq-icon">+</div></button>
+          <div class="faq-body"><div class="faq-answer">Bookings can be modified up to 6 hours before the session start time (subject to availability). Open your booking in the dashboard and click "Modify".</div></div>
+        </div>
       </div>
       <div style="text-align:center;margin-top:var(--space-8)">
         <a href="contact.html" class="btn btn-outline btn-lg">Have More Questions? Contact Us →</a>
