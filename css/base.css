@@ -137,12 +137,12 @@ p {
   margin-bottom: var(--space-4);
 }
 
-.section-title .accent {
+.accent {
   color: var(--electric-lime);
   position: relative;
 }
 
-[data-theme="light"] .section-title .accent {
+[data-theme="light"] .accent {
   color: var(--stadium-green);
 }
 

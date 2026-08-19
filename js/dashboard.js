@@ -37,16 +37,18 @@ const NOTIFICATIONS = [
 ];
 
 // ── Dashboard Navigation ───────────────────────────────────
-const initDashboardNav = () => {
+const activatePanel = (panelId) => {
   const navItems = document.querySelectorAll('.dashboard-nav-item[data-panel]');
   const panels = document.querySelectorAll('.dashboard-panel');
 
-  const activatePanel = (panelId) => {
-    navItems.forEach(item => item.classList.toggle('active', item.getAttribute('data-panel') === panelId));
-    panels.forEach(panel => panel.classList.toggle('active', panel.getAttribute('id') === `panel-${panelId}`));
-    // Update URL hash
-    history.replaceState(null, '', `#${panelId}`);
-  };
+  navItems.forEach(item => item.classList.toggle('active', item.getAttribute('data-panel') === panelId));
+  panels.forEach(panel => panel.classList.toggle('active', panel.getAttribute('id') === `panel-${panelId}`));
+  // Update URL hash
+  history.replaceState(null, '', `#${panelId}`);
+};
+
+const initDashboardNav = () => {
+  const navItems = document.querySelectorAll('.dashboard-nav-item[data-panel]');
 
   navItems.forEach(item => {
     item.addEventListener('click', () => {
@@ -157,7 +159,6 @@ const renderNotifications = () => {
   `).join('');
 };
 
-
 // ── Populate Profile Form ──────────────────────────────────
 const populateProfile = () => {
   const fields = {
@@ -205,8 +206,59 @@ const initMobileSidebar = () => {
 // ── Add Booking from external module ──────────────────────
 window.addBookingToHistory = (state) => {
   if (!state.selectedTurf || !state.selectedSlot) return;
-  // In a real app, this would push to API
   console.log('New booking added:', state);
+};
+
+// ── Deep-Link URL Query Parameter Handler for Direct Slot Booking ──
+const checkBookingQueryParams = () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const turfParam = urlParams.get('turf') || urlParams.get('venue');
+  const slotParam = urlParams.get('slot');
+
+  if (turfParam || slotParam) {
+    // 1. Switch to Book panel
+    activatePanel('book');
+
+    // 2. Open booking modal with requested turf and slot
+    const executeBookingOpen = () => {
+      const turfsList = window.BookingSystem?.TURFS || [];
+      let turf = null;
+
+      if (turfParam) {
+        turf = turfsList.find(t => t.id == turfParam || t.name.toLowerCase().includes(turfParam.toLowerCase()));
+      }
+      if (!turf && turfsList.length > 0) {
+        turf = turfsList[0];
+      }
+
+      if (turf && window.BookingSystem?.openBookingModal) {
+        window.BookingSystem.openBookingModal(turf);
+
+        // 3. Select the specified slot
+        if (slotParam) {
+          setTimeout(() => {
+            const slotContainer = document.getElementById('slot-container');
+            if (slotContainer) {
+              const cleanTarget = slotParam.trim().toLowerCase().replace(/^0/, '');
+              const slotBtns = slotContainer.querySelectorAll('.slot-btn');
+              for (const btn of slotBtns) {
+                const btnClean = btn.textContent.trim().toLowerCase().replace(/^0/, '');
+                if (btnClean === cleanTarget || btn.textContent.trim().toLowerCase() === slotParam.trim().toLowerCase()) {
+                  if (!btn.disabled) {
+                    btn.click();
+                  }
+                  break;
+                }
+              }
+            }
+          }, 120);
+        }
+      }
+    };
+
+    // Run after DOM and scripts ready
+    setTimeout(executeBookingOpen, 250);
+  }
 };
 
 // ── Init ───────────────────────────────────────────────────
@@ -218,4 +270,5 @@ document.addEventListener('DOMContentLoaded', () => {
   populateProfile();
   initProfileSave();
   initMobileSidebar();
+  checkBookingQueryParams();
 });
