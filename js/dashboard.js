@@ -126,7 +126,7 @@ const renderBookingHistory = () => {
       <td><span class="booking-status booking-status--${b.status}">${b.status.charAt(0).toUpperCase() + b.status.slice(1)}</span></td>
       <td>
         ${b.status === 'confirmed' ? `<button class="btn btn-sm btn-secondary" onclick="window.SportifyApp.showToast('Booking ${b.id} cancelled.', 'info')">Cancel</button>` : ''}
-        ${b.status === 'pending' ? `<button class="btn btn-sm btn-primary">Pay Now</button>` : ''}
+        ${b.status === 'pending' ? `<button class="btn btn-sm btn-primary" onclick="window.SportifyApp.showToast('Redirecting to secure payment for ${b.id}...', 'info')">Pay Now</button>` : ''}
       </td>
     </tr>
   `).join('');

@@ -346,8 +346,8 @@
               Location: Premier Football Arena, Anna Nagar
             </div>
             <div style="display:flex;gap:var(--space-3)">
-              <button class="btn btn-primary btn-sm">Book Next Session</button>
-              <button class="btn btn-secondary btn-sm">Manage Team</button>
+              <button class="btn btn-primary btn-sm" onclick="document.querySelector('[data-panel=\'book\' ]').click()">Book Next Session</button>
+              <button class="btn btn-secondary btn-sm" onclick="document.querySelector('[data-panel=\'team\' ]').click()">Manage Team</button>
             </div>
           </div>
 
@@ -445,7 +445,7 @@
                 </div>
               </div>
             </div>
-            <button class="btn btn-outline btn-sm" style="margin-top:var(--space-4)">+ Add Payment Method</button>
+            <button class="btn btn-outline btn-sm" style="margin-top:var(--space-4)" onclick="window.SportifyApp.showToast('Adding payment methods via UPI...', 'info')">+ Add Payment Method</button>
           </div>
         </div>
 
@@ -526,7 +526,7 @@
                 <svg class="v-icon icon-xs v-icon-lime" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M6 4h12v6c0 3.31-2.69 6-6 6s-6-2.69-6-6V4z"/></svg>
                 Gold Member · Since Jan 2025
               </p>
-              <button class="btn btn-secondary btn-sm">Change Photo</button>
+              <button class="btn btn-secondary btn-sm" onclick="window.SportifyApp.showToast('Photo upload coming soon!', 'info')">Change Photo</button>
             </div>
           </div>
 
@@ -559,7 +559,7 @@
             </div>
             <div style="margin-top:var(--space-6);display:flex;gap:var(--space-3)">
               <button type="submit" id="save-profile-btn" class="btn btn-primary">Save Changes</button>
-              <button type="button" class="btn btn-secondary">Cancel</button>
+              <button type="button" class="btn btn-secondary" onclick="document.getElementById('profile-form').reset();window.SportifyApp.showToast('Changes discarded.', 'info')">Cancel</button>
             </div>
           </form>
         </div>
@@ -600,33 +600,33 @@
             <!-- Booking Confirmations -->
             <div style="display:flex;align-items:center;justify-content:space-between;padding:var(--space-4);background:var(--bg-card-hover);border-radius:var(--radius-lg);margin-bottom:var(--space-3)">
               <div><p style="font-weight:600">Booking Confirmations</p><p style="font-size:var(--text-sm);color:var(--text-muted)">Receive instant confirmation when a slot is booked</p></div>
-              <label style="position:relative;display:inline-block;width:44px;height:24px;cursor:pointer">
-                <input type="checkbox" checked style="opacity:0;width:0;height:0;position:absolute">
-                <span style="position:absolute;inset:0;background:var(--electric-lime);border-radius:12px;transition:0.3s"></span>
+              <label class="settings-toggle">
+                <input type="checkbox" checked>
+                <span class="settings-toggle__track"><span class="settings-toggle__thumb"></span></span>
               </label>
             </div>
             <!-- Reminders -->
             <div style="display:flex;align-items:center;justify-content:space-between;padding:var(--space-4);background:var(--bg-card-hover);border-radius:var(--radius-lg);margin-bottom:var(--space-3)">
               <div><p style="font-weight:600">Reminders</p><p style="font-size:var(--text-sm);color:var(--text-muted)">Get reminded 1 hour before your booking</p></div>
-              <label style="position:relative;display:inline-block;width:44px;height:24px;cursor:pointer">
-                <input type="checkbox" checked style="opacity:0;width:0;height:0;position:absolute">
-                <span style="position:absolute;inset:0;background:var(--electric-lime);border-radius:12px;transition:0.3s"></span>
+              <label class="settings-toggle">
+                <input type="checkbox" checked>
+                <span class="settings-toggle__track"><span class="settings-toggle__thumb"></span></span>
               </label>
             </div>
             <!-- Promotional Offers -->
             <div style="display:flex;align-items:center;justify-content:space-between;padding:var(--space-4);background:var(--bg-card-hover);border-radius:var(--radius-lg);margin-bottom:var(--space-3)">
               <div><p style="font-weight:600">Promotional Offers</p><p style="font-size:var(--text-sm);color:var(--text-muted)">Receive exclusive deals and offers</p></div>
-              <label style="position:relative;display:inline-block;width:44px;height:24px;cursor:pointer">
-                <input type="checkbox" checked style="opacity:0;width:0;height:0;position:absolute">
-                <span style="position:absolute;inset:0;background:var(--electric-lime);border-radius:12px;transition:0.3s"></span>
+              <label class="settings-toggle">
+                <input type="checkbox" checked>
+                <span class="settings-toggle__track"><span class="settings-toggle__thumb"></span></span>
               </label>
             </div>
             <!-- Team Updates -->
             <div style="display:flex;align-items:center;justify-content:space-between;padding:var(--space-4);background:var(--bg-card-hover);border-radius:var(--radius-lg);margin-bottom:var(--space-3)">
               <div><p style="font-weight:600">Team Updates</p><p style="font-size:var(--text-sm);color:var(--text-muted)">Notifications about your team bookings</p></div>
-              <label style="position:relative;display:inline-block;width:44px;height:24px;cursor:pointer">
-                <input type="checkbox" checked style="opacity:0;width:0;height:0;position:absolute">
-                <span style="position:absolute;inset:0;background:var(--electric-lime);border-radius:12px;transition:0.3s"></span>
+              <label class="settings-toggle">
+                <input type="checkbox" checked>
+                <span class="settings-toggle__track"><span class="settings-toggle__thumb"></span></span>
               </label>
             </div>
           </div>

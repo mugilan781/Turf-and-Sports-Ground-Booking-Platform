@@ -460,3 +460,67 @@
   .booking-table th:nth-child(3),
   .booking-table td:nth-child(3) { display: none; }
 }
+
+/* ── Settings Toggle Switch ── */
+.settings-toggle {
+  position: relative;
+  display: inline-block;
+  width: 46px;
+  height: 26px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.settings-toggle input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.settings-toggle__track {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.22);
+  transition: all var(--transition-base);
+}
+.settings-toggle__thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--ice-white);
+  transition: transform var(--transition-base);
+}
+.settings-toggle input:checked + .settings-toggle__track {
+  background: var(--electric-lime);
+  border-color: var(--electric-lime);
+}
+.settings-toggle input:checked + .settings-toggle__track .settings-toggle__thumb {
+  transform: translateX(20px);
+  background: var(--midnight-navy);
+}
+.settings-toggle input:focus-visible + .settings-toggle__track {
+  box-shadow: 0 0 0 3px rgba(184, 230, 46, 0.35);
+}
+
+[data-theme="light"] .settings-toggle__track {
+  background: rgba(7, 26, 43, 0.1);
+  border-color: rgba(7, 26, 43, 0.22);
+}
+[data-theme="light"] .settings-toggle__thumb {
+  background: var(--midnight-navy);
+}
+[data-theme="light"] .settings-toggle input:checked + .settings-toggle__track {
+  background: var(--stadium-green);
+  border-color: var(--stadium-green);
+}
+[data-theme="light"] .settings-toggle input:checked + .settings-toggle__track .settings-toggle__thumb {
+  transform: translateX(20px);
+  background: var(--ice-white);
+}
+
+[dir="rtl"] .settings-toggle__thumb { left: auto; right: 3px; }
+[dir="rtl"] .settings-toggle input:checked + .settings-toggle__track .settings-toggle__thumb { transform: translateX(-20px); }
