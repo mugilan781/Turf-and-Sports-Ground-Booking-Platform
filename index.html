@@ -562,7 +562,7 @@
 
       <div class="testimonial-nav">
         <button class="btn btn-secondary btn-icon" id="testimonialPrev" aria-label="Previous testimonial">‹</button>
-        <button class="btn btn-primary btn-icon" id="testimonialNext" aria-label="Next testimonial">›</button>
+        <button class="btn btn-secondary btn-icon" id="testimonialNext" aria-label="Next testimonial">›</button>
       </div>
     </div>
   </section>
@@ -695,9 +695,10 @@
     const prevBtn = document.getElementById('testimonialPrev');
     const nextBtn = document.getElementById('testimonialNext');
     if (track) {
+      const carousel = track.parentElement;
       const step = () => (track.querySelector('.testimonial-card')?.offsetWidth || 0) + 24;
-      prevBtn?.addEventListener('click', () => track.scrollBy({ left: -step(), behavior: 'smooth' }));
-      nextBtn?.addEventListener('click', () => track.scrollBy({ left: step(), behavior: 'smooth' }));
+      prevBtn?.addEventListener('click', () => carousel.scrollBy({ left: -step(), behavior: 'smooth' }));
+      nextBtn?.addEventListener('click', () => carousel.scrollBy({ left: step(), behavior: 'smooth' }));
     }
 
     // Sport filter ARIA update

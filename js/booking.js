@@ -139,11 +139,13 @@ const renderTurfCards = (container, turfs) => {
     return '';
   };
 
+  const getBadgeClass = (badge) => badge ? `badge-${badge.toLowerCase().replace(/\s+/g, '-')}` : '';
+
   container.innerHTML = turfs.map(turf => `
     <div class="turf-card card reveal" data-sport="${turf.sport}" data-id="${turf.id}">
       <div class="turf-card__image">
         <img src="${turf.image}" alt="${turf.name}" loading="lazy">
-        ${turf.badge ? `<span class="turf-card__badge badge badge-lime">${turf.badge}</span>` : ''}
+        ${turf.badge ? `<span class="turf-card__badge badge ${getBadgeClass(turf.badge)}">${turf.badge}</span>` : ''}
         <div class="turf-card__sport-icon sport-icon sport-icon--${turf.sport}">
           ${getSportSvg(turf.sport)}
         </div>
