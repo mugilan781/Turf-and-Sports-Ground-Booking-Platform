@@ -257,6 +257,15 @@
   position: relative;
 }
 
+.navbar__profile::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 12px;
+}
+
 .navbar__profile-menu {
   position: absolute;
   top: calc(100% + 8px);
