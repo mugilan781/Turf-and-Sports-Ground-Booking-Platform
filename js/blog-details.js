@@ -404,7 +404,7 @@
     if ((el = document.getElementById('comments-list'))) el.innerHTML = buildComments(post);
     if ((el = document.getElementById('cta-widget'))) {
       el.innerHTML =
-        '<div class="icon-circle icon-circle--lime" style="margin:0 auto var(--space-3);width:48px;height:48px"><span data-icon="' + post.cta.icon + '" data-icon-class="v-icon icon-md v-icon-navy"></span></div>' +
+        '<div class="icon-circle" style="margin:0 auto var(--space-3);width:48px;height:48px;background:rgba(7,26,43,0.75);border-color:rgba(7,26,43,0.4);color:var(--ice-white)"><span data-icon="' + post.cta.icon + '" data-icon-class="v-icon icon-md"></span></div>' +
         '<h3 style="color:white;margin-bottom:var(--space-2)">Ready to Play?</h3>' +
         '<p style="color:rgba(255,255,255,0.75);font-size:var(--text-sm);margin-bottom:var(--space-4)">' + post.cta.text + '</p>' +
         '<a href="dashboard.html" class="btn btn-primary" style="width:100%;justify-content:center">Book Now \u2192</a>';
