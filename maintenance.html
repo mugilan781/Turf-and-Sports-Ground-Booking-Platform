@@ -6,13 +6,14 @@
   <meta name="description" content="SportifyTurf is currently undergoing scheduled maintenance. We'll be back soon with exciting new features!">
   <meta name="robots" content="noindex, nofollow">
   <title>Maintenance — SportifyTurf · Back Soon</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚽</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23B8E62E'><circle cx='12' cy='12' r='10'/><polygon points='12 6.5 8 9.5 9.5 14.5 14.5 16 9.5' fill='%23071A2B'/></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800;900&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/error.css">
+  <script src="js/icons.js"></script>
 </head>
 <body>
 
@@ -20,12 +21,16 @@
     <!-- Logo -->
     <div class="maintenance-content">
       <a href="index.html" class="maintenance-logo" aria-label="SportifyTurf Home">
-        <div class="maintenance-logo-mark">⚽</div>
+        <div class="maintenance-logo-mark">
+          <svg class="v-icon icon-md v-icon-navy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/><polygon points="12 6.5 8 9.5 9.5 14.5 14.5 16 9.5" fill="currentColor" opacity="0.35"/></svg>
+        </div>
         <div class="maintenance-logo-name">Sportify<span>Turf</span></div>
       </a>
 
       <!-- Spinning Icon -->
-      <div class="maintenance-icon" aria-hidden="true">⚙️</div>
+      <div class="maintenance-icon" aria-hidden="true" style="display:flex;align-items:center;justify-content:center;margin-bottom:var(--space-6)">
+        <svg class="v-icon icon-2xl v-icon-lime" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="animation:spin 8s linear infinite"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      </div>
 
       <h1 class="maintenance-title">
         We're <span class="accent">Upgrading</span><br>the Pitch!
@@ -64,29 +69,32 @@
 
       <!-- What We're Working On -->
       <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-2xl);padding:var(--space-6);margin-bottom:var(--space-8);text-align:left;max-width:480px;margin-inline:auto">
-        <h3 style="color:white;margin-bottom:var(--space-4);font-size:var(--text-base)">🔧 What We're Working On:</h3>
+        <h3 style="color:white;margin-bottom:var(--space-4);font-size:var(--text-base);display:flex;align-items:center;gap:6px">
+          <svg class="v-icon icon-xs v-icon-lime" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          What We're Working On:
+        </h3>
         <div style="display:flex;flex-direction:column;gap:var(--space-3)">
           <!-- Task: Complete -->
           <div style="display:flex;align-items:center;gap:var(--space-3)">
-            <span style="font-size:var(--text-lg)">✅</span>
+            <svg class="v-icon icon-sm v-icon-lime" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
             <span style="font-size:var(--text-sm);color:rgba(255,255,255,0.8);flex:1">Improved booking speed</span>
             <span style="font-size:10px;font-weight:700;padding:2px 8px;border-radius:var(--radius-full);background:rgba(34,197,94,0.15);color:var(--success)">Complete</span>
           </div>
           <!-- Task: Complete -->
           <div style="display:flex;align-items:center;gap:var(--space-3)">
-            <span style="font-size:var(--text-lg)">✅</span>
+            <svg class="v-icon icon-sm v-icon-lime" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
             <span style="font-size:var(--text-sm);color:rgba(255,255,255,0.8);flex:1">Enhanced venue search filters</span>
             <span style="font-size:10px;font-weight:700;padding:2px 8px;border-radius:var(--radius-full);background:rgba(34,197,94,0.15);color:var(--success)">Complete</span>
           </div>
           <!-- Task: In Progress -->
           <div style="display:flex;align-items:center;gap:var(--space-3)">
-            <span style="font-size:var(--text-lg)">🔄</span>
+            <svg class="v-icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--warning)"><path d="M23 4v6h-6"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
             <span style="font-size:var(--text-sm);color:rgba(255,255,255,0.8);flex:1">New loyalty rewards system</span>
             <span style="font-size:10px;font-weight:700;padding:2px 8px;border-radius:var(--radius-full);background:rgba(245,158,11,0.15);color:var(--warning)">In Progress</span>
           </div>
           <!-- Task: Coming Soon -->
           <div style="display:flex;align-items:center;gap:var(--space-3)">
-            <span style="font-size:var(--text-lg)">⏳</span>
+            <svg class="v-icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:rgba(255,255,255,0.4)"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             <span style="font-size:var(--text-sm);color:rgba(255,255,255,0.8);flex:1">Mobile app improvements</span>
             <span style="font-size:10px;font-weight:700;padding:2px 8px;border-radius:var(--radius-full);background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.5)">Coming Soon</span>
           </div>
@@ -95,24 +103,27 @@
 
       <!-- Newsletter -->
       <div class="maintenance-newsletter">
-        <h3>Get Notified When We're Back 🔔</h3>
+        <h3 style="display:flex;align-items:center;justify-content:center;gap:6px">
+          <svg class="v-icon icon-xs v-icon-lime" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          Get Notified When We're Back
+        </h3>
         <p>Enter your email and we'll notify you the moment SportifyTurf is back online.</p>
         <form class="maintenance-newsletter-form" onsubmit="handleMaintenanceNotify(event)">
           <input type="email" class="maintenance-newsletter-input" placeholder="your@email.com" required id="maintenance-email" aria-label="Email for notification">
           <button type="submit" class="btn btn-primary" style="white-space:nowrap">Notify Me →</button>
         </form>
         <div id="notify-success" style="display:none;margin-top:var(--space-3);color:var(--electric-lime);font-size:var(--text-sm);font-weight:600">
-          ✅ You're on the list! We'll email you when we're back.
+          You're on the list! We'll email you when we're back.
         </div>
       </div>
 
       <!-- Social Links -->
       <p style="color:rgba(255,255,255,0.5);font-size:var(--text-sm);margin-bottom:var(--space-4)">Stay connected for live updates:</p>
       <div class="maintenance-social">
-        <a href="#" class="maintenance-social-link" aria-label="Follow us on Twitter">𝕏</a>
-        <a href="#" class="maintenance-social-link" aria-label="Follow us on Instagram">📸</a>
-        <a href="#" class="maintenance-social-link" aria-label="Follow us on Facebook">f</a>
-        <a href="#" class="maintenance-social-link" aria-label="Subscribe on YouTube">▶</a>
+        <a href="#" class="maintenance-social-link" aria-label="Follow us on Twitter" data-icon="twitter" data-icon-class="v-icon icon-sm"></a>
+        <a href="#" class="maintenance-social-link" aria-label="Follow us on Instagram" data-icon="instagram" data-icon-class="v-icon icon-sm"></a>
+        <a href="#" class="maintenance-social-link" aria-label="Follow us on Facebook" data-icon="facebook" data-icon-class="v-icon icon-sm"></a>
+        <a href="#" class="maintenance-social-link" aria-label="Subscribe on YouTube" data-icon="youtube" data-icon-class="v-icon icon-sm"></a>
       </div>
 
       <!-- Contact in Emergency -->

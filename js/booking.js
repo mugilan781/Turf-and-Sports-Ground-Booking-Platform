@@ -119,13 +119,27 @@ const bookingState = {
 const renderTurfCards = (container, turfs) => {
   if (!container) return;
 
+  const getSportSvg = (sport) => {
+    if (window.SportifyIcons) {
+      return window.SportifyIcons.get(sport, { className: 'v-icon icon-sm' });
+    }
+    return '';
+  };
+
+  const getPinSvg = () => {
+    if (window.SportifyIcons) {
+      return window.SportifyIcons.get('pin', { className: 'v-icon icon-xs v-icon-lime' });
+    }
+    return '';
+  };
+
   container.innerHTML = turfs.map(turf => `
     <div class="turf-card card reveal" data-sport="${turf.sport}" data-id="${turf.id}">
       <div class="turf-card__image">
         <img src="${turf.image}" alt="${turf.name}" loading="lazy">
         ${turf.badge ? `<span class="turf-card__badge badge badge-lime">${turf.badge}</span>` : ''}
         <div class="turf-card__sport-icon sport-icon sport-icon--${turf.sport}">
-          ${turf.sport === 'football' ? '⚽' : turf.sport === 'cricket' ? '🏏' : '🏸'}
+          ${getSportSvg(turf.sport)}
         </div>
         <div class="turf-card__status ${turf.available ? 'available' : 'unavailable'}">
           <span class="status-dot"></span>
@@ -141,24 +155,22 @@ const renderTurfCards = (container, turfs) => {
           </div>
         </div>
         <div class="turf-card__location">
-          <span>📍</span> ${turf.location}
+          ${getPinSvg()} ${turf.location}
         </div>
         <div class="turf-card__rating">
-          <div class="stars">
-            ${'★'.repeat(Math.floor(turf.rating))}${turf.rating % 1 ? '☆' : ''}
-          </div>
+          ${window.SportifyIcons ? window.SportifyIcons.renderRating(turf.rating) : '<div class="stars">★★★★★</div>'}
           <span class="rating-value">${turf.rating}</span>
           <span class="rating-count">(${turf.reviews} reviews)</span>
         </div>
         <div class="turf-card__facilities">
-          ${turf.facilities.slice(0, 3).map(f => `<span class="chip">${f}</span>`).join('')}
+          ${turf.facilities.map(f => `<span class="chip">${f}</span>`).slice(0, 3).join('')}
           ${turf.facilities.length > 3 ? `<span class="chip">+${turf.facilities.length - 3}</span>` : ''}
         </div>
         <div class="turf-card__actions">
           <button class="btn btn-primary btn-sm book-slot-btn" 
             data-turf="${turf.id}" 
             ${!turf.available ? 'disabled' : ''}>
-            ${turf.available ? '🗓️ Book Now' : '⏰ Fully Booked'}
+            ${turf.available ? 'Book Now →' : 'Fully Booked'}
           </button>
           <button class="btn btn-secondary btn-sm view-turf-btn" data-turf="${turf.id}">
             Details
@@ -167,6 +179,7 @@ const renderTurfCards = (container, turfs) => {
       </div>
     </div>
   `).join('');
+
 
   // Attach event listeners
   container.querySelectorAll('.book-slot-btn').forEach(btn => {
@@ -314,7 +327,7 @@ const openBookingModal = (turf) => {
   // Populate modal
   document.getElementById('modal-turf-img').src = turf.image;
   document.getElementById('modal-turf-name').textContent = turf.name;
-  document.getElementById('modal-turf-location').textContent = `📍 ${turf.location}`;
+  document.getElementById('modal-turf-location').textContent = turf.location;
   document.getElementById('modal-turf-price').innerHTML = `<span class="price-amount">₹${turf.price.toLocaleString()}</span>/hr`;
 
   // Set today's date
@@ -361,8 +374,9 @@ const confirmBooking = () => {
   closeBookingModal();
 
   setTimeout(() => {
-    window.SportifyApp?.showToast(`✅ Booking confirmed for ${bookingState.selectedTurf?.name}!`, 'success', 5000);
+    window.SportifyApp?.showToast(`Booking confirmed for ${bookingState.selectedTurf?.name}!`, 'success', 5000);
   }, 300);
+
 
   // Add to history if on dashboard
   if (window.addBookingToHistory) {

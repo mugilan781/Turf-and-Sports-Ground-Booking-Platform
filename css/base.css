@@ -766,3 +766,80 @@ p {
 [dir="rtl"] .divider-center {
   background: linear-gradient(270deg, transparent, var(--electric-lime), transparent);
 }
+
+/* ── Vector SVG Icons System ── */
+.v-icon,
+svg.v-icon,
+.icon-svg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  flex-shrink: 0;
+  stroke: currentColor;
+  fill: none;
+}
+
+.v-icon-fill {
+  fill: currentColor;
+  stroke: none;
+}
+
+.icon-xs { width: 14px; height: 14px; }
+.icon-sm { width: 18px; height: 18px; }
+.icon-md { width: 22px; height: 22px; }
+.icon-lg { width: 28px; height: 28px; }
+.icon-xl { width: 40px; height: 40px; }
+.icon-2xl { width: 56px; height: 56px; }
+
+.v-icon-lime { color: var(--electric-lime); stroke: var(--electric-lime); }
+.v-icon-green { color: var(--stadium-green); stroke: var(--stadium-green); }
+.v-icon-white { color: var(--white); stroke: var(--white); }
+.v-icon-navy { color: var(--midnight-navy); stroke: var(--midnight-navy); }
+.v-icon-muted { color: var(--text-muted); stroke: var(--text-muted); }
+
+.icon-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-lg);
+  background: rgba(184, 230, 46, 0.1);
+  color: var(--electric-lime);
+  border: 1px solid rgba(184, 230, 46, 0.2);
+  flex-shrink: 0;
+  transition: all var(--transition-base);
+}
+
+.icon-circle--green {
+  background: rgba(18, 107, 79, 0.15);
+  color: var(--stadium-green);
+  border-color: rgba(18, 107, 79, 0.3);
+}
+
+.icon-circle--blue {
+  background: rgba(59, 130, 246, 0.12);
+  color: #3B82F6;
+  border-color: rgba(59, 130, 246, 0.25);
+}
+
+.icon-circle--gold {
+  background: rgba(245, 158, 11, 0.12);
+  color: #F59E0B;
+  border-color: rgba(245, 158, 11, 0.25);
+}
+
+.stars-vector {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  color: var(--warning);
+}
+
+.stars-vector .icon-star {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+

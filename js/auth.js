@@ -177,12 +177,18 @@ const initPasswordToggle = (inputId, toggleId) => {
   const toggle = document.getElementById(toggleId);
   if (!input || !toggle) return;
 
+  const eyeSvg = window.SportifyIcons ? window.SportifyIcons.get('eye', { className: 'v-icon icon-xs' }) : '👁';
+  const eyeOffSvg = window.SportifyIcons ? window.SportifyIcons.get('eyeOff', { className: 'v-icon icon-xs' }) : '✕';
+
+  toggle.innerHTML = eyeSvg;
+
   toggle.addEventListener('click', () => {
     const isPassword = input.type === 'password';
     input.type = isPassword ? 'text' : 'password';
-    toggle.textContent = isPassword ? '🙈' : '👁️';
+    toggle.innerHTML = isPassword ? eyeOffSvg : eyeSvg;
   });
 };
+
 
 // ── Init ───────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {

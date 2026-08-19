@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="10 Football Tactics Every Amateur Team Must Know in 2026 — Expert tactical analysis and practical game plans for weekend football teams.">
   <title>10 Football Tactics Every Amateur Team Must Know — SportifyTurf Blog</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚽</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23B8E62E'><circle cx='12' cy='12' r='10'/><polygon points='12 6.5 8 9.5 9.5 14.5 14.5 16 9.5' fill='%23071A2B'/></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800;900&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/variables.css">
@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="css/navbar.css">
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/components.css">
+  <script src="js/icons.js"></script>
   <style>
     .article-layout { display:grid;grid-template-columns:1fr 320px;gap:var(--space-10);align-items:start;padding-block:var(--space-12) }
     .article-hero-img { width:100%;max-height:520px;object-fit:cover;border-radius:var(--radius-2xl);margin-bottom:var(--space-8) }
@@ -25,7 +26,7 @@
     .article-highlight { background:rgba(184,230,46,0.06);border-left:4px solid var(--electric-lime);border-radius:0 var(--radius-md) var(--radius-md) 0;padding:var(--space-5) var(--space-6);margin:var(--space-6) 0;font-style:italic;font-size:var(--text-lg);color:var(--text-secondary) }
     .article-sidebar { position:sticky;top:calc(var(--nav-height)+var(--space-6)) }
     .sidebar-widget { background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-xl);padding:var(--space-5);margin-bottom:var(--space-4) }
-    .sidebar-widget-title { font-size:var(--text-xs);font-weight:900;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:var(--space-4) }
+    .sidebar-widget-title { font-size:var(--text-xs);font-weight:900;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:var(--space-4);display:flex;align-items:center;gap:6px }
     .comment-item { display:flex;gap:var(--space-4);padding:var(--space-5);background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-xl);margin-bottom:var(--space-4) }
     @media (max-width:1024px) { .article-layout{grid-template-columns:1fr} .article-sidebar{position:static} }
   </style>
@@ -36,10 +37,15 @@
 
   <nav class="navbar navbar--solid" role="navigation" aria-label="Main navigation">
     <div class="container"><div class="navbar__inner">
-      <a href="index.html" class="navbar__logo"><div class="navbar__logo-mark">⚽</div><div class="navbar__logo-text"><span class="navbar__logo-name">Sportify<span>Turf</span></span><span class="navbar__logo-tagline">Book. Play. Win.</span></div></a>
+      <a href="index.html" class="navbar__logo">
+        <div class="navbar__logo-mark">
+          <svg class="v-icon icon-md v-icon-navy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/><polygon points="12 6.5 8 9.5 9.5 14.5 14.5 16 9.5" fill="currentColor" opacity="0.35"/></svg>
+        </div>
+        <div class="navbar__logo-text"><span class="navbar__logo-name">Sportify<span>Turf</span></span><span class="navbar__logo-tagline">Book. Play. Win.</span></div>
+      </a>
       <nav class="navbar__nav"><a href="index.html" class="navbar__link">Home</a><a href="about.html" class="navbar__link">About</a><a href="services.html" class="navbar__link">Services</a><a href="blog.html" class="navbar__link active">Blog</a><a href="contact.html" class="navbar__link">Contact</a></nav>
       <div class="navbar__actions">
-        <button id="theme-toggle" class="navbar__toggle-btn"><span class="theme-icon">☀️</span></button>
+        <button id="theme-toggle" class="navbar__toggle-btn"><span class="theme-icon"><svg class="v-icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/></svg></span></button>
         <button id="rtl-toggle" class="navbar__toggle-btn"><span class="rtl-icon" style="font-size:10px;font-weight:700">RTL</span></button>
         <a href="login.html" class="btn btn-secondary btn-sm">Sign In</a>
         <a href="dashboard.html" class="btn btn-primary btn-sm">Book Now →</a>
@@ -47,8 +53,8 @@
       <button class="navbar__hamburger" id="mobile-menu-toggle"><span></span><span></span><span></span></button>
     </div></div>
     <div class="navbar__mobile" id="mobile-menu">
-      <a href="blog.html" class="navbar__mobile-link active">📰 Blog</a>
-      <div class="navbar__mobile-actions"><button id="theme-toggle-mobile" class="navbar__toggle-btn" style="width:100%"><span class="theme-icon">☀️</span> Theme</button><a href="dashboard.html" class="btn btn-primary" style="width:100%;justify-content:center">Book Now →</a></div>
+      <a href="blog.html" class="navbar__mobile-link active"><span data-icon="blog" data-icon-class="v-icon icon-sm"></span> Blog</a>
+      <div class="navbar__mobile-actions"><button id="theme-toggle-mobile" class="navbar__toggle-btn" style="width:100%"><span class="theme-icon"><svg class="v-icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/></svg></span> Theme</button><a href="dashboard.html" class="btn btn-primary" style="width:100%;justify-content:center">Book Now →</a></div>
     </div>
   </nav>
 
@@ -62,8 +68,14 @@
       </nav>
       <div style="max-width:800px">
         <div style="display:flex;gap:var(--space-3);margin-bottom:var(--space-4)">
-          <span class="badge badge-lime">⚽ Football</span>
-          <span class="badge badge-navy">🔥 Featured</span>
+          <span class="badge badge-lime" style="display:inline-flex;align-items:center;gap:4px">
+            <svg class="v-icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="12 6.5 8 9.5 9.5 14.5 14.5 16 9.5" fill="currentColor" opacity="0.3"/></svg>
+            Football
+          </span>
+          <span class="badge badge-navy" style="display:inline-flex;align-items:center;gap:4px">
+            <svg class="v-icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            Featured
+          </span>
         </div>
         <h1 class="section-title reveal" style="text-align:left;font-size:clamp(var(--text-3xl),4vw,var(--text-5xl))" id="article-heading">
           10 Football Tactics Every Amateur Team Must Know in 2026
@@ -79,12 +91,21 @@
               <div style="font-size:var(--text-xs);color:var(--text-muted)">CEO & Sports Strategist</div>
             </div>
           </div>
-          <div style="font-size:var(--text-sm);color:var(--text-muted)">📅 August 15, 2026</div>
-          <div style="font-size:var(--text-sm);color:var(--text-muted)">⏱️ 12 min read</div>
-          <div style="font-size:var(--text-sm);color:var(--text-muted)">👁️ 2,431 views</div>
+          <div style="font-size:var(--text-sm);color:var(--text-muted);display:flex;align-items:center;gap:4px">
+            <svg class="v-icon icon-xs v-icon-lime" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            August 15, 2026
+          </div>
+          <div style="font-size:var(--text-sm);color:var(--text-muted);display:flex;align-items:center;gap:4px">
+            <svg class="v-icon icon-xs v-icon-lime" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            12 min read
+          </div>
+          <div style="font-size:var(--text-sm);color:var(--text-muted);display:flex;align-items:center;gap:4px">
+            <svg class="v-icon icon-xs v-icon-lime" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            2,431 views
+          </div>
           <div style="display:flex;gap:var(--space-2);margin-left:auto">
-            <button class="btn btn-secondary btn-sm" onclick="window.SportifyApp.showToast('Link copied!','success')">🔗 Share</button>
-            <button class="btn btn-secondary btn-sm" onclick="window.SportifyApp.showToast('Bookmarked!','success')">🔖 Save</button>
+            <button class="btn btn-secondary btn-sm" onclick="window.SportifyApp.showToast('Link copied!','success')">Share</button>
+            <button class="btn btn-secondary btn-sm" onclick="window.SportifyApp.showToast('Bookmarked!','success')">Save</button>
           </div>
         </div>
       </div>
@@ -167,15 +188,15 @@
             <a href="blog.html" class="chip" style="text-decoration:none">5-a-side</a>
           </div>
           <div style="display:flex;gap:var(--space-2)">
-            <button class="btn btn-secondary btn-sm" onclick="window.SportifyApp.showToast('Sharing on WhatsApp...','info')">📱 WhatsApp</button>
-            <button class="btn btn-secondary btn-sm" onclick="window.SportifyApp.showToast('Sharing on Twitter...','info')">𝕏 Twitter</button>
-            <button class="btn btn-secondary btn-sm" onclick="window.SportifyApp.showToast('Link copied!','success')">🔗 Copy Link</button>
+            <button class="btn btn-secondary btn-sm" onclick="window.SportifyApp.showToast('Sharing on WhatsApp...','info')">WhatsApp</button>
+            <button class="btn btn-secondary btn-sm" onclick="window.SportifyApp.showToast('Sharing on Twitter...','info')">Twitter</button>
+            <button class="btn btn-secondary btn-sm" onclick="window.SportifyApp.showToast('Link copied!','success')">Copy Link</button>
           </div>
         </div>
 
         <!-- SECTION 4: Comments -->
         <section aria-labelledby="comments-heading">
-          <h2 style="font-size:var(--text-2xl);margin-bottom:var(--space-6)" id="comments-heading">💬 Comments (8)</h2>
+          <h2 style="font-size:var(--text-2xl);margin-bottom:var(--space-6)" id="comments-heading">Comments (8)</h2>
           <div style="margin-bottom:var(--space-8)">
 
             <!-- Comment 1 -->
@@ -185,7 +206,13 @@
                 <div style="display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-2)">
                   <strong style="font-size:var(--text-sm)">Arjun R.</strong>
                   <span style="font-size:var(--text-xs);color:var(--text-muted)">2 days ago</span>
-                  <div style="font-size:10px;margin-left:auto">★★★★★</div>
+                  <div class="stars-vector" style="margin-left:auto">
+                    <svg class="icon-star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg class="icon-star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg class="icon-star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg class="icon-star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg class="icon-star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  </div>
                 </div>
                 <p style="font-size:var(--text-sm);color:var(--text-secondary);line-height:var(--lh-relaxed);margin-bottom:var(--space-3)">Excellent breakdown! We implemented the high press last Saturday and won 3-1. The key insight about pressing in groups, not individually, was a game changer.</p>
                 <button class="btn btn-secondary btn-sm" onclick="window.SportifyApp.showToast('Reply posted!','success')">↩ Reply</button>
@@ -199,7 +226,13 @@
                 <div style="display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-2)">
                   <strong style="font-size:var(--text-sm)">Kavitha S.</strong>
                   <span style="font-size:var(--text-xs);color:var(--text-muted)">1 day ago</span>
-                  <div style="font-size:10px;margin-left:auto">★★★★★</div>
+                  <div class="stars-vector" style="margin-left:auto">
+                    <svg class="icon-star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg class="icon-star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg class="icon-star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg class="icon-star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg class="icon-star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  </div>
                 </div>
                 <p style="font-size:var(--text-sm);color:var(--text-secondary);line-height:var(--lh-relaxed);margin-bottom:var(--space-3)">The section on set-pieces is gold. We've been neglecting this aspect completely. Going to dedicate our next training session to set-piece routines.</p>
                 <button class="btn btn-secondary btn-sm" onclick="window.SportifyApp.showToast('Reply posted!','success')">↩ Reply</button>
@@ -213,7 +246,13 @@
                 <div style="display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-2)">
                   <strong style="font-size:var(--text-sm)">Mithun P.</strong>
                   <span style="font-size:var(--text-xs);color:var(--text-muted)">5 hours ago</span>
-                  <div style="font-size:10px;margin-left:auto">★★★★★</div>
+                  <div class="stars-vector" style="margin-left:auto">
+                    <svg class="icon-star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg class="icon-star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg class="icon-star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg class="icon-star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg class="icon-star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  </div>
                 </div>
                 <p style="font-size:var(--text-sm);color:var(--text-secondary);line-height:var(--lh-relaxed);margin-bottom:var(--space-3)">Great article! One addition — in humid Chennai weather, energy management (point 10) is even more critical. We rotate our pressing intensity every 15 minutes.</p>
                 <button class="btn btn-secondary btn-sm" onclick="window.SportifyApp.showToast('Reply posted!','success')">↩ Reply</button>
@@ -241,7 +280,9 @@
       <aside class="article-sidebar" aria-label="Article sidebar">
         <!-- CTA Widget -->
         <div class="sidebar-widget" style="background:linear-gradient(135deg,var(--stadium-green),var(--green-dark));border-color:var(--stadium-green);text-align:center">
-          <div style="font-size:2rem;margin-bottom:var(--space-3)">⚽</div>
+          <div class="icon-circle icon-circle--lime" style="margin:0 auto var(--space-3);width:48px;height:48px">
+            <svg class="v-icon icon-md v-icon-navy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="12 6.5 8 9.5 9.5 14.5 14.5 16 9.5" fill="currentColor" opacity="0.3"/></svg>
+          </div>
           <h3 style="color:white;margin-bottom:var(--space-2)">Ready to Play?</h3>
           <p style="color:rgba(255,255,255,0.75);font-size:var(--text-sm);margin-bottom:var(--space-4)">Book a premium football turf and put these tactics into practice!</p>
           <a href="dashboard.html" class="btn btn-primary" style="width:100%;justify-content:center">Book Now →</a>
@@ -249,7 +290,10 @@
 
         <!-- Related Posts (SECTION 5) -->
         <div class="sidebar-widget">
-          <div class="sidebar-widget-title">📖 Related Articles</div>
+          <div class="sidebar-widget-title">
+            <svg class="v-icon icon-xs v-icon-lime" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            Related Articles
+          </div>
           <div style="display:flex;flex-direction:column;gap:var(--space-4)">
             <a href="blog-details.html" style="display:flex;gap:var(--space-3);align-items:flex-start;text-decoration:none">
               <img src="https://images.unsplash.com/photo-1575361204480-aadea25e6e68?w=200&q=80" alt="Top 10 Football Turfs in Chennai" style="width:60px;height:50px;object-fit:cover;border-radius:var(--radius-md);flex-shrink:0" loading="lazy">
@@ -268,7 +312,10 @@
 
         <!-- Newsletter (SECTION 6) -->
         <div class="sidebar-widget">
-          <div class="sidebar-widget-title">📧 Weekly Tips</div>
+          <div class="sidebar-widget-title">
+            <svg class="v-icon icon-xs v-icon-lime" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Weekly Tips
+          </div>
           <p style="font-size:var(--text-sm);color:var(--text-muted);margin-bottom:var(--space-4)">Get sports tips & exclusive offers every week.</p>
           <input type="email" class="form-input" placeholder="your@email.com" style="margin-bottom:var(--space-3)" aria-label="Newsletter email">
           <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="window.SportifyApp.showToast('Subscribed!','success')">Subscribe →</button>
@@ -276,12 +323,15 @@
 
         <!-- Social Share -->
         <div class="sidebar-widget">
-          <div class="sidebar-widget-title">🔗 Share This</div>
+          <div class="sidebar-widget-title">
+            <svg class="v-icon icon-xs v-icon-lime" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+            Share This
+          </div>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-2)">
-            <button class="btn btn-secondary btn-sm" onclick="window.SportifyApp.showToast('Sharing...','info')">📱 WhatsApp</button>
-            <button class="btn btn-secondary btn-sm" onclick="window.SportifyApp.showToast('Sharing...','info')">𝕏 Twitter</button>
-            <button class="btn btn-secondary btn-sm" onclick="window.SportifyApp.showToast('Sharing...','info')">f Facebook</button>
-            <button class="btn btn-secondary btn-sm" onclick="window.SportifyApp.showToast('Copied!','success')">🔗 Copy</button>
+            <button class="btn btn-secondary btn-sm" onclick="window.SportifyApp.showToast('Sharing...','info')">WhatsApp</button>
+            <button class="btn btn-secondary btn-sm" onclick="window.SportifyApp.showToast('Sharing...','info')">Twitter</button>
+            <button class="btn btn-secondary btn-sm" onclick="window.SportifyApp.showToast('Sharing...','info')">Facebook</button>
+            <button class="btn btn-secondary btn-sm" onclick="window.SportifyApp.showToast('Copied!','success')">Copy</button>
           </div>
         </div>
       </aside>
@@ -292,10 +342,10 @@
   <footer class="footer" role="contentinfo">
     <div class="footer__glow footer__glow--lime"></div><div class="footer__glow footer__glow--green"></div>
     <div class="footer__top"><div class="container"><div class="footer__grid">
-      <div class="footer__brand"><a href="index.html" class="footer__logo"><div class="footer__logo-mark">⚽</div><div><div class="footer__logo-name">Sportify<span>Turf</span></div></div></a><p class="footer__desc">India's most trusted sports ground booking platform.</p><div class="footer__social"><a href="#" class="footer__social-link">f</a><a href="#" class="footer__social-link">📸</a><a href="#" class="footer__social-link">𝕏</a></div></div>
+      <div class="footer__brand"><a href="index.html" class="footer__logo"><div class="footer__logo-mark"><svg class="v-icon icon-md v-icon-navy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/><polygon points="12 6.5 8 9.5 9.5 14.5 14.5 16 9.5" fill="currentColor" opacity="0.35"/></svg></div><div><div class="footer__logo-name">Sportify<span>Turf</span></div></div></a><p class="footer__desc">India's most trusted sports ground booking platform.</p><div class="footer__social"><a href="#" class="footer__social-link" data-icon="facebook" data-icon-class="v-icon icon-sm"></a><a href="#" class="footer__social-link" data-icon="instagram" data-icon-class="v-icon icon-sm"></a><a href="#" class="footer__social-link" data-icon="twitter" data-icon-class="v-icon icon-sm"></a></div></div>
       <div class="footer__nav-group"><h3 class="footer__nav-title">Platform</h3><ul class="footer__nav-list"><li><a href="index.html" class="footer__nav-link">Home</a></li><li><a href="blog.html" class="footer__nav-link">Blog</a></li><li><a href="contact.html" class="footer__nav-link">Contact</a></li></ul></div>
-      <div class="footer__nav-group"><h3 class="footer__nav-title">Sports</h3><ul class="footer__nav-list"><li><a href="services.html#football" class="footer__nav-link">⚽ Football</a></li><li><a href="services.html#cricket" class="footer__nav-link">🏏 Cricket</a></li><li><a href="services.html#badminton" class="footer__nav-link">🏸 Badminton</a></li></ul></div>
-      <div class="footer__nav-group"><h3 class="footer__nav-title">Legal</h3><ul class="footer__nav-list"><li><a href="privacy-policy.html" class="footer__nav-link">Privacy</a></li><li><a href="terms.html" class="footer__nav-link">Terms</a></li><li><a href="sitemap.html" class="footer__nav-link">Sitemap</a></li></ul></div>
+      <div class="footer__nav-group"><h3 class="footer__nav-title">Sports</h3><ul class="footer__nav-list"><li><a href="services.html#football" class="footer__nav-link">Football</a></li><li><a href="services.html#cricket" class="footer__nav-link">Cricket</a></li><li><a href="services.html#badminton" class="footer__nav-link">Badminton</a></li></ul></div>
+      <div class="footer__nav-group"><h3 class="footer__nav-title">Legal</h3><ul class="footer__nav-list"><li><a href="privacy-policy.html" class="footer__nav-link">Privacy Policy</a></li><li><a href="terms.html" class="footer__nav-link">Terms</a></li><li><a href="sitemap.html" class="footer__nav-link">Sitemap</a></li></ul></div>
     </div></div></div>
     <div class="footer__bottom"><div class="container"><div class="footer__bottom-inner"><p class="footer__copyright">© 2026 <span>SportifyTurf</span>. All rights reserved.</p></div></div></div>
   </footer>

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="SportifyTurf Sitemap — Complete overview of all pages on our sports ground booking platform.">
   <title>Sitemap — SportifyTurf</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚽</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23B8E62E'><circle cx='12' cy='12' r='10'/><polygon points='12 6.5 8 9.5 9.5 14.5 14.5 16 9.5' fill='%23071A2B'/></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800;900&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/variables.css">
@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="css/navbar.css">
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/legal.css">
+  <script src="js/icons.js"></script>
 </head>
 <body class="page-transition">
   <div id="preloader"><div class="preloader-logo">Sportify<span>Turf</span></div><div class="preloader-bar"><div class="preloader-bar__fill"></div></div></div>
@@ -21,14 +22,19 @@
 
   <nav class="navbar navbar--solid" role="navigation" aria-label="Main navigation">
     <div class="container"><div class="navbar__inner">
-      <a href="index.html" class="navbar__logo"><div class="navbar__logo-mark">⚽</div><div class="navbar__logo-text"><span class="navbar__logo-name">Sportify<span>Turf</span></span></div></a>
+      <a href="index.html" class="navbar__logo">
+        <div class="navbar__logo-mark">
+          <svg class="v-icon icon-md v-icon-navy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/><polygon points="12 6.5 8 9.5 9.5 14.5 14.5 16 9.5" fill="currentColor" opacity="0.35"/></svg>
+        </div>
+        <div class="navbar__logo-text"><span class="navbar__logo-name">Sportify<span>Turf</span></span></div>
+      </a>
       <nav class="navbar__nav"><a href="index.html" class="navbar__link">Home</a><a href="about.html" class="navbar__link">About</a><a href="services.html" class="navbar__link">Services</a><a href="contact.html" class="navbar__link">Contact</a></nav>
-      <div class="navbar__actions"><button id="theme-toggle" class="navbar__toggle-btn"><span class="theme-icon">☀️</span></button><button id="rtl-toggle" class="navbar__toggle-btn"><span class="rtl-icon" style="font-size:10px;font-weight:700">RTL</span></button><a href="dashboard.html" class="btn btn-primary btn-sm">Book Now →</a></div>
+      <div class="navbar__actions"><button id="theme-toggle" class="navbar__toggle-btn"><span class="theme-icon"><svg class="v-icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/></svg></span></button><button id="rtl-toggle" class="navbar__toggle-btn"><span class="rtl-icon" style="font-size:10px;font-weight:700">RTL</span></button><a href="dashboard.html" class="btn btn-primary btn-sm">Book Now →</a></div>
       <button class="navbar__hamburger" id="mobile-menu-toggle"><span></span><span></span><span></span></button>
     </div></div>
     <div class="navbar__mobile" id="mobile-menu">
-      <a href="index.html" class="navbar__mobile-link">🏠 Home</a>
-      <div class="navbar__mobile-actions"><button id="theme-toggle-mobile" class="navbar__toggle-btn" style="width:100%"><span class="theme-icon">☀️</span> Theme</button><a href="dashboard.html" class="btn btn-primary" style="width:100%;justify-content:center">Book Now →</a></div>
+      <a href="index.html" class="navbar__mobile-link"><span data-icon="home" data-icon-class="v-icon icon-sm"></span> Home</a>
+      <div class="navbar__mobile-actions"><button id="theme-toggle-mobile" class="navbar__toggle-btn" style="width:100%"><span class="theme-icon"><svg class="v-icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/></svg></span> Theme</button><a href="dashboard.html" class="btn btn-primary" style="width:100%;justify-content:center">Book Now →</a></div>
     </div>
   </nav>
 
@@ -39,7 +45,10 @@
         <nav aria-label="Breadcrumb" style="display:flex;gap:var(--space-2);font-size:var(--text-sm);color:var(--text-muted);margin-bottom:var(--space-5)">
           <a href="index.html" style="color:var(--text-muted)">Home</a><span>›</span><span>Sitemap</span>
         </nav>
-        <h1 style="font-size:clamp(var(--text-3xl),5vw,var(--text-5xl));font-weight:900;margin-bottom:var(--space-3)">🗺️ Sitemap</h1>
+        <h1 style="font-size:clamp(var(--text-3xl),5vw,var(--text-5xl));font-weight:900;margin-bottom:var(--space-3);display:flex;align-items:center;gap:12px">
+          <svg class="v-icon icon-lg v-icon-lime" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+          Sitemap
+        </h1>
         <p style="color:var(--text-muted);font-size:var(--text-lg)">A complete directory of all pages on SportifyTurf — find what you need quickly.</p>
       </div>
     </div>
@@ -49,7 +58,10 @@
       <div class="container">
         <div style="display:flex;gap:var(--space-3);max-width:480px">
           <input type="search" id="sitemap-search" class="form-input" placeholder="Search pages..." aria-label="Search sitemap">
-          <button class="btn btn-primary" onclick="filterSitemap()">🔍 Filter</button>
+          <button class="btn btn-primary" onclick="filterSitemap()" style="display:inline-flex;align-items:center;gap:6px">
+            <svg class="v-icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            Filter
+          </button>
           <button class="btn btn-secondary" onclick="clearSitemapFilter()">Clear</button>
         </div>
       </div>
@@ -62,7 +74,10 @@
         <div class="sitemap-grid" id="sitemap-grid">
           <!-- Main Pages -->
           <div class="sitemap-group reveal">
-            <div class="sitemap-group-title">🏠 Main Pages</div>
+            <div class="sitemap-group-title">
+              <svg class="v-icon icon-xs v-icon-lime" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              Main Pages
+            </div>
             <div class="sitemap-links">
               <a href="index.html" class="sitemap-link">Home</a>
               <a href="home2.html" class="sitemap-link">Home 2 — Discover</a>
@@ -74,43 +89,55 @@
 
           <!-- Sports Pages -->
           <div class="sitemap-group reveal delay-100">
-            <div class="sitemap-group-title">🏟️ Sports</div>
+            <div class="sitemap-group-title">
+              <svg class="v-icon icon-xs v-icon-lime" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="8" rx="10" ry="5"/><path d="M2 8v8c0 2.76 4.48 5 10 5s10-2.24 10-5V8"/></svg>
+              Sports
+            </div>
             <div class="sitemap-links">
-              <a href="services.html#football" class="sitemap-link">⚽ Football Turfs</a>
-              <a href="services.html#cricket" class="sitemap-link">🏏 Cricket Grounds</a>
-              <a href="services.html#badminton" class="sitemap-link">🏸 Badminton Courts</a>
-              <a href="services.html#pricing" class="sitemap-link">💰 Pricing Plans</a>
-              <a href="services.html#facilities" class="sitemap-link">🏟️ Facilities</a>
+              <a href="services.html#football" class="sitemap-link">Football Turfs</a>
+              <a href="services.html#cricket" class="sitemap-link">Cricket Grounds</a>
+              <a href="services.html#badminton" class="sitemap-link">Badminton Courts</a>
+              <a href="services.html#pricing" class="sitemap-link">Pricing Plans</a>
+              <a href="services.html#facilities" class="sitemap-link">Facilities</a>
             </div>
           </div>
 
           <!-- Dashboard Pages -->
           <div class="sitemap-group reveal delay-200">
-            <div class="sitemap-group-title">📊 Dashboard</div>
+            <div class="sitemap-group-title">
+              <svg class="v-icon icon-xs v-icon-lime" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+              Dashboard
+            </div>
             <div class="sitemap-links">
-              <a href="dashboard.html#overview" class="sitemap-link">📊 Overview</a>
-              <a href="dashboard.html#book" class="sitemap-link">📅 Book a Turf</a>
-              <a href="dashboard.html#history" class="sitemap-link">📋 Booking History</a>
-              <a href="dashboard.html#team" class="sitemap-link">👥 Team Bookings</a>
-              <a href="dashboard.html#payments" class="sitemap-link">💳 Payments</a>
-              <a href="dashboard.html#notifications" class="sitemap-link">🔔 Notifications</a>
-              <a href="dashboard.html#profile" class="sitemap-link">👤 Profile</a>
-              <a href="dashboard.html#settings" class="sitemap-link">⚙️ Settings</a>
+              <a href="dashboard.html#overview" class="sitemap-link">Overview</a>
+              <a href="dashboard.html#book" class="sitemap-link">Book a Turf</a>
+              <a href="dashboard.html#history" class="sitemap-link">Booking History</a>
+              <a href="dashboard.html#team" class="sitemap-link">Team Bookings</a>
+              <a href="dashboard.html#payments" class="sitemap-link">Payments</a>
+              <a href="dashboard.html#notifications" class="sitemap-link">Notifications</a>
+              <a href="dashboard.html#profile" class="sitemap-link">Profile</a>
+              <a href="dashboard.html#settings" class="sitemap-link">Settings</a>
             </div>
           </div>
 
           <!-- Auth Pages -->
           <div class="sitemap-group reveal delay-300">
-            <div class="sitemap-group-title">🔐 Account</div>
+            <div class="sitemap-group-title">
+              <svg class="v-icon icon-xs v-icon-lime" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              Account
+            </div>
             <div class="sitemap-links">
-              <a href="login.html" class="sitemap-link">🔑 Sign In</a>
-              <a href="signup.html" class="sitemap-link">✨ Create Account</a>
+              <a href="login.html" class="sitemap-link">Sign In</a>
+              <a href="signup.html" class="sitemap-link">Create Account</a>
             </div>
           </div>
 
           <!-- Blog Pages -->
           <div class="sitemap-group reveal delay-100">
-            <div class="sitemap-group-title">📰 Blog</div>
+            <div class="sitemap-group-title">
+              <svg class="v-icon icon-xs v-icon-lime" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+              Blog
+            </div>
             <div class="sitemap-links">
               <a href="blog.html" class="sitemap-link">Blog Home</a>
               <a href="blog-details.html" class="sitemap-link">10 Football Tactics</a>
@@ -124,7 +151,10 @@
 
           <!-- Legal Pages -->
           <div class="sitemap-group reveal delay-200">
-            <div class="sitemap-group-title">⚖️ Legal</div>
+            <div class="sitemap-group-title">
+              <svg class="v-icon icon-xs v-icon-lime" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              Legal
+            </div>
             <div class="sitemap-links">
               <a href="privacy-policy.html" class="sitemap-link">Privacy Policy</a>
               <a href="terms.html" class="sitemap-link">Terms & Conditions</a>
@@ -134,7 +164,10 @@
 
           <!-- System Pages -->
           <div class="sitemap-group reveal delay-300">
-            <div class="sitemap-group-title">⚙️ System</div>
+            <div class="sitemap-group-title">
+              <svg class="v-icon icon-xs v-icon-lime" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+              System
+            </div>
             <div class="sitemap-links">
               <a href="404.html" class="sitemap-link">404 — Page Not Found</a>
               <a href="maintenance.html" class="sitemap-link">Maintenance Mode</a>
@@ -143,12 +176,15 @@
 
           <!-- Quick Actions -->
           <div class="sitemap-group reveal delay-400" style="background:linear-gradient(135deg,rgba(184,230,46,0.06),rgba(18,107,79,0.06));border-color:rgba(184,230,46,0.2)">
-            <div class="sitemap-group-title" style="color:var(--electric-lime)">⚡ Quick Actions</div>
+            <div class="sitemap-group-title" style="color:var(--electric-lime)">
+              <svg class="v-icon icon-xs v-icon-lime" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              Quick Actions
+            </div>
             <div class="sitemap-links">
-              <a href="dashboard.html" class="sitemap-link" style="color:var(--electric-lime);font-weight:700">📅 Book a Turf Now</a>
-              <a href="signup.html" class="sitemap-link">✨ Create Free Account</a>
-              <a href="contact.html" class="sitemap-link">📞 Contact Support</a>
-              <a href="services.html#pricing" class="sitemap-link">💰 View Pricing</a>
+              <a href="dashboard.html" class="sitemap-link" style="color:var(--electric-lime);font-weight:700">Book a Turf Now</a>
+              <a href="signup.html" class="sitemap-link">Create Free Account</a>
+              <a href="contact.html" class="sitemap-link">Contact Support</a>
+              <a href="services.html#pricing" class="sitemap-link">View Pricing</a>
             </div>
           </div>
         </div>
@@ -167,7 +203,7 @@
   <footer class="footer" role="contentinfo">
     <div class="footer__glow footer__glow--lime"></div><div class="footer__glow footer__glow--green"></div>
     <div class="footer__top"><div class="container"><div class="footer__grid">
-      <div class="footer__brand"><a href="index.html" class="footer__logo"><div class="footer__logo-mark">⚽</div><div><div class="footer__logo-name">Sportify<span>Turf</span></div></div></a><p class="footer__desc">India's most trusted sports ground booking platform.</p></div>
+      <div class="footer__brand"><a href="index.html" class="footer__logo"><div class="footer__logo-mark"><svg class="v-icon icon-md v-icon-navy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/><polygon points="12 6.5 8 9.5 9.5 14.5 14.5 16 9.5" fill="currentColor" opacity="0.35"/></svg></div><div><div class="footer__logo-name">Sportify<span>Turf</span></div></div></a><p class="footer__desc">India's most trusted sports ground booking platform.</p></div>
       <div class="footer__nav-group"><h3 class="footer__nav-title">Platform</h3><ul class="footer__nav-list"><li><a href="index.html" class="footer__nav-link">Home</a></li><li><a href="about.html" class="footer__nav-link">About</a></li><li><a href="services.html" class="footer__nav-link">Services</a></li></ul></div>
       <div class="footer__nav-group"><h3 class="footer__nav-title">Legal</h3><ul class="footer__nav-list"><li><a href="privacy-policy.html" class="footer__nav-link">Privacy</a></li><li><a href="terms.html" class="footer__nav-link">Terms</a></li><li><a href="sitemap.html" class="footer__nav-link">Sitemap</a></li></ul></div>
     </div></div></div>

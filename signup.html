@@ -5,13 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Create your free SportifyTurf account — Book sports grounds instantly, join teams, and track your game history.">
   <title>Create Account — SportifyTurf</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚽</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23B8E62E'><circle cx='12' cy='12' r='10'/><polygon points='12 6.5 8 9.5 9.5 14.5 14.5 16 9.5' fill='%23071A2B'/></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800;900&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/auth.css">
+  <script src="js/icons.js"></script>
 </head>
 <body class="page-transition">
 
@@ -24,7 +25,9 @@
       <div class="auth-left__overlay"></div>
 
       <a href="index.html" class="auth-left__logo">
-        <div class="auth-left__logo-mark">⚽</div>
+        <div class="auth-left__logo-mark">
+          <svg class="v-icon icon-md v-icon-navy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/><polygon points="12 6.5 8 9.5 9.5 14.5 14.5 16 9.5" fill="currentColor" opacity="0.35"/></svg>
+        </div>
         <div class="auth-left__logo-name">Sportify<span>Turf</span></div>
       </a>
 
@@ -36,9 +39,9 @@
           Create your free account and get instant access to 120+ premium sports venues across Chennai. Start playing today.
         </p>
         <div class="auth-trust">
-          <div class="auth-trust-item"><span>🎁</span> First booking 20% OFF</div>
-          <div class="auth-trust-item"><span>🏆</span> Earn reward points</div>
-          <div class="auth-trust-item"><span>👥</span> Free team features</div>
+          <div class="auth-trust-item"><span data-icon="gift" data-icon-class="v-icon icon-xs v-icon-lime"></span> First booking 20% OFF</div>
+          <div class="auth-trust-item"><span data-icon="trophy" data-icon-class="v-icon icon-xs v-icon-lime"></span> Earn reward points</div>
+          <div class="auth-trust-item"><span data-icon="users" data-icon-class="v-icon icon-xs v-icon-lime"></span> Free team features</div>
         </div>
       </div>
     </div>
@@ -47,7 +50,7 @@
     <div class="auth-right">
       <div class="auth-form-container" style="animation:fadeInUp 0.6s ease both">
         <div style="margin-bottom:var(--space-6)">
-          <h1 class="auth-title">Create account 🎯</h1>
+          <h1 class="auth-title">Create account</h1>
           <p class="auth-subtitle">
             Already have an account? <a href="login.html">Sign in →</a>
           </p>
@@ -108,7 +111,7 @@
                 <label class="form-label" for="signup-password">Create Password</label>
                 <div class="password-input-wrap">
                   <input type="password" id="signup-password" class="form-input" placeholder="Minimum 8 characters" autocomplete="new-password" aria-required="true">
-                  <button type="button" class="password-toggle" id="toggle-signup-password" aria-label="Toggle password visibility">👁️</button>
+                  <button type="button" class="password-toggle" id="toggle-signup-password" aria-label="Toggle password visibility"><svg class="v-icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
                 </div>
                 <span class="form-error" id="signup-password-error" role="alert"></span>
               </div>
@@ -116,7 +119,7 @@
                 <label class="form-label" for="signup-confirm-password">Confirm Password</label>
                 <div class="password-input-wrap">
                   <input type="password" id="signup-confirm-password" class="form-input" placeholder="Re-enter your password" autocomplete="new-password" aria-required="true">
-                  <button type="button" class="password-toggle" id="toggle-confirm-password" aria-label="Toggle confirm password visibility">👁️</button>
+                  <button type="button" class="password-toggle" id="toggle-confirm-password" aria-label="Toggle confirm password visibility"><svg class="v-icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
                 </div>
                 <span class="form-error" id="signup-confirm-password-error" role="alert"></span>
               </div>
@@ -133,20 +136,20 @@
           <!-- Step 3: Sport Preferences -->
           <div class="signup-step-panel" id="signup-panel-3">
             <div style="margin-bottom:var(--space-5)">
-              <h3 style="font-size:var(--text-lg);margin-bottom:var(--space-2)">What sports do you play? 🏆</h3>
+              <h3 style="font-size:var(--text-lg);margin-bottom:var(--space-2)">What sports do you play?</h3>
               <p style="font-size:var(--text-sm);color:var(--text-muted)">Select all that apply (optional — you can change this later)</p>
             </div>
             <div class="sport-prefs" style="margin-bottom:var(--space-6)">
               <button type="button" class="sport-pref-btn selected" data-sport="football">
-                <span class="sport-pref-icon">⚽</span>
+                <span class="sport-pref-icon"><span data-icon="football" data-icon-class="v-icon icon-sm"></span></span>
                 <span class="sport-pref-name">Football</span>
               </button>
               <button type="button" class="sport-pref-btn" data-sport="cricket">
-                <span class="sport-pref-icon">🏏</span>
+                <span class="sport-pref-icon"><span data-icon="cricket" data-icon-class="v-icon icon-sm"></span></span>
                 <span class="sport-pref-name">Cricket</span>
               </button>
               <button type="button" class="sport-pref-btn" data-sport="badminton">
-                <span class="sport-pref-icon">🏸</span>
+                <span class="sport-pref-icon"><span data-icon="badminton" data-icon-class="v-icon icon-sm"></span></span>
                 <span class="sport-pref-name">Badminton</span>
               </button>
             </div>
@@ -164,13 +167,13 @@
           <div style="display:flex;gap:var(--space-3);margin-top:var(--space-6)">
             <button type="button" id="signup-prev" class="btn btn-secondary" style="display:none">← Back</button>
             <button type="button" id="signup-next" class="btn btn-primary" style="flex:1;justify-content:center">Continue →</button>
-            <button type="submit" id="signup-submit" class="btn btn-primary" style="flex:1;justify-content:center;display:none">🎯 Create Account</button>
+            <button type="submit" id="signup-submit" class="btn btn-primary" style="flex:1;justify-content:center;display:none">Create Account</button>
           </div>
         </form>
 
         <div style="text-align:center;margin-top:var(--space-6)">
           <button id="theme-toggle" class="btn btn-secondary btn-sm">
-            <span class="theme-icon">☀️</span> Toggle Theme
+            <span class="theme-icon"><svg class="v-icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/></svg></span> Toggle Theme
           </button>
           <button id="rtl-toggle" class="btn btn-secondary btn-sm" style="margin-left:var(--space-2)">
             <span class="rtl-icon" style="font-size:10px;font-weight:700">RTL</span> Direction

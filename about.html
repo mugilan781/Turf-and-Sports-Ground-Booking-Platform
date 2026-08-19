@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="About SportifyTurf — Our story, mission, vision, and the team behind India's premier sports ground booking platform.">
   <title>About Us — SportifyTurf</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚽</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23B8E62E'><circle cx='12' cy='12' r='10'/><polygon points='12 6.5 8 9.5 9.5 14.5 14.5 14.5 16 9.5' fill='%23071A2B'/></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800;900&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/variables.css">
@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="css/navbar.css">
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/components.css">
+  <script src="js/icons.js"></script>
   <style>
     .about-intro { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-16); align-items: center; }
     .about-intro__image { position: relative; border-radius: var(--radius-2xl); overflow: hidden; aspect-ratio: 4/3; }
@@ -23,7 +24,7 @@
     .award-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-4); }
     .award-card { background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-xl);padding:var(--space-6);text-align:center;transition:all var(--transition-slow); }
     .award-card:hover { border-color:var(--border-accent);transform:translateY(-4px); }
-    .award-icon { font-size:3rem;margin-bottom:var(--space-3);display:block; }
+    .award-icon { margin-bottom:var(--space-3);display:flex;align-items:center;justify-content:center; }
     .award-name { font-weight:700;font-size:var(--text-sm);margin-bottom:var(--space-1); }
     .award-org { font-size:var(--text-xs);color:var(--text-muted); }
     @media (max-width:1024px) { .about-intro{grid-template-columns:1fr} .award-grid{grid-template-columns:repeat(2,1fr)} }
@@ -37,7 +38,12 @@
   <!-- Navbar -->
   <nav class="navbar navbar--transparent" role="navigation" aria-label="Main navigation">
     <div class="container"><div class="navbar__inner">
-      <a href="index.html" class="navbar__logo"><div class="navbar__logo-mark">⚽</div><div class="navbar__logo-text"><span class="navbar__logo-name">Sportify<span>Turf</span></span><span class="navbar__logo-tagline">Book. Play. Win.</span></div></a>
+      <a href="index.html" class="navbar__logo">
+        <div class="navbar__logo-mark">
+          <svg class="v-icon icon-md v-icon-navy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/><polygon points="12 6.5 8 9.5 9.5 14.5 14.5 16 9.5" fill="currentColor" opacity="0.35"/></svg>
+        </div>
+        <div class="navbar__logo-text"><span class="navbar__logo-name">Sportify<span>Turf</span></span><span class="navbar__logo-tagline">Book. Play. Win.</span></div>
+      </a>
       <nav class="navbar__nav">
         <a href="index.html" class="navbar__link">Home</a>
         <a href="about.html" class="navbar__link active">About</a>
@@ -46,7 +52,7 @@
         <a href="contact.html" class="navbar__link">Contact</a>
       </nav>
       <div class="navbar__actions">
-        <button id="theme-toggle" class="navbar__toggle-btn"><span class="theme-icon">☀️</span></button>
+        <button id="theme-toggle" class="navbar__toggle-btn"><span class="theme-icon"><svg class="v-icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/></svg></span></button>
         <button id="rtl-toggle" class="navbar__toggle-btn"><span class="rtl-icon" style="font-size:10px;font-weight:700">RTL</span></button>
         <a href="login.html" class="btn btn-secondary btn-sm">Sign In</a>
         <a href="dashboard.html" class="btn btn-primary btn-sm">Book Now →</a>
@@ -54,13 +60,13 @@
       <button class="navbar__hamburger" id="mobile-menu-toggle"><span></span><span></span><span></span></button>
     </div></div>
     <div class="navbar__mobile" id="mobile-menu">
-      <a href="index.html" class="navbar__mobile-link">🏠 Home</a>
-      <a href="about.html" class="navbar__mobile-link active">👥 About</a>
-      <a href="services.html" class="navbar__mobile-link">🏟️ Services</a>
-      <a href="blog.html" class="navbar__mobile-link">📰 Blog</a>
-      <a href="contact.html" class="navbar__mobile-link">📞 Contact</a>
+      <a href="index.html" class="navbar__mobile-link"><span data-icon="home" data-icon-class="v-icon icon-sm"></span> Home</a>
+      <a href="about.html" class="navbar__mobile-link active"><span data-icon="about" data-icon-class="v-icon icon-sm"></span> About</a>
+      <a href="services.html" class="navbar__mobile-link"><span data-icon="services" data-icon-class="v-icon icon-sm"></span> Services</a>
+      <a href="blog.html" class="navbar__mobile-link"><span data-icon="blog" data-icon-class="v-icon icon-sm"></span> Blog</a>
+      <a href="contact.html" class="navbar__mobile-link"><span data-icon="contact" data-icon-class="v-icon icon-sm"></span> Contact</a>
       <div class="navbar__mobile-actions">
-        <button id="theme-toggle-mobile" class="navbar__toggle-btn" style="width:100%"><span class="theme-icon">☀️</span> Toggle Theme</button>
+        <button id="theme-toggle-mobile" class="navbar__toggle-btn" style="width:100%"><span class="theme-icon"><svg class="v-icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/></svg></span> Toggle Theme</button>
         <a href="login.html" class="btn btn-secondary" style="width:100%;justify-content:center">Sign In</a>
         <a href="dashboard.html" class="btn btn-primary" style="width:100%;justify-content:center">Book Now →</a>
       </div>
@@ -72,7 +78,10 @@
     <div class="page-hero__bg"><img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1920&q=80" alt="Premium football stadium at sunset"></div>
     <div class="page-hero__overlay"></div>
     <div class="container"><div class="page-hero__content reveal">
-      <span class="page-hero__eyebrow">👥 Our Story</span>
+      <span class="page-hero__eyebrow">
+        <svg class="v-icon icon-xs v-icon-lime" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+        Our Story
+      </span>
       <h1 class="page-hero__title" id="about-heading">About <span style="color:var(--electric-lime)">SportifyTurf</span></h1>
       <p style="color:rgba(255,255,255,0.75);font-size:var(--text-lg);max-width:560px;margin-inline:auto;line-height:var(--lh-relaxed)">
         We're passionate sports enthusiasts who built the platform we always wished existed — a seamless, instant, and premium way to book your next game.
@@ -95,7 +104,10 @@
           </div>
         </div>
         <div class="reveal-right">
-          <span class="section-label" id="story-heading">⭐ Our Story</span>
+          <span class="section-label" id="story-heading">
+            <svg class="v-icon icon-xs v-icon-lime" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            Our Story
+          </span>
           <h2 class="section-title" style="text-align:left">Born From a <span class="accent">Missed Game</span></h2>
           <p style="color:var(--text-secondary);line-height:var(--lh-relaxed);margin-bottom:var(--space-5)">
             It started with a frustrating Saturday morning — our founder, Raj Kumar, called 12 different turf owners just to find an available football pitch. By the time he found one, half his team had gone home.
@@ -122,22 +134,31 @@
   <section class="section" style="background:var(--bg-secondary)" aria-labelledby="mvv-heading">
     <div class="container">
       <div class="section-header">
-        <span class="section-label" id="mvv-heading">🎯 What Drives Us</span>
+        <span class="section-label" id="mvv-heading">
+          <svg class="v-icon icon-xs v-icon-lime" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg>
+          What Drives Us
+        </span>
         <h2 class="section-title reveal">Mission, Vision & <span class="accent">Values</span></h2>
       </div>
       <div class="grid-3">
         <div class="card reveal delay-100" style="padding:var(--space-8);border-top:3px solid var(--electric-lime)">
-          <div style="font-size:3rem;margin-bottom:var(--space-4)">🎯</div>
+          <div class="icon-circle icon-circle--lime" style="margin-bottom:var(--space-4);width:52px;height:52px">
+            <svg class="v-icon icon-lg v-icon-lime" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg>
+          </div>
           <h3 style="font-size:var(--text-xl);margin-bottom:var(--space-3)">Our Mission</h3>
           <p style="color:var(--text-muted);line-height:var(--lh-relaxed)">To make premium sports ground booking accessible, instant, and stress-free for every player in India — from weekend warriors to professional teams.</p>
         </div>
         <div class="card reveal delay-200" style="padding:var(--space-8);border-top:3px solid var(--stadium-green)">
-          <div style="font-size:3rem;margin-bottom:var(--space-4)">🔭</div>
+          <div class="icon-circle icon-circle--green" style="margin-bottom:var(--space-4);width:52px;height:52px">
+            <svg class="v-icon icon-lg v-icon-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
           <h3 style="font-size:var(--text-xl);margin-bottom:var(--space-3)">Our Vision</h3>
           <p style="color:var(--text-muted);line-height:var(--lh-relaxed)">To become India's most trusted sports infrastructure platform, connecting 1 million athletes with premium facilities by 2030.</p>
         </div>
         <div class="card reveal delay-300" style="padding:var(--space-8);border-top:3px solid var(--silver)">
-          <div style="font-size:3rem;margin-bottom:var(--space-4)">💎</div>
+          <div class="icon-circle icon-circle--blue" style="margin-bottom:var(--space-4);width:52px;height:52px">
+            <svg class="v-icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:#3B82F6"><polygon points="6 2 18 2 22 8 12 22 2 8 6 2"/></svg>
+          </div>
           <h3 style="font-size:var(--text-xl);margin-bottom:var(--space-3)">Our Values</h3>
           <ul style="color:var(--text-muted);line-height:2;padding-left:var(--space-5)">
             <li style="list-style:disc">Excellence in every detail</li>
@@ -154,7 +175,10 @@
   <section class="section" aria-labelledby="team-heading">
     <div class="container">
       <div class="section-header">
-        <span class="section-label" id="team-heading">👥 Meet the Team</span>
+        <span class="section-label" id="team-heading">
+          <svg class="v-icon icon-xs v-icon-lime" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>
+          Meet the Team
+        </span>
         <h2 class="section-title reveal">The People Behind the <span class="accent">Platform</span></h2>
         <p class="section-desc reveal delay-100">A passionate team of sports lovers, tech builders, and community champions.</p>
       </div>
@@ -164,28 +188,28 @@
           <h3 class="team-card__name">Raj Kumar</h3>
           <div class="team-card__role">CEO & Co-Founder</div>
           <p class="team-card__bio">Ex-professional footballer turned entrepreneur. 10+ years in sports management.</p>
-          <div class="team-card__social"><a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="Twitter">𝕏</a></div>
+          <div class="team-card__social"><a href="#" aria-label="LinkedIn" data-icon="linkedin" data-icon-class="v-icon icon-xs"></a><a href="#" aria-label="Twitter" data-icon="twitter" data-icon-class="v-icon icon-xs"></a></div>
         </div>
         <div class="team-card reveal delay-200">
           <div class="team-card__avatar"><img src="https://images.unsplash.com/photo-1494790108755-2616b8e8f8dc?w=200&q=80" alt="Priya Nair - CTO" loading="lazy"></div>
           <h3 class="team-card__name">Priya Nair</h3>
           <div class="team-card__role">CTO & Co-Founder</div>
           <p class="team-card__bio">Full-stack engineer with 8 years building scalable platforms for high-growth startups.</p>
-          <div class="team-card__social"><a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="GitHub">⌨</a></div>
+          <div class="team-card__social"><a href="#" aria-label="LinkedIn" data-icon="linkedin" data-icon-class="v-icon icon-xs"></a><a href="#" aria-label="Twitter" data-icon="twitter" data-icon-class="v-icon icon-xs"></a></div>
         </div>
         <div class="team-card reveal delay-300">
           <div class="team-card__avatar"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80" alt="Vikram Sharma - Head of Operations" loading="lazy"></div>
           <h3 class="team-card__name">Vikram Sharma</h3>
           <div class="team-card__role">Head of Operations</div>
           <p class="team-card__bio">Sports logistics expert ensuring every venue meets our premium quality standards.</p>
-          <div class="team-card__social"><a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="Twitter">𝕏</a></div>
+          <div class="team-card__social"><a href="#" aria-label="LinkedIn" data-icon="linkedin" data-icon-class="v-icon icon-xs"></a><a href="#" aria-label="Twitter" data-icon="twitter" data-icon-class="v-icon icon-xs"></a></div>
         </div>
         <div class="team-card reveal delay-400">
           <div class="team-card__avatar"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&q=80" alt="Ananya Krishnan - Head of Design" loading="lazy"></div>
           <h3 class="team-card__name">Ananya Krishnan</h3>
           <div class="team-card__role">Head of Design</div>
           <p class="team-card__bio">Award-winning UX designer obsessed with creating seamless sports tech experiences.</p>
-          <div class="team-card__social"><a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="Behance">Be</a></div>
+          <div class="team-card__social"><a href="#" aria-label="LinkedIn" data-icon="linkedin" data-icon-class="v-icon icon-xs"></a><a href="#" aria-label="Twitter" data-icon="twitter" data-icon-class="v-icon icon-xs"></a></div>
         </div>
       </div>
     </div>
@@ -195,7 +219,10 @@
   <section class="section" style="background:var(--bg-secondary)" aria-labelledby="milestones-heading">
     <div class="container">
       <div class="section-header">
-        <span class="section-label" id="milestones-heading">📅 Our Journey</span>
+        <span class="section-label" id="milestones-heading">
+          <svg class="v-icon icon-xs v-icon-lime" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Our Journey
+        </span>
         <h2 class="section-title reveal">Key <span class="accent">Milestones</span></h2>
       </div>
       <div class="timeline">
@@ -252,14 +279,41 @@
   <section class="section" aria-labelledby="awards-heading">
     <div class="container">
       <div class="section-header">
-        <span class="section-label" id="awards-heading">🏆 Recognition</span>
+        <span class="section-label" id="awards-heading">
+          <svg class="v-icon icon-xs v-icon-lime" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M6 4h12v6c0 3.31-2.69 6-6 6s-6-2.69-6-6V4z"/></svg>
+          Recognition
+        </span>
         <h2 class="section-title reveal">Awards & <span class="accent">Certifications</span></h2>
       </div>
       <div class="award-grid" style="margin-bottom:var(--space-16)">
-        <div class="award-card reveal delay-100"><span class="award-icon">🏆</span><div class="award-name">Best Sports Tech Startup</div><div class="award-org">TechSpark India, 2023</div></div>
-        <div class="award-card reveal delay-200"><span class="award-icon">⭐</span><div class="award-name">Top Sports Platform</div><div class="award-org">StartupIndia Awards, 2024</div></div>
-        <div class="award-card reveal delay-300"><span class="award-icon">🛡️</span><div class="award-name">ISO 27001 Certified</div><div class="award-org">Information Security</div></div>
-        <div class="award-card reveal delay-400"><span class="award-icon">🌟</span><div class="award-name">Customer Choice Award</div><div class="award-org">Google Play & App Store</div></div>
+        <div class="award-card reveal delay-100">
+          <span class="award-icon">
+            <svg class="v-icon icon-xl v-icon-lime" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M6 4h12v6c0 3.31-2.69 6-6 6s-6-2.69-6-6V4z"/></svg>
+          </span>
+          <div class="award-name">Best Sports Tech Startup</div>
+          <div class="award-org">TechSpark India, 2023</div>
+        </div>
+        <div class="award-card reveal delay-200">
+          <span class="award-icon">
+            <svg class="v-icon icon-xl" viewBox="0 0 24 24" fill="currentColor" style="color:#F59E0B"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </span>
+          <div class="award-name">Top Sports Platform</div>
+          <div class="award-org">StartupIndia Awards, 2024</div>
+        </div>
+        <div class="award-card reveal delay-300">
+          <span class="award-icon">
+            <svg class="v-icon icon-xl v-icon-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </span>
+          <div class="award-name">ISO 27001 Certified</div>
+          <div class="award-org">Information Security</div>
+        </div>
+        <div class="award-card reveal delay-400">
+          <span class="award-icon">
+            <svg class="v-icon icon-xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="color:#3B82F6"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+          </span>
+          <div class="award-name">Customer Choice Award</div>
+          <div class="award-org">Google Play & App Store</div>
+        </div>
       </div>
       <div style="background:linear-gradient(135deg,var(--stadium-green),var(--green-dark));border-radius:var(--radius-2xl);padding:var(--space-12);text-align:center;position:relative;overflow:hidden">
         <h2 style="font-size:clamp(var(--text-2xl),4vw,var(--text-4xl));font-weight:900;color:var(--white);margin-bottom:var(--space-4)">Ready to Play? <span style="color:var(--electric-lime)">Join Us.</span></h2>
@@ -268,7 +322,6 @@
           <a href="dashboard.html" class="btn btn-primary btn-lg">Book Your First Turf</a>
           <a href="contact.html" class="btn btn-ghost btn-lg">Get In Touch</a>
         </div>
-        <div style="position:absolute;bottom:-30px;right:-30px;font-size:12rem;opacity:0.05;pointer-events:none">🏆</div>
       </div>
     </div>
   </section>
@@ -279,12 +332,12 @@
     <div class="footer__glow footer__glow--green"></div>
     <div class="footer__top"><div class="container"><div class="footer__grid">
       <div class="footer__brand">
-        <a href="index.html" class="footer__logo"><div class="footer__logo-mark">⚽</div><div><div class="footer__logo-name">Sportify<span>Turf</span></div><div class="footer__logo-tagline">Book. Play. Win.</div></div></a>
+        <a href="index.html" class="footer__logo"><div class="footer__logo-mark"><svg class="v-icon icon-md v-icon-navy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/><polygon points="12 6.5 8 9.5 9.5 14.5 14.5 16 9.5" fill="currentColor" opacity="0.35"/></svg></div><div><div class="footer__logo-name">Sportify<span>Turf</span></div><div class="footer__logo-tagline">Book. Play. Win.</div></div></a>
         <p class="footer__desc">India's most trusted sports ground booking platform.</p>
-        <div class="footer__social"><a href="#" class="footer__social-link">f</a><a href="#" class="footer__social-link">📸</a><a href="#" class="footer__social-link">𝕏</a><a href="#" class="footer__social-link">▶</a></div>
+        <div class="footer__social"><a href="#" class="footer__social-link" data-icon="facebook" data-icon-class="v-icon icon-sm"></a><a href="#" class="footer__social-link" data-icon="instagram" data-icon-class="v-icon icon-sm"></a><a href="#" class="footer__social-link" data-icon="twitter" data-icon-class="v-icon icon-sm"></a><a href="#" class="footer__social-link" data-icon="youtube" data-icon-class="v-icon icon-sm"></a></div>
       </div>
       <div class="footer__nav-group"><h3 class="footer__nav-title">Platform</h3><ul class="footer__nav-list"><li><a href="index.html" class="footer__nav-link">Home</a></li><li><a href="about.html" class="footer__nav-link">About</a></li><li><a href="services.html" class="footer__nav-link">Services</a></li><li><a href="blog.html" class="footer__nav-link">Blog</a></li><li><a href="contact.html" class="footer__nav-link">Contact</a></li></ul></div>
-      <div class="footer__nav-group"><h3 class="footer__nav-title">Sports</h3><ul class="footer__nav-list"><li><a href="services.html#football" class="footer__nav-link">⚽ Football</a></li><li><a href="services.html#cricket" class="footer__nav-link">🏏 Cricket</a></li><li><a href="services.html#badminton" class="footer__nav-link">🏸 Badminton</a></li><li><a href="dashboard.html" class="footer__nav-link">📅 Book Now</a></li></ul></div>
+      <div class="footer__nav-group"><h3 class="footer__nav-title">Sports</h3><ul class="footer__nav-list"><li><a href="services.html#football" class="footer__nav-link">Football</a></li><li><a href="services.html#cricket" class="footer__nav-link">Cricket</a></li><li><a href="services.html#badminton" class="footer__nav-link">Badminton</a></li><li><a href="dashboard.html" class="footer__nav-link">Book Now</a></li></ul></div>
       <div class="footer__nav-group"><h3 class="footer__nav-title">Legal</h3><ul class="footer__nav-list"><li><a href="privacy-policy.html" class="footer__nav-link">Privacy Policy</a></li><li><a href="terms.html" class="footer__nav-link">Terms & Conditions</a></li><li><a href="sitemap.html" class="footer__nav-link">Sitemap</a></li></ul></div>
     </div></div></div>
     <div class="footer__bottom"><div class="container"><div class="footer__bottom-inner">

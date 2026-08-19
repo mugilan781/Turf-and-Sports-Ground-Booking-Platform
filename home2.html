@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="SportifyTurf — Discover premium sports venues, live availability, exclusive offers, and seamless booking. India's #1 sports ground platform.">
   <title>Discover Venues — SportifyTurf</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚽</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23B8E62E'><circle cx='12' cy='12' r='10'/><polygon points='12 6.5 8 9.5 9.5 14.5 14.5 14.5 16 9.5' fill='%23071A2B'/></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800;900&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/variables.css">
@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/home.css">
+  <script src="js/icons.js"></script>
   <style>
     .home2-hero { min-height:100vh;position:relative;display:flex;align-items:center;overflow:hidden;padding-top:var(--nav-height) }
     .home2-hero__bg { position:absolute;inset:0 }
@@ -32,7 +33,7 @@
     .service-card:hover .service-card__img img { transform:scale(1.08) }
     .service-card__body { padding:var(--space-6) }
     .partner-logos { display:flex;gap:var(--space-8);align-items:center;justify-content:center;flex-wrap:wrap }
-    .partner-logo { display:flex;align-items:center;justify-content:center;height:60px;padding:var(--space-3) var(--space-6);background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);font-size:var(--text-sm);font-weight:700;color:var(--text-muted);transition:all var(--transition-base);cursor:default;opacity:0.7 }
+    .partner-logo { display:flex;align-items:center;justify-content:center;gap:8px;height:60px;padding:var(--space-3) var(--space-6);background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);font-size:var(--text-sm);font-weight:700;color:var(--text-muted);transition:all var(--transition-base);cursor:default;opacity:0.7 }
     .partner-logo:hover { opacity:1;border-color:var(--border-accent) }
     @media (max-width:768px) { .services-grid{grid-template-columns:1fr} }
   </style>
@@ -43,10 +44,15 @@
 
   <nav class="navbar navbar--transparent" role="navigation" aria-label="Main navigation">
     <div class="container"><div class="navbar__inner">
-      <a href="index.html" class="navbar__logo"><div class="navbar__logo-mark">⚽</div><div class="navbar__logo-text"><span class="navbar__logo-name">Sportify<span>Turf</span></span><span class="navbar__logo-tagline">Book. Play. Win.</span></div></a>
+      <a href="index.html" class="navbar__logo">
+        <div class="navbar__logo-mark">
+          <svg class="v-icon icon-md v-icon-navy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/><polygon points="12 6.5 8 9.5 9.5 14.5 14.5 14.5 16 9.5" fill="currentColor" opacity="0.35"/></svg>
+        </div>
+        <div class="navbar__logo-text"><span class="navbar__logo-name">Sportify<span>Turf</span></span><span class="navbar__logo-tagline">Book. Play. Win.</span></div>
+      </a>
       <nav class="navbar__nav"><a href="index.html" class="navbar__link">Home</a><a href="home2.html" class="navbar__link active">Discover</a><a href="about.html" class="navbar__link">About</a><a href="services.html" class="navbar__link">Services</a><a href="blog.html" class="navbar__link">Blog</a><a href="contact.html" class="navbar__link">Contact</a></nav>
       <div class="navbar__actions">
-        <button id="theme-toggle" class="navbar__toggle-btn"><span class="theme-icon">☀️</span></button>
+        <button id="theme-toggle" class="navbar__toggle-btn"><span class="theme-icon"><svg class="v-icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/></svg></span></button>
         <button id="rtl-toggle" class="navbar__toggle-btn"><span class="rtl-icon" style="font-size:10px;font-weight:700">RTL</span></button>
         <a href="login.html" class="btn btn-secondary btn-sm">Sign In</a>
         <a href="dashboard.html" class="btn btn-primary btn-sm">Book Now →</a>
@@ -54,8 +60,9 @@
       <button class="navbar__hamburger" id="mobile-menu-toggle"><span></span><span></span><span></span></button>
     </div></div>
     <div class="navbar__mobile" id="mobile-menu">
-      <a href="index.html" class="navbar__mobile-link">🏠 Home</a><a href="home2.html" class="navbar__mobile-link active">🔍 Discover</a>
-      <div class="navbar__mobile-actions"><button id="theme-toggle-mobile" class="navbar__toggle-btn" style="width:100%"><span class="theme-icon">☀️</span> Theme</button><a href="dashboard.html" class="btn btn-primary" style="width:100%;justify-content:center">Book Now →</a></div>
+      <a href="index.html" class="navbar__mobile-link"><span data-icon="home" data-icon-class="v-icon icon-sm"></span> Home</a>
+      <a href="home2.html" class="navbar__mobile-link active"><span data-icon="search" data-icon-class="v-icon icon-sm"></span> Discover</a>
+      <div class="navbar__mobile-actions"><button id="theme-toggle-mobile" class="navbar__toggle-btn" style="width:100%"><span class="theme-icon"><svg class="v-icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/></svg></span> Theme</button><a href="dashboard.html" class="btn btn-primary" style="width:100%;justify-content:center">Book Now →</a></div>
     </div>
   </nav>
 
@@ -80,12 +87,15 @@
       <!-- Big Search Bar -->
       <div class="reveal delay-300" style="background:rgba(7,26,43,0.8);backdrop-filter:blur(20px);border:1px solid rgba(184,230,46,0.2);border-radius:var(--radius-2xl);padding:var(--space-5);max-width:800px;margin-inline:auto;display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:var(--space-3);align-items:end">
         <div><label style="display:block;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:var(--space-2)">Sport</label>
-          <select class="quick-book-select" aria-label="Select sport"><option>All Sports</option><option>⚽ Football</option><option>🏏 Cricket</option><option>🏸 Badminton</option></select></div>
+          <select class="quick-book-select" aria-label="Select sport"><option>All Sports</option><option>Football</option><option>Cricket</option><option>Badminton</option></select></div>
         <div><label style="display:block;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:var(--space-2)">Location</label>
           <select class="quick-book-select" aria-label="Select location"><option>All Areas</option><option>Anna Nagar</option><option>T. Nagar</option><option>Adyar</option><option>OMR</option></select></div>
         <div><label style="display:block;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:var(--space-2)">Date</label>
           <input type="date" class="quick-book-select" id="h2-date" aria-label="Select date"></div>
-        <button class="btn btn-primary btn-lg" style="white-space:nowrap" onclick="document.getElementById('h2-venues').scrollIntoView({behavior:'smooth'})">🔍 Search</button>
+        <button class="btn btn-primary btn-lg" style="white-space:nowrap;display:inline-flex;align-items:center;gap:6px" onclick="document.getElementById('h2-venues').scrollIntoView({behavior:'smooth'})">
+          <svg class="v-icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          Search
+        </button>
       </div>
     </div>
   </section>
@@ -93,17 +103,17 @@
   <!-- SECTION 2: Live Availability Ticker -->
   <div style="background:var(--graphite);border-top:1px solid var(--border-color);border-bottom:1px solid var(--border-color);padding-block:var(--space-4);overflow:hidden" role="marquee" aria-label="Live availability updates">
     <div class="ticker-content" style="gap:var(--space-10)">
-      <span class="ticker-item" style="color:var(--ice-white)">⚽ <strong style="color:var(--electric-lime)">Premier Football Arena</strong> — 3 slots open today</span>
+      <span class="ticker-item" style="color:var(--ice-white)"><span data-icon="football" data-icon-class="v-icon icon-xs v-icon-lime"></span> <strong style="color:var(--electric-lime)">Premier Football Arena</strong> — 3 slots open today</span>
       <span class="ticker-sep" style="color:var(--silver-dark)">|</span>
-      <span class="ticker-item" style="color:var(--ice-white)">🏏 <strong style="color:var(--electric-lime)">Cricket Ground Pro</strong> — Available 5 AM–9 AM</span>
+      <span class="ticker-item" style="color:var(--ice-white)"><span data-icon="cricket" data-icon-class="v-icon icon-xs v-icon-lime"></span> <strong style="color:var(--electric-lime)">Cricket Ground Pro</strong> — Available 5 AM–9 AM</span>
       <span class="ticker-sep" style="color:var(--silver-dark)">|</span>
-      <span class="ticker-item" style="color:var(--ice-white)">🏸 <strong style="color:var(--electric-lime)">Smash Zone</strong> — 4 courts open tonight</span>
+      <span class="ticker-item" style="color:var(--ice-white)"><span data-icon="badminton" data-icon-class="v-icon icon-xs v-icon-lime"></span> <strong style="color:var(--electric-lime)">Smash Zone</strong> — 4 courts open tonight</span>
       <span class="ticker-sep" style="color:var(--silver-dark)">|</span>
-      <span class="ticker-item" style="color:var(--ice-white)">⚽ <strong style="color:var(--electric-lime)">Green Pitch Stadium</strong> — Only 1 slot left at 8 PM!</span>
+      <span class="ticker-item" style="color:var(--ice-white)"><span data-icon="football" data-icon-class="v-icon icon-xs v-icon-lime"></span> <strong style="color:var(--electric-lime)">Green Pitch Stadium</strong> — Only 1 slot left at 8 PM!</span>
       <span class="ticker-sep" style="color:var(--silver-dark)">|</span>
-      <span class="ticker-item" style="color:var(--ice-white)">🏏 <strong style="color:var(--electric-lime)">Champions Cricket Club</strong> — Fully booked until Sunday</span>
+      <span class="ticker-item" style="color:var(--ice-white)"><span data-icon="cricket" data-icon-class="v-icon icon-xs v-icon-lime"></span> <strong style="color:var(--electric-lime)">Champions Cricket Club</strong> — Fully booked until Sunday</span>
       <span class="ticker-sep" style="color:var(--silver-dark)">|</span>
-      <span class="ticker-item" style="color:var(--ice-white)">⚽ <strong style="color:var(--electric-lime)">Premier Football Arena</strong> — 3 slots open today</span>
+      <span class="ticker-item" style="color:var(--ice-white)"><span data-icon="football" data-icon-class="v-icon icon-xs v-icon-lime"></span> <strong style="color:var(--electric-lime)">Premier Football Arena</strong> — 3 slots open today</span>
     </div>
   </div>
 
@@ -111,7 +121,10 @@
   <section class="section" id="h2-venues" aria-labelledby="h2-services-heading">
     <div class="container">
       <div class="section-header">
-        <span class="section-label" id="h2-services-heading">🏟️ Premium Services</span>
+        <span class="section-label" id="h2-services-heading">
+          <svg class="v-icon icon-xs v-icon-lime" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="8" rx="10" ry="5"/><path d="M2 8v8c0 2.76 4.48 5 10 5s10-2.24 10-5V8"/></svg>
+          Premium Services
+        </span>
         <h2 class="section-title reveal">Book Your <span class="accent">Perfect Venue</span></h2>
       </div>
       <div class="services-grid">
@@ -119,13 +132,13 @@
           <div class="service-card__img"><img src="https://images.unsplash.com/photo-1575361204480-aadea25e6e68?w=800&q=80" alt="Floodlit football turf" loading="lazy"></div>
           <div class="service-card__body">
             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-3)">
-              <span class="badge badge-lime">⚽ Football</span>
+              <span class="badge badge-lime">Football</span>
               <span style="font-family:var(--font-display);font-size:var(--text-xl);font-weight:900;color:var(--electric-lime)">₹900/hr</span>
             </div>
             <h3 style="margin-bottom:var(--space-2)">Football Turfs</h3>
             <p style="font-size:var(--text-sm);color:var(--text-muted);margin-bottom:var(--space-4)">50+ FIFA-approved synthetic turfs with LED floodlights, 5-a-side and 7-a-side formats.</p>
             <div style="display:flex;gap:var(--space-2);margin-bottom:var(--space-5);flex-wrap:wrap">
-              <span class="chip">💡 Floodlights</span><span class="chip">🅿️ Parking</span><span class="chip">🚿 Showers</span>
+              <span class="chip">Floodlights</span><span class="chip">Parking</span><span class="chip">Showers</span>
             </div>
             <a href="dashboard.html" class="btn btn-primary" style="width:100%;justify-content:center">Book Football Turf →</a>
           </div>
@@ -134,13 +147,13 @@
           <div class="service-card__img"><img src="https://images.unsplash.com/photo-1540747913346-19212a4b573d?w=800&q=80" alt="Cricket ground with pavilion" loading="lazy"></div>
           <div class="service-card__body">
             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-3)">
-              <span class="badge badge-green">🏏 Cricket</span>
+              <span class="badge badge-green">Cricket</span>
               <span style="font-family:var(--font-display);font-size:var(--text-xl);font-weight:900;color:var(--electric-lime)">₹1,200/hr</span>
             </div>
             <h3 style="margin-bottom:var(--space-2)">Cricket Grounds</h3>
             <p style="font-size:var(--text-sm);color:var(--text-muted);margin-bottom:var(--space-4)">30+ full-size cricket grounds with practice nets, scoreboards, and pavilion facilities.</p>
             <div style="display:flex;gap:var(--space-2);margin-bottom:var(--space-5);flex-wrap:wrap">
-              <span class="chip">🎯 Practice Nets</span><span class="chip">📊 Scoreboard</span><span class="chip">🏛️ Pavilion</span>
+              <span class="chip">Practice Nets</span><span class="chip">Scoreboard</span><span class="chip">Pavilion</span>
             </div>
             <a href="dashboard.html" class="btn btn-primary" style="width:100%;justify-content:center">Book Cricket Ground →</a>
           </div>
@@ -149,13 +162,13 @@
           <div class="service-card__img"><img src="https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?w=800&q=80" alt="Indoor badminton court" loading="lazy"></div>
           <div class="service-card__body">
             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--space-3)">
-              <span class="badge badge-navy">🏸 Badminton</span>
+              <span class="badge badge-navy">Badminton</span>
               <span style="font-family:var(--font-display);font-size:var(--text-xl);font-weight:900;color:var(--electric-lime)">₹500/hr</span>
             </div>
             <h3 style="margin-bottom:var(--space-2)">Badminton Courts</h3>
             <p style="font-size:var(--text-sm);color:var(--text-muted);margin-bottom:var(--space-4)">40+ AC indoor courts with professional flooring, racket rentals, and shuttle service.</p>
             <div style="display:flex;gap:var(--space-2);margin-bottom:var(--space-5);flex-wrap:wrap">
-              <span class="chip">❄️ AC Courts</span><span class="chip">🏸 Rental</span><span class="chip">📹 Recording</span>
+              <span class="chip">AC Courts</span><span class="chip">Rental</span><span class="chip">Recording</span>
             </div>
             <a href="dashboard.html" class="btn btn-primary" style="width:100%;justify-content:center">Book Badminton Court →</a>
           </div>
@@ -168,26 +181,35 @@
   <section class="section" style="background:var(--bg-secondary)" aria-labelledby="offers-heading">
     <div class="container">
       <div class="section-header">
-        <span class="section-label" id="offers-heading">🎁 Limited Time</span>
+        <span class="section-label" id="offers-heading">
+          <svg class="v-icon icon-xs v-icon-lime" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/></svg>
+          Limited Time
+        </span>
         <h2 class="section-title reveal">Exclusive <span class="accent">Offers</span></h2>
       </div>
       <div class="grid-3" style="gap:var(--space-5)">
         <div class="card reveal delay-100" style="padding:var(--space-6);background:linear-gradient(135deg,rgba(184,230,46,0.1),rgba(18,107,79,0.08));border-color:rgba(184,230,46,0.25)">
-          <div style="font-size:3rem;margin-bottom:var(--space-4)">🎉</div>
+          <div class="icon-circle icon-circle--lime" style="margin-bottom:var(--space-4);width:52px;height:52px">
+            <svg class="v-icon icon-lg v-icon-lime" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
           <div class="badge badge-lime" style="margin-bottom:var(--space-3)">NEW USER</div>
           <h3 style="margin-bottom:var(--space-3)">First Booking 20% OFF</h3>
           <p style="color:var(--text-muted);font-size:var(--text-sm);margin-bottom:var(--space-4)">Create your free account and get 20% off your very first turf booking. No conditions attached.</p>
           <div style="background:var(--bg-card);padding:var(--space-3);border-radius:var(--radius-md);font-family:monospace;letter-spacing:0.1em;font-weight:700;color:var(--electric-lime);text-align:center;font-size:var(--text-lg)">SPORT20</div>
         </div>
         <div class="card reveal delay-200" style="padding:var(--space-6)">
-          <div style="font-size:3rem;margin-bottom:var(--space-4)">🏆</div>
+          <div class="icon-circle icon-circle--gold" style="margin-bottom:var(--space-4);width:52px;height:52px">
+            <svg class="v-icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M6 4h12v6c0 3.31-2.69 6-6 6s-6-2.69-6-6V4z"/></svg>
+          </div>
           <div class="badge badge-green" style="margin-bottom:var(--space-3)">WEEKEND</div>
           <h3 style="margin-bottom:var(--space-3)">Book 2hr, Get 30 Mins FREE</h3>
           <p style="color:var(--text-muted);font-size:var(--text-sm);margin-bottom:var(--space-4)">Every Saturday and Sunday, book any 2-hour session and get an extra 30 minutes of playtime absolutely free.</p>
           <a href="dashboard.html" class="btn btn-outline btn-sm" style="width:100%;justify-content:center">Claim Offer</a>
         </div>
         <div class="card reveal delay-300" style="padding:var(--space-6)">
-          <div style="font-size:3rem;margin-bottom:var(--space-4)">👥</div>
+          <div class="icon-circle icon-circle--blue" style="margin-bottom:var(--space-4);width:52px;height:52px">
+            <svg class="v-icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>
+          </div>
           <div class="badge badge-navy" style="margin-bottom:var(--space-3)">TEAMS</div>
           <h3 style="margin-bottom:var(--space-3)">Cricket Season Package</h3>
           <p style="color:var(--text-muted);font-size:var(--text-sm);margin-bottom:var(--space-4)">Book 10 cricket sessions upfront and save 25%. Guaranteed recurring slots every week.</p>
@@ -201,36 +223,47 @@
   <section class="section" aria-labelledby="partners-heading">
     <div class="container">
       <div class="section-header">
-        <span class="section-label" id="partners-heading">🤝 Trusted Partners</span>
+        <span class="section-label" id="partners-heading">
+          <svg class="v-icon icon-xs v-icon-lime" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Trusted Partners
+        </span>
         <h2 class="section-title reveal">Built With <span class="accent">Trust</span></h2>
         <p class="section-desc reveal delay-100">SportifyTurf is partnered with premium venue operators and trusted by thousands across Chennai.</p>
       </div>
       <div class="partner-logos reveal">
-        <div class="partner-logo">🏅 Sports Authority of India</div>
-        <div class="partner-logo">🏟️ Chennai Football Club</div>
-        <div class="partner-logo">🏏 TNCA Partners</div>
-        <div class="partner-logo">🏸 Badminton Association TN</div>
-        <div class="partner-logo">💳 Razorpay Secure</div>
-        <div class="partner-logo">📱 Google Partner</div>
+        <div class="partner-logo"><span data-icon="trophy" data-icon-class="v-icon icon-sm"></span> Sports Authority of India</div>
+        <div class="partner-logo"><span data-icon="stadium" data-icon-class="v-icon icon-sm"></span> Chennai Football Club</div>
+        <div class="partner-logo"><span data-icon="cricket" data-icon-class="v-icon icon-sm"></span> TNCA Partners</div>
+        <div class="partner-logo"><span data-icon="badminton" data-icon-class="v-icon icon-sm"></span> Badminton Association TN</div>
+        <div class="partner-logo"><span data-icon="creditCard" data-icon-class="v-icon icon-sm"></span> Razorpay Secure</div>
+        <div class="partner-logo"><span data-icon="shield" data-icon-class="v-icon icon-sm"></span> Google Partner</div>
       </div>
       <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-6);margin-top:var(--space-12)">
         <div class="card reveal" style="padding:var(--space-6);text-align:center">
-          <div style="font-size:2.5rem;margin-bottom:var(--space-3)">🔒</div>
+          <div class="icon-circle icon-circle--lime" style="margin:0 auto var(--space-3);width:48px;height:48px">
+            <svg class="v-icon icon-md v-icon-lime" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
           <div style="font-weight:700;margin-bottom:var(--space-2)">Secure Payments</div>
           <div style="font-size:var(--text-sm);color:var(--text-muted)">256-bit SSL encryption on all transactions</div>
         </div>
         <div class="card reveal" style="padding:var(--space-6);text-align:center">
-          <div style="font-size:2.5rem;margin-bottom:var(--space-3)">⭐</div>
-          <div style="font-weight:700;margin-bottom:var(--space-2)">4.9★ Rating</div>
+          <div class="icon-circle icon-circle--gold" style="margin:0 auto var(--space-3);width:48px;height:48px">
+            <svg class="v-icon icon-md" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <div style="font-weight:700;margin-bottom:var(--space-2)">4.9 Rating</div>
           <div style="font-size:var(--text-sm);color:var(--text-muted)">Average rating from 12,000+ reviews</div>
         </div>
         <div class="card reveal" style="padding:var(--space-6);text-align:center">
-          <div style="font-size:2.5rem;margin-bottom:var(--space-3)">⚡</div>
+          <div class="icon-circle icon-circle--lime" style="margin:0 auto var(--space-3);width:48px;height:48px">
+            <svg class="v-icon icon-md v-icon-lime" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
           <div style="font-weight:700;margin-bottom:var(--space-2)">Instant Booking</div>
           <div style="font-size:var(--text-sm);color:var(--text-muted)">Confirmation in under 30 seconds</div>
         </div>
         <div class="card reveal" style="padding:var(--space-6);text-align:center">
-          <div style="font-size:2.5rem;margin-bottom:var(--space-3)">🛡️</div>
+          <div class="icon-circle icon-circle--green" style="margin:0 auto var(--space-3);width:48px;height:48px">
+            <svg class="v-icon icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
           <div style="font-weight:700;margin-bottom:var(--space-2)">Money-Back</div>
           <div style="font-size:var(--text-sm);color:var(--text-muted)">100% refund if venue fails to deliver</div>
         </div>
@@ -242,7 +275,10 @@
   <section class="section" style="background:var(--bg-secondary)" aria-labelledby="h2-faq-heading">
     <div class="container">
       <div class="section-header">
-        <span class="section-label" id="h2-faq-heading">❓ Got Questions?</span>
+        <span class="section-label" id="h2-faq-heading">
+          <svg class="v-icon icon-xs v-icon-lime" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          Got Questions?
+        </span>
         <h2 class="section-title reveal">Frequently Asked <span class="accent">Questions</span></h2>
       </div>
       <div class="faq-list">
@@ -277,9 +313,9 @@
   <footer class="footer" role="contentinfo">
     <div class="footer__glow footer__glow--lime"></div><div class="footer__glow footer__glow--green"></div>
     <div class="footer__top"><div class="container"><div class="footer__grid">
-      <div class="footer__brand"><a href="index.html" class="footer__logo"><div class="footer__logo-mark">⚽</div><div><div class="footer__logo-name">Sportify<span>Turf</span></div><div class="footer__logo-tagline">Book. Play. Win.</div></div></a><p class="footer__desc">India's most trusted sports ground booking platform.</p><div class="footer__social"><a href="#" class="footer__social-link">f</a><a href="#" class="footer__social-link">📸</a><a href="#" class="footer__social-link">𝕏</a><a href="#" class="footer__social-link">▶</a></div></div>
+      <div class="footer__brand"><a href="index.html" class="footer__logo"><div class="footer__logo-mark"><svg class="v-icon icon-md v-icon-navy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/><polygon points="12 6.5 8 9.5 9.5 14.5 14.5 14.5 16 9.5" fill="currentColor" opacity="0.35"/></svg></div><div><div class="footer__logo-name">Sportify<span>Turf</span></div><div class="footer__logo-tagline">Book. Play. Win.</div></div></a><p class="footer__desc">India's most trusted sports ground booking platform.</p><div class="footer__social"><a href="#" class="footer__social-link" data-icon="facebook" data-icon-class="v-icon icon-sm"></a><a href="#" class="footer__social-link" data-icon="instagram" data-icon-class="v-icon icon-sm"></a><a href="#" class="footer__social-link" data-icon="twitter" data-icon-class="v-icon icon-sm"></a><a href="#" class="footer__social-link" data-icon="youtube" data-icon-class="v-icon icon-sm"></a></div></div>
       <div class="footer__nav-group"><h3 class="footer__nav-title">Platform</h3><ul class="footer__nav-list"><li><a href="index.html" class="footer__nav-link">Home</a></li><li><a href="about.html" class="footer__nav-link">About</a></li><li><a href="services.html" class="footer__nav-link">Services</a></li><li><a href="blog.html" class="footer__nav-link">Blog</a></li><li><a href="contact.html" class="footer__nav-link">Contact</a></li></ul></div>
-      <div class="footer__nav-group"><h3 class="footer__nav-title">Sports</h3><ul class="footer__nav-list"><li><a href="services.html#football" class="footer__nav-link">⚽ Football</a></li><li><a href="services.html#cricket" class="footer__nav-link">🏏 Cricket</a></li><li><a href="services.html#badminton" class="footer__nav-link">🏸 Badminton</a></li></ul></div>
+      <div class="footer__nav-group"><h3 class="footer__nav-title">Sports</h3><ul class="footer__nav-list"><li><a href="services.html#football" class="footer__nav-link">Football</a></li><li><a href="services.html#cricket" class="footer__nav-link">Cricket</a></li><li><a href="services.html#badminton" class="footer__nav-link">Badminton</a></li></ul></div>
       <div class="footer__nav-group"><h3 class="footer__nav-title">Legal</h3><ul class="footer__nav-list"><li><a href="privacy-policy.html" class="footer__nav-link">Privacy Policy</a></li><li><a href="terms.html" class="footer__nav-link">Terms</a></li><li><a href="sitemap.html" class="footer__nav-link">Sitemap</a></li></ul></div>
     </div></div></div>
     <div class="footer__bottom"><div class="container"><div class="footer__bottom-inner"><p class="footer__copyright">© 2026 <span>SportifyTurf</span>. All rights reserved.</p><div class="footer__legal"><a href="privacy-policy.html" class="footer__legal-link">Privacy</a><a href="terms.html" class="footer__legal-link">Terms</a><a href="sitemap.html" class="footer__legal-link">Sitemap</a></div></div></div></div>
