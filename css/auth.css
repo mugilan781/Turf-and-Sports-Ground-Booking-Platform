@@ -57,6 +57,13 @@
   text-decoration: none;
 }
 
+.auth-left__logo-img {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  object-fit: contain;
+}
+
 .auth-left__logo-mark {
   width: 44px;
   height: 44px;

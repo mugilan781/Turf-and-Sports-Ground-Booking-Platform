@@ -50,6 +50,13 @@
   align-self: flex-start;
 }
 
+.footer__logo-img {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  object-fit: contain;
+}
+
 .footer__logo-mark {
   width: 48px;
   height: 48px;
