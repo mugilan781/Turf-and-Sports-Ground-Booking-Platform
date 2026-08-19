@@ -577,8 +577,6 @@
   box-shadow: 0 0 0 4px rgba(18,107,79,0.2);
 }
 
-.timeline-empty { display: none; }
-
 /* ── Info Cards (Contact) ── */
 .info-cards-grid {
   display: grid;
