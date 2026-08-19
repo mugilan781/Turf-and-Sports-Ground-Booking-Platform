@@ -33,18 +33,18 @@
   z-index: 1;
   background: linear-gradient(
     135deg,
-    rgba(7, 26, 43, 0.82) 0%,
-    rgba(7, 26, 43, 0.50) 55%,
-    rgba(18, 107, 79, 0.35) 100%
+    rgba(7, 26, 43, 0.88) 0%,
+    rgba(7, 26, 43, 0.60) 55%,
+    rgba(18, 107, 79, 0.40) 100%
   );
 }
 
 [data-theme="light"] .h2-hero__overlay {
   background: linear-gradient(
     135deg,
-    rgba(245, 247, 244, 0.88) 0%,
-    rgba(245, 247, 244, 0.60) 55%,
-    rgba(18, 107, 79, 0.25) 100%
+    rgba(7, 26, 43, 0.88) 0%,
+    rgba(7, 26, 43, 0.60) 55%,
+    rgba(18, 107, 79, 0.40) 100%
   );
 }
 
@@ -62,8 +62,8 @@
 
 [data-theme="light"] .h2-hero__mesh {
   background-image: 
-    linear-gradient(rgba(18, 107, 79, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(18, 107, 79, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(184, 230, 46, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(184, 230, 46, 0.04) 1px, transparent 1px);
 }
 
 .h2-hero__glow {
@@ -85,12 +85,6 @@
 .h2-hero__glow--green {
   bottom: 5%;
   right: 10%;
-  background: var(--stadium-green);
-}
-
-[data-theme="light"] .h2-hero__glow--lime,
-[data-theme="light"] .h2-hero__glow--green {
-  opacity: 0.08;
   background: var(--stadium-green);
 }
 
@@ -121,10 +115,10 @@
   backdrop-filter: blur(8px);
 }
 
-[data-theme="light"] .h2-badge {
-  background: rgba(18, 107, 79, 0.08);
-  border-color: rgba(18, 107, 79, 0.25);
-  color: var(--stadium-green);
+[data-theme="light"] .h2-hero .h2-badge {
+  background: rgba(184, 230, 46, 0.12);
+  border-color: rgba(184, 230, 46, 0.3);
+  color: var(--electric-lime);
 }
 
 .h2-badge__pulse {
@@ -136,9 +130,9 @@
   animation: pulse-ring 1.5s infinite;
 }
 
-[data-theme="light"] .h2-badge__pulse {
-  background: var(--stadium-green);
-  box-shadow: 0 0 10px var(--stadium-green);
+[data-theme="light"] .h2-hero .h2-badge__pulse {
+  background: var(--electric-lime);
+  box-shadow: 0 0 10px var(--electric-lime);
 }
 
 .h2-hero__title {
@@ -146,17 +140,30 @@
   font-size: clamp(var(--text-2xl), 3.2vw, var(--text-5xl));
   font-weight: var(--fw-black);
   line-height: 1.12;
-  color: var(--text-primary);
+  color: var(--ice-white);
   margin-bottom: var(--space-4);
   letter-spacing: -0.03em;
 }
 
+.h2-hero__title .accent,
+[data-theme="light"] .h2-hero__title .accent {
+  color: var(--electric-lime);
+}
+
+[data-theme="light"] .h2-hero__title {
+  color: var(--ice-white);
+}
+
 .h2-hero__desc {
   font-size: clamp(var(--text-sm), 1.1vw, var(--text-base));
-  color: var(--text-secondary);
+  color: var(--silver);
   line-height: 1.6;
   margin-bottom: var(--space-5);
   max-width: 520px;
+}
+
+[data-theme="light"] .h2-hero__desc {
+  color: var(--silver);
 }
 
 .h2-hero__actions {
@@ -166,18 +173,42 @@
   margin-bottom: var(--space-5);
 }
 
+.h2-hero .btn-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--ice-white);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.h2-hero .btn-secondary:hover {
+  background: rgba(184, 230, 46, 0.15);
+  color: var(--electric-lime);
+  border-color: var(--electric-lime);
+}
+
+[data-theme="light"] .h2-hero .btn-secondary {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--ice-white);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+[data-theme="light"] .h2-hero .btn-secondary:hover {
+  background: rgba(184, 230, 46, 0.2);
+  color: var(--electric-lime);
+  border-color: var(--electric-lime);
+}
+
 .h2-hero__stats {
   display: flex;
   gap: var(--space-6);
   padding-top: var(--space-4);
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .h2-stat-num {
   font-family: var(--font-display);
   font-size: var(--text-xl);
   font-weight: var(--fw-black);
-  color: var(--text-primary);
+  color: var(--ice-white);
   line-height: 1;
 }
 
@@ -185,15 +216,23 @@
   color: var(--electric-lime);
 }
 
-[data-theme="light"] .h2-stat-num span {
-  color: var(--stadium-green);
+[data-theme="light"] .h2-hero .h2-stat-num {
+  color: var(--ice-white);
+}
+
+[data-theme="light"] .h2-hero .h2-stat-num span {
+  color: var(--electric-lime);
 }
 
 .h2-stat-label {
   font-size: 11px;
-  color: var(--text-muted);
+  color: var(--silver-dark);
   font-weight: var(--fw-semibold);
   margin-top: 3px;
+}
+
+[data-theme="light"] .h2-hero .h2-stat-label {
+  color: var(--silver-dark);
 }
 
 /* ── Live Match HUD Widget ── */
