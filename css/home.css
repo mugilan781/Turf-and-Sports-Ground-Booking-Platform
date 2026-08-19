@@ -9,12 +9,16 @@
 
 .hero-slide__stats {
   position: absolute;
-  bottom: var(--space-20);
-  right: var(--space-16);
+  bottom: var(--space-16);
+  right: var(--space-12);
   display: flex;
-  gap: var(--space-4);
+  gap: var(--space-3);
   z-index: 10;
   animation: fadeInRight 1s ease 1s both;
+}
+
+@media (max-width: 640px) {
+  .hero-slide__stats { display: none; }
 }
 
 .hero-stat-card {

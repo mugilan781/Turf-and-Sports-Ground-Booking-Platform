@@ -271,8 +271,8 @@ p {
 }
 
 .btn-xl {
-  padding: 1.25rem 3rem;
-  font-size: var(--text-lg);
+  padding: 1.125rem 2.5rem;
+  font-size: var(--text-base);
 }
 
 .btn-icon {
