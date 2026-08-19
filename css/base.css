@@ -791,6 +791,12 @@ svg.v-icon,
   stroke: none;
 }
 
+/* Fill-based brand icons (facebook, twitter/x, linkedin, youtube) keep their fill */
+svg.v-icon[fill="currentColor"] {
+  fill: currentColor;
+  stroke: none;
+}
+
 .icon-xs { width: 14px; height: 14px; }
 .icon-sm { width: 18px; height: 18px; }
 .icon-md { width: 22px; height: 22px; }
