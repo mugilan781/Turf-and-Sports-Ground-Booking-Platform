@@ -232,12 +232,6 @@
 
 .password-toggle:hover { color: var(--text-primary); }
 
-.auth-form__row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-4);
-}
-
 .auth-form__options {
   display: flex;
   align-items: center;
@@ -268,108 +262,33 @@
 
 [data-theme="light"] .auth-form__forgot { color: var(--stadium-green); }
 
-/* ── Multi Step Signup ── */
-.signup-steps {
+.auth-form__link {
+  color: var(--electric-lime);
+  font-weight: var(--fw-bold);
+  text-decoration: none;
+}
+
+.auth-form__link:hover { text-decoration: underline; }
+
+[data-theme="light"] .auth-form__link { color: var(--stadium-green); }
+
+.signup-terms {
   display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  margin-bottom: var(--space-8);
-}
-
-.signup-step {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-}
-
-.signup-step-num {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: var(--text-xs);
-  font-weight: var(--fw-black);
-  border: 2px solid var(--border-color);
-  color: var(--text-muted);
-  transition: all var(--transition-base);
-}
-
-.signup-step.active .signup-step-num {
-  background: var(--electric-lime);
-  border-color: var(--electric-lime);
-  color: var(--midnight-navy);
-}
-
-[data-theme="light"] .signup-step.active .signup-step-num {
-  background: var(--stadium-green);
-  border-color: var(--stadium-green);
-  color: var(--white);
-}
-
-.signup-step.done .signup-step-num {
-  background: var(--success);
-  border-color: var(--success);
-  color: var(--white);
-}
-
-.signup-step-label {
-  font-size: var(--text-xs);
-  color: var(--text-muted);
-  white-space: nowrap;
-}
-
-.signup-step.active .signup-step-label { color: var(--text-primary); font-weight: var(--fw-semibold); }
-
-.signup-step-divider {
-  flex: 1;
-  height: 1px;
-  background: var(--border-color);
-}
-
-.signup-step-panel {
-  display: none;
-}
-
-.signup-step-panel.active { display: block; }
-
-/* ── Sport Preference Chips ── */
-.sport-prefs {
-  display: flex;
+  align-items: flex-start;
   gap: var(--space-3);
-  flex-wrap: wrap;
 }
 
-.sport-pref-btn {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-2);
-  padding: var(--space-4);
-  border-radius: var(--radius-xl);
-  border: 2px solid var(--border-color);
-  background: var(--bg-card);
-  cursor: pointer;
-  transition: all var(--transition-base);
-  min-width: 90px;
+.signup-terms input {
+  margin-top: 3px;
+  flex-shrink: 0;
+  accent-color: var(--electric-lime);
 }
 
-.sport-pref-btn.selected {
-  border-color: var(--electric-lime);
-  background: rgba(184,230,46,0.08);
-}
+[data-theme="light"] .signup-terms input { accent-color: var(--stadium-green); }
 
-[data-theme="light"] .sport-pref-btn.selected {
-  border-color: var(--stadium-green);
-  background: rgba(18,107,79,0.08);
-}
-
-.sport-pref-icon { font-size: var(--text-3xl); }
-
-.sport-pref-name {
-  font-size: var(--text-xs);
-  font-weight: var(--fw-semibold);
+.signup-terms span {
+  font-size: var(--text-sm);
+  line-height: var(--lh-relaxed);
   color: var(--text-secondary);
 }
 
@@ -386,7 +305,6 @@
 }
 
 @media (max-width: 640px) {
-  .auth-form__row { grid-template-columns: 1fr; }
   .auth-right { padding: var(--space-6) var(--space-5); padding-top: calc(var(--nav-height) + var(--space-6)); }
 }
 
