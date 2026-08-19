@@ -88,7 +88,6 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-6);
-  align-items: start;
 }
 
 .pricing-card {
@@ -99,12 +98,13 @@
   position: relative;
   transition: all var(--transition-slow);
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .pricing-card--featured {
   background: linear-gradient(135deg, var(--stadium-green) 0%, var(--green-dark) 100%);
   border-color: var(--stadium-green);
-  transform: scale(1.05);
   box-shadow: var(--shadow-lg), var(--shadow-green);
 }
 
@@ -172,6 +172,7 @@
   gap: var(--space-3);
   margin-bottom: var(--space-8);
   text-align: left;
+  flex: 1;
 }
 
 .pricing-feature {
@@ -201,6 +202,8 @@
   background: rgba(184,230,46,0.2);
   color: var(--electric-lime);
 }
+
+[data-theme="light"] .pricing-card:not(.pricing-card--featured) .pricing-amount { color: var(--stadium-green); }
 
 /* ── Blog Cards ── */
 .blog-grid {
@@ -713,6 +716,30 @@
   font-weight: var(--fw-bold);
   letter-spacing: 0.04em;
   white-space: nowrap;
+}
+
+.sport-price {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 900;
+  color: var(--electric-lime);
+}
+
+[data-theme="light"] .sport-price { color: var(--stadium-green); }
+
+.cta-banner h2 { color: var(--ice-white); }
+.cta-banner .accent { color: var(--electric-lime); }
+.cta-banner p { color: rgba(255,255,255,0.7); }
+
+[data-theme="light"] .cta-banner .btn-secondary {
+  background: rgba(255,255,255,0.12);
+  color: var(--ice-white);
+  border-color: rgba(255,255,255,0.32);
+}
+
+[data-theme="light"] .cta-banner .btn-secondary:hover {
+  color: var(--electric-lime);
+  border-color: var(--electric-lime);
 }
 
 /* ── Services Grid (Home 2) ── */
