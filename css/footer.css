@@ -61,6 +61,12 @@
   font-size: 22px;
 }
 
+.footer__logo-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
 .footer__logo-name {
   font-family: var(--font-display);
   font-size: var(--text-xl);
@@ -187,7 +193,7 @@
 
 .footer__contact-item {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: var(--space-3);
   font-size: var(--text-sm);
   color: var(--silver-dark);
@@ -324,24 +330,6 @@
 
 .footer__legal-link:hover { color: var(--electric-lime); }
 
-.footer__payment-badges {
-  display: flex;
-  gap: var(--space-2);
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.footer__payment-badge {
-  padding: 4px 8px;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: var(--radius-sm);
-  font-size: 10px;
-  font-weight: var(--fw-bold);
-  color: var(--silver);
-  letter-spacing: 0.05em;
-}
-
 /* ── Decorative Elements ── */
 .footer__glow {
   position: absolute;
@@ -378,11 +366,6 @@
 }
 
 [data-theme="light"] .footer__newsletter-input {
-  background: rgba(255,255,255,0.08);
-  border-color: rgba(255,255,255,0.12);
-}
-
-[data-theme="light"] .footer__payment-badge {
   background: rgba(255,255,255,0.08);
   border-color: rgba(255,255,255,0.12);
 }
@@ -426,9 +409,6 @@
     gap: var(--space-4);
   }
   .footer__legal {
-    justify-content: center;
-  }
-  .footer__payment-badges {
     justify-content: center;
   }
 }
