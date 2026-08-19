@@ -425,7 +425,8 @@
 .navbar__mobile-link {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: var(--space-3);
   padding: var(--space-3) var(--space-4);
   border-radius: var(--radius-md);
   font-size: var(--text-base);
@@ -444,15 +445,6 @@
 [data-theme="light"] .navbar__mobile-link.active {
   background: rgba(18,107,79,0.08);
   color: var(--stadium-green);
-}
-
-.navbar__mobile-actions {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
-  margin-top: var(--space-4);
-  padding-top: var(--space-4);
-  border-top: 1px solid var(--border-color);
 }
 
 @media (max-width: 1024px) {
