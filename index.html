@@ -579,23 +579,12 @@
         </span>
         <h2 class="cta-title" id="cta-heading">Your Next <span class="accent">Epic Game</span><br>Starts Here</h2>
         <p class="cta-desc">Join 15,000+ players who trust SportifyTurf for their weekend plans. First booking? Get 20% off with code <strong style="color:var(--electric-lime)">SPORT20</strong>.</p>
-        <div class="cta-actions reveal">
+<div class="cta-actions reveal">
           <a href="dashboard.html" class="btn btn-primary btn-xl">
             <svg class="v-icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
             Book Your Slot Now
           </a>
           <a href="signup.html" class="btn btn-ghost btn-xl">Create Free Account</a>
-        </div>
-
-        <!-- Newsletter -->
-        <div style="margin-top:var(--space-12);max-width:480px;margin-inline:auto" class="reveal delay-200">
-          <p style="color:rgba(255,255,255,0.6);margin-bottom:var(--space-4);font-size:var(--text-sm)">
-            Subscribe for exclusive deals, new venue alerts & sports tips:
-          </p>
-          <div class="newsletter-form" style="display:flex;gap:var(--space-3)">
-            <input type="email" placeholder="Enter your email address" class="form-input" id="newsletter-email" aria-label="Email address for newsletter">
-            <button class="btn btn-primary" style="white-space:nowrap" id="newsletter-submit">Subscribe →</button>
-          </div>
         </div>
       </div>
     </div>
@@ -703,38 +692,21 @@
 <script>
     // ── Testimonial Carousel ──
     const track = document.getElementById('testimonialTrack');
-      const prevBtn = document.getElementById('testimonialPrev');
-      const nextBtn = document.getElementById('testimonialNext');
-      if (!track) return;
+    const prevBtn = document.getElementById('testimonialPrev');
+    const nextBtn = document.getElementById('testimonialNext');
+    if (track) {
+      const step = () => (track.querySelector('.testimonial-card')?.offsetWidth || 0) + 24;
+      prevBtn?.addEventListener('click', () => track.scrollBy({ left: -step(), behavior: 'smooth' }));
+      nextBtn?.addEventListener('click', () => track.scrollBy({ left: step(), behavior: 'smooth' }));
+    }
 
-      let tIndex = 0;
-      const cards = track.querySelectorAll('.testimonial-card');
-      const visible = window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
-      const maxIndex = Math.max(0, cards.length - visible);
-
-      const moveCarousel = () => {
-        const cardWidth = cards[0]?.offsetWidth || 0;
-        const gap = 24;
-        track.style.transform = `translateX(-${tIndex * (cardWidth + gap)}px)`;
-      };
-
-      prevBtn?.addEventListener('click', () => {
-        tIndex = Math.max(0, tIndex - 1);
-        moveCarousel();
+    // Sport filter ARIA update
+    document.querySelectorAll('[data-sport-filter]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('[data-sport-filter]').forEach(b => b.setAttribute('aria-pressed', 'false'));
+        btn.setAttribute('aria-pressed', 'true');
       });
-
-      nextBtn?.addEventListener('click', () => {
-        tIndex = Math.min(maxIndex, tIndex + 1);
-        moveCarousel();
-      });
-
-      // Sport filter ARIA update
-document.querySelectorAll('[data-sport-filter]').forEach(btn => {
-        btn.addEventListener('click', () => {
-          document.querySelectorAll('[data-sport-filter]').forEach(b => b.setAttribute('aria-pressed', 'false'));
-          btn.setAttribute('aria-pressed', 'true');
-        });
-      });
+    });
   </script>
 
 </body>

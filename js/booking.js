@@ -17,7 +17,8 @@ const TURFS = [
     image: 'https://images.unsplash.com/photo-1575361204480-aadea25e6e68?w=600&q=80',
     facilities: ['Floodlights', 'Parking', 'Cafeteria', 'Showers'],
     badge: 'Featured',
-    available: true
+    available: true,
+    description: 'A premier floodlit football arena with FIFA-grade artificial turf. Features 5-a-side and 7-a-side pitches, premium drainage, and vibrant night lighting for the perfect evening match.'
   },
   {
     id: 2,
@@ -30,7 +31,8 @@ const TURFS = [
     image: 'https://images.unsplash.com/photo-1529900748604-07564a03e7a6?w=600&q=80',
     facilities: ['Floodlights', 'Parking', 'Changing Rooms'],
     badge: 'Popular',
-    available: true
+    available: true,
+    description: 'A well-maintained football ground in the heart of T. Nagar. Smooth synthetic pitch, shaded seating for spectators, and clean changing rooms make it ideal for weekend league games.'
   },
   {
     id: 3,
@@ -43,7 +45,8 @@ const TURFS = [
     image: 'https://images.unsplash.com/photo-1714425340532-bf62553cb288?w=600&q=80',
     facilities: ['Practice Nets', 'Scoreboard', 'Pavilion', 'Parking'],
     badge: 'Premium',
-    available: true
+    available: true,
+    description: 'A full-size professional cricket ground with a true-bounce pitch, practice nets, electronic scoreboard, and a spacious pavilion. The lush outfield is maintained to tournament standards all year round.'
   },
   {
     id: 4,
@@ -56,7 +59,8 @@ const TURFS = [
     image: 'https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?w=600&q=80',
     facilities: ['AC Courts', 'Racket Rental', 'Showers', 'Cafe'],
     badge: 'New',
-    available: true
+    available: true,
+    description: 'State-of-the-art air-conditioned badminton courts on OMR. Tournament-standard wooden flooring, precision lighting, and racket rental on-site — perfect for serious players and casual games alike.'
   },
   {
     id: 5,
@@ -69,7 +73,8 @@ const TURFS = [
     image: 'https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=600&q=80',
     facilities: ['Coaching', 'Practice Nets', 'Cafeteria'],
     badge: null,
-    available: false
+    available: false,
+    description: 'A club-level cricket ground in Velachery with dedicated coaching staff, covered practice nets, and a well-stocked cafeteria. Training programs available for all age groups.'
   },
   {
     id: 6,
@@ -82,7 +87,8 @@ const TURFS = [
     image: 'https://images.unsplash.com/photo-1593341646782-e0b495cff86d?w=600&q=80',
     facilities: ['4 Courts', 'Shuttle Service', 'Locker Rooms'],
     badge: null,
-    available: true
+    available: true,
+    description: 'A compact four-court badminton facility in Porur with shuttle service, secure lockers, and pro-shop. The bright, airy courts are booked out every evening by local leagues.'
   }
 ];
 
@@ -187,6 +193,14 @@ const renderTurfCards = (container, turfs) => {
       const turfId = parseInt(btn.getAttribute('data-turf'));
       const turf = TURFS.find(t => t.id === turfId);
       if (turf) openBookingModal(turf);
+    });
+  });
+
+  container.querySelectorAll('.view-turf-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const turfId = parseInt(btn.getAttribute('data-turf'));
+      const turf = TURFS.find(t => t.id === turfId);
+      if (turf) openTurfDetails(turf);
     });
   });
 
@@ -401,6 +415,77 @@ const openBookingModal = (turf) => {
   document.body.style.overflow = 'hidden';
 };
 
+// ── Turf Details Modal ─────────────────────────────────────
+const openTurfDetails = (turf) => {
+  const sportLabels = { football: 'Football', cricket: 'Cricket', badminton: 'Badminton' };
+
+  let modal = document.getElementById('turf-details-modal');
+  if (!modal) {
+    modal = document.createElement('div');
+    modal.id = 'turf-details-modal';
+    modal.className = 'modal-overlay';
+    modal.innerHTML = `
+      <div class="modal turf-details-modal">
+        <button class="modal-close" id="close-turf-details">✕</button>
+        <div class="turf-details__image">
+          <img id="detail-img" src="" alt="">
+          <span class="turf-details__sport" id="detail-sport"></span>
+          <span class="turf-details__status" id="detail-status"></span>
+        </div>
+        <div class="turf-details__body">
+          <h2 id="detail-name"></h2>
+          <div class="turf-details__meta">
+            <span id="detail-location"></span>
+            <span id="detail-rating"></span>
+          </div>
+          <p id="detail-desc"></p>
+          <div class="turf-details__facilities" id="detail-facilities"></div>
+          <div class="turf-details__price">
+            <span class="price-amount" id="detail-price"></span>
+            <span class="price-unit">/hr</span>
+          </div>
+          <button class="btn btn-primary btn-lg" id="detail-book">Book This Turf →</button>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(modal);
+
+    document.getElementById('close-turf-details').addEventListener('click', closeTurfDetails);
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeTurfDetails(); });
+    document.getElementById('detail-book').addEventListener('click', () => {
+      const name = document.getElementById('detail-name').textContent;
+      const turf = TURFS.find(t => t.name === name);
+      closeTurfDetails();
+      if (turf) openBookingModal(turf);
+    });
+  }
+
+  document.getElementById('detail-img').src = turf.image;
+  document.getElementById('detail-img').alt = turf.name;
+  document.getElementById('detail-name').textContent = turf.name;
+  document.getElementById('detail-sport').textContent = sportLabels[turf.sport] || turf.sport;
+  document.getElementById('detail-location').textContent = '📍 ' + turf.location;
+  document.getElementById('detail-rating').textContent = '★ ' + turf.rating + ' (' + turf.reviews + ' reviews)';
+  document.getElementById('detail-desc').textContent = turf.description || '';
+  document.getElementById('detail-price').textContent = '₹' + turf.price.toLocaleString();
+  const status = document.getElementById('detail-status');
+  status.textContent = turf.available ? 'Available' : 'Booked';
+  status.className = 'turf-details__status ' + (turf.available ? 'available' : 'unavailable');
+  document.getElementById('detail-facilities').innerHTML = turf.facilities
+    .map(f => `<span class="chip">${f}</span>`).join('');
+  const bookBtn = document.getElementById('detail-book');
+  bookBtn.disabled = !turf.available;
+
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+};
+
+const closeTurfDetails = () => {
+  const modal = document.getElementById('turf-details-modal');
+  if (modal) modal.classList.remove('open');
+  document.body.style.overflow = '';
+};
+
 const closeBookingModal = () => {
   const modal = document.getElementById('booking-modal');
   if (modal) modal.classList.remove('open');
@@ -453,5 +538,6 @@ window.BookingSystem = {
   TURFS,
   TIME_SLOTS,
   renderTurfCards,
-  openBookingModal
+  openBookingModal,
+  openTurfDetails
 };

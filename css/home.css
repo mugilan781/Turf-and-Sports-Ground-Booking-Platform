@@ -223,6 +223,19 @@ background-repeat: no-repeat;
   z-index: 1;
 }
 
+.turf-card__badge .badge {
+  background: rgba(7, 26, 43, 0.85);
+  color: var(--electric-lime);
+  border-color: rgba(184, 230, 46, 0.45);
+  backdrop-filter: blur(8px);
+}
+
+[data-theme="light"] .turf-card__badge .badge {
+  background: rgba(7, 26, 43, 0.85);
+  color: var(--electric-lime);
+  border-color: rgba(184, 230, 46, 0.5);
+}
+
 .turf-card__sport-icon {
   position: absolute;
   top: var(--space-3);
@@ -236,6 +249,7 @@ background-repeat: no-repeat;
   align-items: center;
   justify-content: center;
   font-size: 18px;
+  color: var(--electric-lime);
 }
 
 .turf-card__status {
@@ -395,6 +409,11 @@ background-repeat: no-repeat;
   display: block;
 }
 
+[data-theme="light"] .stats-section .v-icon-lime {
+  color: var(--electric-lime);
+  stroke: var(--electric-lime);
+}
+
 .stat-value {
   font-family: var(--font-display);
   font-size: clamp(var(--text-4xl), 5vw, var(--text-6xl));
@@ -464,8 +483,8 @@ background-repeat: no-repeat;
   justify-content: center;
   font-family: var(--font-display);
   font-size: var(--text-2xl);
-  font-weight: var(--fw-black);
-  color: var(--midnight-navy);
+font-weight: var(--fw-black);
+  color: var(--white);
   margin: 0 auto var(--space-6);
   position: relative;
   z-index: 1;
@@ -497,12 +516,13 @@ background-repeat: no-repeat;
 .testimonial-carousel {
   position: relative;
   overflow: hidden;
+  padding-block: var(--space-4);
 }
 
 .testimonial-track {
   display: flex;
   gap: var(--space-6);
-  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  scroll-behavior: smooth;
 }
 
 .testimonial-card {
@@ -605,9 +625,28 @@ background-repeat: no-repeat;
 
 .cta-actions {
   display: flex;
-  gap: var(--space-4);
   justify-content: center;
+  gap: var(--space-4);
   flex-wrap: wrap;
+}
+
+.cta-section .btn-ghost {
+  background: rgba(255,255,255,0.12);
+  color: var(--ice-white);
+  border-color: rgba(255,255,255,0.32);
+  backdrop-filter: blur(10px);
+}
+
+.cta-section .btn-ghost:hover {
+  background: rgba(255,255,255,0.2);
+  color: var(--electric-lime);
+  border-color: var(--electric-lime);
+}
+
+[data-theme="light"] .cta-section .btn-ghost {
+  background: rgba(255,255,255,0.16);
+  color: var(--white);
+  border-color: rgba(255,255,255,0.45);
 }
 
 /* ── Booking Modal Styles ── */
@@ -659,6 +698,107 @@ background-repeat: no-repeat;
   justify-content: flex-end;
   padding-top: var(--space-6);
   border-top: 1px solid var(--border-color);
+}
+
+/* ── Turf Details Modal ── */
+.turf-details-modal {
+  max-width: 520px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.turf-details__image {
+  position: relative;
+  height: 200px;
+}
+
+.turf-details__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.turf-details__image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(7,26,43,0.55) 100%);
+}
+
+.turf-details__sport {
+  position: absolute;
+  top: var(--space-4);
+  left: var(--space-4);
+  z-index: 2;
+  background: rgba(7,26,43,0.85);
+  color: var(--electric-lime);
+  border: 1px solid rgba(184,230,46,0.45);
+  border-radius: var(--radius-full);
+  padding: 4px 12px;
+  font-size: var(--text-xs);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.turf-details__status {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  z-index: 2;
+  background: rgba(7,26,43,0.85);
+  border-radius: var(--radius-full);
+  padding: 4px 12px;
+  font-size: var(--text-xs);
+  font-weight: var(--fw-semibold);
+}
+
+.turf-details__status.available { color: var(--success); }
+.turf-details__status.unavailable { color: var(--error); }
+
+.turf-details__body {
+  padding: var(--space-6);
+}
+
+.turf-details__body h2 {
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-2);
+}
+
+.turf-details__meta {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  margin-bottom: var(--space-4);
+}
+
+.turf-details__body > p {
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  line-height: var(--lh-relaxed);
+  margin-bottom: var(--space-4);
+}
+
+.turf-details__facilities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+}
+
+.turf-details__price {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-1);
+  margin-bottom: var(--space-5);
+}
+
+.turf-details__price .price-unit {
+  color: var(--text-muted);
+  font-size: var(--text-sm);
 }
 
 /* ── Slot Grid Styles ── */

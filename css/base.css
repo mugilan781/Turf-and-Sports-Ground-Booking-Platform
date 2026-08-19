@@ -817,6 +817,12 @@ svg.v-icon,
   stroke: var(--electric-lime);
 }
 
+[data-theme="light"] .cta-section .section-label {
+  color: var(--electric-lime);
+  background: rgba(184, 230, 46, 0.12);
+  border-color: rgba(184, 230, 46, 0.3);
+}
+
 .section-label .v-icon,
 .badge .v-icon,
 .pill-badge .v-icon,
