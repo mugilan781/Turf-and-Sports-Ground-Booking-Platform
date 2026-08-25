@@ -102,7 +102,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
-  padding: 5px 14px;
+  padding: 6px 14px;
   background: rgba(184, 230, 46, 0.12);
   border: 1px solid rgba(184, 230, 46, 0.3);
   border-radius: var(--radius-full);
@@ -113,6 +113,16 @@
   text-transform: uppercase;
   margin-bottom: var(--space-3);
   backdrop-filter: blur(8px);
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.h2-badge-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
 }
 
 [data-theme="light"] .h2-hero .h2-badge {
@@ -659,6 +669,12 @@
   box-shadow: 0 0 10px var(--stadium-green);
 }
 
+.h2-calc-addons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+}
+
 .h2-calc-output {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
@@ -666,19 +682,45 @@
   padding: var(--space-8);
   text-align: center;
   box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .h2-per-player-amount {
   font-family: var(--font-display);
-  font-size: clamp(var(--text-4xl), 5vw, var(--text-6xl));
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
   font-weight: var(--fw-black);
   color: var(--electric-lime);
-  line-height: 1;
-  margin-block: var(--space-3);
+  line-height: 1.1;
+  margin-block: var(--space-2);
 }
 
 [data-theme="light"] .h2-per-player-amount {
   color: var(--stadium-green);
+}
+
+.h2-calc-total-box {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  margin-bottom: var(--space-6);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.h2-calc-btn {
+  width: 100%;
+  justify-content: center;
+  white-space: normal !important;
+  text-align: center;
+  line-height: 1.3;
+  padding: 0.875rem 1.25rem !important;
 }
 
 /* ── Open Challenge & Squad Matchmaker ── */
@@ -873,6 +915,8 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-6);
+  margin-top: var(--space-8);
+  align-items: stretch;
 }
 
 .h2-vip-card {
@@ -884,6 +928,35 @@
   flex-direction: column;
   position: relative;
   transition: all var(--transition-slow);
+}
+
+.h2-vip-title {
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-1);
+  color: var(--text-primary);
+  font-weight: var(--fw-bold);
+}
+
+.h2-vip-subtitle {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  margin-bottom: var(--space-4);
+}
+
+.h2-vip-price {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 900;
+  color: var(--text-primary);
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.h2-vip-price-unit {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  font-weight: 600;
 }
 
 .h2-vip-card:hover {
@@ -905,7 +978,7 @@
 
 .h2-vip-badge {
   position: absolute;
-  top: -12px;
+  top: -14px;
   left: 50%;
   transform: translateX(-50%);
   background: var(--electric-lime);
@@ -917,6 +990,11 @@
   border-radius: var(--radius-full);
   letter-spacing: 0.08em;
   white-space: nowrap;
+  max-width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  z-index: 2;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 [data-theme="light"] .h2-vip-badge {
@@ -936,10 +1014,15 @@
 
 .h2-vip-perk {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: var(--space-3);
   font-size: var(--text-sm);
   color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.h2-vip-perk span:last-child {
+  padding-top: 1px;
 }
 
 .h2-vip-perk-icon {
@@ -959,6 +1042,15 @@
 [data-theme="light"] .h2-vip-perk-icon {
   background: rgba(18, 107, 79, 0.1);
   color: var(--stadium-green);
+}
+
+.h2-vip-btn {
+  width: 100%;
+  justify-content: center;
+  white-space: normal !important;
+  text-align: center;
+  line-height: 1.3;
+  padding: 0.75rem 1.25rem !important;
 }
 
 /* ── Leaderboard Table & 1st Row Champion Highlight ── */

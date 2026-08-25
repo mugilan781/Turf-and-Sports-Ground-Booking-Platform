@@ -478,7 +478,7 @@
                 <div style="font-size:var(--text-xs);color:var(--text-muted)">Captain: Vignesh K. (Rating: 4.9)</div>
               </div>
             </div>
-            <div style="display:flex;gap:var(--space-2);margin-bottom:var(--space-3)">
+            <div class="h2-badge-group">
               <span class="badge badge-lime">Football 7v7</span>
               <span class="badge badge-navy">Looking for: 2 Players</span>
             </div>
@@ -503,7 +503,7 @@
                 <div style="font-size:var(--text-xs);color:var(--text-muted)">Captain: Rahul S. (Rating: 4.8)</div>
               </div>
             </div>
-            <div style="display:flex;gap:var(--space-2);margin-bottom:var(--space-3)">
+            <div class="h2-badge-group">
               <span class="badge badge-green">Box Cricket T10</span>
               <span class="badge badge-navy">Looking for: 3 Players</span>
             </div>
@@ -528,7 +528,7 @@
                 <div style="font-size:var(--text-xs);color:var(--text-muted)">Captain: Deepa R. (Rating: 5.0)</div>
               </div>
             </div>
-            <div style="display:flex;gap:var(--space-2);margin-bottom:var(--space-3)">
+            <div class="h2-badge-group">
               <span class="badge badge-navy">Badminton Doubles</span>
               <span class="badge badge-lime">Looking for: 1 Partner</span>
             </div>
@@ -610,7 +610,7 @@
 
           <!-- Add-ons Checkboxes -->
           <div style="font-size:var(--text-xs);font-weight:800;color:var(--text-primary);margin-bottom:var(--space-3);text-transform:uppercase;letter-spacing:0.05em">Add-On Amenities:</div>
-          <div class="h2-calc-addons" style="display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-3)">
+          <div class="h2-calc-addons">
             <label style="display:flex;align-items:center;gap:var(--space-2);font-size:var(--text-xs);color:var(--text-secondary);cursor:pointer">
               <input type="checkbox" id="calc-floodlights" checked style="accent-color:var(--text-accent)"> LED Floodlights (+₹200/h)
             </label>
@@ -631,12 +631,12 @@
             Split equally among 10 players for a 2h session
           </div>
 
-          <div style="padding:var(--space-3);background:var(--bg-surface);border-radius:var(--radius-lg);border:1px solid var(--border-color);margin-bottom:var(--space-6);display:flex;justify-content:space-between;align-items:center">
+          <div class="h2-calc-total-box">
             <span style="font-size:var(--text-xs);color:var(--text-secondary)">Total Turf Booking Fee:</span>
             <span style="font-weight:900;font-size:var(--text-base);color:var(--text-primary)" id="calc-total-amount">₹2,800</span>
           </div>
 
-          <a href="dashboard.html?turf=1&slot=07:00+PM#book" class="btn btn-primary btn-lg" style="width:100%;justify-content:center">
+          <a href="dashboard.html?turf=1&slot=07:00+PM#book" class="btn btn-primary btn-lg h2-calc-btn">
             Lock Slot with Split UPI Link →
           </a>
         </div>
@@ -786,61 +786,61 @@
       <div class="h2-vip-grid">
         <!-- Tier 1 -->
         <div class="h2-vip-card reveal delay-100">
-          <h3 style="font-size:var(--text-xl);margin-bottom:var(--space-1)">Weekend Warrior</h3>
-          <div style="font-size:var(--text-xs);color:var(--text-muted);margin-bottom:var(--space-4)">For casual weekend groups</div>
-          <div style="font-family:var(--font-display);font-size:var(--text-3xl);font-weight:900;color:var(--text-primary)">
+          <h3 class="h2-vip-title">Weekend Warrior</h3>
+          <div class="h2-vip-subtitle">For casual weekend groups</div>
+          <div class="h2-vip-price">
             <span class="h2-vip-price-num" data-monthly="1999" data-annual="1599">₹1,999</span>
-            <span style="font-size:var(--text-xs);color:var(--text-muted);font-weight:600">/ month</span>
+            <span class="h2-vip-price-unit">/ month</span>
           </div>
 
           <ul class="h2-vip-perks">
-            <li class="h2-vip-perk"><span class="h2-vip-perk-icon">✓</span> 4 Weekend Sessions per month</li>
-            <li class="h2-vip-perk"><span class="h2-vip-perk-icon">✓</span> 7-Day Advance Slot Window</li>
-            <li class="h2-vip-perk"><span class="h2-vip-perk-icon">✓</span> 10% Flat Turf Discount</li>
-            <li class="h2-vip-perk"><span class="h2-vip-perk-icon">✓</span> Free Football / Bib Rentals</li>
+            <li class="h2-vip-perk"><span class="h2-vip-perk-icon">✓</span><span>4 Weekend Sessions per month</span></li>
+            <li class="h2-vip-perk"><span class="h2-vip-perk-icon">✓</span><span>7-Day Advance Slot Window</span></li>
+            <li class="h2-vip-perk"><span class="h2-vip-perk-icon">✓</span><span>10% Flat Turf Discount</span></li>
+            <li class="h2-vip-perk"><span class="h2-vip-perk-icon">✓</span><span>Free Football / Bib Rentals</span></li>
           </ul>
 
-          <a href="signup.html" class="btn btn-outline" style="width:100%;justify-content:center;margin-top:auto">Select Warrior Pass</a>
+          <a href="signup.html" class="btn btn-outline h2-vip-btn" style="margin-top:auto">Select Warrior Pass</a>
         </div>
 
         <!-- Tier 2: Featured -->
         <div class="h2-vip-card h2-vip-card--featured reveal delay-200">
           <div class="h2-vip-badge">MOST POPULAR PRO PASS</div>
-          <h3 style="font-size:var(--text-xl);margin-bottom:var(--space-1)">Pro Club Member</h3>
-          <div style="font-size:var(--text-xs);color:var(--text-muted);margin-bottom:var(--space-4)">For competitive teams & regular squads</div>
-          <div style="font-family:var(--font-display);font-size:var(--text-3xl);font-weight:900" class="h2-card-price">
+          <h3 class="h2-vip-title">Pro Club Member</h3>
+          <div class="h2-vip-subtitle">For competitive teams & regular squads</div>
+          <div class="h2-vip-price h2-card-price">
             <span class="h2-vip-price-num" data-monthly="3999" data-annual="3199">₹3,999</span>
-            <span style="font-size:var(--text-xs);color:var(--text-muted);font-weight:600">/ month</span>
+            <span class="h2-vip-price-unit">/ month</span>
           </div>
 
           <ul class="h2-vip-perks">
-            <li class="h2-vip-perk"><span class="h2-vip-perk-icon">✓</span> 10 Guaranteed Monthly Sessions</li>
-            <li class="h2-vip-perk"><span class="h2-vip-perk-icon">✓</span> 14-Day Priority Advance Booking</li>
-            <li class="h2-vip-perk"><span class="h2-vip-perk-icon">✓</span> Free Cancellation up to 2 Hours</li>
-            <li class="h2-vip-perk"><span class="h2-vip-perk-icon">✓</span> 2x SportifyPoints Rewards</li>
-            <li class="h2-vip-perk"><span class="h2-vip-perk-icon">✓</span> Free HD Match Video Recording</li>
+            <li class="h2-vip-perk"><span class="h2-vip-perk-icon">✓</span><span>10 Guaranteed Monthly Sessions</span></li>
+            <li class="h2-vip-perk"><span class="h2-vip-perk-icon">✓</span><span>14-Day Priority Advance Booking</span></li>
+            <li class="h2-vip-perk"><span class="h2-vip-perk-icon">✓</span><span>Free Cancellation up to 2 Hours</span></li>
+            <li class="h2-vip-perk"><span class="h2-vip-perk-icon">✓</span><span>2x SportifyPoints Rewards</span></li>
+            <li class="h2-vip-perk"><span class="h2-vip-perk-icon">✓</span><span>Free HD Match Video Recording</span></li>
           </ul>
 
-          <a href="signup.html" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:auto">Join Pro Club →</a>
+          <a href="signup.html" class="btn btn-primary h2-vip-btn" style="margin-top:auto">Join Pro Club →</a>
         </div>
 
         <!-- Tier 3 -->
         <div class="h2-vip-card reveal delay-300">
-          <h3 style="font-size:var(--text-xl);margin-bottom:var(--space-1)">Corporate Elite</h3>
-          <div style="font-size:var(--text-xs);color:var(--text-muted);margin-bottom:var(--space-4)">For tech parks & company teams</div>
-          <div style="font-family:var(--font-display);font-size:var(--text-3xl);font-weight:900;color:var(--text-primary)">
+          <h3 class="h2-vip-title">Corporate Elite</h3>
+          <div class="h2-vip-subtitle">For tech parks & company teams</div>
+          <div class="h2-vip-price">
             <span class="h2-vip-price-num" data-monthly="8999" data-annual="7199">₹8,999</span>
-            <span style="font-size:var(--text-xs);color:var(--text-muted);font-weight:600">/ month</span>
+            <span class="h2-vip-price-unit">/ month</span>
           </div>
 
           <ul class="h2-vip-perks">
-            <li class="h2-vip-perk"><span class="h2-vip-perk-icon">✓</span> Unlimited Team Roster Access</li>
-            <li class="h2-vip-perk"><span class="h2-vip-perk-icon">✓</span> Recurring Weekly Slot Lock-In</li>
-            <li class="h2-vip-perk"><span class="h2-vip-perk-icon">✓</span> Corporate Tournament Hosting</li>
-            <li class="h2-vip-perk"><span class="h2-vip-perk-icon">✓</span> Dedicated Account Manager & GST Invoices</li>
+            <li class="h2-vip-perk"><span class="h2-vip-perk-icon">✓</span><span>Unlimited Team Roster Access</span></li>
+            <li class="h2-vip-perk"><span class="h2-vip-perk-icon">✓</span><span>Recurring Weekly Slot Lock-In</span></li>
+            <li class="h2-vip-perk"><span class="h2-vip-perk-icon">✓</span><span>Corporate Tournament Hosting</span></li>
+            <li class="h2-vip-perk"><span class="h2-vip-perk-icon">✓</span><span>Dedicated Account Manager & GST Invoices</span></li>
           </ul>
 
-          <a href="contact.html" class="btn btn-outline" style="width:100%;justify-content:center;margin-top:auto">Contact Corporate Sales</a>
+          <a href="contact.html" class="btn btn-outline h2-vip-btn" style="margin-top:auto">Contact Corporate Sales</a>
         </div>
       </div>
     </div>

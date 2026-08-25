@@ -23,6 +23,32 @@
     padding-block: calc(var(--nav-height) + var(--space-12)) var(--space-12);
   }
 
+  .h2-hero__stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+  }
+
+  /* Badges & Labels on Tablet */
+  .badge {
+    padding: 3px 10px;
+    font-size: 11px;
+  }
+
+  .h2-badge-group {
+    gap: 6px;
+  }
+
+  /* VIP section tablet 3-col grid scaling */
+  .h2-vip-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+  }
+
+  .h2-vip-card {
+    padding: var(--space-6) var(--space-4);
+  }
+
   /* Compact xs buttons (Home 2 HUD join buttons) */
   .btn-xs {
     padding: 0.5rem 1rem;
@@ -51,6 +77,17 @@
   /* Leaderboard table — tighter cells */
   .h2-lb-table th,
   .h2-lb-table td { padding: var(--space-3) var(--space-4); }
+}
+
+/* ═══════════════ TABLET PORTRAIT (≤900px) ═══════════════ */
+@media (max-width: 900px) {
+  /* VIP cards stack cleanly on portrait tablets */
+  .h2-vip-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin-inline: auto;
+    gap: var(--space-8);
+  }
 }
 
 /* ═══════════════ TABLET (≤768px) ═══════════════ */
@@ -91,14 +128,23 @@
 
   /* Calculator — clamp grid tracks so the controls/output min-content
      (394px) can no longer leak into the layout viewport */
-  .h2-calc-wrapper { grid-template-columns: minmax(0, 1fr); }
+  .h2-calc-wrapper {
+    grid-template-columns: minmax(0, 1fr);
+    padding: var(--space-6);
+    gap: var(--space-6);
+  }
+
+  .h2-calc-addons {
+    grid-template-columns: 1fr !important;
+  }
+
+  .h2-calc-output {
+    padding: var(--space-6);
+  }
 
   /* Contact info cards — the inline repeat(3, 1fr) grid is too tight
      below 768px and leaks ~467px of min-content */
   .info-cards-grid { grid-template-columns: 1fr !important; max-width: 400px; margin-inline: auto; }
-
-  /* VIP cards tighter on tablets */
-  .h2-vip-card { padding: var(--space-6); }
 }
 
 /* ═══════════════ MOBILE (≤640px) ═══════════════ */
@@ -121,8 +167,16 @@
   .h2-match-roster { flex-wrap: wrap; gap: var(--space-3); }
   .h2-zone-tab { padding: var(--space-2) var(--space-4); }
 
+  .h2-badge {
+    font-size: 11px;
+    padding: 5px 12px;
+    letter-spacing: 0.03em;
+  }
+
   /* Calculator — tighter padding */
-  .h2-calc-wrapper { padding: var(--space-5); }
+  .h2-calc-wrapper { padding: var(--space-5); gap: var(--space-5); }
+  .h2-calc-output { padding: var(--space-5) var(--space-4); }
+  .h2-per-player-amount { font-size: clamp(2rem, 8vw, 2.75rem); }
 
   /* Leaderboard — hide "Win Rate", shrink type */
   .h2-lb-table th:nth-child(5),
@@ -131,8 +185,8 @@
   .h2-lb-table td { font-size: var(--text-xs); }
 
   /* Billing switcher — compact pills */
-  .h2-billing-switcher { max-width: 100%; }
-  .h2-billing-btn { padding: 8px 16px; font-size: var(--text-xs); }
+  .h2-billing-switcher { width: 100%; display: flex; justify-content: center; }
+  .h2-billing-btn { flex: 1; text-align: center; padding: 8px 12px; font-size: var(--text-xs); }
 
   /* Showcase images shorter on phones */
   .sport-img,
@@ -217,11 +271,27 @@
   .h2-lb-table td:nth-child(3) { display: none; }
   .h2-lb-table th,
   .h2-lb-table td { padding: var(--space-2) var(--space-3); }
-  .h2-vip-card { padding: var(--space-5); }
+  .h2-vip-card { padding: var(--space-5) var(--space-4); }
+  .h2-vip-badge { font-size: 10px; padding: 3px 10px; letter-spacing: 0.04em; }
+  .h2-vip-perk { font-size: var(--text-xs); }
   .h2-tourney-body { padding: var(--space-5); }
 
-  /* Calculator add-ons — single column */
-  .h2-calc-addons { grid-template-columns: 1fr !important; }
+  .h2-badge {
+    font-size: 10px;
+    padding: 4px 10px;
+    line-height: 1.3;
+    white-space: normal;
+  }
+
+  .badge {
+    padding: 3px 8px;
+    font-size: 10px;
+  }
+
+  .h2-calc-wrapper { padding: var(--space-4); }
+  .h2-calc-output { padding: var(--space-4); }
+  .h2-calc-label { flex-wrap: wrap; gap: 4px; }
+  .h2-calc-total-box { flex-direction: column; align-items: flex-start; gap: 4px; }
 
   /* Facilities grid — single column for roomy touch targets */
   .facilities-grid { grid-template-columns: 1fr; }
