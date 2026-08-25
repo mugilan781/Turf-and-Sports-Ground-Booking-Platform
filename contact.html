@@ -16,11 +16,34 @@
   <link rel="stylesheet" href="css/components.css">
   <script src="js/icons.js"></script>
   <style>
-    .contact-layout { display:grid;grid-template-columns:1fr 1fr;gap:var(--space-12);align-items:start }
-    .contact-form-wrap { background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-2xl);padding:var(--space-8) }
-    .map-placeholder { background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-2xl);overflow:hidden;aspect-ratio:16/9;position:relative }
-    .map-placeholder iframe { width:100%;height:100%;filter:grayscale(40%) invert(15%) hue-rotate(180deg) }
-    @media (max-width:1024px) { .contact-layout{grid-template-columns:1fr} }
+    .contact-layout { display:grid; grid-template-columns:1.05fr 0.95fr; gap:var(--space-12); align-items:start; }
+    .contact-form-wrap { background:var(--bg-card); border:1px solid var(--border-color); border-radius:var(--radius-2xl); padding:var(--space-8); box-shadow:var(--shadow-lg); }
+    .contact-widget { background:var(--bg-card); border:1px solid var(--border-color); border-radius:var(--radius-2xl); padding:var(--space-6); margin-bottom:var(--space-5); }
+    .op-hours-list { display:flex; flex-direction:column; gap:var(--space-3); }
+    .op-hours-row { display:flex; justify-content:space-between; align-items:center; padding:var(--space-3) var(--space-4); background:var(--bg-card-hover); border-radius:var(--radius-md); gap:var(--space-3); }
+    .social-grid { display:grid; grid-template-columns:1fr 1fr; gap:var(--space-3); }
+    .social-card-item { display:flex; align-items:center; gap:var(--space-3); padding:var(--space-3); background:var(--bg-card-hover); border:1px solid var(--border-color); border-radius:var(--radius-lg); transition:all var(--transition-base); text-decoration:none; }
+    .social-card-item:hover { border-color:var(--border-accent); transform:translateY(-2px); }
+    .social-icon-box { width:36px; height:36px; background:rgba(184,230,46,0.1); border-radius:var(--radius-md); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .map-placeholder { background:var(--bg-card); border:1px solid var(--border-color); border-radius:var(--radius-2xl); overflow:hidden; aspect-ratio:16/9; position:relative; min-height:380px; }
+    .map-placeholder iframe { width:100%; height:100%; filter:grayscale(40%) invert(15%) hue-rotate(180deg); }
+
+    @media (max-width:1024px) {
+      .contact-layout { grid-template-columns:1fr; gap:var(--space-8); }
+    }
+    @media (max-width:640px) {
+      .contact-form-wrap { padding:var(--space-6) var(--space-4); }
+      .contact-form-grid { grid-template-columns:1fr !important; }
+      #contact-submit { width:100%; justify-content:center; }
+      .contact-widget { padding:var(--space-5) var(--space-4); }
+      .op-hours-row { padding:var(--space-3); }
+      .map-placeholder { min-height:280px; aspect-ratio:16/10; }
+    }
+    @media (max-width:480px) {
+      .social-grid { grid-template-columns:1fr; }
+      .op-hours-row { flex-wrap:wrap; gap:var(--space-2); }
+      .op-hours-row .badge { margin-left:auto; }
+    }
   </style>
 <link rel="stylesheet" href="css/responsive.css">
 </head>
@@ -111,7 +134,7 @@
         </span>
         <h2 class="section-title reveal">Multiple Ways to <span class="accent">Connect</span></h2>
       </div>
-      <div class="info-cards-grid" style="grid-template-columns:repeat(3,1fr)">
+      <div class="info-cards-grid">
         <div class="info-card reveal delay-100">
           <div class="icon-circle icon-circle--lime" style="margin:0 auto var(--space-4);width:52px;height:52px">
             <svg class="v-icon icon-md v-icon-lime" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -157,7 +180,7 @@
           <h2 style="font-size:var(--text-2xl);font-weight:900;margin-block:var(--space-3) var(--space-6)">We'd Love to <span class="accent">Hear From You</span></h2>
           <form id="contact-form" novalidate>
             <div style="display:flex;flex-direction:column;gap:var(--space-4)">
-              <div class="form-grid-2" style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)">
+              <div class="form-grid-2 contact-form-grid">
                 <div class="form-group">
                   <label class="form-label" for="contact-name">Full Name *</label>
                   <input type="text" id="contact-name" class="form-input" placeholder="Your name" required>
@@ -191,9 +214,9 @@
                 <textarea id="contact-message" class="form-input" rows="5" placeholder="Tell us how we can help you..." style="resize:vertical" required></textarea>
                 <span class="form-error" id="contact-message-error" role="alert"></span>
               </div>
-              <label style="display:flex;align-items:center;gap:var(--space-3);font-size:var(--text-sm);color:var(--text-secondary);cursor:pointer">
-                <input type="checkbox" id="contact-consent" style="accent-color:var(--electric-lime)">
-                I agree to the <a href="privacy-policy.html" style="color:var(--electric-lime)">Privacy Policy</a>
+              <label style="display:flex;align-items:flex-start;gap:var(--space-3);font-size:var(--text-sm);color:var(--text-secondary);cursor:pointer;line-height:1.4">
+                <input type="checkbox" id="contact-consent" style="accent-color:var(--electric-lime);margin-top:2px">
+                <span>I agree to the <a href="privacy-policy.html" style="color:var(--electric-lime)">Privacy Policy</a></span>
               </label>
               <button type="submit" id="contact-submit" class="btn btn-primary btn-lg">Send Message →</button>
             </div>
@@ -202,25 +225,25 @@
 
         <div class="reveal-right">
           <!-- Operating Hours -->
-          <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-2xl);padding:var(--space-6);margin-bottom:var(--space-5)">
+          <div class="contact-widget">
             <h3 style="margin-bottom:var(--space-5);display:flex;align-items:center;gap:8px">
               <svg class="v-icon icon-sm v-icon-lime" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
               Operating Hours
             </h3>
-            <div style="display:flex;flex-direction:column;gap:var(--space-3)">
-              <div style="display:flex;justify-content:space-between;align-items:center;padding:var(--space-3);background:var(--bg-card-hover);border-radius:var(--radius-md)">
+            <div class="op-hours-list">
+              <div class="op-hours-row">
                 <div><div style="font-size:var(--text-sm);font-weight:600">Monday – Friday</div><div style="font-size:var(--text-xs);color:var(--text-muted)">9:00 AM – 9:00 PM</div></div>
                 <span class="badge badge-green">Open</span>
               </div>
-              <div style="display:flex;justify-content:space-between;align-items:center;padding:var(--space-3);background:var(--bg-card-hover);border-radius:var(--radius-md)">
+              <div class="op-hours-row">
                 <div><div style="font-size:var(--text-sm);font-weight:600">Saturday</div><div style="font-size:var(--text-xs);color:var(--text-muted)">8:00 AM – 10:00 PM</div></div>
                 <span class="badge badge-green">Open</span>
               </div>
-              <div style="display:flex;justify-content:space-between;align-items:center;padding:var(--space-3);background:var(--bg-card-hover);border-radius:var(--radius-md)">
+              <div class="op-hours-row">
                 <div><div style="font-size:var(--text-sm);font-weight:600">Sunday</div><div style="font-size:var(--text-xs);color:var(--text-muted)">8:00 AM – 8:00 PM</div></div>
                 <span class="badge badge-green">Open</span>
               </div>
-              <div style="display:flex;justify-content:space-between;align-items:center;padding:var(--space-3);background:var(--bg-card-hover);border-radius:var(--radius-md)">
+              <div class="op-hours-row">
                 <div><div style="font-size:var(--text-sm);font-weight:600">Public Holidays</div><div style="font-size:var(--text-xs);color:var(--text-muted)">10:00 AM – 6:00 PM</div></div>
                 <span class="badge badge-navy">Limited</span>
               </div>
@@ -228,26 +251,26 @@
           </div>
 
           <!-- Social -->
-          <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-2xl);padding:var(--space-6)">
+          <div class="contact-widget">
             <h3 style="margin-bottom:var(--space-5);display:flex;align-items:center;gap:8px">
               <svg class="v-icon icon-sm v-icon-lime" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
               Follow Us
             </h3>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3)">
-              <a href="https://www.facebook.com/sportifyturf" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:var(--space-3);padding:var(--space-3);background:var(--bg-card-hover);border:1px solid var(--border-color);border-radius:var(--radius-lg);transition:all var(--transition-base);text-decoration:none" onmouseover="this.style.borderColor='var(--electric-lime)'" onmouseout="this.style.borderColor='var(--border-color)'">
-                <div style="width:36px;height:36px;background:rgba(184,230,46,0.1);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center"><span data-icon="facebook" data-icon-class="v-icon icon-sm"></span></div>
+            <div class="social-grid">
+              <a href="https://www.facebook.com/sportifyturf" target="_blank" rel="noopener" class="social-card-item">
+                <div class="social-icon-box"><span data-icon="facebook" data-icon-class="v-icon icon-sm"></span></div>
                 <div><div style="font-size:var(--text-xs);font-weight:700;color:var(--text-primary)">Facebook</div><div style="font-size:10px;color:var(--text-muted)">@SportifyTurf</div></div>
               </a>
-              <a href="https://www.instagram.com/sportifyturf" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:var(--space-3);padding:var(--space-3);background:var(--bg-card-hover);border:1px solid var(--border-color);border-radius:var(--radius-lg);transition:all var(--transition-base);text-decoration:none" onmouseover="this.style.borderColor='var(--electric-lime)'" onmouseout="this.style.borderColor='var(--border-color)'">
-                <div style="width:36px;height:36px;background:rgba(184,230,46,0.1);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center"><span data-icon="instagram" data-icon-class="v-icon icon-sm"></span></div>
+              <a href="https://www.instagram.com/sportifyturf" target="_blank" rel="noopener" class="social-card-item">
+                <div class="social-icon-box"><span data-icon="instagram" data-icon-class="v-icon icon-sm"></span></div>
                 <div><div style="font-size:var(--text-xs);font-weight:700;color:var(--text-primary)">Instagram</div><div style="font-size:10px;color:var(--text-muted)">@sportifyturf</div></div>
               </a>
-              <a href="https://x.com/SportifyTurf" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:var(--space-3);padding:var(--space-3);background:var(--bg-card-hover);border:1px solid var(--border-color);border-radius:var(--radius-lg);transition:all var(--transition-base);text-decoration:none" onmouseover="this.style.borderColor='var(--electric-lime)'" onmouseout="this.style.borderColor='var(--border-color)'">
-                <div style="width:36px;height:36px;background:rgba(184,230,46,0.1);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center"><span data-icon="twitter" data-icon-class="v-icon icon-sm"></span></div>
+              <a href="https://x.com/SportifyTurf" target="_blank" rel="noopener" class="social-card-item">
+                <div class="social-icon-box"><span data-icon="twitter" data-icon-class="v-icon icon-sm"></span></div>
                 <div><div style="font-size:var(--text-xs);font-weight:700;color:var(--text-primary)">Twitter/X</div><div style="font-size:10px;color:var(--text-muted)">@SportifyTurf</div></div>
               </a>
-              <a href="https://www.youtube.com/@SportifyTurf" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:var(--space-3);padding:var(--space-3);background:var(--bg-card-hover);border:1px solid var(--border-color);border-radius:var(--radius-lg);transition:all var(--transition-base);text-decoration:none" onmouseover="this.style.borderColor='var(--electric-lime)'" onmouseout="this.style.borderColor='var(--border-color)'">
-                <div style="width:36px;height:36px;background:rgba(184,230,46,0.1);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center"><span data-icon="youtube" data-icon-class="v-icon icon-sm"></span></div>
+              <a href="https://www.youtube.com/@SportifyTurf" target="_blank" rel="noopener" class="social-card-item">
+                <div class="social-icon-box"><span data-icon="youtube" data-icon-class="v-icon icon-sm"></span></div>
                 <div><div style="font-size:var(--text-xs);font-weight:700;color:var(--text-primary)">YouTube</div><div style="font-size:10px;color:var(--text-muted)">SportifyTurf</div></div>
               </a>
             </div>
