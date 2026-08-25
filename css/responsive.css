@@ -189,16 +189,16 @@
   .h2-billing-btn { flex: 1; text-align: center; padding: 8px 12px; font-size: var(--text-xs); }
 
   /* Showcase images shorter on phones */
-  .sport-img,
-  .about-intro__image { height: 220px; }
+  .sport-img { height: 220px; }
   .article-hero-img { height: 220px; }
 
-  /* Services CTA banner — stack text + buttons (overrides inline grid) */
-  .cta-banner {
+  /* Services CTA banner & About Join banner — stack text + buttons */
+  .cta-banner,
+  .join-banner {
     grid-template-columns: 1fr !important;
     text-align: center;
     gap: var(--space-6) !important;
-    padding: var(--space-8) !important;
+    padding: var(--space-8) var(--space-4) !important;
   }
 
   /* Sport showcase price/button row — allow wrap */

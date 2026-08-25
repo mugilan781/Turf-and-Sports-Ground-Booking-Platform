@@ -651,12 +651,14 @@
 
 @media (max-width: 768px) {
   .blog-grid { grid-template-columns: 1fr; }
-  .timeline::before { left: 20px; }
-  .timeline-item { grid-template-columns: 1fr; }
-  .timeline-dot { display: none; }
-  .timeline-item:nth-child(even) .timeline-content { order: 1; text-align: left; }
-  .timeline-item:nth-child(even) .timeline-empty { display: none; }
-  .timeline-empty { display: none; }
+  .timeline { padding-block: var(--space-4); }
+  .timeline::before { left: 50% !important; transform: translateX(-50%) !important; top: 20px; bottom: 20px; }
+  .timeline-item { grid-template-columns: 1fr !important; gap: var(--space-4); margin-bottom: var(--space-8); position: relative; text-align: center; }
+  .timeline-dot { display: block !important; position: relative !important; left: 50% !important; top: auto !important; bottom: auto !important; transform: translateX(-50%) !important; margin-block: var(--space-3); z-index: 2; }
+  .timeline-content { text-align: center !important; max-width: 480px; margin-inline: auto; padding: var(--space-5); }
+  .timeline-item:nth-child(even) .timeline-content { order: 1 !important; text-align: center !important; }
+  .timeline-item:nth-child(even) .timeline-empty { display: none !important; }
+  .timeline-empty { display: none !important; }
 }
 
 @media (max-width: 640px) {
