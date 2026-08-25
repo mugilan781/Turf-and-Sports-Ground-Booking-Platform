@@ -954,9 +954,19 @@ font-weight: var(--fw-black);
 
 .ticker-content {
   display: flex;
-  gap: var(--space-16);
+  align-items: center;
+  width: max-content;
   white-space: nowrap;
   animation: ticker-scroll 30s linear infinite;
+}
+
+/* Two identical groups → translateX(-50%) loops seamlessly */
+.ticker-group {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: var(--space-16);
+  padding-inline-end: var(--space-16);
 }
 
 .ticker-item {
@@ -1003,6 +1013,11 @@ font-weight: var(--fw-black);
 }
 
 @media (max-width: 768px) {
+  /* Ticker sits between hero and this section — cancel the hero-overlap
+     pull-up or the card lands ~4px under the marquee */
+  .quick-book-bar {
+    margin-top: 0;
+  }
   .quick-book-card {
     grid-template-columns: 1fr;
   }
@@ -1020,8 +1035,14 @@ font-weight: var(--fw-black);
   .slot-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
+/* Mobile — stats stack to a single column (2 cols overflow small screens) */
+@media (max-width: 640px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 480px) {
-  .stats-grid { grid-template-columns: 1fr 1fr; }
   .slot-grid { grid-template-columns: repeat(2, 1fr); }
 }
 

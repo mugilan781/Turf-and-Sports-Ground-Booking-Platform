@@ -7,8 +7,9 @@
 
 /* ═══════════════ TABLET-LAPTOP (≤1024px) ═══════════════ */
 @media (max-width: 1024px) {
-  /* Hero slider (index) */
+  /* Hero slider (index) — arrows off on touch layouts; dots + swipe + autoplay remain */
   .hero-slider { min-height: 640px; }
+  .hero-arrows { display: none; }
 
   /* Page hero (all inner pages) — tighten oversized padding */
   .page-hero {
@@ -58,8 +59,6 @@
   .hero-slider { min-height: 580px; }
   .hero-slide__content { padding-bottom: var(--space-20); }
   .hero-controls { bottom: var(--space-5); gap: var(--space-3); }
-  .hero-arrows { padding-inline: var(--space-3); }
-  .hero-arrow { width: 44px; height: 44px; font-size: 15px; }
 
   /* Modal fills the screen nicely on tablets */
   .modal-overlay { padding: var(--space-4); }
@@ -243,7 +242,6 @@
 /* ═══════════════ TINY MOBILE (≤360px) ═══════════════ */
 @media (max-width: 360px) {
   .hero-slider { min-height: 500px; }
-  .hero-arrow { width: 38px; height: 38px; font-size: 13px; }
   .h2-billing-btn { padding: 8px 12px; }
 }
 
