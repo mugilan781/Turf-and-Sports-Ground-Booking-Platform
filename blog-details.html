@@ -16,19 +16,56 @@
   <link rel="stylesheet" href="css/components.css">
   <script src="js/icons.js"></script>
   <style>
-    .article-layout { display:grid;grid-template-columns:1fr 320px;gap:var(--space-10);align-items:start;padding-block:var(--space-12) }
-    .article-hero-img { width:100%;max-height:520px;object-fit:cover;border-radius:var(--radius-2xl);margin-bottom:var(--space-8) }
-    .article-content h2 { font-size:var(--text-2xl);margin:var(--space-8) 0 var(--space-4);color:var(--text-primary) }
-    .article-content h3 { font-size:var(--text-xl);margin:var(--space-6) 0 var(--space-3);color:var(--text-primary) }
-    .article-content p { color:var(--text-secondary);line-height:1.8;margin-bottom:var(--space-5);font-size:var(--text-lg) }
-    .article-content ul { padding-left:var(--space-6);margin-bottom:var(--space-5) }
-    .article-content ul li { color:var(--text-secondary);line-height:1.8;margin-bottom:var(--space-2);list-style:disc;font-size:var(--text-base) }
-    .article-highlight { background:rgba(184,230,46,0.06);border-left:4px solid var(--electric-lime);border-radius:0 var(--radius-md) var(--radius-md) 0;padding:var(--space-5) var(--space-6);margin:var(--space-6) 0;font-style:italic;font-size:var(--text-lg);color:var(--text-secondary) }
-    .article-sidebar { position:sticky;top:calc(var(--nav-height) + var(--space-6)) }
-    .sidebar-widget { background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-xl);padding:var(--space-5);margin-bottom:var(--space-4) }
-    .sidebar-widget-title { font-size:var(--text-xs);font-weight:900;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:var(--space-4);display:flex;align-items:center;gap:6px }
-    .comment-item { display:flex;gap:var(--space-4);padding:var(--space-5);background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-xl);margin-bottom:var(--space-4) }
-    @media (max-width:1024px) { .article-layout{grid-template-columns:1fr} .article-sidebar{position:static} }
+    .article-layout { display:grid; grid-template-columns:1fr 320px; gap:var(--space-10); align-items:start; padding-block:var(--space-12); }
+    .article-hero-img { width:100%; height:auto; aspect-ratio:16/9; max-height:480px; object-fit:cover; border-radius:var(--radius-2xl); margin-bottom:var(--space-8); box-shadow:var(--shadow-lg); }
+    .article-content h2 { font-size:clamp(1.25rem, 3.5vw, 1.75rem); margin:var(--space-8) 0 var(--space-4); color:var(--text-primary); }
+    .article-content h3 { font-size:clamp(1.1rem, 3vw, 1.35rem); margin:var(--space-6) 0 var(--space-3); color:var(--text-primary); }
+    .article-content p { color:var(--text-secondary); line-height:1.8; margin-bottom:var(--space-5); font-size:var(--text-base); }
+    .article-content ul { padding-left:var(--space-6); margin-bottom:var(--space-5); }
+    .article-content ul li { color:var(--text-secondary); line-height:1.7; margin-bottom:var(--space-2); list-style:disc; font-size:var(--text-sm); }
+    .article-highlight { background:rgba(184,230,46,0.06); border-left:4px solid var(--electric-lime); border-radius:0 var(--radius-md) var(--radius-md) 0; padding:var(--space-5) var(--space-6); margin:var(--space-6) 0; font-style:italic; font-size:var(--text-base); color:var(--text-secondary); line-height:1.6; }
+    .article-meta-row { display:flex; align-items:center; gap:var(--space-6); flex-wrap:wrap; padding-top:var(--space-5); border-top:1px solid var(--border-color); }
+    .article-meta-actions { display:flex; gap:var(--space-2); margin-left:auto; }
+
+    .author-card { background:var(--bg-card); border:1px solid var(--border-color); border-radius:var(--radius-2xl); padding:var(--space-8); margin-block:var(--space-10); display:flex; gap:var(--space-6); align-items:flex-start; }
+    .article-tags-share { display:flex; justify-content:space-between; align-items:center; padding:var(--space-5) 0; border-top:1px solid var(--border-color); border-bottom:1px solid var(--border-color); margin-bottom:var(--space-10); flex-wrap:wrap; gap:var(--space-4); }
+
+    .article-sidebar { position:sticky; top:calc(var(--nav-height) + var(--space-6)); }
+    .sidebar-widget { background:var(--bg-card); border:1px solid var(--border-color); border-radius:var(--radius-xl); padding:var(--space-5); margin-bottom:var(--space-4); }
+    .sidebar-widget-title { font-size:var(--text-xs); font-weight:900; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted); margin-bottom:var(--space-4); display:flex; align-items:center; gap:6px; }
+    .comment-item { display:flex; gap:var(--space-4); padding:var(--space-5); background:var(--bg-card); border:1px solid var(--border-color); border-radius:var(--radius-xl); margin-bottom:var(--space-4); }
+    .comment-header { display:flex; align-items:center; gap:var(--space-3); margin-bottom:var(--space-2); flex-wrap:wrap; }
+    .comment-form-grid { display:grid; grid-template-columns:1fr 1fr; gap:var(--space-4); }
+
+    @media (max-width:1024px) {
+      .article-layout { grid-template-columns:1fr; padding-block:var(--space-8); }
+      .article-sidebar { position:static; margin-top:var(--space-8); }
+    }
+
+    @media (max-width:768px) {
+      .article-meta-row { gap:var(--space-4); }
+      .article-meta-actions { margin-left:0; width:100%; justify-content:flex-start; margin-top:var(--space-2); }
+      .author-card { padding:var(--space-6); gap:var(--space-5); }
+    }
+
+    @media (max-width:640px) {
+      .article-hero-img { aspect-ratio:16/10; border-radius:var(--radius-xl); margin-bottom:var(--space-6); }
+      .article-highlight { padding:var(--space-4); font-size:var(--text-sm); margin:var(--space-4) 0; }
+      .author-card { flex-direction:column; align-items:center; text-align:center; padding:var(--space-6) var(--space-4); }
+      .author-card .btn { width:100%; justify-content:center; }
+      .author-card-actions { width:100%; display:flex; flex-direction:column; gap:var(--space-2); }
+      .article-tags-share { flex-direction:column; align-items:stretch; }
+      .comment-share-row { width:100%; display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-2); }
+      .comment-share-row .btn { width:100%; padding-inline:var(--space-2); justify-content:center; font-size:12px; }
+      .comment-form-grid { grid-template-columns:1fr !important; }
+    }
+
+    @media (max-width:480px) {
+      .comment-item { flex-direction:column; align-items:flex-start; padding:var(--space-4); }
+      .comment-header { width:100%; }
+      .comment-item .stars-vector { margin-left:0 !important; margin-top:4px; width:100%; }
+      .comment-share-row { grid-template-columns:1fr; }
+    }
   </style>
 <link rel="stylesheet" href="css/responsive.css">
 </head>
@@ -119,7 +156,7 @@
         <p id="article-excerpt" style="font-size:var(--text-xl);line-height:var(--lh-relaxed);margin:var(--space-5) 0">
           From high-press formations to counter-attack strategies — these tactical frameworks have transformed amateur football teams from regional underdogs to local champions.
         </p>
-        <div style="display:flex;align-items:center;gap:var(--space-6);flex-wrap:wrap;padding-top:var(--space-5);border-top:1px solid var(--border-color)">
+        <div class="article-meta-row">
           <div style="display:flex;align-items:center;gap:var(--space-3)">
             <div class="avatar avatar-lg" id="author-avatar" style="background:linear-gradient(135deg,var(--electric-lime),var(--stadium-green));color:var(--midnight-navy);font-weight:900">RK</div>
             <div>
@@ -139,7 +176,7 @@
             <svg class="v-icon icon-xs v-icon-lime" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
             <span id="article-views-text">2,431 views</span>
           </div>
-          <div style="display:flex;gap:var(--space-2);margin-left:auto">
+          <div class="article-meta-actions">
             <button class="btn btn-secondary btn-sm" onclick="window.SportifyApp.showToast('Link copied!','success')">Share</button>
             <button class="btn btn-secondary btn-sm" onclick="window.SportifyApp.showToast('Bookmarked!','success')">Save</button>
           </div>
@@ -199,14 +236,14 @@
         </div>
 
         <!-- Author Card (SECTION 3) -->
-        <div class="author-card" style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-2xl);padding:var(--space-8);margin-block:var(--space-10);display:flex;gap:var(--space-6);align-items:flex-start" aria-label="Author information">
+        <div class="author-card" aria-label="Author information">
           <div class="avatar avatar-xl" id="author-card-avatar" style="background:linear-gradient(135deg,var(--electric-lime),var(--stadium-green));color:var(--midnight-navy);font-weight:900;flex-shrink:0;font-size:var(--text-2xl)">RK</div>
           <div>
             <div style="font-size:var(--text-xs);color:var(--electric-lime);font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:var(--space-1)">Written by</div>
             <h3 style="font-size:var(--text-xl);margin-bottom:var(--space-2)" id="author-card-name">Raj Kumar</h3>
             <p style="font-size:var(--text-xs);color:var(--text-muted);margin-bottom:var(--space-3)" id="author-card-role">CEO & Co-Founder, SportifyTurf | Former Professional Footballer | Sports Strategist with 10+ years experience</p>
             <p style="font-size:var(--text-sm);color:var(--text-secondary);line-height:var(--lh-relaxed);margin-bottom:var(--space-4)" id="author-card-bio">Raj has played football at the state level and has been coaching amateur teams for 8 years. His tactical analysis pieces have been read by over 50,000 athletes across India.</p>
-            <div style="display:flex;gap:var(--space-3)">
+            <div class="author-card-actions" style="display:flex;gap:var(--space-3)">
               <a href="#" class="btn btn-secondary btn-sm">Follow on Twitter</a>
               <a href="#" class="btn btn-secondary btn-sm">More Articles</a>
             </div>
@@ -214,7 +251,7 @@
         </div>
 
         <!-- Tags + Share -->
-        <div style="display:flex;justify-content:space-between;align-items:center;padding:var(--space-5) 0;border-top:1px solid var(--border-color);border-bottom:1px solid var(--border-color);margin-bottom:var(--space-10);flex-wrap:wrap;gap:var(--space-4)">
+        <div class="article-tags-share">
           <div id="article-tags" style="display:flex;gap:var(--space-2);flex-wrap:wrap">
             <a href="blog.html" class="chip" style="text-decoration:none">Football</a>
             <a href="blog.html" class="chip" style="text-decoration:none">Tactics</a>
@@ -223,7 +260,7 @@
             <a href="blog.html" class="chip" style="text-decoration:none">Strategy</a>
             <a href="blog.html" class="chip" style="text-decoration:none">5-a-side</a>
           </div>
-          <div class="comment-share-row" style="display:flex;gap:var(--space-2)">
+          <div class="comment-share-row">
             <button class="btn btn-secondary btn-sm" onclick="window.SportifyApp.showToast('Sharing on WhatsApp...','info')">WhatsApp</button>
             <button class="btn btn-secondary btn-sm" onclick="window.SportifyApp.showToast('Sharing on Twitter...','info')">Twitter</button>
             <button class="btn btn-secondary btn-sm" onclick="window.SportifyApp.showToast('Link copied!','success')">Copy Link</button>
@@ -239,7 +276,7 @@
             <div class="comment-item reveal">
               <div class="avatar avatar-lg" style="background:linear-gradient(135deg,var(--electric-lime),#8aaa1a);color:var(--midnight-navy);font-weight:900;flex-shrink:0;font-size:14px">AR</div>
               <div style="flex:1">
-                <div style="display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-2)">
+                <div class="comment-header">
                   <strong style="font-size:var(--text-sm)">Arjun R.</strong>
                   <span style="font-size:var(--text-xs);color:var(--text-muted)">2 days ago</span>
                   <div class="stars-vector" style="margin-left:auto">
@@ -259,7 +296,7 @@
             <div class="comment-item reveal delay-100">
               <div class="avatar avatar-lg" style="background:linear-gradient(135deg,var(--stadium-green),#0d5a3e);color:white;font-weight:900;flex-shrink:0;font-size:14px">KS</div>
               <div style="flex:1">
-                <div style="display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-2)">
+                <div class="comment-header">
                   <strong style="font-size:var(--text-sm)">Kavitha S.</strong>
                   <span style="font-size:var(--text-xs);color:var(--text-muted)">1 day ago</span>
                   <div class="stars-vector" style="margin-left:auto">
@@ -279,7 +316,7 @@
             <div class="comment-item reveal delay-200">
               <div class="avatar avatar-lg" style="background:linear-gradient(135deg,#3B82F6,#1D4ED8);color:white;font-weight:900;flex-shrink:0;font-size:14px">MP</div>
               <div style="flex:1">
-                <div style="display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-2)">
+                <div class="comment-header">
                   <strong style="font-size:var(--text-sm)">Mithun P.</strong>
                   <span style="font-size:var(--text-xs);color:var(--text-muted)">5 hours ago</span>
                   <div class="stars-vector" style="margin-left:auto">
@@ -301,7 +338,7 @@
           <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-2xl);padding:var(--space-6)">
             <h3 style="margin-bottom:var(--space-5)">Leave a Comment</h3>
             <div class="auth-form" style="display:flex;flex-direction:column;gap:var(--space-4)">
-              <div class="form-grid-2" style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)">
+              <div class="form-grid-2 comment-form-grid">
                 <div class="form-group"><label class="form-label">Name</label><input type="text" class="form-input" placeholder="Your name"></div>
                 <div class="form-group"><label class="form-label">Email</label><input type="email" class="form-input" placeholder="your@email.com"></div>
               </div>
