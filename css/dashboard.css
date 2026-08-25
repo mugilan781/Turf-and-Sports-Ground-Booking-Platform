@@ -436,6 +436,12 @@
   cursor: pointer;
 }
 
+/* ── Chart Scroll Helper (keeps bar charts usable on small screens) ── */
+.db-chart-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 @media (max-width: 1024px) {
   .db-stats-grid { grid-template-columns: repeat(2, 1fr); }
 }
@@ -453,6 +459,11 @@
   .dashboard-main { padding: var(--space-5); }
   .profile-grid { grid-template-columns: 1fr; }
   .db-stats-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 640px) {
+  .dashboard-header__title { font-size: var(--text-2xl); }
+  .booking-table-header { flex-direction: column; align-items: flex-start; gap: var(--space-3); }
 }
 
 @media (max-width: 480px) {

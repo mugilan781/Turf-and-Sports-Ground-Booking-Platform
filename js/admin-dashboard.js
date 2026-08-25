@@ -322,7 +322,7 @@ const renderTurfs = () => {
           ? '<span class="badge badge-lime">Active</span>'
           : '<span class="booking-status booking-status--pending">Maintenance</span>'}
       </div>
-      <div style="display:flex;gap:var(--space-5);margin-bottom:var(--space-4);font-size:var(--text-sm)">
+      <div style="display:flex;flex-wrap:wrap;gap:var(--space-3) var(--space-5);margin-bottom:var(--space-4);font-size:var(--text-sm)">
         <div><span style="color:var(--text-muted)">Price:</span> <strong>${fmtINR(t.price)}/hr</strong></div>
         <div><span style="color:var(--text-muted)">Rating:</span> <strong style="color:var(--electric-lime)">★ ${t.rating}</strong></div>
         <div><span style="color:var(--text-muted)">Bookings:</span> <strong>${t.bookingsCount}</strong></div>

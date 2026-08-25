@@ -175,7 +175,7 @@
         <div class="grid-2" style="margin-bottom:var(--space-6)">
           <div class="booking-table-wrap" style="padding:var(--space-6)">
             <div class="booking-table-title" style="margin-bottom:var(--space-5)">Revenue — Last 7 Days</div>
-            <div id="admin-revenue-chart" style="display:flex;align-items:flex-end;gap:var(--space-2);height:180px" aria-label="Revenue chart for last 7 days"></div>
+            <div id="admin-revenue-chart" class="db-chart-scroll" style="display:flex;align-items:flex-end;gap:var(--space-2);height:180px" aria-label="Revenue chart for last 7 days"></div>
           </div>
           <div class="booking-table-wrap" style="padding:var(--space-6)">
             <div class="booking-table-title" style="margin-bottom:var(--space-5)">Bookings by Sport</div>
@@ -265,7 +265,7 @@
           <button class="btn btn-primary" id="add-turf-btn">+ Add New Turf</button>
         </div>
 
-        <div id="admin-turf-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:var(--space-5)" aria-live="polite" aria-label="All turfs">
+        <div id="admin-turf-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(320px,100%),1fr));gap:var(--space-5)" aria-live="polite" aria-label="All turfs">
           <!-- Populated by admin-dashboard.js -->
         </div>
       </div>
@@ -354,7 +354,7 @@
             <h1 class="dashboard-header__title">Reports &amp; Analytics</h1>
             <p class="dashboard-header__subtitle">Insights to grow your platform business.</p>
           </div>
-          <div style="display:flex;gap:var(--space-3)">
+          <div style="display:flex;flex-wrap:wrap;gap:var(--space-3)">
             <button class="btn btn-secondary" onclick="window.AdminApp.exportBookingsCsv()">Export Bookings CSV</button>
             <button class="btn btn-primary" id="download-report-btn">Download Full Report</button>
           </div>
@@ -363,7 +363,7 @@
         <!-- Monthly Revenue Chart -->
         <div class="booking-table-wrap" style="padding:var(--space-6);margin-bottom:var(--space-6)">
           <div class="booking-table-title" style="margin-bottom:var(--space-5)">Monthly Revenue — 2026</div>
-          <div id="admin-monthly-chart" style="display:flex;align-items:flex-end;gap:var(--space-3);height:220px" aria-label="Monthly revenue chart"></div>
+          <div id="admin-monthly-chart" class="db-chart-scroll" style="display:flex;align-items:flex-end;gap:var(--space-3);height:220px" aria-label="Monthly revenue chart"></div>
         </div>
 
         <!-- Top Performing Turfs -->
@@ -406,14 +406,14 @@
           <!-- Appearance -->
           <div class="booking-table-wrap" style="padding:var(--space-6)">
             <h3 style="margin-bottom:var(--space-5)">Appearance</h3>
-            <div style="display:flex;align-items:center;justify-content:space-between;padding:var(--space-4);background:var(--bg-card-hover);border-radius:var(--radius-lg)">
+            <div style="display:flex;flex-wrap:wrap;gap:var(--space-3);align-items:center;justify-content:space-between;padding:var(--space-4);background:var(--bg-card-hover);border-radius:var(--radius-lg)">
               <div>
                 <p style="font-weight:600">Dark Mode</p>
                 <p style="font-size:var(--text-sm);color:var(--text-muted)">Toggle between dark and light theme</p>
               </div>
               <button id="theme-toggle-settings" class="btn btn-secondary btn-sm" onclick="document.getElementById('theme-toggle').click();this.textContent=document.documentElement.getAttribute('data-theme')==='dark'?'Dark Mode':'Light Mode'">Toggle Theme</button>
             </div>
-            <div style="display:flex;align-items:center;justify-content:space-between;padding:var(--space-4);background:var(--bg-card-hover);border-radius:var(--radius-lg);margin-top:var(--space-3)">
+            <div style="display:flex;flex-wrap:wrap;gap:var(--space-3);align-items:center;justify-content:space-between;padding:var(--space-4);background:var(--bg-card-hover);border-radius:var(--radius-lg);margin-top:var(--space-3)">
               <div>
                 <p style="font-weight:600">Reading Direction</p>
                 <p style="font-size:var(--text-sm);color:var(--text-muted)">Toggle between LTR and RTL layout</p>
@@ -460,28 +460,28 @@
           <!-- Notifications -->
           <div class="booking-table-wrap" style="padding:var(--space-6)">
             <h3 style="margin-bottom:var(--space-5)">Notification Preferences</h3>
-            <div style="display:flex;align-items:center;justify-content:space-between;padding:var(--space-4);background:var(--bg-card-hover);border-radius:var(--radius-lg);margin-bottom:var(--space-3)">
+            <div style="display:flex;flex-wrap:wrap;gap:var(--space-3);align-items:center;justify-content:space-between;padding:var(--space-4);background:var(--bg-card-hover);border-radius:var(--radius-lg);margin-bottom:var(--space-3)">
               <div><p style="font-weight:600">New Booking Alerts</p><p style="font-size:var(--text-sm);color:var(--text-muted)">Get notified whenever a customer books a slot</p></div>
               <label class="settings-toggle">
                 <input type="checkbox" checked>
                 <span class="settings-toggle__track"><span class="settings-toggle__thumb"></span></span>
               </label>
             </div>
-            <div style="display:flex;align-items:center;justify-content:space-between;padding:var(--space-4);background:var(--bg-card-hover);border-radius:var(--radius-lg);margin-bottom:var(--space-3)">
+            <div style="display:flex;flex-wrap:wrap;gap:var(--space-3);align-items:center;justify-content:space-between;padding:var(--space-4);background:var(--bg-card-hover);border-radius:var(--radius-lg);margin-bottom:var(--space-3)">
               <div><p style="font-weight:600">Cancellation Alerts</p><p style="font-size:var(--text-sm);color:var(--text-muted)">Alerts when a booking is cancelled by a user</p></div>
               <label class="settings-toggle">
                 <input type="checkbox" checked>
                 <span class="settings-toggle__track"><span class="settings-toggle__thumb"></span></span>
               </label>
             </div>
-            <div style="display:flex;align-items:center;justify-content:space-between;padding:var(--space-4);background:var(--bg-card-hover);border-radius:var(--radius-lg);margin-bottom:var(--space-3)">
+            <div style="display:flex;flex-wrap:wrap;gap:var(--space-3);align-items:center;justify-content:space-between;padding:var(--space-4);background:var(--bg-card-hover);border-radius:var(--radius-lg);margin-bottom:var(--space-3)">
               <div><p style="font-weight:600">Daily Revenue Summary</p><p style="font-size:var(--text-sm);color:var(--text-muted)">Receive end-of-day revenue digest via email</p></div>
               <label class="settings-toggle">
                 <input type="checkbox" checked>
                 <span class="settings-toggle__track"><span class="settings-toggle__thumb"></span></span>
               </label>
             </div>
-            <div style="display:flex;align-items:center;justify-content:space-between;padding:var(--space-4);background:var(--bg-card-hover);border-radius:var(--radius-lg)">
+            <div style="display:flex;flex-wrap:wrap;gap:var(--space-3);align-items:center;justify-content:space-between;padding:var(--space-4);background:var(--bg-card-hover);border-radius:var(--radius-lg)">
               <div><p style="font-weight:600">Maintenance Reminders</p><p style="font-size:var(--text-sm);color:var(--text-muted)">Periodic turf maintenance schedule reminders</p></div>
               <label class="settings-toggle">
                 <input type="checkbox">
@@ -496,14 +496,14 @@
               <svg class="v-icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--error)"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
               Danger Zone
             </h3>
-            <div style="display:flex;align-items:center;justify-content:space-between;padding-bottom:var(--space-4);border-bottom:1px solid var(--border-color);margin-bottom:var(--space-4)">
+            <div style="display:flex;flex-wrap:wrap;gap:var(--space-3);align-items:center;justify-content:space-between;padding-bottom:var(--space-4);border-bottom:1px solid var(--border-color);margin-bottom:var(--space-4)">
               <div>
                 <p style="font-weight:600">Clear All Sessions</p>
                 <p style="font-size:var(--text-sm);color:var(--text-muted)">Force logout all users across the platform</p>
               </div>
               <button class="btn btn-sm" style="background:transparent;border:1.5px solid var(--warning);color:var(--warning)" onclick="window.SportifyApp.showToast('All active sessions have been cleared.', 'success')">Clear Sessions</button>
             </div>
-            <div style="display:flex;align-items:center;justify-content:space-between">
+            <div style="display:flex;flex-wrap:wrap;gap:var(--space-3);align-items:center;justify-content:space-between">
               <div>
                 <p style="font-weight:600">Reset Platform Data</p>
                 <p style="font-size:var(--text-sm);color:var(--text-muted)">Erase all demo data and restore defaults</p>
@@ -556,7 +556,7 @@
             </select>
           </div>
         </div>
-        <div style="margin-top:var(--space-6);display:flex;gap:var(--space-3)">
+        <div style="margin-top:var(--space-6);display:flex;flex-wrap:wrap;gap:var(--space-3)">
           <button type="submit" class="btn btn-primary" id="save-turf-btn">Save Turf</button>
           <button type="button" class="btn btn-secondary" data-close-modal>Cancel</button>
         </div>
@@ -569,7 +569,7 @@
     <div class="modal" style="max-width:440px">
       <h3 id="confirm-modal-title" style="margin-bottom:var(--space-3);font-size:var(--text-xl)">Are you sure?</h3>
       <p id="confirm-modal-message" style="color:var(--text-secondary);margin-bottom:var(--space-6)"></p>
-      <div style="display:flex;gap:var(--space-3);justify-content:flex-end">
+      <div style="display:flex;flex-wrap:wrap;gap:var(--space-3);justify-content:flex-end">
         <button class="btn btn-secondary" data-close-modal>Cancel</button>
         <button class="btn btn-primary" id="confirm-modal-ok">Confirm</button>
       </div>
