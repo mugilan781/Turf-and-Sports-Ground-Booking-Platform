@@ -81,12 +81,12 @@
 
 /* ═══════════════ TABLET PORTRAIT (≤900px) ═══════════════ */
 @media (max-width: 900px) {
-  /* VIP cards stack cleanly on portrait tablets */
+  /* VIP cards 3-col on portrait tablets with tighter gap */
   .h2-vip-grid {
-    grid-template-columns: 1fr;
-    max-width: 480px;
-    margin-inline: auto;
-    gap: var(--space-8);
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 100%;
+    margin-inline: 0;
+    gap: var(--space-3);
   }
 }
 
@@ -135,20 +135,22 @@
   }
 
   .h2-calc-addons {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: repeat(2, 1fr) !important;
   }
 
   .h2-calc-output {
     padding: var(--space-6);
   }
 
-  /* Contact info cards — the inline repeat(3, 1fr) grid is too tight
-     below 768px and leaks ~467px of min-content */
-  .info-cards-grid { grid-template-columns: 1fr !important; max-width: 400px; margin-inline: auto; }
+  /* Contact info cards — maintain 3 columns on tablet screens */
+  .info-cards-grid { grid-template-columns: repeat(3, 1fr) !important; max-width: 100% !important; margin-inline: 0 !important; gap: var(--space-3) !important; }
 }
 
 /* ═══════════════ MOBILE (≤640px) ═══════════════ */
 @media (max-width: 640px) {
+  /* Info cards stack on mobile phones */
+  .info-cards-grid { grid-template-columns: 1fr !important; max-width: 420px !important; margin-inline: auto !important; }
+  .h2-vip-grid { grid-template-columns: 1fr; max-width: 440px; margin-inline: auto; gap: var(--space-6); }
   /* Hero slider (index) */
   .hero-slider { min-height: 540px; }
   .hero-slide__eyebrow {

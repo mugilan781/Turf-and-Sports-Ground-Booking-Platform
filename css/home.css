@@ -994,12 +994,13 @@ font-weight: var(--fw-black);
   }
   #turf-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
   }
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
   }
   .steps-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--space-6);
   }
   .steps-grid::before { display: none; }
@@ -1019,24 +1020,37 @@ font-weight: var(--fw-black);
     margin-top: 0;
   }
   .quick-book-card {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
   #turf-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
   }
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
   }
   .stat-item::after { display: none; }
   .testimonial-card {
-    width: calc(100% - 0px);
+    width: calc(50% - var(--space-3));
   }
   .hero-slide__stats { display: none; }
   .slot-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
-/* Mobile — stats stack to a single column (2 cols overflow small screens) */
+/* Mobile — 1 column stack for mobile phones */
 @media (max-width: 640px) {
+  .quick-book-card {
+    grid-template-columns: 1fr;
+  }
+  #turf-grid {
+    grid-template-columns: 1fr;
+  }
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+  .testimonial-card {
+    width: 100%;
+  }
   .stats-grid {
     grid-template-columns: 1fr;
   }
