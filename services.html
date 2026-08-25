@@ -18,16 +18,31 @@
   <style>
     .sport-section { padding-block:var(--space-20);scroll-margin-top:var(--nav-height) }
     .sport-section--alt { background:var(--bg-secondary) }
-    .sport-showcase { display:grid;grid-template-columns:1fr 1fr;gap:var(--space-16);align-items:center }
-    .sport-showcase--reverse { direction:ltr }
-    .sport-img { border-radius:var(--radius-2xl);overflow:hidden;aspect-ratio:4/3;position:relative }
-    .sport-img img { width:100%;height:100%;object-fit:cover }
-    .sport-img__overlay { position:absolute;inset:0;background:linear-gradient(135deg,rgba(7,26,43,0.3),transparent) }
-    .sport-img__badge { position:absolute;top:var(--space-4);left:var(--space-4);background:rgba(7,26,43,0.85);backdrop-filter:blur(12px);border:1px solid rgba(184,230,46,0.25);border-radius:var(--radius-xl);padding:6px 14px;font-size:var(--text-xs);line-height:1.2;font-weight:700;color:var(--electric-lime);display:inline-flex;align-items:center;gap:6px }
+    .sport-showcase { display:grid;grid-template-columns:1.05fr 0.95fr;gap:var(--space-12);align-items:center }
+    .sport-showcase--reverse { grid-template-columns:0.95fr 1.05fr }
+    .sport-img { border-radius:var(--radius-2xl);overflow:hidden;aspect-ratio:4/3;position:relative;width:100%;max-width:580px;margin-inline:auto;box-shadow:var(--shadow-xl) }
+    .sport-img img { width:100%;height:100%;object-fit:cover;display:block }
+    .sport-img__overlay { position:absolute;inset:0;background:linear-gradient(135deg,rgba(7,26,43,0.3),transparent);pointer-events:none }
+    .sport-img__badge { position:absolute;top:var(--space-4);left:var(--space-4);background:rgba(7,26,43,0.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(184,230,46,0.25);border-radius:var(--radius-xl);padding:6px 14px;font-size:var(--text-xs);line-height:1.2;font-weight:700;color:var(--electric-lime);display:inline-flex;align-items:center;gap:6px;box-shadow:0 4px 15px rgba(0,0,0,0.3) }
     .sport-features { display:flex;flex-direction:column;gap:var(--space-4) }
-    .sport-feature-item { display:flex;gap:var(--space-4);align-items:flex-start }
+    .sport-feature-item { display:flex;gap:var(--space-4);align-items:flex-start;text-align:left }
     .sport-feature-icon { width:44px;height:44px;border-radius:var(--radius-md);background:rgba(184,230,46,0.1);border:1px solid rgba(184,230,46,0.2);display:flex;align-items:center;justify-content:center;color:var(--electric-lime);flex-shrink:0 }
-    @media (max-width:1024px) { .sport-showcase{grid-template-columns:1fr} }
+    
+    @media (max-width:1024px) {
+      .sport-showcase, .sport-showcase--reverse { grid-template-columns:1fr !important; gap:var(--space-8); text-align:center }
+      .sport-showcase--reverse .reveal-right, .sport-showcase--reverse .sport-img { order:unset !important }
+      .sport-img { max-width:520px; aspect-ratio:16/10; margin-inline:auto }
+      .sport-showcase .section-label { margin-inline:auto }
+      .sport-title { text-align:center !important }
+      .sport-showcase p { max-width:560px; margin-inline:auto }
+      .sport-features { max-width:520px; margin-inline:auto }
+      .sport-showcase__cta { justify-content:center !important; align-items:center !important }
+    }
+    @media (max-width:640px) {
+      .sport-img { max-width:100%; aspect-ratio:16/10 }
+      .sport-img__badge { top:var(--space-3); left:var(--space-3); padding:5px 10px; font-size:11px }
+      .sport-showcase__cta { flex-wrap:wrap; gap:var(--space-3) }
+    }
   </style>
 <link rel="stylesheet" href="css/responsive.css">
 </head>
@@ -142,7 +157,7 @@
             <span data-icon="football" data-icon-class="v-icon icon-xs v-icon-lime"></span>
             Football
           </span>
-          <h2 class="section-title" style="text-align:left">World-Class <span class="accent">Football Turfs</span></h2>
+          <h2 class="section-title sport-title">World-Class <span class="accent">Football Turfs</span></h2>
           <p style="color:var(--text-muted);line-height:var(--lh-relaxed);margin-bottom:var(--space-6)">From 5-a-side to 7-a-side formats, our floodlit football turfs feature FIFA-approved synthetic surfaces, professional-grade goalposts, and all the facilities your team needs.</p>
           <div class="sport-features">
             <div class="sport-feature-item">
@@ -182,7 +197,7 @@
             <span data-icon="cricket" data-icon-class="v-icon icon-xs v-icon-lime"></span>
             Cricket
           </span>
-          <h2 class="section-title" style="text-align:left">Professional <span class="accent">Cricket Grounds</span></h2>
+          <h2 class="section-title sport-title">Professional <span class="accent">Cricket Grounds</span></h2>
           <p style="color:var(--text-muted);line-height:var(--lh-relaxed);margin-bottom:var(--space-6)">Full-size cricket grounds with well-maintained pitches, practice nets, scoreboard facilities, and pavilions. Ideal for matches, practice sessions, and tournaments.</p>
           <div class="sport-features">
             <div class="sport-feature-item">
@@ -238,7 +253,7 @@
             <span data-icon="badminton" data-icon-class="v-icon icon-xs v-icon-lime"></span>
             Badminton
           </span>
-          <h2 class="section-title" style="text-align:left">Elite <span class="accent">Badminton Courts</span></h2>
+          <h2 class="section-title sport-title">Elite <span class="accent">Badminton Courts</span></h2>
           <p style="color:var(--text-muted);line-height:var(--lh-relaxed);margin-bottom:var(--space-6)">Air-conditioned indoor badminton courts with professional anti-slip flooring, BWF-standard net heights, and premium shuttle service. Play in absolute comfort.</p>
           <div class="sport-features">
             <div class="sport-feature-item">
