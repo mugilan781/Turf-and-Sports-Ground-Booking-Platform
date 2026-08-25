@@ -28,9 +28,15 @@
     .sport-feature-item { display:flex;gap:var(--space-4);align-items:flex-start;text-align:left }
     .sport-feature-icon { width:44px;height:44px;border-radius:var(--radius-md);background:rgba(184,230,46,0.1);border:1px solid rgba(184,230,46,0.2);display:flex;align-items:center;justify-content:center;color:var(--electric-lime);flex-shrink:0 }
     
+    @media (min-width:1025px) {
+      .sport-showcase--reverse .reveal-right { order:1 }
+      .sport-showcase--reverse .sport-img { order:2 }
+    }
+
     @media (max-width:1024px) {
       .sport-showcase, .sport-showcase--reverse { grid-template-columns:1fr !important; gap:var(--space-8); text-align:center }
-      .sport-showcase--reverse .reveal-right, .sport-showcase--reverse .sport-img { order:unset !important }
+      .sport-showcase--reverse .sport-img { order:1 !important }
+      .sport-showcase--reverse .reveal-right { order:2 !important }
       .sport-img { max-width:520px; aspect-ratio:16/10; margin-inline:auto }
       .sport-showcase .section-label { margin-inline:auto }
       .sport-title { text-align:center !important }
@@ -192,7 +198,15 @@
   <section class="sport-section sport-section--alt" id="cricket" aria-labelledby="cricket-heading">
     <div class="container">
       <div class="sport-showcase sport-showcase--reverse">
-        <div class="reveal-right" style="order:2">
+        <div class="sport-img reveal-left">
+          <img src="https://images.unsplash.com/photo-1714425340532-bf62553cb288?w=900&q=80" alt="Professional cricket ground with players" loading="lazy">
+          <div class="sport-img__overlay"></div>
+          <div class="sport-img__badge">
+            <span data-icon="cricket" data-icon-class="v-icon icon-xs v-icon-lime"></span>
+            30+ Cricket Grounds
+          </div>
+        </div>
+        <div class="reveal-right">
           <span class="section-label" id="cricket-heading">
             <span data-icon="cricket" data-icon-class="v-icon icon-xs v-icon-lime"></span>
             Cricket
@@ -222,14 +236,6 @@
           <div class="sport-showcase__cta" style="margin-top:var(--space-8);display:flex;gap:var(--space-4)">
             <div><div style="font-size:var(--text-xs);color:var(--text-muted);margin-bottom:2px">Starting from</div><div class="sport-price">₹1,200/hr</div></div>
             <a href="dashboard.html" class="btn btn-primary btn-lg" style="align-self:flex-end">Book Cricket Ground →</a>
-          </div>
-        </div>
-        <div class="sport-img reveal-left" style="order:1">
-          <img src="https://images.unsplash.com/photo-1714425340532-bf62553cb288?w=900&q=80" alt="Professional cricket ground with players" loading="lazy">
-          <div class="sport-img__overlay"></div>
-          <div class="sport-img__badge">
-            <span data-icon="cricket" data-icon-class="v-icon icon-xs v-icon-lime"></span>
-            30+ Cricket Grounds
           </div>
         </div>
       </div>
