@@ -653,6 +653,7 @@
   .pricing-grid { grid-template-columns: repeat(3, 1fr); gap: var(--space-4); margin-top: var(--space-8); }
   .pricing-card { padding: var(--space-6) var(--space-4); }
   .pricing-card--featured { transform: none; }
+  .pricing-amount { font-size: clamp(1.75rem, 3.5vw, 2.5rem); }
   .blog-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-6); }
   .facilities-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-6); }
   .team-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-6); }
@@ -660,7 +661,10 @@
 }
 
 @media (max-width: 900px) {
-  .pricing-grid { grid-template-columns: repeat(3, 1fr); gap: var(--space-3); }
+  .pricing-grid { grid-template-columns: 1fr; max-width: 480px; margin-inline: auto; gap: var(--space-6); }
+  .pricing-card { padding: var(--space-6); }
+  .pricing-amount { font-size: 2.5rem; }
+  .pricing-card .btn { width: 100%; justify-content: center; text-align: center; }
 }
 
 @media (max-width: 768px) {

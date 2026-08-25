@@ -81,12 +81,23 @@
 
 /* ═══════════════ TABLET PORTRAIT (≤900px) ═══════════════ */
 @media (max-width: 900px) {
-  /* VIP cards 3-col on portrait tablets with tighter gap */
+  /* VIP cards stack into clean centered cards on portrait tablets (≤900px including 768px) */
   .h2-vip-grid {
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 100%;
-    margin-inline: 0;
-    gap: var(--space-3);
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin-inline: auto;
+    gap: var(--space-6);
+  }
+  .h2-vip-card {
+    padding: var(--space-6);
+  }
+  .h2-vip-price-num {
+    font-size: 2.5rem;
+  }
+  .h2-vip-btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
   }
 }
 
