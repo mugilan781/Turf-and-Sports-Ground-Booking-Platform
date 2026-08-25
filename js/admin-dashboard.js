@@ -826,9 +826,23 @@ const initMobileSidebar = () => {
   const toggle = document.querySelector('.dashboard-sidebar-toggle');
   if (!toggle || !sidebar) return;
 
+  const closeSidebar = () => sidebar.classList.remove('open');
+
   toggle.addEventListener('click', () => sidebar.classList.toggle('open'));
+
+  // Close on outside click
   document.addEventListener('click', (e) => {
-    if (!sidebar.contains(e.target) && !toggle.contains(e.target)) sidebar.classList.remove('open');
+    if (!sidebar.contains(e.target) && !toggle.contains(e.target)) closeSidebar();
+  });
+
+  // Close after selecting a section (mobile / tablet)
+  sidebar.querySelectorAll('.dashboard-nav-item').forEach((item) => {
+    item.addEventListener('click', closeSidebar);
+  });
+
+  // Reset state when viewport returns to desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) closeSidebar();
   });
 };
 
