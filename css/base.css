@@ -417,14 +417,16 @@ p {
 /* ── Page Hero ── */
 .page-hero {
   position: relative;
+  height: 440px;
   min-height: 440px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding-block: var(--space-20);
-  padding-top: calc(var(--nav-height) + var(--space-20));
+  padding-top: var(--nav-height);
+  padding-bottom: 0;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .page-hero .container {
@@ -453,6 +455,12 @@ p {
   z-index: 0;
 }
 
+/* For legal/sitemap pages without photo background */
+.page-hero--legal {
+  background: linear-gradient(135deg, var(--midnight-navy) 0%, var(--navy-mid) 50%, var(--graphite-dark) 100%);
+  border-bottom: 1px solid rgba(184, 230, 46, 0.15);
+}
+
 .page-hero__content {
   position: relative;
   z-index: 1;
@@ -461,7 +469,7 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 760px;
+  max-width: 900px;
   margin-inline: auto;
   width: 100%;
 }
@@ -481,18 +489,25 @@ p {
 }
 
 .page-hero__title {
-  font-size: clamp(var(--text-4xl), 5vw, var(--text-6xl));
+  font-size: clamp(var(--text-3xl), 4.2vw, var(--text-5xl));
   font-weight: var(--fw-black);
   color: var(--white);
   line-height: var(--lh-tight);
   margin-bottom: var(--space-4);
   text-align: center;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .page-hero__title {
+    white-space: normal;
+  }
 }
 
 .page-hero p {
   color: rgba(255,255,255,0.75);
   font-size: var(--text-lg);
-  max-width: 580px;
+  max-width: 600px;
   margin-inline: auto;
   line-height: var(--lh-relaxed);
   text-align: center;

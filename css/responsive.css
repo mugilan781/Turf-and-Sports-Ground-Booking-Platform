@@ -13,9 +13,10 @@
 
   /* Page hero (all inner pages) — standardize uniform height */
   .page-hero {
+    height: 400px;
     min-height: 400px;
-    padding-block: var(--space-16);
-    padding-top: calc(var(--nav-height) + var(--space-16));
+    padding-top: var(--nav-height);
+    padding-bottom: 0;
   }
 
   /* Home 2 hero — 100vh grid collapses to one column; give it natural height */
@@ -238,9 +239,10 @@
 
   /* Page hero — uniform height on phones */
   .page-hero {
+    height: 360px;
     min-height: 360px;
-    padding-block: var(--space-12);
-    padding-top: calc(var(--nav-height) + var(--space-12));
+    padding-top: var(--nav-height);
+    padding-bottom: 0;
   }
 
   /* Section header — tighter bottom margin */
@@ -255,9 +257,10 @@
 @media (max-width: 480px) {
   /* Page hero — compact uniform height on small mobile */
   .page-hero {
+    height: 320px;
     min-height: 320px;
-    padding-block: var(--space-10);
-    padding-top: calc(var(--nav-height) + var(--space-10));
+    padding-top: var(--nav-height);
+    padding-bottom: 0;
   }
 
   /* Hero actions — full-width stacked buttons */
