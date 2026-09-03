@@ -159,8 +159,14 @@
 /* ── Social Auth ── */
 .social-auth {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-3);
+}
+
+@media (max-width: 520px) {
+  .social-auth {
+    grid-template-columns: 1fr;
+  }
 }
 
 .social-auth-btn {
