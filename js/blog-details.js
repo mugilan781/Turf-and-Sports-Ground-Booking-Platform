@@ -21,15 +21,16 @@
         role: 'CEO & Sports Strategist',
         gradient: 'linear-gradient(135deg,var(--electric-lime),var(--stadium-green))',
         color: 'var(--midnight-navy)',
+        avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face&auto=format&q=80',
         bio: 'Raj has played football at the state level and has been coaching amateur teams for 8 years. His tactical analysis pieces have been read by over 50,000 athletes across India.'
       },
       tags: ['Football', 'Tactics', 'Amateur Football', 'Coaching', 'Strategy', '5-a-side'],
       cta: { icon: 'football', text: 'Book a premium football turf and put these tactics into practice!' },
       related: ['chennai-turfs', 'pre-match-nutrition', 'badminton-footwork'],
       comments: [
-        { name: 'Arjun R.', initials: 'AR', gradient: 'linear-gradient(135deg,var(--electric-lime),#8aaa1a)', color: 'var(--midnight-navy)', time: '2 days ago', rating: 5, text: 'Excellent breakdown! We implemented the high press last Saturday and won 3-1. The key insight about pressing in groups, not individually, was a game changer.' },
-        { name: 'Kavitha S.', initials: 'KS', gradient: 'linear-gradient(135deg,var(--stadium-green),#0d5a3e)', color: 'white', time: '1 day ago', rating: 5, text: 'The section on set-pieces is gold. We\'ve been neglecting this aspect completely. Going to dedicate our next training session to set-piece routines.' },
-        { name: 'Mithun P.', initials: 'MP', gradient: 'linear-gradient(135deg,#3B82F6,#1D4ED8)', color: 'white', time: '5 hours ago', rating: 5, text: 'Great article! One addition — in humid Chennai weather, energy management (point 10) is even more critical. We rotate our pressing intensity every 15 minutes.' }
+        { name: 'Arjun R.', initials: 'AR', gradient: 'linear-gradient(135deg,var(--electric-lime),#8aaa1a)', color: 'var(--midnight-navy)', avatar: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=200&h=200&fit=crop&crop=face&auto=format&q=80', time: '2 days ago', rating: 5, text: 'Excellent breakdown! We implemented the high press last Saturday and won 3-1. The key insight about pressing in groups, not individually, was a game changer.' },
+        { name: 'Kavitha S.', initials: 'KS', gradient: 'linear-gradient(135deg,var(--stadium-green),#0d5a3e)', color: 'white', avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&h=200&fit=crop&crop=face&auto=format&q=80', time: '1 day ago', rating: 5, text: 'The section on set-pieces is gold. We\'ve been neglecting this aspect completely. Going to dedicate our next training session to set-piece routines.' },
+        { name: 'Mithun P.', initials: 'MP', gradient: 'linear-gradient(135deg,#3B82F6,#1D4ED8)', color: 'white', avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=200&h=200&fit=crop&crop=face&auto=format&q=80', time: '5 hours ago', rating: 5, text: 'Great article! One addition — in humid Chennai weather, energy management (point 10) is even more critical. We rotate our pressing intensity every 15 minutes.' }
       ],
       content: `<p>In the rapidly evolving landscape of amateur football, the gap between organized tactical thinking and raw athletic talent is narrowing. Teams that once relied solely on individual brilliance are now discovering that structured tactical frameworks can level the playing field — even against more physically gifted opponents.</p>
 <div class="article-highlight">"Tactics without talent can beat talent without tactics. Every game is won twice — first on the tactics board, then on the pitch."</div>
@@ -74,14 +75,15 @@
         role: 'Cricket Analyst & Former Ranji Player',
         gradient: 'linear-gradient(135deg,var(--stadium-green),#0D4F3A)',
         color: 'white',
+        avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&crop=face&auto=format&q=80',
         bio: 'Vikram played Ranji Trophy cricket for 6 seasons before moving into coaching and analysis. He has worked with 200+ amateur batsmen across Chennai and Bangalore on strike-rate improvement.'
       },
       tags: ['Cricket', 'Batting', 'Drills', 'Nets', 'Strike Rate'],
       cta: { icon: 'cricket', text: 'Book a premium cricket ground and put these drills into practice!' },
       related: ['reading-cricket-pitch', 'pre-match-nutrition', 'football-tactics'],
       comments: [
-        { name: 'Suresh K.', initials: 'SK', gradient: 'linear-gradient(135deg,#22C55E,#15803D)', color: 'white', time: '3 days ago', rating: 5, text: 'The Gate Drill completely changed my defence. Used to nick everything on the 5th stump line — now I leave or play it with a straight bat.' },
-        { name: 'Divya M.', initials: 'DM', gradient: 'linear-gradient(135deg,#F472B6,#BE185D)', color: 'white', time: '1 day ago', rating: 4, text: 'Loved the pressure simulation drill. Practising with run targets in the nets feels completely different from free-flow batting.' }
+        { name: 'Suresh K.', initials: 'SK', gradient: 'linear-gradient(135deg,#22C55E,#15803D)', color: 'white', avatar: 'https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=200&h=200&fit=crop&crop=face&auto=format&q=80', time: '3 days ago', rating: 5, text: 'The Gate Drill completely changed my defence. Used to nick everything on the 5th stump line — now I leave or play it with a straight bat.' },
+        { name: 'Divya M.', initials: 'DM', gradient: 'linear-gradient(135deg,#F472B6,#BE185D)', color: 'white', avatar: 'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=200&h=200&fit=crop&crop=face&auto=format&q=80', time: '1 day ago', rating: 4, text: 'Loved the pressure simulation drill. Practising with run targets in the nets feels completely different from free-flow batting.' }
       ],
       content: `<p>Strike rate is the currency of modern cricket. Whether you play weekend league matches or office tournaments, the difference between a match-winner and a passenger is often built in the nets — not on match day. These five drills target the specific skills that translate directly into faster scoring.</p>
 <div class="article-highlight">"Your strike rate is a habit, not a talent. Drill it daily and it becomes your identity at the crease."</div>
@@ -116,14 +118,15 @@
         role: 'Badminton Coach & National-Level Player',
         gradient: 'linear-gradient(135deg,#3B82F6,#1D4ED8)',
         color: 'white',
+        avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&crop=face&auto=format&q=80',
         bio: 'Ananya is a national-level badminton player and a certified coach with 9 years of experience. She has trained over 500 junior and amateur players in Chennai on movement and court coverage.'
       },
       tags: ['Badminton', 'Footwork', 'Drills', 'Court Coverage', 'Singles'],
       cta: { icon: 'badminton', text: 'Book an air-conditioned badminton court and practise these footwork drills!' },
       related: ['pre-match-nutrition', 'football-tactics', 'chennai-turfs'],
       comments: [
-        { name: 'Rahul V.', initials: 'RV', gradient: 'linear-gradient(135deg,#8B5CF6,#6D28D9)', color: 'white', time: '2 days ago', rating: 5, text: 'The split step timing tip fixed my recovery completely. I was landing late on every return — now the rallies last twice as long.' },
-        { name: 'Neha S.', initials: 'NS', gradient: 'linear-gradient(135deg,#EC4899,#BE185D)', color: 'white', time: '6 hours ago', rating: 5, text: 'Shadow drills are so underrated. Did the corner-pattern routine for a week and my court coverage feels effortless now.' }
+        { name: 'Rahul V.', initials: 'RV', gradient: 'linear-gradient(135deg,#8B5CF6,#6D28D9)', color: 'white', avatar: 'https://images.unsplash.com/photo-1512310604669-443f26c35f52?w=200&h=200&fit=crop&crop=face&auto=format&q=80', time: '2 days ago', rating: 5, text: 'The split step timing tip fixed my recovery completely. I was landing late on every return — now the rallies last twice as long.' },
+        { name: 'Neha S.', initials: 'NS', gradient: 'linear-gradient(135deg,#EC4899,#BE185D)', color: 'white', avatar: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=200&h=200&fit=crop&crop=face&auto=format&q=80', time: '6 hours ago', rating: 5, text: 'Shadow drills are so underrated. Did the corner-pattern routine for a week and my court coverage feels effortless now.' }
       ],
       content: `<p>Badminton is often called the fastest racket sport in the world, and the secret to keeping up is not in your racket — it's in your feet. Elite players win points with movement, not power. Here is a complete footwork framework that works for players of every level.</p>
 <div class="article-highlight">"In badminton, the shuttle doesn't beat you. Late movement does. Fix your feet and everything else follows."</div>
@@ -158,14 +161,15 @@
         role: 'Sports Nutritionist',
         gradient: 'linear-gradient(135deg,#F59E0B,#D97706)',
         color: 'white',
+        avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face&auto=format&q=80',
         bio: 'Dr. Ravi is a certified sports nutritionist who has advised state-level teams and 1,000+ amateur athletes on match-day nutrition and recovery plans.'
       },
       tags: ['Nutrition', 'Fitness', 'Pre-Match', 'Hydration', 'Recovery'],
       cta: { icon: 'fitness', text: 'Book a turf near you and put the right fuel in your tank before your next game!' },
       related: ['football-tactics', 'badminton-footwork', 'team-cohesion'],
       comments: [
-        { name: 'Arun T.', initials: 'AT', gradient: 'linear-gradient(135deg,#22C55E,#15803D)', color: 'white', time: '4 days ago', rating: 5, text: 'Followed the 3-hour rule before our weekend match and felt the difference in the last 15 minutes. No more energy crashes.' },
-        { name: 'Lakshmi R.', initials: 'LR', gradient: 'linear-gradient(135deg,#F472B6,#BE185D)', color: 'white', time: '1 day ago', rating: 4, text: 'Great guide, wish there was a breakfast plan too. The hydration strategy alone was worth the read.' }
+        { name: 'Arun T.', initials: 'AT', gradient: 'linear-gradient(135deg,#22C55E,#15803D)', color: 'white', avatar: 'https://images.unsplash.com/photo-1511367461989-f85a21fda167?w=200&h=200&fit=crop&crop=face&auto=format&q=80', time: '4 days ago', rating: 5, text: 'Followed the 3-hour rule before our weekend match and felt the difference in the last 15 minutes. No more energy crashes.' },
+        { name: 'Lakshmi R.', initials: 'LR', gradient: 'linear-gradient(135deg,#F472B6,#BE185D)', color: 'white', avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop&crop=face&auto=format&q=80', time: '1 day ago', rating: 4, text: 'Great guide, wish there was a breakfast plan too. The hydration strategy alone was worth the read.' }
       ],
       content: `<p>You can train for months, but a match can still be decided in the 2 hours before kick-off — at the dinner table. What you eat and drink before a game directly controls your energy, focus, and recovery. This science-backed plan is built for team sport athletes playing evening and weekend matches.</p>
 <div class="article-highlight">"A match is won in the first hour by preparation, and in the last 15 minutes by fuel. Both start the night before."</div>
@@ -200,14 +204,15 @@
         role: 'CEO & Sports Strategist',
         gradient: 'linear-gradient(135deg,var(--electric-lime),var(--stadium-green))',
         color: 'var(--midnight-navy)',
+        avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face&auto=format&q=80',
         bio: 'Raj has played football at the state level and has been coaching amateur teams for 8 years. His venue reviews have been read by over 50,000 athletes across India.'
       },
       tags: ['Venues', 'Football', 'Chennai', 'Turf Booking', 'Weekend'],
       cta: { icon: 'stadium', text: 'Browse Chennai\'s best-rated football turfs and book your weekend slot now!' },
       related: ['football-tactics', 'pre-match-nutrition', 'team-cohesion'],
       comments: [
-        { name: 'Karthik J.', initials: 'KJ', gradient: 'linear-gradient(135deg,#22C55E,#15803D)', color: 'white', time: '2 days ago', rating: 5, text: 'Booked the Anna Nagar turf from this list — exactly as described. Floodlights, clean changing rooms, and the booking took 30 seconds.' },
-        { name: 'Farhan A.', initials: 'FA', gradient: 'linear-gradient(135deg,#3B82F6,#1D4ED8)', color: 'white', time: '12 hours ago', rating: 5, text: 'The OMR night slots are amazing. Started a weekly 5-a-side group with my office team — best decision of the season.' }
+        { name: 'Karthik J.', initials: 'KJ', gradient: 'linear-gradient(135deg,#22C55E,#15803D)', color: 'white', avatar: 'https://images.unsplash.com/photo-1508341591423-4347099e1f19?w=200&h=200&fit=crop&crop=face&auto=format&q=80', time: '2 days ago', rating: 5, text: 'Booked the Anna Nagar turf from this list — exactly as described. Floodlights, clean changing rooms, and the booking took 30 seconds.' },
+        { name: 'Farhan A.', initials: 'FA', gradient: 'linear-gradient(135deg,#3B82F6,#1D4ED8)', color: 'white', avatar: 'https://images.unsplash.com/photo-1521119989659-a83eee488004?w=200&h=200&fit=crop&crop=face&auto=format&q=80', time: '12 hours ago', rating: 5, text: 'The OMR night slots are amazing. Started a weekly 5-a-side group with my office team — best decision of the season.' }
       ],
       content: `<p>Chennai's football scene has exploded over the past two years, and so has the number of turfs. With so many options, picking the right one for your group can be overwhelming. We reviewed 1,000+ player ratings to bring you the turfs that consistently deliver.</p>
 <div class="article-highlight">"A great turf is 10% astroturf and 90% everything else — lights, changing rooms, parking, and a booking system that works."</div>
@@ -241,14 +246,15 @@
         role: 'Cricket Captain & Pitch Specialist',
         gradient: 'linear-gradient(135deg,#8B5CF6,#6D28D9)',
         color: 'white',
+        avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&h=200&fit=crop&crop=face&auto=format&q=80',
         bio: 'Murali has captained amateur teams for 12 years and studies pitch behaviour professionally. He consults for clubs across Tamil Nadu on team selection and match strategy.'
       },
       tags: ['Cricket', 'Pitch', 'Captaincy', 'Team Selection', 'Strategy'],
       cta: { icon: 'cricket', text: 'Book a well-maintained cricket ground and test your pitch-reading skills!' },
       related: ['batting-drills', 'football-tactics', 'pre-match-nutrition'],
       comments: [
-        { name: 'Venkat G.', initials: 'VG', gradient: 'linear-gradient(135deg,#22C55E,#15803D)', color: 'white', time: '3 days ago', rating: 5, text: 'The footmarks section saved our weekend match. Identified the dry, cracked pitch and picked three spinners — won by 40 runs.' },
-        { name: 'Ramesh B.', initials: 'RB', gradient: 'linear-gradient(135deg,#F59E0B,#D97706)', color: 'white', time: '1 day ago', rating: 4, text: 'Wish there were photos of each pitch type, but the descriptions are accurate enough to spot the signs at your local ground.' }
+        { name: 'Venkat G.', initials: 'VG', gradient: 'linear-gradient(135deg,#22C55E,#15803D)', color: 'white', avatar: 'https://images.unsplash.com/photo-1552058544-f2b08422138a?w=200&h=200&fit=crop&crop=face&auto=format&q=80', time: '3 days ago', rating: 5, text: 'The footmarks section saved our weekend match. Identified the dry, cracked pitch and picked three spinners — won by 40 runs.' },
+        { name: 'Ramesh B.', initials: 'RB', gradient: 'linear-gradient(135deg,#F59E0B,#D97706)', color: 'white', avatar: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=200&h=200&fit=crop&crop=face&auto=format&q=80', time: '1 day ago', rating: 4, text: 'Wish there were photos of each pitch type, but the descriptions are accurate enough to spot the signs at your local ground.' }
       ],
       content: `<p>At the toss, a captain has one question to answer: what kind of pitch are we playing on? Get it right and you win the toss twice over. Get it wrong and your best XI plays the wrong game. Here is how amateur captains can read a pitch in 5 minutes.</p>
 <div class="article-highlight">"The pitch tells you what to do at the toss. Most captains fail to listen because they decide before they look."</div>
@@ -283,14 +289,15 @@
         role: 'HR Strategist & Sports Enthusiast',
         gradient: 'linear-gradient(135deg,#EC4899,#BE185D)',
         color: 'white',
+        avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=face&auto=format&q=80',
         bio: 'Priya designs team-building programmes for startups and enterprises across India. Her work combines sports science with HR research to build high-trust teams.'
       },
       tags: ['Team Building', 'Corporate', 'Sports', 'Workplace', 'Cohesion'],
       cta: { icon: 'users', text: 'Book a group package and turn your team outing into a winning tradition!' },
       related: ['football-tactics', 'pre-match-nutrition', 'chennai-turfs'],
       comments: [
-        { name: 'Nithya C.', initials: 'NC', gradient: 'linear-gradient(135deg,#8B5CF6,#6D28D9)', color: 'white', time: '5 days ago', rating: 5, text: 'We ran this for our office team last month. The mixed-team rule got people talking to colleagues they never speak to. Booking again next quarter!' },
-        { name: 'Imran S.', initials: 'IS', gradient: 'linear-gradient(135deg,#22C55E,#15803D)', color: 'white', time: '2 days ago', rating: 5, text: 'The post-game debrief template is gold. Our team\'s retro after the match was the most honest meeting we have had all year.' }
+        { name: 'Nithya C.', initials: 'NC', gradient: 'linear-gradient(135deg,#8B5CF6,#6D28D9)', color: 'white', avatar: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=200&h=200&fit=crop&crop=face&auto=format&q=80', time: '5 days ago', rating: 5, text: 'We ran this for our office team last month. The mixed-team rule got people talking to colleagues they never speak to. Booking again next quarter!' },
+        { name: 'Imran S.', initials: 'IS', gradient: 'linear-gradient(135deg,#22C55E,#15803D)', color: 'white', avatar: 'https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=200&h=200&fit=crop&crop=face&auto=format&q=80', time: '2 days ago', rating: 5, text: 'The post-game debrief template is gold. Our team\'s retro after the match was the most honest meeting we have had all year.' }
       ],
       content: `<p>Corporate sports bookings have risen 40% year-on-year, and for good reason. Games do something workshops can't: they reveal how people behave under pressure, reward collaboration, and create shared stories. Here's how to turn a sports outing into genuine team cohesion.</p>
 <div class="article-highlight">"You learn more about a colleague in one game of football than in a year of meetings."</div>
@@ -332,12 +339,20 @@
     return stars;
   }
 
+  function buildAvatar(c, sizeClass) {
+    var cls = sizeClass || 'avatar-lg';
+    if (c.avatar) {
+      return '<div class="avatar ' + cls + '" style="flex-shrink:0;border:1.5px solid var(--border-color);overflow:hidden"><img src="' + c.avatar + '" alt="' + c.name + '" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>';
+    }
+    return '<div class="avatar ' + cls + '" style="background:' + c.gradient + ';color:' + c.color + ';font-weight:900;flex-shrink:0;font-size:14px">' + c.initials + '</div>';
+  }
+
   function buildComments(post) {
     var html = '';
     for (var i = 0; i < post.comments.length; i++) {
       var c = post.comments[i];
       html += '<div class="comment-item reveal' + (i > 0 ? ' delay-' + (i * 100) : '') + '">' +
-        '<div class="avatar avatar-lg" style="background:' + c.gradient + ';color:' + c.color + ';font-weight:900;flex-shrink:0;font-size:14px">' + c.initials + '</div>' +
+        buildAvatar(c, 'avatar-lg') +
         '<div style="flex:1">' +
           '<div style="display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-2)">' +
             '<strong style="font-size:var(--text-sm)">' + c.name + '</strong>' +
@@ -387,7 +402,16 @@
     }
     if ((el = document.getElementById('article-heading'))) el.textContent = post.title;
     if ((el = document.getElementById('article-excerpt'))) el.textContent = post.excerpt;
-    if ((el = document.getElementById('author-avatar'))) el.textContent = post.author.initials;
+    if ((el = document.getElementById('author-avatar'))) {
+      if (post.author.avatar) {
+        el.style.background = 'none';
+        el.style.border = '2px solid var(--electric-lime)';
+        el.style.overflow = 'hidden';
+        el.innerHTML = '<img src="' + post.author.avatar + '" alt="' + post.author.name + '" loading="lazy" style="width:100%;height:100%;object-fit:cover">';
+      } else {
+        el.textContent = post.author.initials;
+      }
+    }
     if ((el = document.getElementById('author-name'))) el.textContent = post.author.name;
     if ((el = document.getElementById('author-role'))) el.textContent = post.author.role;
     if ((el = document.getElementById('article-date-text'))) el.textContent = post.date;
@@ -395,7 +419,16 @@
     if ((el = document.getElementById('article-views-text'))) el.textContent = post.views;
     if ((el = document.getElementById('article-hero-img'))) { el.src = post.image; el.alt = post.imageAlt; }
     if ((el = document.getElementById('article-body'))) el.innerHTML = post.content;
-    if ((el = document.getElementById('author-card-avatar'))) el.textContent = post.author.initials;
+    if ((el = document.getElementById('author-card-avatar'))) {
+      if (post.author.avatar) {
+        el.style.background = 'none';
+        el.style.border = '3px solid var(--border-accent)';
+        el.style.overflow = 'hidden';
+        el.innerHTML = '<img src="' + post.author.avatar + '" alt="' + post.author.name + '" loading="lazy" style="width:100%;height:100%;object-fit:cover">';
+      } else {
+        el.textContent = post.author.initials;
+      }
+    }
     if ((el = document.getElementById('author-card-name'))) el.textContent = post.author.name;
     if ((el = document.getElementById('author-card-role'))) el.textContent = post.author.role;
     if ((el = document.getElementById('author-card-bio'))) el.textContent = post.author.bio;
