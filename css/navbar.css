@@ -447,6 +447,17 @@
   color: var(--stadium-green);
 }
 
+/* ── Mobile CTA ── */
+.navbar__mobile-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+  width: 100%;
+  text-align: center;
+}
+
 @media (max-width: 1024px) {
   .navbar__nav { display: none; }
   .navbar__hamburger { display: flex; }
