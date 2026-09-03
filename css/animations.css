@@ -176,11 +176,25 @@
   height: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
+  text-align: center;
   padding-top: var(--nav-height);
+}
+
+.hero-slide__content .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-slide__inner {
   max-width: 700px;
+  margin-inline: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-slide__eyebrow {
@@ -206,6 +220,8 @@
   line-height: var(--lh-tight);
   color: var(--white);
   margin-bottom: var(--space-5);
+  text-align: center;
+  margin-inline: auto;
   animation: fadeInUp 0.9s ease 0.4s both;
 }
 
@@ -217,6 +233,8 @@
   line-height: var(--lh-relaxed);
   margin-bottom: var(--space-8);
   max-width: 520px;
+  margin-inline: auto;
+  text-align: center;
   animation: fadeInUp 0.9s ease 0.6s both;
 }
 
@@ -224,6 +242,8 @@
   display: flex;
   gap: var(--space-3);
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   animation: fadeInUp 0.9s ease 0.8s both;
 }
 
