@@ -11,10 +11,11 @@
   .hero-slider { min-height: 640px; }
   .hero-arrows { display: none; }
 
-  /* Page hero (all inner pages) — tighten oversized padding */
+  /* Page hero (all inner pages) — standardize uniform height */
   .page-hero {
-    padding-block: var(--space-24);
-    padding-top: calc(var(--nav-height) + var(--space-24));
+    min-height: 400px;
+    padding-block: var(--space-16);
+    padding-top: calc(var(--nav-height) + var(--space-16));
   }
 
   /* Home 2 hero — 100vh grid collapses to one column; give it natural height */
@@ -235,10 +236,11 @@
   .booking-table th,
   .booking-table td { padding: var(--space-3); }
 
-  /* Page hero — tighter top padding on phones */
+  /* Page hero — uniform height on phones */
   .page-hero {
-    padding-block: var(--space-16);
-    padding-top: calc(var(--nav-height) + var(--space-16));
+    min-height: 360px;
+    padding-block: var(--space-12);
+    padding-top: calc(var(--nav-height) + var(--space-12));
   }
 
   /* Section header — tighter bottom margin */
@@ -251,6 +253,13 @@
 
 /* ═══════════════ SMALL MOBILE (≤480px) ═══════════════ */
 @media (max-width: 480px) {
+  /* Page hero — compact uniform height on small mobile */
+  .page-hero {
+    min-height: 320px;
+    padding-block: var(--space-10);
+    padding-top: calc(var(--nav-height) + var(--space-10));
+  }
+
   /* Hero actions — full-width stacked buttons */
   .hero-slide__actions .btn {
     width: 100%;
